@@ -5,12 +5,6 @@
 \usepackage{color}
 \usepackage{setspace}
 \usepackage{tikz}
-\usepackage{pgfplots}
-\usepackage{amsmath}
-\usepackage{textcomp}
-\usepackage{amssymb}
-\usepackage{enumitem}
-\usepackage{txfonts}
 
 \begin{document}
 
@@ -29,7 +23,7 @@
 \begin{enumerate}
 \item C variables have sizes based on the platform they were compiled by and for, such that sizeof(type) can be used to determine the size in bytes
 \item On a standard computer, int = 4, short = 2, long = 8, float = 4, double = 8, and char = 1 bytes (8 bits to a byte)
-\items Types can also be specified as unsigned, such that it is not able to be given a negative value
+\item Types can also be specified as unsigned, such that it is not able to be given a negative value
 \end{enumerate}
 \item Boolean values are numbers, such that 0 is false, and all nonzero numbers are considered true
 \item Character literals can be represented inside single quotes rather than use a number, and Strings, though not an object, can use a double quotes literal
@@ -43,7 +37,7 @@
 \begin{enumerate}
 \item All C programs are made up of a series of functions, run within the main function, which returns an integer (typically 0, or other values for errors)
 \begin{enumerate}
-\item They are compiled through “gcc file.c -o program_name”, then run through “./program_name”
+\item They are compiled through ``gcc file.c -o program\_name'', then run through ``./program\_name''
 \end{enumerate}
 \end{enumerate}
 
