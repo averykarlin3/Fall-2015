@@ -1,0 +1,56 @@
+\documentclass[11 pt, twoside]{article}
+\usepackage{textcomp}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{txfonts}
+\usepackage{outlines}
+
+\setenumerate[1]{label=\Roman*.}
+\setenumerate[2]{label=\Alph*.}
+\setenumerate[3]{label=\roman*.}
+\setenumerate[4]{label=\alph*.}
+
+\begin{document}
+
+\title{System-level Programming}
+\author{Avery Karlin}
+\date{Fall 2015}
+
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{C Primitive Variable Types}
+\begin{enumerate}
+\item All C primitives are numeric, divided purely based on variable size, and integer or floating point
+\begin{enumerate}
+\item C variables have sizes based on the platform they were compiled by and for, such that sizeof(type) can be used to determine the size in bytes
+\item On a standard computer, int = 4, short = 2, long = 8, float = 4, double = 8, and char = 1 bytes (8 bits to a byte)
+\items Types can also be specified as unsigned, such that it is not able to be given a negative value
+\end{enumerate}
+\item Boolean values are numbers, such that 0 is false, and all nonzero numbers are considered true
+\item Character literals can be represented inside single quotes rather than use a number, and Strings, though not an object, can use a double quotes literal
+\begin{enumerate}
+\item Strings are created by character arrays, using a null character (value 0), to show the end of the array, allowing it to be modified easier
+\end{enumerate}
+\item Variables are able to be initialized within a for loop, but are not able to be declared, such that it must be before the loop
+\end{enumerate}
+
+\section{C Programming}
+\begin{enumerate}
+\item All C programs are made up of a series of functions, run within the main function, which returns an integer (typically 0, or other values for errors)
+\begin{enumerate}
+\item They are compiled through “gcc file.c -o program_name”, then run through “./program_name”
+\end{enumerate}
+\end{enumerate}
+
+\end{document}
