@@ -39,7 +39,19 @@
 \item All C programs are made up of a series of functions, run within the main function, which returns an integer (typically 0, or other values for errors)
 \begin{enumerate}
 \item They are compiled through ``gcc file.c -o program\_name'', then run through ``./program\_name''
-\item All files typically start with calling the C library with \#include$<$stdio.c$>$
+\end{enumerate}
+\item Libraries are added, either .h files from the current directory through \#include ``file.h'' or through premade libraries by \#include $<$file.h$>$
+\begin{enumerate}
+\item All files typically start with calling the C library with \#include$<$stdio.c$>$ and $<$stdlib.h$>$
 \end{enumerate}
 \end{enumerate}
+
+\subsection{C Structures}
+\begin{enumerate}
+\item ``printf(text, var1, var2)'' is used to print a String in terminal, where the text is a formatted string, with placeholders for variables following
+\begin{enumerate}
+\item \%f is a placeholder for a float, \%d for double, \%c for char, \%s for string, \%f for pointer, \%lf for double, \%ld for long, and \%d for int
+\end{enumerate}
+\end{enumerate}
+
 \end{document}
