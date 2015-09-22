@@ -44,6 +44,11 @@
 \begin{enumerate}
 \item All files typically start with calling the C library with \#include$<$stdio.c$>$ and $<$stdlib.h$>$
 \end{enumerate}
+\item The man pages, called by ``man command'' or ``man section command'', give information on both bash and C commands
+\begin{enumerate}
+\item (1) is user commands, (2) is system calls, (3) is library functions, such as the C libraries, (4) is devices, (5) is file formats, (6) is games and amusements, (7) is conventions and miscellany, and (8) is system admin and priveledged commands
+\item (L) is used for local commands, installed by certain programs
+\end{enumerate}
 \end{enumerate}
 
 \subsection{C Structures}
@@ -52,6 +57,13 @@
 \begin{enumerate}
 \item \%f is a placeholder for a float, \%d for double, \%c for char, \%s for string, \%f for pointer, \%lf for double, \%ld for long, and \%d for int
 \end{enumerate}
+\end{enumerate}
+
+\subsection{Memory Management}
+\begin{enumerate}
+\item Memory allocation is either during compile time (static stack memory), or during runtime (dynamic heap memory)
+\item Compiler allocated memory is packaged within the binary, without a default value, where variables and arrays are allocated
+\item GET REMAINING NOTES FROM THIS
 \end{enumerate}
 
 \end{document}
