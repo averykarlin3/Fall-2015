@@ -111,10 +111,11 @@ $\mathbb{R}$ is an instance of many kinds of mathematical structures, such as:
 	\begin{itemize}
 	\item A set closed under addition and multiplication (results are within set)
 	\item Obeys all associated laws of addition and multiplication
+	\end{itemize}
     \item Ordered Set
         \begin{itemize}
             \item The set has an ordering that reflect the operations in the
-                field (such that x, y > 0, then x + y & xy > 0)
+                field (such that x, y > 0, then x + y and  xy > 0)
             \item This structure is what allows for comparisons, like the $<$
                 function
         \end{itemize}
@@ -285,22 +286,22 @@ For any positive numbers $x$ and $y$, it is possible to find some $n \in
 $$\forall x, y > 0, \exists\text{ } n \in \mathbb{N}: nx > y$$
 
 \subsubsection{Proof}
-Assume that $\neg\+\exists\text{ } n:nx > y$, this is logically equivalent to
-$\forall n: nx \leq y$. Let $\mathcal{C} = \{nx\+|\+n \in \mathbb{N}\}$. Then
+Assume that $\neg \exists\text{ } n:nx > y$, this is logically equivalent to
+$\forall n: nx \leq y$. Let $\mathcal{C} = \{nx | n \in \mathbb{N}\}$. Then
 $\mathcal{C} \leq y$, let $c = \text{sup } \mathcal{C}$.
-We claim that $\exists\+N: c-\frac{1}{2}x < Nx \leq c$. This is true because if
+We claim that $\exists N: c-\frac{1}{2}x < Nx \leq c$. This is true because if
 such $N$ does not exist, then $c - \frac{1}{2}x$ would be an upper bound, but
 $c$ is the least upper bound, so such $N$ must exist.
 Now we've established the existence of $N$, let us consider $(N + 1)x$. $(N +
 1)x = Nx + x > (c - \frac{1}{2}x) + x = c + \frac{1}{2}x > c$. But $(N + 1)x \in
 \mathcal{C}$, so it should be $< c$. We have a contradiction. This shows that
-the original assumption is false, so $\forall x, y > 0, \exists\+n \in
+the original assumption is false, so $\forall x, y > 0, \exists n \in
 \mathbb{N}: nx > y$
 
 \subsubsection{Consequences}
 This property can be used to show that $\lim_{n\to\infty} \frac{1}{n} = 0$.
 If we consider the definition of limits, the statement is equivalent to saying
-that $\forall \epsilon \in \mathbb{R} > 0, \exists\+ N\in\mathbb{N},
+that $\forall \epsilon \in \mathbb{R} > 0, \exists N \in \mathbb{N},
 \forall n > N, n \in \mathbb{R}, \frac{1}{n} < \epsilon$.
 If we rearrange the term, we get that we need to show $1 < \epsilon N$ for any
 $\epsilon$. This is true because of the Archimedean Property. $\forall n > N$,
