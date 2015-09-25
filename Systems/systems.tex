@@ -25,7 +25,7 @@
 \begin{enumerate}
 \item All C primitives are numeric, divided purely based on variable size, and integer or floating point
 \begin{enumerate}
-\item C variables have sizes based on the platform they were compiled by and for, such that sizeof(type) can be used to determine the size in bytes
+\item C variables have sizes based on the platform they were compiled by and for, such that sizeof(\textit{type}) can be used to determine the size in bytes
 \item On a standard computer, int = 4, short = 2, long = 8, float = 4, double = 8, and char = 1 bytes (8 bits to a byte)
 \item Types can also be specified as unsigned, such that it is not able to be given a negative value
 \end{enumerate}
@@ -41,13 +41,13 @@
 \begin{enumerate}
 \item All C programs are made up of a series of functions, run within the main function, which returns an integer (typically 0, or other values for errors)
 \begin{enumerate}
-\item They are compiled through ``gcc file.c -o program\_name'', then run through ``./program\_name''
+\item They are compiled through ``gcc \textit{file.c} -o \textit{program\_name}'', then run through ``./\textit{program\_name}''
 \end{enumerate}
-\item Libraries are added, either .h files from the current directory through \#include ``file.h'' or through premade libraries by \#include $<$file.h$>$
+\item Libraries are added, either .h files from the current directory through \#include ``\textit{file}.h'' or through premade libraries by \#include $<$file.h$>$
 \begin{enumerate}
 \item All files typically start with calling the C library with \#include$<$stdio.c$>$ and $<$stdlib.h$>$
 \end{enumerate}
-\item The man pages, called by ``man command'' or ``man section command'', give information on both bash and C commands
+\item The man pages, called by ``man \textit{command}'' or ``man \textit{section command}'', give information on both bash and C commands
 \begin{enumerate}
 \item (1) is user commands, (2) is system calls, (3) is library functions, such as the C libraries, (4) is devices, (5) is file formats, (6) is games and amusements, (7) is conventions and miscellany, and (8) is system admin and priveledged commands
 \item (L) is used for local commands, installed by certain programs
@@ -56,13 +56,13 @@
 
 \subsection{C Structures}
 \begin{enumerate}
-\item ``printf(text, var1, var2)'' is used to print a String in terminal, where the text is a formatted string, with placeholders for variables following
+\item ``printf(\textit{text, var1, var2})'' is used to print a String in terminal, where the text is a formatted string, with placeholders for variables following
 \begin{enumerate}
 \item \%f is a placeholder for a float, \%d for double, \%c for char, \%s for string, \%f for pointer, \%lf for double, \%ld for long, and \%d for int
 \end{enumerate}
 \item Arrays in C are non-dynamic, such that they must have a fixed size, with no length function, and there are no errors for going outside boundries, rather going to a different point in memory
 \begin{enumerate}
-\item Arrays are declared by ``type[size];'' and must be initialized each part at a time
+\item Arrays are declared by ``\textit{type}[\textit{size}];'' and must be initialized each part at a time
 \end{enumerate}
 \end{enumerate}
 
@@ -71,6 +71,10 @@
 \item Memory allocation is either during compile time (static stack memory), or during runtime (dynamic heap memory)
 \item Compiler allocated memory is packaged within the binary, unable to overwrite other programs memory due to protected memory, without a default value, where variables and arrays are allocated
 \item Runtime memory is temporary, used for values of variables
+\item Pointers are variables designed to store memory addresses
+\begin{enumerate}
+\item \%\textit{variable} is used to get the address of a variable, such that the number returned can be the value of a pointer 
+\end{enumerate}
 \end{enumerate}
 
 \end{document}
