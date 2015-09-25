@@ -332,7 +332,22 @@ $n_k = choice\{n > n_{k-1} | a_n \geq a_{n_{k-1}}$, thus $n_k \neq \emptyset$ be
 \subsection{Bolzano-Weierstrass Theorem}
 Every bounded sequence in $\mathbb{R}$ has at least one convergent subsequence
 
+\subsubsection{Proof}
+Let $(a_n)^\infty_{n=1}$ be a bounded sequence. For any monotone sequence $(a_{n_k})^\infty_{k=1}$, then $(a_{n_k})^\infty_{k=1}$ is both bounded and mono0tone, so it converges.
+
 \section{Extreme Value Theorem}
-For some function $f:[a, b]$ 
+For some function $f:[a, b] \to \mathbb{R}$ (for the codomain, not the range) that is continuous ($f(x_0) = \lim_{x \to x_o}f(x)$ for any x $\in (a, b)$, $f(a) = \lim_{x \to a^+}f(x)$, $f(b) = \lim_{x \to b^-}f(x)$), then $\exists c, d \in [a, b]$ such that $f(c) \leq f(x) \leq f(d)$.
+
+\subsection{Proof}
+\subsubsection{$\exists M>0$ such that $f(x) \leq < M \forall x \in [a,b]$ (f(x) is bounded above)}
+Lets assume that f is not bounded above, such that for any $n \in mathbb{N}, \exists x_n \in [a, b]$ such that $f(x_n) > n$.
+The sequence $(x_n)^\infty_{n=1}$ is bounded between a and b, such that it has a convergent subsequence $(x_{n_k})^\infty_{k=1}$ converging to some point $k \lim_{k \to \infty} x_{n_k}$, by the below claim.
+\underline{Claim:} $t \in [a, b]$. 
+Let $t>b$, then $\epsilon > 0$ such that $[a, b] \cap (t-\epsilon, t+\epsilon) = \emptyset$. But $\exists N$ such that $x_N \in (t-\epsilon, t+\epsilon)$ and $x_N \in [a, b]$, which is a contradiction.
+
+By the previous claim, $lim_{k \to \infty}f(x_{n_k}) = f(t)$ by the assumed continuity of f. Thus, $\exists$ K such that for all $k \geq K, f(x_{n_k}) < f(t) + 1 \in \mathbb{R}$. On the other hand, $f(x_{n_k}) > n_k > f(t) + 1$ when k is sufficiently large. Thus, there is a contradiction, and f(x) is bounded from above. This can be reversed to show it is bounded from below, as well.
+
+\subsubsection{The function reaches the supremum and infimum}
+We now know $R := f([a, b]) = \{f(x) | x \in [a, b]\}$ is bounded, such that S := sup(R) and I := inf(R). By the definition of infimum and supremum, $\exists (y_n)^\infty_{n = 1}$ such that $y_n \in R \forall n$, and $\lim_{n \to \infty}y_n = S$. Since $y_n \in R, \exists x_n [a, b]$ such that $f(x_n) = y_n$. Now $(x_n)^\infty_{n=1}$ is bounded between a and b so it has a convergent subsequence, $(x_{n_k})^\infty_{k=1}$, converging to $t \in [a, b]$. Also, by continuity of f, $\lim_{k \to \infty}f(x_{n_k}) = f(t)$. Thus, f(t) = S. This can be reversed to apply to the infimum. 
 
 \end{document}
