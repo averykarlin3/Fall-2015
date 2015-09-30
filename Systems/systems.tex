@@ -66,7 +66,8 @@
 \end{enumerate}
 \end{enumerate}
 
-\subsection{Memory Management}
+\section{Memory Management}
+\subsection{Memory Allocation}
 \begin{enumerate}
 \item Memory allocation is either during compile time (static stack memory), or during runtime (dynamic heap memory)
 \item Compiler allocated memory is packaged within the binary, unable to overwrite other programs memory due to protected memory, without a default value, where variables and arrays are allocated
@@ -74,7 +75,21 @@
 \item Pointers are variables designed to store memory addresses
 \begin{enumerate}
 \item \%\textit{variable} is used to get the address of a variable, such that the number returned can be the value of a pointer 
+\item When a pointer is incremented, the location moves the number of bytes of the variable type which the pointer applies to
 \end{enumerate}
+\end{enumerate}
+
+\subsection{Strings}
+\begin{enumerate}
+\item Strings can be declared by several methods, "char \textit{str[byte_num]}" to do basic allocation, or it can be set on the same line, with a null put in the byte after the last letter
+\begin{enumerate}
+\item It can also be declared with an empty byte number, but set such that it will be given the exact amount of space needed
+\item It can also be declared as a pointer to the array by "char *\textit{str = data}", created the array the exact correct size, and a pointer to the array under that variable name
+\item After declaration, each character must be set individually, instead of using the equal sign
+\item On the other hand, if a pointer is used, the pointer can be changed to apply to a seperate array, using an equal sign, even after declaration
+\end{enumerate}
+\item The null character at the end is needed for string functions in string.h to work correctly, but is not a requirement
+\item String and array variables are immutable, such that they cannot be changed without creating a different point in memory, unlike pointers
 \end{enumerate}
 
 \end{document}

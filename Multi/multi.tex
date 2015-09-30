@@ -350,4 +350,36 @@ By the previous claim, $lim_{k \to \infty}f(x_{n_k}) = f(t)$ by the assumed cont
 \subsubsection{The function reaches the supremum and infimum}
 We now know $R := f([a, b]) = \{f(x) | x \in [a, b]\}$ is bounded, such that S := sup(R) and I := inf(R). By the definition of infimum and supremum, $\exists (y_n)^\infty_{n = 1}$ such that $y_n \in R \forall n$, and $\lim_{n \to \infty}y_n = S$. Since $y_n \in R, \exists x_n [a, b]$ such that $f(x_n) = y_n$. Now $(x_n)^\infty_{n=1}$ is bounded between a and b so it has a convergent subsequence, $(x_{n_k})^\infty_{k=1}$, converging to $t \in [a, b]$. Also, by continuity of f, $\lim_{k \to \infty}f(x_{n_k}) = f(t)$. Thus, f(t) = S. This can be reversed to apply to the infimum. 
 
+\section{EVT in Higher Dimensions}
+
+\subsection{Higher Dimensions}
+%ADD
+
+\subsection{Metric Topology in $\mathbb{R^n}$}
+\subsubsection{Continuity}
+Let $f: D\to\varmathbb{R}$, $D\subseteq\varmathbb{R}^2$, $D\neq\emptyset$. Let $(a, b)\in D$. We say that $f$ is \underline{continuous} at $(a, b)$ if:
+$$f(a, b) = \lim_{\substack{(x, y)\to(a,b)\\(x, y)\in D}} f(x, y)$$
+Or in other terms:
+$$\forall \varepsilon > 0, \exists\+ \delta>0, \forall (x, y)\in D: dist(x,
+y\+;\+a,b) < \delta \to |f(x,y) - f(a,b)| < \varepsilon$$
+
+$f:D \to \mathbb{R}, D \subseteq \mathbb{R^2}, D \neq \emptyset is continuous if f is continuous at (a, b) for all (a, b) \in D.$
+
+\subsubsection{Directional Limits}
+Let $D \subseteq \mathbb{R} and a \in D \cup \partial D$ (the boundry, both already included in D, and not), $\lim_{x \to a^+} f(x) = L$ means $\forall \epsilon > 0, \exists \delta(\epsilon) > 0: \forall x \in D \cap (a, \infty), |x-a| < \delta(\epsilon) \Rightarrow |f(x) - L| < \epsilon$
+
+%CHECK IF COMPLETE
+%MOVE TO HIGHER
+
+\subsection{Properties of Domain}
+For the extreme value theorem to apply to a domain, the set must be compact, such that it must be bounded and closed over limits. On the \mathbb{R} dimension, this applies to all closed intervals, as well as the empty set, though functions except the empty set cannot accept it as a domain.
+
+\subsubsection{Bounded}
+$If D \subseteq \mathbb(R^2)$ is bounded if $\exists M > 0: D \subseteq [-M, M] x [-M, M]$.
+
+\subsubsection{Closed Over Limits}
+On $mathbb{R}$, if $x_n \in [a, b] for \forall n \in mathbb{N}, and x_n \to x \in \mathbb{R}, then x \in [a, b]$.
+
+$D \subseteq \mathbb{R^2} is closed if for any points (x_n, y_n) \in D (for all n \in \mathbb{N}, if (x_n, y_n) \to (x, y) \in \mathbb{R^2}, then (x, y) \in D. (x_n, y_n) \to (a, b) as n \to \infty$ means $d_n = \sqrt[2]{(x_n - a)^2 + (y_n - b)^2} \to 0 as n \to \infty.$
+
 \end{document}
