@@ -72,16 +72,19 @@
 \item Memory allocation is either during compile time (static stack memory), or during runtime (dynamic heap memory)
 \item Compiler allocated memory is packaged within the binary, unable to overwrite other programs memory due to protected memory, without a default value, where variables and arrays are allocated
 \item Runtime memory is temporary, used for values of variables
+\item Systems have a bit limit which they can read at once, such that 32 bit systems are limited to 32 bit unsigned values, such that $[0, 2^32-1]$ is possible, or ~4 GB 
 \item Pointers are variables designed to store memory addresses
 \begin{enumerate}
 \item \%\textit{variable} is used to get the address of a variable, such that the number returned can be the value of a pointer 
 \item When a pointer is incremented, the location moves the number of bytes of the variable type which the pointer applies to
+\item * is used before a variable name to declare a pointer, and is also used when calling a variable to get the value of the item at that location, preceeding before numeric operators except ++ and --
+\item Thus, for some array a, with *a as the pointer, a[i] = *(a + i)
 \end{enumerate}
 \end{enumerate}
 
 \subsection{Strings}
 \begin{enumerate}
-\item Strings can be declared by several methods, "char \textit{str[byte_num]}" to do basic allocation, or it can be set on the same line, with a null put in the byte after the last letter
+\item Strings can be declared by several methods, "char \textit{str[byte\_num]}" to do basic allocation, or it can be set on the same line, with a null put in the byte after the last letter
 \begin{enumerate}
 \item It can also be declared with an empty byte number, but set such that it will be given the exact amount of space needed
 \item It can also be declared as a pointer to the array by "char *\textit{str = data}", created the array the exact correct size, and a pointer to the array under that variable name
@@ -89,7 +92,8 @@
 \item On the other hand, if a pointer is used, the pointer can be changed to apply to a seperate array, using an equal sign, even after declaration
 \end{enumerate}
 \item The null character at the end is needed for string functions in string.h to work correctly, but is not a requirement
-\item String and array variables are immutable, such that they cannot be changed without creating a different point in memory, unlike pointers
+\item String and array variables are functionally immutable, such that they should not be changed without creating a different point in memory, unlike pointers
+\item All other variables are mutable, such that they can be changed easily
 \end{enumerate}
 
 \end{document}

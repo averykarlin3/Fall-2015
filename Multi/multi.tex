@@ -353,7 +353,45 @@ We now know $R := f([a, b]) = \{f(x) | x \in [a, b]\}$ is bounded, such that S :
 \section{EVT in Higher Dimensions}
 
 \subsection{Higher Dimensions}
-%ADD
+\subsubsection{Cartesian Product}
+The Cartesian Plane represents the set $\varmathbb{R}^2 := \{(x, y)\+|\+x, y\in \varmathbb(R)\}$. This is known as the \textbf{Cartesian Product} of $\varmathbb{R}$ with
+itself. The Cartesian Product of two sets $\mathcal{S}$ and $\mathcal{T}$,
+$\mathcal{S} \times \mathcal{T} :=  \{(s, t)\+|\+s\in\mathcal{S},
+t\in\mathcal{T}\}$.
+
+\subsubsection{Boundary}
+Given $D \subseteq \varmathbb{R}^2, D \neq \emptyset$. We say $(a, b) \in
+\partial D$, i.e. $(a, b)$ is on a \underline{boundry point} of $D$ if $\forall
+\varepsilon > 0$, there are points $(x, y)\in D$ and $(u, v) \in D^c$ ($D^c :=
+\varmathbb{R}^2 \setminus D$) such that $dist(x, y\+;\+ a, b) < \varepsilon$ and
+$dist(u, v\+;\+ a, b) < \varepsilon$. Since the definition is symmetrical, $\partial D^c = \partial D$.
+
+\subsubsection{Ordered Pair}
+The ordered pair $(a, b)$ can be thought of as a set, but a set is inheritly
+unordered. To express the order, we can do the following: $(a, b) = \{\{a\},
+\{a, b\}\}$. Now we know that $a$ is the first element because it appears in
+both subsets.
+We can then expand this into higher dimensions like the following:
+$(a, b, c) = ((a, b), c)$. Note that this means that $((a, b), c) \neq (a, (b,
+c))$. But this does not matter to us.
+\textbf{Fundamental Postulate of Ordered Pairs}:
+$(a_1, a_2, a_3, \dots, a_n) = (b_1, b_2, b_3, \dots, b_n)$ if and only if $a_1
+= b_1 \wedge a_2 = b_2 \wedge \dots \wedge a_n = b_n$.
+
+\subsubsection{Distance}
+For our purpose, we define the distance function in 2D as:
+$$dist(x, y\+\+;\+a,b) := \sqrt{(x - a)^2 + (y - b)^2}$$
+We use the Euclidean distance because it is preserved under many
+transformations.
+\textbf{Minkowski Distance}
+This is another distance formula, but under this, only reflection preserves
+distance.
+$$((x - a)^p + (y - b)^p)^{\frac{1}{p}} \+\+\+\+ (p > 1)$$
+
+\subsection{Functions in Higher Dimensions}
+The domain is a subset of $\mathbb{R^n}$.
+Let the function of f(x, y) be an ordered pair within some curve, such that $(x, y) \in D$. Thus, the range of f, G = ${x, y, f(x,y) | (x, y) \in D} \subseteq{R^{n+1}}$.
+Functions are defined as one-to-one if for f(x, y), $(x, y), (u, v) \in D, f(x, y) = f(u, v)$ iff x = u $\wedge$ (and) y = v. 
 
 \subsection{Metric Topology in $\mathbb{R^n}$}
 \subsubsection{Continuity}
