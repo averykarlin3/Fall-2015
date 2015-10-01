@@ -53,7 +53,12 @@
 \item (L) is used for local commands, installed by certain programs
 \end{enumerate}
 \item C functions are pass by value, such that they put the value into a new variable created by the function, though if pointers are passed, it is equivelent to pass by reference, due to being a ppointer to the same location
+\begin{enumerate}
 \item C functions are written similar to java, with the exception of the lack of the protection
+\item Due to C being functional, the functions are created in the order written, such that it should already have created all functions and commands used within the function being compiled
+\item Failure to declare first leads to an implicit declaration warning that it has not been formally declared yet, though it will still work if it is declared later
+\item All functions are expected to return a value in C
+\end{enumerate}
 \end{enumerate}
 
 \subsection{C Structures}
