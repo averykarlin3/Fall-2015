@@ -58,6 +58,7 @@
 \item C functions are written similar to java, with the exception of the lack of the protection
 \item Due to C being functional, the functions are created in the order written, such that it should already have created all functions and commands used within the function being compiled
 \item Failure to declare first leads to an implicit declaration warning that it has not been formally declared yet, though it will still work if it is declared later
+\item Headers can also be placed at the top of the function in addition to where they are defined, to avoid implicit declaration, or in a seperate header file
 \end{enumerate}
 \end{enumerate}
 
@@ -71,6 +72,7 @@
 \begin{enumerate}
 \item Arrays are declared by ``\textit{type}[\textit{size}];'' and must be initialized each part at a time
 \end{enumerate}
+\item String functions are held within the string.h library, always assuming the strings are null-terminated
 \end{enumerate}
 
 \section{Memory Management}
@@ -92,7 +94,7 @@
 \end{enumerate}
 \end{enumerate}
 
-\subsection{Strings}
+\subsection{Strings and Arrays}
 \begin{enumerate}
 \item Strings can be declared by several methods, "char \textit{str[byte\_num]}" to do basic allocation, or it can be set on the same line, with a null put in the byte after the last letter
 \begin{enumerate}
