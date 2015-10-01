@@ -28,6 +28,7 @@
 \item C variables have sizes based on the platform they were compiled by and for, such that sizeof(\textit{type}) can be used to determine the size in bytes
 \item On a standard computer, int = 4, short = 2, long = 8, float = 4, double = 8, and char = 1 bytes (8 bits to a byte)
 \item Types can also be specified as unsigned, such that it is not able to be given a negative value
+\item Types can be placed within types of larger size and the same format without any form of conversion, but not of a different format
 \end{enumerate}
 \item Boolean values are numbers, such that 0 is false, and all nonzero numbers are considered true
 \item Character literals can be represented inside single quotes rather than use a number, and Strings, though not an object, can use a double quotes literal
@@ -57,7 +58,6 @@
 \item C functions are written similar to java, with the exception of the lack of the protection
 \item Due to C being functional, the functions are created in the order written, such that it should already have created all functions and commands used within the function being compiled
 \item Failure to declare first leads to an implicit declaration warning that it has not been formally declared yet, though it will still work if it is declared later
-\item All functions are expected to return a value in C
 \end{enumerate}
 \end{enumerate}
 
