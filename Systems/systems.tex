@@ -71,6 +71,9 @@
 \begin{enumerate}
 \item Memory allocation is either during compile time (static stack memory), or during runtime (dynamic heap memory)
 \item Compiler allocated memory is packaged within the binary, unable to overwrite other programs memory due to protected memory, without a default value, where variables and arrays are allocated
+\begin{enumerate}
+\item Memory addresses of variables are fixed once they are placed, such that the data can be changed, but the location cannot be
+\end{enumerate}
 \item Runtime memory is temporary, used for values of variables
 \item Systems have a bit limit which they can read at once, such that 32 bit systems are limited to 32 bit unsigned values, such that $[0, 2^32-1]$ is possible, or ~4 GB 
 \item Pointers are variables designed to store memory addresses
@@ -92,8 +95,7 @@
 \item On the other hand, if a pointer is used, the pointer can be changed to apply to a seperate array, using an equal sign, even after declaration
 \end{enumerate}
 \item The null character at the end is needed for string functions in string.h to work correctly, but is not a requirement
-\item String and array variables are functionally immutable, such that they should not be changed without creating a different point in memory, unlike pointers
-\item All other variables are mutable, such that they can be changed easily
+\item String/array variables are functionally immutable pointers to the first item in an array
 \end{enumerate}
 
 \end{document}

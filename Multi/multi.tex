@@ -391,7 +391,7 @@ $$((x - a)^p + (y - b)^p)^{\frac{1}{p}} \+\+\+\+ (p > 1)$$
 \subsection{Functions in Higher Dimensions}
 The domain is a subset of $\mathbb{R^n}$.
 Let the function of f(x, y) be an ordered pair within some curve, such that $(x, y) \in D$. Thus, the range of f, G = ${x, y, f(x,y) | (x, y) \in D} \subseteq{R^{n+1}}$.
-Functions are defined as one-to-one if for f(x, y), $(x, y), (u, v) \in D, f(x, y) = f(u, v)$ iff x = u $\wedge$ (and) y = v. 
+Functions are defined as one-to-one if for f(x, y), $(x, y), (u, v) \in D, f(x, y) = f(u, v)$ iff (if and only if) x = u $\wedge$ (and) y = v (such that for every z value, there is only one point that will create it.
 
 \subsection{Metric Topology in $\mathbb{R^n}$}
 \subsubsection{Continuity}
@@ -404,10 +404,14 @@ y\+;\+a,b) < \delta \to |f(x,y) - f(a,b)| < \varepsilon$$
 $f:D \to \mathbb{R}, D \subseteq \mathbb{R^2}, D \neq \emptyset is continuous if f is continuous at (a, b) for all (a, b) \in D.$
 
 \subsubsection{Directional Limits}
-Let $D \subseteq \mathbb{R} and a \in D \cup \partial D$ (the boundry, both already included in D, and not), $\lim_{x \to a^+} f(x) = L$ means $\forall \epsilon > 0, \exists \delta(\epsilon) > 0: \forall x \in D \cap (a, \infty), |x-a| < \delta(\epsilon) \Rightarrow |f(x) - L| < \epsilon$
+Let $D \subseteq \mathbb{R} and a \in D \cup \partial D$ (the boundry, both already included in D, and not), $\lim_{x \to a^+} f(x) = L$ means $\forall \epsilon > 0, \exists \delta(\epsilon) > 0: \forall x \in D \cap (a, \infty), |x-a| < \delta(\epsilon) \Rightarrow |f(x) - L| < \epsilon$. The limit only exists if both directions equal the same value.
 
-%CHECK IF COMPLETE
-%MOVE TO HIGHER
+\subsubsection{Limits in Higher Dimensions}
+The same theory can be applied to higher dimensions, such that if two arbitrary approaches are not the same, it doesn't exist, but if several approaches yield the same result, the definition of a limit is used. Polar coordinate substitutions can be used to give format to directions of approach.
+
+Due to difficulty defining approaching through lines, it is said that $(x, y) \to (a, b) iff dist(x, y: a, b) \to 0$.
+
+Let $f: D \to \mathbb{R}, D \subseteq \mathbb{R^2}, D \neq \emptyset, and (a, b) \in D \cup \delta D.$ Then, $L = \lim_{(x, y) \in D \to (a,b)} f(x) iff \forall \epsilon > 0, \exists \delta > 0, \forall (x, y) \in D: dist(x, y: a, b) < \delta \to |f(x, y) - L| < \epsilon$. As a corollary, when (a, b) is on the boundry, the approach can only be from the domain.
 
 \subsection{Properties of Domain}
 For the extreme value theorem to apply to a domain, the set must be compact, such that it must be bounded and closed over limits. On the \mathbb{R} dimension, this applies to all closed intervals, as well as the empty set, though functions except the empty set cannot accept it as a domain.
@@ -415,9 +419,18 @@ For the extreme value theorem to apply to a domain, the set must be compact, suc
 \subsubsection{Bounded}
 $If D \subseteq \mathbb(R^2)$ is bounded if $\exists M > 0: D \subseteq [-M, M] x [-M, M]$.
 
-\subsubsection{Closed Over Limits}
-On $mathbb{R}$, if $x_n \in [a, b] for \forall n \in mathbb{N}, and x_n \to x \in \mathbb{R}, then x \in [a, b]$.
+\subsubsection{Closed}
+The term closed is used to apply to sets which are closed under limits. On $mathbb{R}$, if $x_n \in [a, b] for \forall n \in mathbb{N}, and x_n \to x \in \mathbb{R}, then x \in [a, b]$.
 
 $D \subseteq \mathbb{R^2} is closed if for any points (x_n, y_n) \in D (for all n \in \mathbb{N}, if (x_n, y_n) \to (x, y) \in \mathbb{R^2}, then (x, y) \in D. (x_n, y_n) \to (a, b) as n \to \infty$ means $d_n = \sqrt[2]{(x_n - a)^2 + (y_n - b)^2} \to 0 as n \to \infty.$
+
+This applies the definition of limits to sequences, such that $(x_n, y_n) \to (a, b) if dist(x_n, y_n: a, b) \to 0 as n \to \infty$.
+
+Thus, $D \subseteq \mathbb{R^2}$ is closed if for any sequence $((x_n, y_n))^\infty_{n=1}$ in D that converges, the limit poiint (a, b) of the sequence also lies in D.
+
+\subsubsection{Open Set Theorem}
+$D \subseteq \mathbb{R^2}$ is open if $\forall (a, b) \in D, \exists r > 0:$ the disk of radius r, $B_r(a, b) \subseteq D$.
+
+It follows that for any open set, the complement set within the space is a closed set.
 
 \end{document}
