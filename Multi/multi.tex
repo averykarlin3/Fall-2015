@@ -359,12 +359,47 @@ itself. The Cartesian Product of two sets $\mathcal{S}$ and $\mathcal{T}$,
 $\mathcal{S} \times \mathcal{T} :=  \{(s, t)+|+s\in\mathcal{S},
 t\in\mathcal{T}\}$.
 
+\subsubsection{Shapes}
+\underline{Open-ball}:
+$B_r(P) := \{X+|+dist(X, P) < r\}$
+\underline{Closed-ball}:
+$\bar{B}_r := \{X+|+ dist(X, P) \leq r\}$
+\underline{Sphere}:
+$S_r := \{X+|+dist(X, P) = r\}$
+
 \subsubsection{Boundary}
 Given $D \subseteq \mathbb{R}^2, D \neq \emptyset$. We say $(a, b) \in
 \partial D$, i.e. $(a, b)$ is on a \underline{boundry point} of $D$ if $\forall
 \epsilon > 0$, there are points $(x, y)\in D$ and $(u, v) \in D^c$ ($D^c :=
 \mathbb{R}^2 \setminus D$) such that $dist(x, y+;+ a, b) < \epsilon$ and
 $dist(u, v+;+ a, b) < \epsilon$. Since the definition is symmetrical, $\partial D^c = \partial D$.
+
+\subsubsection{Interior}
+Let $D \subseteq \mathbb{R}^2$. We say $(a, b)$ is an
+\underline{interior point} of $D$ if $\exists+ r > 0:B_r(a, b)\subseteq D$.
+The set of all interior points is called the \underline{interior} of $D$ and is
+written as $\text{int } D$.
+
+\subsubsection{Exterior}
+Let $D \subseteq \mathbb{R}^2$. We say $(a, b)$ is an
+\underline{exterior point} for $D$ if it is an interior point of $D^c$.
+$\exists+ r > 0: B_r(a, b) \subseteq D^c$.
+The set of all exterior points for $D$ is the \underline{exterior} of $D$,
+written as $\text{ext } D$.
+\textbf{Thm}: For any $D \subseteq \mathbb{R}^2$, $\mathbb{R}^2 =
+\text{int } D \cup \partial D \cup \text{ext } D$. And $\text{int } D \cap
+\partial D = \emptyset$, $\text{int } D \cap \text{ext } D = \emptyset$,
+$\partial D \cap \text{ext } D = \emptyset$.
+\textbf{Thm}: $\text{int } D = \text{ext } D^c$ and $\text{ext } D =
+\text{int } D^c$
+\textbf{Thm}: $\text{ext } D \subseteq D^c$
+
+\subsubsection{Closure}
+The \textbf{closure} of $D \subseteq \mathbb{R}^2$:
+$$\bar{D} := D \cup \partial D$$
+\textbf{Thm}: $\partial \bar{D} = \partial D$, $\text{int } \bar{D} =
+\text{int } D$, and $\text{ext } \bar{D} = \text{ext } D$
+\textbf{Thm}: $\text{int } D \subseteq D \subseteq \bar{D}$.
 
 \subsubsection{Ordered Pair}
 The ordered pair $(a, b)$ can be thought of as a set, but a set is inheritly
@@ -432,5 +467,16 @@ Thus, $D \subseteq \mathbb{R^2}$ is closed if for any sequence $((x_n, y_n))^\in
 $D \subseteq \mathbb{R^2}$ is open if $\forall (a, b) \in D, \exists r > 0:$ the disk of radius r, $B_r(a, b) \subseteq D$.
 
 It follows that for any open set, the complement set within the space is a closed set.
+
+\underline{Proof}:
+Assume $D$ is open, we prove $D^c$ is closed. Choose any convergent sequence
+$((x_n, y_n))_{n = 1}^\infty$, converging to $(a, b)$, where $(x_n, y_n) \in
+D^c$ for all $n \geq 1$.
+
+We prove this by contradiction. Assume that $(a, b) \in D$. Since $D$ is ipen,
+$\exists+ r > 0:B_r(a, b)\subseteq D$. $\exists+ N, \forall n \geq
+\mathbb{N}, (x_n, y_n) \in B_r(a, b)$ since $(x_n, y_n)\to(a,b)$. But we
+assumed that $(x_n, y_n) \in D^c$, and $(x_n, y_n) \in D$. But $D \cap D^c =
+\emptyset$. Therefore $D^c$ is closed under taking limits.
 
 \end{document}
