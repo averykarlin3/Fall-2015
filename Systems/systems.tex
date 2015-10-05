@@ -26,9 +26,10 @@
 \item All C primitives are numeric, divided purely based on variable size, and integer or floating point
 \begin{enumerate}
 \item C variables have sizes based on the platform they were compiled by and for, such that sizeof(\textit{type}) can be used to determine the size in bytes
-\item On a standard computer, int = 4, short = 2, long = 8, float = 4, double = 8, and char = 1 bytes (8 bits to a byte)
+\item On a standard computer, int = 4 $(-2^31, 2^31 - 1)$, short = 2, long = 8, float = 4, double = 8, and char = 1 bytes (8 bits to a byte)
 \item Types can also be specified as unsigned, such that it is not able to be given a negative value
 \item Types can be placed within types of larger size and the same format without any form of conversion, but not of a different format
+\item sizeof(\textit{type}) returns the size in bytes of the type
 \end{enumerate}
 \item Boolean values are numbers, such that 0 is false, and all nonzero numbers are considered true
 \item Character literals can be represented inside single quotes rather than use a number, and Strings, though not an object, can use a double quotes literal
@@ -46,7 +47,7 @@
 \end{enumerate}
 \item Libraries are added, either .h files from the current directory through \#include ``\textit{file}.h'' or through premade libraries by \#include $<$file.h$>$
 \begin{enumerate}
-\item All files typically start with calling the C library with \#include$<$stdio.c$>$ and $<$stdlib.h$>$
+\item All files typically start with calling the C library with \#include$<$stdio.c$>$ (standard io) and $<$stdlib.h$>$ (standard library)
 \end{enumerate}
 \item The man pages, called by ``man \textit{command}'' or ``man \textit{section command}'', give information on both bash and C commands
 \begin{enumerate}
@@ -67,6 +68,8 @@
 \item ``printf(\textit{text, var1, var2})'' is used to print a String in terminal, where the text is a formatted string, with placeholders for variables following
 \begin{enumerate}
 \item \%f is a placeholder for a float, \%d for double, \%c for char, \%s for string, \%f for pointer, \%lf for double, \%ld for long, and \%d for int
+\item println can be used instead of printf for non-formatted strings (without variables)
+\item Print functions do not automatically add ``\\n'' at the end of a line, and must be written in the string
 \end{enumerate}
 \item Arrays in C are non-dynamic, such that they must have a fixed size, with no length function, and there are no errors for going outside boundries, rather going to a different point in memory
 \begin{enumerate}
