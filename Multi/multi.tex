@@ -413,20 +413,92 @@ c))$. But this does not matter to us.
 $(a_1, a_2, a_3, \dots, a_n) = (b_1, b_2, b_3, \dots, b_n)$ if and only if $a_1
 = b_1 \wedge a_2 = b_2 \wedge \dots \wedge a_n = b_n$.
 
-\subsubsection{Distance}
-For our purpose, we define the distance function in 2D as:
-$$dist(x, y++;+a,b) := \sqrt{(x - a)^2 + (y - b)^2}$$
-We use the Euclidean distance because it is preserved under many
-transformations.
-\textbf{Minkowski Distance}
-This is another distance formula, but under this, only reflection preserves
-distance.
-$$((x - a)^p + (y - b)^p)^{\frac{1}{p}} ++++ (p > 1)$$
-
 \subsection{Functions in Higher Dimensions}
 The domain is a subset of $\mathbb{R^n}$.
 Let the function of f(x, y) be an ordered pair within some curve, such that $(x, y) \in D$. Thus, the range of f, G = ${x, y, f(x,y) | (x, y) \in D} \subseteq{R^{n+1}}$.
 Functions are defined as one-to-one if for f(x, y), $(x, y), (u, v) \in D, f(x, y) = f(u, v)$ iff (if and only if) x = u $\wedge$ (and) y = v (such that for every z value, there is only one point that will create it.
+
+\subsection{Distance}
+\subsubsection{Euclidean Distance}
+The distance function in one space between two points $a$ and $b$ is simply $|a
+- b|$. However, we can also write it in the following way: $\sqrt{(a - b)^2}$
+
+In $\mathbb{R}^2$, the distance function is:
+$$dist(x, y++;+a,b) := \sqrt{(x - a)^2 + (y - b)^2}$$
+
+And in $\mathbb{R}^3$, the distance function is:
+$$dist(x, y, z+;+ a,b,c) := \sqrt{(x - a)^2 + (y - b)^2 + (c - z)^2}$$
+
+This is known as the \underline{Euclidean Distance}. It is used because it is
+preserved under many transformations.
+
+The generalized form of Euclidean Distance in $N$ space is:
+$$dist(\vec{p}, \vec{q}) = \sqrt{\sum_{j = 1}^N (p_j - q_j)^2}$$
+
+\textbf{Properties}:
+\begin{enumerate}
+    \item $dist(\vec{p}, \vec{q}) = dist(\vec{q}, \vec{p})$
+    \item $dist(\vec{p}, \vec{q}) \geq 0$
+    \item $dist(\vec{p}, \vec{q}) = 0 \leftrightarrow \vec{p} = \vec{q}$
+    \item \textbf{Triangle Inequality}: $dist(\vec{p}, \vec{q}) + dist(\vec{q}, \vec{r}) \geq dist(\vec{p},
+        \vec{r})$
+    \begin{itemize}
+        \item This can be generalized by mathematical induction to
+            $dist(\vec{p_0}, \vec{q_n}) \leq \sum_{j = 1}^n
+            dist(\vec{p}_{j -
+        1}, \vec{p}_{j})$ (Otherwise known that the shortest distance
+            between two points is the straight line, or the
+            \textbf{Generalized Triangle Inequality} or the ``Broken Line
+            Inequality'')
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection{Basic Distance Bounds Lemma}
+ $\forall \vec{p}, \vec{q} \in
+\mathbb{R}^d$, and $\forall j \in \{1,2,3,\dots,d\}$:
+$$|p_j - q_j| \leq dist(\vec{p}, \vec{q}) \leq \sqrt{d} \max_{1 \leq k \leq
+d} |p_k - q_k|$$
+
+\textbf{Proof}
+
+Note that $(p_j - q_j)^2 \leq \sum_{k = 1}^d (p_k - q_k)^2$ is trivial, because
+you can only add positive number when you add squares. Now let's take the square
+root, and we get
+$$\sqrt{(p_j - q_j)^2} = |p_j - q_j| \leq \sqrt{\sum_{k = 1}^d (p_k - q_k)^2} =
+dist(\vec{p}, \vec{q})$$
+
+To prove the other inequality, it is trivial as well. We can just factor out the
+length of the vector $d$ and multiply that with the maximum value of the
+distance vector. Then we get:
+
+$$dist(\vec{p}, \vec{q}) = \sqrt{\sum_{k = 1}^d (p_k - q_k)^2} \leq \sqrt{d \max_{1 \leq k \leq d} (p_k -
+q_k)^2} = \sqrt{d} \max_{1 \leq k \leq
+d} |p_k - q_k|$$
+
+\textbf{Cor}: Coordinatewise Nature of Convergence
+
+Let $(\vec{p}_n)_{n = 1}^\infty$ be a sequence in $\mathbb{R}^d$, and let
+$\vec{p} \in \mathbb{R}^d$. Then $\vec{p}_n \to \vec{p}$ if and only if
+$p_{n|j} \to p_j$ ($\vec{p} = (p_1, p_2, p_3, \dots, p_d)$ and $\vec{p}_n =
+(p_{n|1}, p_{n|2}, \dots, p_{n|d})$). Otherwise known as convergence of points
+can be reduced to conversion of dimensions.
+
+This follows directly from the inequality, because if the total distance goes to
+0, then $|p_j - q_j|$ goes to 0. Therefore if the points converge, the
+corresponding coordinates must converge.
+
+To prove the converse, we prove using the other side of the distance bounds. If
+all $d$ coordinates are going to 0, then if we take the maximum, that would be
+going to 0. (the maximum of a sequence is less than the sum of the sequence, but
+if every term of the sum is going to 0, then the sum is going to 0, then the
+maximum is going to 0). Therefore the distance must also be going to 0. Thus the two points
+converges.
+
+\subsubsection{Other Distance}
+Of course, there are other distance formulas, like the \underline{Minkowski Distance}
+$$((x - a)^p + (y - b)^p)^{\frac{1}{p}} ++++ (p > 1)$$
+This is another distance formula, but under this, only reflection preserves
+distance.
 
 \subsection{Metric Topology in $\mathbb{R^n}$}
 \subsubsection{Continuity}
