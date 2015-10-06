@@ -82,9 +82,10 @@
 \subsection{Memory Allocation}
 \begin{enumerate}
 \item Memory allocation is either during compile time (static stack memory), or during runtime (dynamic heap memory)
-\item Compiler allocated memory is packaged within the binary, unable to overwrite other programs memory due to protected memory, without a default value, where variables and arrays are allocated
+\item Compiler allocated memory is packaged within the binary, unable to be overwritten due to protected memory, without a default value, where variables and arrays are allocated
 \begin{enumerate}
 \item Memory addresses of variables are fixed once they are placed, such that the data can be changed, but the location cannot be
+\item String literals and variables marked by the ``const'' keyword have the value stored in stack memory as well
 \end{enumerate}
 \item Runtime memory is temporary, used for values of variables
 \item Systems have a bit limit which they can read at once, such that 32 bit systems are limited to 32 bit unsigned values, such that $[0, 2^32-1]$ is possible, or ~4 GB 
@@ -110,7 +111,7 @@
 \item String/array variables are functionally immutable pointers to the first item in an array (such that the location cannot be changed)
 \item Pointer-defined strings are literals, such that they are made in protected memory, where the pointer location can be redefined, but the string cannot be
 \begin{enumerate}
-\item Literals of the same string will point at the same location as previously made literals
+\item Literals of the same string will point at the same location as previously made literals, stored fully in static stack memory
 \end{enumerate}
 \end{enumerate}
 
