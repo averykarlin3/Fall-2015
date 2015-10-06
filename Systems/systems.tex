@@ -107,7 +107,22 @@
 \item On the other hand, if a pointer is used, the pointer can be changed to apply to a seperate array, using an equal sign, even after declaration
 \end{enumerate}
 \item The null character at the end is needed for string functions in string.h to work correctly, but is not a requirement
-\item String/array variables are functionally immutable pointers to the first item in an array
+\item String/array variables are functionally immutable pointers to the first item in an array (such that the location cannot be changed)
+\item Pointer-defined strings are literals, such that they are made in protected memory, where the pointer location can be redefined, but the string cannot be
+\begin{enumerate}
+\item Literals of the same string will point at the same location as previously made literals
+\end{enumerate}
+\end{enumerate}
+
+\section{Structural Functions}
+\subsection{String Functions}
+\begin{enumerate}
+\item String functions are found within <string.h>, assuming a null character at the end
+\item int strlen(char *s) returns the length of s, ignoring the null character
+\item int strcmp(char *s1, char *s2) returns 0 if equal, >0 if s1 > s2, and <0 otherwise
+\item char* strcpy (char *destination, char *source) copies the string to destination, assuming the allocated destination space is the same size or larger
+\item char* strcat (char *destination, char *source) adds source to the end of destination
+\item strncat and strncpy has an integer as a final parameter, using only the first n characters of the source string, such that if it is longer than the string, it uses up to the null character 
 \end{enumerate}
 
 \end{document}
