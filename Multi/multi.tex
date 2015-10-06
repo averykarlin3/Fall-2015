@@ -413,6 +413,21 @@ c))$. But this does not matter to us.
 $(a_1, a_2, a_3, \dots, a_n) = (b_1, b_2, b_3, \dots, b_n)$ if and only if $a_1
 = b_1 \wedge a_2 = b_2 \wedge \dots \wedge a_n = b_n$.
 
+\subsubsection{Vector and Points}
+Vectors are quantities of directionality and length, its location does not
+matter. Points are just positions in space. In higher dimensions with no
+ambiance space (flat space surrounding the surface, i.e. the shortest distance
+in the ambiant space is the straight line),  we define a vector as all
+the lines with the same direction at a certain point.
+
+However, the nice thing about $\mathbb{R}^d$ is that there is always ambiance
+space, so we will not make any notational distinction between a point and a
+vector.
+
+The length of a vector in $d$ space is defined as:
+$$||\vec{a}|| := dist(\vec{0}, \vec{a}) = \sqrt{\sum_{i =
+1}^d a_i^2}$$
+
 \subsection{Functions in Higher Dimensions}
 The domain is a subset of $\mathbb{R^n}$.
 Let the function of f(x, y) be an ordered pair within some curve, such that $(x, y) \in D$. Thus, the range of f, G = ${x, y, f(x,y) | (x, y) \in D} \subseteq{R^{n+1}}$.
@@ -429,28 +444,24 @@ $$dist(x, y++;+a,b) := \sqrt{(x - a)^2 + (y - b)^2}$$
 And in $\mathbb{R}^3$, the distance function is:
 $$dist(x, y, z+;+ a,b,c) := \sqrt{(x - a)^2 + (y - b)^2 + (c - z)^2}$$
 
-This is known as the \underline{Euclidean Distance}. It is used because it is
-preserved under many transformations.
-
 The generalized form of Euclidean Distance in $N$ space is:
 $$dist(\vec{p}, \vec{q}) = \sqrt{\sum_{j = 1}^N (p_j - q_j)^2}$$
+
+This is known as the \underline{Euclidean Distance}. We use this specific
+definition of distance because this is preserved under an infinite set of rigid
+or isometric motions, such as rotation, reflection, translation, etc.
+
+\textbf{Basic Transformations}:
+\begin{itemize}
+    \item $T_h : x \mapsto x+h$
+    \item $R: x \mapsto -x$
+\end{itemize}
 
 \textbf{Properties}:
 \begin{enumerate}
     \item $dist(\vec{p}, \vec{q}) = dist(\vec{q}, \vec{p})$
     \item $dist(\vec{p}, \vec{q}) \geq 0$
     \item $dist(\vec{p}, \vec{q}) = 0 \leftrightarrow \vec{p} = \vec{q}$
-    \item \textbf{Triangle Inequality}: $dist(\vec{p}, \vec{q}) + dist(\vec{q}, \vec{r}) \geq dist(\vec{p},
-        \vec{r})$
-    \begin{itemize}
-        \item This can be generalized by mathematical induction to
-            $dist(\vec{p_0}, \vec{q_n}) \leq \sum_{j = 1}^n
-            dist(\vec{p}_{j -
-        1}, \vec{p}_{j})$ (Otherwise known that the shortest distance
-            between two points is the straight line, or the
-            \textbf{Generalized Triangle Inequality} or the ``Broken Line
-            Inequality'')
-    \end{itemize}
 \end{enumerate}
 
 \subsubsection{Basic Distance Bounds Lemma}
@@ -460,7 +471,6 @@ $$|p_j - q_j| \leq dist(\vec{p}, \vec{q}) \leq \sqrt{d} \max_{1 \leq k \leq
 d} |p_k - q_k|$$
 
 \textbf{Proof}
-
 Note that $(p_j - q_j)^2 \leq \sum_{k = 1}^d (p_k - q_k)^2$ is trivial, because
 you can only add positive number when you add squares. Now let's take the square
 root, and we get
@@ -475,7 +485,7 @@ $$dist(\vec{p}, \vec{q}) = \sqrt{\sum_{k = 1}^d (p_k - q_k)^2} \leq \sqrt{d \max
 q_k)^2} = \sqrt{d} \max_{1 \leq k \leq
 d} |p_k - q_k|$$
 
-\textbf{Cor}: Coordinatewise Nature of Convergence
+\textbf{Cor}: Componentwise Nature of Convergence
 
 Let $(\vec{p}_n)_{n = 1}^\infty$ be a sequence in $\mathbb{R}^d$, and let
 $\vec{p} \in \mathbb{R}^d$. Then $\vec{p}_n \to \vec{p}$ if and only if
@@ -491,8 +501,15 @@ To prove the converse, we prove using the other side of the distance bounds. If
 all $d$ coordinates are going to 0, then if we take the maximum, that would be
 going to 0. (the maximum of a sequence is less than the sum of the sequence, but
 if every term of the sum is going to 0, then the sum is going to 0, then the
-maximum is going to 0). Therefore the distance must also be going to 0. Thus the two points
-converges.
+maximum is going to 0). Therefore the distance must also be going to 0. Thus the two points converges.
+
+\subsubsection{Triangle Inequality}
+$$dist(\vec{p}, \vec{q}) + dist(\vec{q}, \vec{r}) \geq dist(\vec{p}, \vec{r})$$
+
+This can be generalized by mathematical induction to $dist(\vec{p_0}, \vec{q_n})
+\leq \sum_{j = 1}^n dist(\vec{p}_{j - 1}, \vec{p}_{j})$ (Otherwise known that the
+shortest distance between two points is the straight line, or the \textbf{Generalized
+Triangle Inequality} or the ``Broken Line Inequality'')
 
 \subsubsection{Other Distance}
 Of course, there are other distance formulas, like the \underline{Minkowski Distance}
