@@ -44,6 +44,16 @@
 \item All C programs are made up of a series of functions, run within the main function, which returns an integer (typically 0, or other values for errors)
 \begin{enumerate}
 \item They are compiled through ``gcc \textit{file.c} -o \textit{program\_name}'', then run through ``./\textit{program\_name}''
+\item C programs can be compiled into one executable, such that there is just one file after another in command line, though since they are compiled in the same namespace, they cannot have the same global variables or function names
+\item The same is true for files called within other files, though those are compiled automatically
+\item C programs must have exactly 1 main() function to compile, creating issues when multiple files have a main()
+\item ``gcc -o \textit{file.c}'' creates a binary object .o file, which can be run through other exectuable files, and can be compounded similarly during compiling
+\begin{enumerate}
+\item Binary object files are used for files without a main method, and are non-executable
+\item Binary object files can be linked to a .c file through compound compiling with the first file as the .c file
+\item Thus, the .o file is dependant on all .h files and the .c file, while the executable is dependent on the .o files, .h files, and the main .c file
+\end{enumerate}
+\item If ``-o \textit{program\_name}'' is not put in, the default executable name is ``a.out''
 \end{enumerate}
 \item Libraries are added, either .h files from the current directory through \#include ``\textit{file}.h'' or through premade libraries by \#include $<$file.h$>$
 \begin{enumerate}
