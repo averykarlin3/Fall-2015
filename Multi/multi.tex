@@ -350,7 +350,7 @@ By the previous claim, $lim_{k \to \infty}f(x_{n_k}) = f(t)$ by the assumed cont
 \subsubsection{The function reaches the supremum and infimum}
 We now know $R := f([a, b]) = \{f(x) | x \in [a, b]\}$ is bounded, such that S := sup(R) and I := inf(R). By the definition of infimum and supremum, $\exists (y_n)^\infty_{n = 1}$ such that $y_n \in R \forall n$, and $\lim_{n \to \infty}y_n = S$. Since $y_n \in R, \exists x_n [a, b]$ such that $f(x_n) = y_n$. Now $(x_n)^\infty_{n=1}$ is bounded between a and b so it has a convergent subsequence, $(x_{n_k})^\infty_{k=1}$, converging to $t \in [a, b]$. Also, by continuity of f, $\lim_{k \to \infty}f(x_{n_k}) = f(t)$. Thus, f(t) = S. This can be reversed to apply to the infimum. 
 
-\section{EVT in Higher Dimensions}
+\section{Higher Dimensional Mathematics}
 
 \subsection{Higher Dimensions}
 \subsubsection{Cartesian Product}
@@ -409,6 +409,7 @@ both subsets.
 We can then expand this into higher dimensions like the following:
 $(a, b, c) = ((a, b), c)$. Note that this means that $((a, b), c) \neq (a, (b,
 c))$. But this does not matter to us.
+
 \textbf{Fundamental Postulate of Ordered Pairs}:
 $(a_1, a_2, a_3, \dots, a_n) = (b_1, b_2, b_3, \dots, b_n)$ if and only if $a_1
 = b_1 \wedge a_2 = b_2 \wedge \dots \wedge a_n = b_n$.
@@ -428,12 +429,37 @@ The length of a vector in $d$ space is defined as:
 $$||\vec{a}|| := dist(\vec{0}, \vec{a}) = \sqrt{\sum_{i =
 1}^d a_i^2}$$
 
+\subsection{Dot Product}
+\subsubsection{Cauchy-Schwartz}
+
+
 \subsection{Functions in Higher Dimensions}
 The domain is a subset of $\mathbb{R^n}$.
 Let the function of f(x, y) be an ordered pair within some curve, such that $(x, y) \in D$. Thus, the range of f, G = ${x, y, f(x,y) | (x, y) \in D} \subseteq{R^{n+1}}$.
 Functions are defined as one-to-one if for f(x, y), $(x, y), (u, v) \in D, f(x, y) = f(u, v)$ iff (if and only if) x = u $\wedge$ (and) y = v (such that for every z value, there is only one point that will create it.
 
 \subsection{Distance}
+\subsection{Distance Functions}
+Standard distance functions must qualify under several non-geometric requirements, of which only the Euclidean distance qualifies.
+
+Distance functions must be \underline{translation-invariant}, or for any translation of two points, the distance must remain the same, such that $T_{h, k}: (x, y) \mapsto (maps to) (x+h, y+k), then dist(x+h, y+k; x'+h, y'+k) = dist(x, y; x', y')$. 
+
+Thus, $dist(x,y; \tilde(x), \tilde(y)) = f(|x-\tilde(x)|, |y-\tilde(y)|)$, where f the distance function defined on $[0, \infty) x [0, \infty).$ As a result, it must be \underline{symmetrical}, such that $dist(x, y; \tilde(x), \tilde(y)) = dist(\tilde(x), \tilde(y); x, y)$.
+
+In addition, it must have \underline{basic reflection symmetry (isotropy)}, such that $dist(x, y; 0, 0) = dist(y, x; 0, 0)$. Thus, f(u, v) = f(v, u) for any $u \geq 0, v \geq 0$. It must also have the \underline{self-distance of (0, 0)}, such that dist(0,0; 0,0) = 0.
+
+It must \underline{recreate the standard distance function on each axis}, such that $dist(x,0; \tilde(x), 0) = |x - \tilde(x)|, dist(0, y; 0, \tilde(y)) = |y - \tilde(y)|. Therefore, f(u, 0) = u, f(0, v) = v \forall u \geq 0, v \geq 0$.
+
+As a result, it must have \underline{asymptotic flatness}, where if a line is drawn to (x, y), where y is fixed, such that $dist(0,0; 0, y) = v_0, while dist(0, 0; x, 0) = u. Then, \lim_{u \to \infty} f(u, v_0)/u = 1$. This also applies in the opposite direction, where x is fixed.
+
+It must be \underline{continuous} in its variables, such that with a minute movement of a point, the distance changes minutely as well.
+
+\underline{The set of isometries} (distance preserving one-to-one functions) that fix the origin onto itself (f(0) = 0) is an infinite set.
+
+Based on these requirements, an ansatz (educated guess, verified by later results) is made, such that $f(u, v) = F(G(u) + G(v)), where F: [0, \infty) \to \mathbb{R} and G: [0, \infty) \to \mathbb{R}$. The use of G(u) and G(v) is needed to assure symmetry. The use of addition is mandated by symmetry, using addition rather than another symmetrical operation simply due to ease of calculations.
+
+\underline{Theorem:} $\exists only one suitable pair F, G; G(x) = x^2, F(x) = \sqrt{x}, that fits all requirements. If G(x) = x^n, F(x) = \sqrt[n]{x}$, it would have all required properties except infinite set of isometries.
+
 \subsubsection{Euclidean Distance}
 The distance function in one space between two points $a$ and $b$ is simply $|a
 - b|$. However, we can also write it in the following way: $\sqrt{(a - b)^2}$

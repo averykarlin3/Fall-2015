@@ -52,8 +52,19 @@
 \item Thus, the .o file is dependant on all .h files and the .c file, while the executable is dependent on the .o files, .h files, and the main .c file
 \end{enumerate}
 \item If ``-o \textit{program\_name}'' is not put in, the default executable name is ``a.out''
+\item Projects with large numbers of dependencies can have a file called ``makefile'' to organize creation of the executable with dependencies
+\begin{enumerate}
+\item The makefile is ordered from the most dependent level to least dependent (ignoring non-dependent files and standard libraries)
+\item Format is:
+\textit{Target-Filename: dependency1 dependency2}
+\textit{Terminal compilation code for file}
+\item ``make \textit{target-filename}'' command is used when in the directory to compule the project using the make file
+\item The clean targets can be used to remove files from the directory after compilation
+\item The all target can be used to compile the entire program
+\item Any bash commands can have a makefile target made, such that it can be used with a ``run'' target to run commands faster
+\item The first target in a makefile is the default if just ``make'' is written in terminal
 \end{enumerate}
-
+\end{enumerate}
 
 \subsection{C Programming}
 \begin{enumerate}
@@ -126,6 +137,17 @@ item Libraries are added, either .h files from the current directory through \#i
 \begin{enumerate}
 \item Literals of the same string will point at the same location as previously made literals, stored fully in static stack memory
 \end{enumerate}
+\end{enumerate}
+
+\subsection{Dynamic Memory Allocation}
+\begin{enumerate}
+\item (\textit{type} *)malloc(int \textit{byte-num}) allocates that number of bytes from the head, returning the location of the first byte, typecasting the pointer to the type specified
+\begin{enumerate}
+\item sizeof(\textit{type}) is often used to allocate the correct amount of memory
+\item calloc is a similar function that sets each bit to 0, otherwise acting like malloc
+\item malloc returns a void pointer, such that it can be typecast to any type of pointer
+\end{enumerate}
+\item realloc(void *p, int \textit{new-byte-num}) will return any extra bytes, or add additional bytes to the allocation
 \end{enumerate}
 
 \section{Structural Functions}
