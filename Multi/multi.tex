@@ -430,6 +430,18 @@ $$||\vec{a}|| := dist(\vec{0}, \vec{a}) = \sqrt{\sum_{i =
 1}^d a_i^2}$$
 
 \subsection{Dot Product}
+\subsubsection{Definition}
+The dot product arises naturally through the idea of geometric distance, such that if $a \neq \emptyset, b \neq \emptyset$, then $a \perp b iff dist(a; b)^2 = dist(\emptyset, a)^2 + dist(\emptyset, b)^2$, where $a = (a_1, a_2), b = (b_1, b_2)$. Thus, by expanding out, $a \perp b iff a_1b_1 + a_2b_2 = 0$ where $a \neq \emptyset, b \neq \emptyset$. In addition, orthoganal refers to both perpendicular vectors and where $a = \emptyset$ and/or $b = \emptyset$, so that no vector can be perpendicular to itself.
+
+By extension, in $\mathbb{R^d}$, $a \dot b = a_1b_1 + a_2b_2 + a_3b_3 +...+ a_db_d$, such that it forms a scalar, rather than a vector.
+
+\subsubsection{Properties}
+The dot product is:
+\begin{itemize}
+\item Commutative
+\item Distributive over Vector Sums
+\end{itemize}
+
 \subsubsection{Cauchy-Schwartz}
 
 
@@ -440,7 +452,7 @@ Functions are defined as one-to-one if for f(x, y), $(x, y), (u, v) \in D, f(x, 
 
 \subsection{Distance}
 \subsection{Distance Functions}
-Standard distance functions must qualify under several non-geometric requirements, of which only the Euclidean distance qualifies.
+In axiomatic geometry, certain axioms including the definition of euclidean distance are taken as assumed. In actuality, standard distance functions must qualify under several non-geometric requirements, of which only the Euclidean distance qualifies.
 
 Distance functions must be \underline{translation-invariant}, or for any translation of two points, the distance must remain the same, such that $T_{h, k}: (x, y) \mapsto (maps to) (x+h, y+k), then dist(x+h, y+k; x'+h, y'+k) = dist(x, y; x', y')$. 
 
@@ -476,6 +488,9 @@ $$dist(\vec{p}, \vec{q}) = \sqrt{\sum_{j = 1}^N (p_j - q_j)^2}$$
 This is known as the \underline{Euclidean Distance}. We use this specific
 definition of distance because this is preserved under an infinite set of rigid
 or isometric motions, such as rotation, reflection, translation, etc.
+
+\subsubsection{Geometric Distance}
+%Add
 
 \textbf{Basic Transformations}:
 \begin{itemize}

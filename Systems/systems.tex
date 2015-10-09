@@ -37,6 +37,7 @@
 \item Strings are created by character arrays, using a null character (value 0), to show the end of the array, allowing it to be modified easier
 \end{enumerate}
 \item Variables are able to be initialized within a for loop, but are not able to be declared, such that it must be before the loop
+\item ``typedef \textit{var-type} \textit{new-name}'' allows you to call an existing variable by a different name
 \end{enumerate}
 
 \subsection{C Compilation}
@@ -105,7 +106,7 @@ item Libraries are added, either .h files from the current directory through \#i
 \section{Memory Management}
 \subsection{Memory Allocation}
 \begin{enumerate}
-\item Memory allocation is either during compile time (static stack memory), or during runtime (dynamic heap memory)
+\item Memory allocation is either during compile time (static stack memory), or during runtime (dynamic heap memory) - CONTRADICTION LATER????
 \item Compiler allocated memory is packaged within the binary, unable to be overwritten due to protected memory, without a default value, where variables and arrays are allocated
 \begin{enumerate}
 \item Memory addresses of variables are fixed once they are placed, such that the data can be changed, but the location cannot be
@@ -148,6 +149,13 @@ item Libraries are added, either .h files from the current directory through \#i
 \item malloc returns a void pointer, such that it can be typecast to any type of pointer
 \end{enumerate}
 \item realloc(void *p, int \textit{new-byte-num}) will return any extra bytes, or add additional bytes to the allocation
+\item Normal memory allocation happens on the stack, automatically released after the function which created it ends
+\item Dynamic memory allocation happens on the heap, kept even after the function that created it is removed from the stack, such that it must be released
+\begin{enumerate}
+\item free(\textit{pointer}) releases the dynamically allocated memory which the pointer goes to
+\item Dynamic memory should always be released in the program when created, and can prevent filling the memory
+\item After the program is ended, the memory is freed automatically, but it can freeze the computer if filled before then, such as in an infinite recursion
+\end{enumerate}
 \end{enumerate}
 
 \section{Structural Functions}
@@ -159,6 +167,13 @@ item Libraries are added, either .h files from the current directory through \#i
 \item char* strcpy (char *destination, char *source) copies the string to destination, assuming the allocated destination space is the same size or larger
 \item char* strcat (char *destination, char *source) adds source to the end of destination
 \item strncat and strncpy has an integer as a final parameter, using only the first n characters of the source string, such that if it is longer than the string, it uses up to the null character 
+\end{enumerate}
+\subsection{Struct}
+\begin{enumerate}
+\item Structs are a collection of values within a single data type, declared by struct\{\textit{type1 var1; type2 var2}\} as the type name
+\item Typedef is used to create a simple type name for it
+\item \textit{struct-name.subvar} is used to call a specific item within the struct
+\item Since . operator has precedence over *, pointers to structs either must get the struct data before getting a specific piece of data, or use ``\textit{pointer-to-struct} -> \textit{struct-var} to do 
 \end{enumerate}
 
 \end{document}
