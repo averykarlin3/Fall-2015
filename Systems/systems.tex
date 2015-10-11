@@ -38,6 +38,9 @@
 \end{enumerate}
 \item Variables are able to be initialized within a for loop, but are not able to be declared, such that it must be before the loop
 \item ``typedef \textit{var-type} \textit{new-name}'' allows you to call an existing variable by a different name
+\begin{enumerate}
+\item Typedef is typically used within the header to allow the term to be used throughout the program
+\end{enumerate}
 \end{enumerate}
 
 \subsection{C Compilation}
@@ -51,6 +54,7 @@
 \item Binary object files are used for files without a main method, and are non-executable
 \item Binary object files can be linked to a .c file through compound compiling with the first file as the .c file
 \item Thus, the .o file is dependant on all .h files and the .c file, while the executable is dependent on the .o files, .h files, and the main .c file
+\item The .o file can then be compiled identically to .c files
 \end{enumerate}
 \item If ``-o \textit{program\_name}'' is not put in, the default executable name is ``a.out''
 \item Projects with large numbers of dependencies can have a file called ``makefile'' to organize creation of the executable with dependencies
@@ -145,7 +149,7 @@ item Libraries are added, either .h files from the current directory through \#i
 \item (\textit{type} *)malloc(int \textit{byte-num}) allocates that number of bytes from the head, returning the location of the first byte, typecasting the pointer to the type specified
 \begin{enumerate}
 \item sizeof(\textit{type}) is often used to allocate the correct amount of memory
-\item calloc is a similar function that sets each bit to 0, otherwise acting like malloc
+\item calloc is a similar function that sets each bit to 0, otherwise acting like malloc, though with a first parameter to determine the number of data pieces created
 \item malloc returns a void pointer, such that it can be typecast to any type of pointer
 \end{enumerate}
 \item realloc(void *p, int \textit{new-byte-num}) will return any extra bytes, or add additional bytes to the allocation
@@ -171,7 +175,10 @@ item Libraries are added, either .h files from the current directory through \#i
 \subsection{Struct}
 \begin{enumerate}
 \item Structs are a collection of values within a single data type, declared by struct\{\textit{type1 var1; type2 var2}\} as the type name
+\begin{enumerate}
 \item Typedef is used to create a simple type name for it
+\item If the struct type itself is needed within the struct, it can be declared implicitly within the typedef, by putting ``struct type-name var'' instead of just the type
+\end{enumerate}
 \item \textit{struct-name.subvar} is used to call a specific item within the struct
 \item Since . operator has precedence over *, pointers to structs either must get the struct data before getting a specific piece of data, or use ``\textit{pointer-to-struct} -> \textit{struct-var} to do 
 \end{enumerate}
