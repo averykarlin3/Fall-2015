@@ -60,9 +60,7 @@
 \item Projects with large numbers of dependencies can have a file called ``makefile'' to organize creation of the executable with dependencies
 \begin{enumerate}
 \item The makefile is ordered from the most dependent level to least dependent (ignoring non-dependent files and standard libraries)
-\item Format is:
-\textit{Target-Filename: dependency1 dependency2}
-\textit{Terminal compilation code for file}
+\item Format is: \\ \textit{Target-Filename: dependency1 dependency2}\\ <tab> \textit{Terminal compilation code for file}
 \item ``make \textit{target-filename}'' command is used when in the directory to compule the project using the make file
 \item The clean targets can be used to remove files from the directory after compilation
 \item The all target can be used to compile the entire program
