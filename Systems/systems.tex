@@ -110,13 +110,14 @@ item Libraries are added, either .h files from the current directory through \#i
 \section{Memory Management}
 \subsection{Memory Allocation}
 \begin{enumerate}
-\item Memory allocation is either during compile time (static stack memory), or during runtime (dynamic heap memory) - CONTRADICTION LATER????
-\item Compiler allocated memory is packaged within the binary, unable to be overwritten due to protected memory, without a default value, where variables and arrays are allocated
+\item Memory allocation is either during compile time (static stack memory), or during runtime (dynamic heap memory)
+\item Compiler allocated memory is packaged within the binary, unable to be overwritten by other programs due to protected memory, without a default value, where variables and arrays are allocated
 \begin{enumerate}
 \item Memory addresses of variables are fixed once they are placed, such that the data can be changed, but the location cannot be
+\item Variable names are not stored, but rather substituted for memory locations during compilation
+\item Once the function/scope under which the stack memory created is finished, the memory is automatically released
 \item String literals and variables marked by the ``const'' keyword have the value stored in stack memory as well
 \end{enumerate}
-\item Runtime memory is temporary, used for values of variables
 \item Systems have a bit limit which they can read at once, such that 32 bit systems are limited to 32 bit unsigned values, such that $[0, 2^32-1]$ is possible, or ~4 GB 
 \item Pointers are variables designed to store memory addresses
 \begin{enumerate}
