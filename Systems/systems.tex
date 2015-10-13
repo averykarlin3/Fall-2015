@@ -116,7 +116,6 @@ item Libraries are added, either .h files from the current directory through \#i
 \item Memory addresses of variables are fixed once they are placed, such that the data can be changed, but the location cannot be
 \item Variable names are not stored, but rather substituted for memory locations during compilation
 \item Once the function/scope under which the stack memory created is finished, the memory is automatically released
-\item String literals and variables marked by the ``const'' keyword have the value stored in stack memory as well
 \end{enumerate}
 \item Systems have a bit limit which they can read at once, such that 32 bit systems are limited to 32 bit unsigned values, such that $[0, 2^32-1]$ is possible, or ~4 GB 
 \item Pointers are variables designed to store memory addresses
@@ -126,8 +125,9 @@ item Libraries are added, either .h files from the current directory through \#i
 \item * is used before a variable name to declare a pointer, and is also used when calling a variable to get the value of the item at that location, preceeding before numeric operators except ++ and --
 \item Thus, for some array a, with *a as the pointer, a[i] = *(a + i)
 \end{enumerate}
+\item Other sections in memory are code (the executable section of an object file, often stored in ROM until run), bss (global or static initialized variables), and data (global or static uninitialized variables)
+\item String literals and variables marked by the ``const'' keyword have the value stored in stack memory as well
 \end{enumerate}
-
 \subsection{Strings and Arrays}
 \begin{enumerate}
 \item Strings can be declared by several methods, "char \textit{str[byte\_num]}" to do basic allocation, or it can be set on the same line, with a null put in the byte after the last letter
