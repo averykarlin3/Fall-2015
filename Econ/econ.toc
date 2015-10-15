@@ -18,3 +18,4 @@
 \contentsline {subsection}{\numberline {4.3}Unemployment}{11}
 \contentsline {subsection}{\numberline {4.4}Causes and Catagories of Unemployment}{12}
 \contentsline {subsection}{\numberline {4.5}Inflation}{13}
+\contentsline {subsection}{\numberline {4.6}Measuring Inflation}{14}
