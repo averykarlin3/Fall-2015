@@ -126,9 +126,11 @@ item Libraries are added, either .h files from the current directory through \#i
 \item Thus, for some array a, with *a as the pointer, a[i] = *(a + i)
 \item Null pointers (set equal to the location 0) are often used to signify the end of a list
 \end{enumerate}
-\item Other sections in memory are code (the executable section of an object file, often stored in ROM until run), bss (global or static initialized variables), and data (global or static uninitialized variables)
-\item String literals and variables marked by the ``const'' keyword have the value stored in stack memory as well
+\item Other sections in memory are code (the executable section of an object file, often stored in ROM until run), bss (global or static uninitialized variables), and data (global or static initialized variables)
+\item Variables marked by the ``const'' keyword have the value stored in the read-only portion of the same memory space they would normally exist in
+\item String literals are generally stored within the code section, though it can occasionally be stored in the data section as a static variable
 \end{enumerate}
+
 \subsection{Strings and Arrays}
 \begin{enumerate}
 \item Strings can be declared by several methods, "char \textit{str[byte\_num]}" to do basic allocation, or it can be set on the same line, with a null put in the byte after the last letter
