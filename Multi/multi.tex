@@ -442,10 +442,126 @@ The dot product is:
 \item Distributive over Vector Sums
 \end{itemize}
 
+\subsection{Inequalities}
+
+\subsection{Level of Operations}
+Powers/root $\to$ Multiplation/division $\to$ addition/subtraction $\to$
+succession/pretrition
+\subsection{AM-GM}
+
+$$\mu = [x_1, x_2, \dots, x_n] \text{ and } x_1, x_2, x_3, \dots, x_n \geq 0$$
+``Multiset'' $\mu = \{(x, n), (y, m), \dots\}$
+
+We define the arithmetic mean of a multiset as:
+$$A(\mu) = \frac{x_1 + x_2 + \dots + x_n}{n}$$
+
+And the geometric mean as:
+$$G(\mu) = \sqrt[\uproot{2}n]{x_1x_2x_3\dots x_n}$$
+
+\subsubsection{AM-GM Inequality}
+$A(\mu) \geq G(\mu)$, with equality iff all elements
+of $\mu$ are the same.
+
+\subsubsection{Proof}
+This is done by mathematical induction. Base case is $n = 2$, then $\mu = [x,
+y]$. Then $A(\mu) = \frac{x + y}{2}, G(\mu) = \sqrt{xy}$
+
+We know by the trivial inequality that $(\sqrt{x} + \sqrt{y})^2 \geq 0$, with
+equality case happening iff $x = y$. Then we get:
+\begin{align*}
+    x - 2 \sqrt{xy} + y &\geq 0\\
+            \frac{x + y}{2} &\geq \sqrt{xy}\\
+	                     A(\mu) &\geq G(\mu)
+			     \end{align*}
+
+			     Now we induce on $n$, we seek to prove that case $n$ implies case $2n$.
+
+			     $\mu = [x_1, x_2, \dots, x_n, y_1, y_2, \dots, y_n]$
+
+			     Then we know that
+			     \begin{align*}
+			         A(\mu) &= \frac{A(\mu_x) + A(\mu_y)}{2}\\
+				            &\geq \frac{G(\mu_x) + G(\mu_y)}{2}\\
+					               &\geq \sqrt{G(\mu_x)G(\mu_y)}\\
+						                  &= G(\mu)
+								  \end{align*}
+
+								  Note that in all inequalities used, the equality case is always when all $x_n$
+								  and $y_n$ are the same element, therefore the equality case holds in all cases
+								  where the length of the list is $2^n$.
+
+								  Now we prove that case $n$ implies $n-1$
+
+								  $\mu = [x_1, x_2, x_3, \dots, x_{n - 1}]$
+
+								  Note that we can construct $\mu' = [x_1, x_2, x_3, \dots, x_{n - 1}, A(\mu)]$
+
+								  Note that $A(\mu') = A(\mu)$, and since the AM-GM inequality is true for $\mu'$
+								  by the assumption, we know
+
+								  \begin{align*}
+								      A(\mu') = A(\mu) &\geq \sqrt[\uproot{2} n]{x_1x_2x_3\dots x_{n - 1}A(\mu)}\\
+								                           &\geq \sqrt[\uproot{2} n]{TODO}
+											   \end{align*}
+
+											   \subsection{Young's Inequality}
+											   \subsubsection{H\"{o}lder Conjugate}
+											   $q$ is said to be the H\"{o}lder Conjugate of $p$:
+											   $$q := p^* := \frac{p}{p - 1}$$
+
+											   Note that $q > 1$ and $\frac{1}{p} + \frac{1}{q} = 1$
+
+											   \subsubsection{Young's Inequality}
+											   $a, b \geq 0$; $p > 1$; $q = p^*$, then Young's Inequality states that:
+											   $$ab \leq \frac{a^p}{p} + \frac{b^q}{q}$$
+											   With equality case iff $a^p = b^q$
+
+											   \subsubsection{Proof}
+											   We first proof Young's Inequality assuming that $p, q \in \mathbb{Q}$.
+											   We can rewrite $p = \frac{n + m}{n}$ and $q = \frac{n + m}{m}$ for some $n, m
+											   \in \mathbb{N}$. Now Young's Inequality turns into:
+
+											   $$ab \leq \frac{na^{\frac{n + m}{n}}}{n + m} + \frac{mb^{\frac{m + n}{m}}}{n + m}$$
+
+											   If we let $x = a^{\frac{1}{n}}$ and $y = b^{\frac{1}{m}}$. Then the inequality
+											   turns into:
+
+											   $$ab = x^ny^m = \leq \frac{nx^{n + m} + my^{n + m}}{n + m}$$
+
+											   And that is true by weighted AM-GM, with equality iff $x = y$, which equals to
+											   $a^{\frac{1}{n}} = b^{\frac{1}{m}}$, which equals to 
+
+											   We can prove the inequality for irrational by taking limits, because
+											   $\forall n \geq n_0: f(n) \leq g(n)$, and the limits of both $f(x)$ and $g(x)$ as
+											   $n\to\infty$ exists and are finite, then we know that $\lim_{n\to\infty}f(n)
+											   \leq \lim_{n\to\infty} g(n)$. When $p$ and $q$ are irrational, we construct
+											   $\{p_n\}$ and $\{q_n\}$ as two sequences of rationals that approaches $p$ and
+											   $q$, the left hand side of Young's Inequality is unaffected by the limit, and by
+											   what we've just said about limits, we know that:
+											   $$ab \leq \lim_{n\to\infty} \frac{a^{p_n}}{p_n} + \frac{b^{q_n}}{q_n} =
+											   \frac{a^p}{p} + \frac{b^q}{q}$$
+
+											   \subsection{Minkowski's Inequality}
+											   In $\mathbb{R}^2$: let $||(a, b)||_p = (|a^p| + |b^p|)^{1/p}$ for any $p \in
+											   \mathbb{R} > 1$, this is known as the $p$-norm of a vector. Note that $||(a,
+											   b)||_2 = ||(a, b)|| = \sqrt{a^2 + b^2}$
+
+
 \subsubsection{Cauchy-Schwartz Inequality}
 In $\mathbb{R^2}$, the p-norm of a vector, $||(a, b)||_p = (|a|^p + |b|^p)^(1\\p)$ for any p > 1, where p $\in \mathbb{Q}$.
 The rational power of some number, m,  exists if there is some sequence, qn, where $n \to \infty, qn \to$ the rational number, only true if for any sequence which does this, the limit is equal.
 This is proven by for any two sequences, qn and rn, $m^{qn}/m^{rn} = m^{qn-rn}$, such that as $n \to \infty$, it equals 1.
+
+\subsection{Triangle Inequality}
+$$dist(\vec{p}, \vec{q}) + dist(\vec{q}, \vec{r}) \geq dist(\vec{p}, \vec{r})$$
+
+
+
+This can be generalized by mathematical induction to $dist(\vec{p_0}, \vec{q_n})
+\leq \sum_{j = 1}^n dist(\vec{p}_{j - 1}, \vec{p}_{j})$ (Otherwise known that the
+shortest distance between two points is the straight line, or the \textbf{Generalized
+Triangle Inequality} or the ``Broken Line Inequality'')
+
 
 \subsection{Functions in Higher Dimensions}
 The domain is a subset of $\mathbb{R^n}$.
@@ -473,6 +589,8 @@ It must be \underline{continuous} in its variables, such that with a minute move
 Based on these requirements, an ansatz (educated guess, verified by later results) is made, such that $f(u, v) = F(G(u) + G(v)), where F: [0, \infty) \to \mathbb{R} and G: [0, \infty) \to \mathbb{R}$. The use of G(u) and G(v) is needed to assure symmetry. The use of addition is mandated by symmetry, using addition rather than another symmetrical operation simply due to ease of calculations.
 
 \underline{Theorem:} $\exists only one suitable pair F, G; G(x) = x^2, F(x) = \sqrt{x}, that fits all requirements. If G(x) = x^n, F(x) = \sqrt[n]{x}$, it would have all required properties except infinite set of isometries.
+
+\underline{Property:} If $dist(p; q) = 0$, then $p = q$, where p and q are asome vector $\in \mathbb{R}$
 
 \subsubsection{Euclidean Distance}
 The distance function in one space between two points $a$ and $b$ is simply $|a
