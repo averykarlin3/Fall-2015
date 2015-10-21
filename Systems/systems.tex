@@ -187,4 +187,46 @@ item Libraries are added, either .h files from the current directory through \#i
 \item Since . operator has precedence over *, pointers to structs either must get the struct data before getting a specific piece of data, or use ``\textit{pointer-to-struct} -> \textit{struct-var} to do 
 \end{enumerate}
 
+\section{File Programming}
+\subsection{Permissions}
+\begin{enumerate}
+\item There are 3 permission areas, each with their own permission value, first the creator (user), then a specific group of users (group), then everyone else (others), each mutually exclusive
+\begin{enumerate}
+\item The owner always has the ability to delete and change the permissions of a file, even if the permission value is 0
+\end{enumerate}
+\item ABC is the permissions of an area in binary, where A = read, B = write, C = execute, such that it can be converted into a number 0-7 in octal (which must be written in code with a 0 first, to tell the compiler it is octal)
+\end{enumerate}
+
+\subsection{File Usage}
+\begin{enumerate}
+\item The file table is a list of all files used by a program while it it running, containing basic information such as location and size
+\begin{enumerate}
+\item The file table has a limited size of $2^n$, typically 256, where getdtablesize() in ``unistd.h'' returns the size value;
+\item Each file is given a descriptor, or an integer index from 0, and the table records the path, location, and other data 
+\item File descriptor 0 (or STDIN\_FILENO) always refers to stdin (standard command line input), and 1 (or STDOUT\_FILENO) refers to stdout
+\item File descriptor 2 (or STDERR\_FILENO) refers to stderr (standard error), which contains all error messages produced by the compiler, similar to stdout
+\item These are automatically opened on the opening of a C program
+\end{enumerate}
+\item Most file control functions are within ``fcntl.h''
+\begin{enumerate}
+\item open(\textit{file\_path, flags, mode}) - Opens/adds the file to the next file table space, returning the file descriptor
+\begin{enumerate}
+\item File descriptor -1 is returned when the file opened does not exist, or there is not permission to access the file
+\item When open() fails, the variable ``errno'' in ``errno.h'' is automatically set for the specific type of error
+\item strerror(\textit{int}) in ``string.h'' returns a string describing the integer stored in errno
+\item Flags are used to declare what the file is being used for, while mode is only used if creating the file, setting the permissions as an octal number
+\item Flags can be:
+\begin{itemize}
+\item O\_RDONLY - Read only
+\item O\_WRONLY - Write only
+\item O\_RDWR - Read and Write
+\item O\_APPEND - Write to end of file only
+\item O\_TRUNC - Erase file and write over
+\item O\_CREAT - Create file and open it if it exists
+\item O\_EXCL - Can be combined with O\_CREAT to return an error if it exists
+\end{itemize}
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+
 \end{document}

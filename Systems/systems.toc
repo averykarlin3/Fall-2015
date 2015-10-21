@@ -10,3 +10,6 @@
 \contentsline {section}{\numberline {3}Structural Functions}{7}
 \contentsline {subsection}{\numberline {3.1}String Functions}{7}
 \contentsline {subsection}{\numberline {3.2}Struct}{7}
+\contentsline {section}{\numberline {4}File Programming}{8}
+\contentsline {subsection}{\numberline {4.1}Permissions}{8}
+\contentsline {subsection}{\numberline {4.2}File Usage}{8}
