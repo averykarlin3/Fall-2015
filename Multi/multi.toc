@@ -43,34 +43,35 @@
 \contentsline {subsubsection}{\numberline {5.2.1}Definition}{11}
 \contentsline {subsubsection}{\numberline {5.2.2}Properties}{11}
 \contentsline {subsection}{\numberline {5.3}Functions in Higher Dimensions}{11}
-\contentsline {subsection}{\numberline {5.4}Distance}{11}
-\contentsline {subsection}{\numberline {5.5}Distance Functions}{11}
-\contentsline {subsubsection}{\numberline {5.5.1}Euclidean Distance}{12}
-\contentsline {subsubsection}{\numberline {5.5.2}Geometric Distance}{12}
-\contentsline {subsubsection}{\numberline {5.5.3}Basic Distance Bounds Lemma}{13}
-\contentsline {subsubsection}{\numberline {5.5.4}Triangle Inequality}{13}
-\contentsline {subsubsection}{\numberline {5.5.5}Other Distance}{14}
-\contentsline {subsection}{\numberline {5.6}Metric Topology in $\mathbb {R^n}$}{14}
-\contentsline {subsubsection}{\numberline {5.6.1}Continuity}{14}
-\contentsline {subsubsection}{\numberline {5.6.2}Directional Limits}{14}
-\contentsline {subsubsection}{\numberline {5.6.3}Limits in Higher Dimensions}{14}
-\contentsline {subsection}{\numberline {5.7}Properties of Domain}{14}
-\contentsline {subsubsection}{\numberline {5.7.1}Bounded}{14}
-\contentsline {subsubsection}{\numberline {5.7.2}Closed}{15}
-\contentsline {subsubsection}{\numberline {5.7.3}Open Set Theorem}{15}
+\contentsline {subsubsection}{\numberline {5.3.1}Bolzano-Weirstrauss in Higher Dimensions}{11}
+\contentsline {subsection}{\numberline {5.4}Distance Functions}{12}
+\contentsline {subsubsection}{\numberline {5.4.1}Euclidean Distance}{12}
+\contentsline {subsubsection}{\numberline {5.4.2}Geometric Distance}{13}
+\contentsline {subsubsection}{\numberline {5.4.3}Basic Distance Bounds Lemma}{13}
+\contentsline {subsubsection}{\numberline {5.4.4}Triangle Inequality}{13}
+\contentsline {subsubsection}{\numberline {5.4.5}Other Distance}{14}
+\contentsline {subsection}{\numberline {5.5}Metric Topology in $\mathbb {R^n}$}{14}
+\contentsline {subsubsection}{\numberline {5.5.1}Continuity}{14}
+\contentsline {subsubsection}{\numberline {5.5.2}Directional Limits}{14}
+\contentsline {subsubsection}{\numberline {5.5.3}Limits in Higher Dimensions}{14}
+\contentsline {subsection}{\numberline {5.6}Properties of Domain}{14}
+\contentsline {subsubsection}{\numberline {5.6.1}Bounded}{14}
+\contentsline {subsubsection}{\numberline {5.6.2}Closed}{15}
+\contentsline {subsubsection}{\numberline {5.6.3}Open Set Theorem}{15}
+\contentsline {subsubsection}{\numberline {5.6.4}Cauchy Sequence}{15}
 \contentsline {section}{\numberline {6}Inequalities}{15}
 \contentsline {subsection}{\numberline {6.1}Level of Operations}{15}
 \contentsline {subsection}{\numberline {6.2}AM-GM}{15}
 \contentsline {subsubsection}{\numberline {6.2.1}AM-GM Inequality}{15}
-\contentsline {subsubsection}{\numberline {6.2.2}Proof}{15}
+\contentsline {subsubsection}{\numberline {6.2.2}Proof}{16}
 \contentsline {subsection}{\numberline {6.3}Young's Inequality}{16}
 \contentsline {subsubsection}{\numberline {6.3.1}H\"{o}lder Conjugate}{16}
-\contentsline {subsubsection}{\numberline {6.3.2}Young's Inequality}{16}
+\contentsline {subsubsection}{\numberline {6.3.2}Young's Inequality}{17}
 \contentsline {subsubsection}{\numberline {6.3.3}Proof}{17}
 \contentsline {subsection}{\numberline {6.4}H\"{o}lder's Inequality}{17}
 \contentsline {subsubsection}{\numberline {6.4.1}$p$-norm}{17}
 \contentsline {subsubsection}{\numberline {6.4.2}H\"{o}lder's Inequality}{17}
-\contentsline {subsection}{\numberline {6.5}Cauchy-Schwarz Inequality}{17}
+\contentsline {subsection}{\numberline {6.5}Cauchy-Schwarz Inequality}{18}
 \contentsline {subsection}{\numberline {6.6}Triangle Inequality}{18}
 \contentsline {subsection}{\numberline {6.7}Minkowski's Inequality}{18}
 \contentsline {subsubsection}{\numberline {6.7.1}P-Norm}{18}

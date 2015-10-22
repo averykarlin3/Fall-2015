@@ -121,7 +121,13 @@ The domain is a subset of $\mathbb{R^n}$.
 Let the function of f(x, y) be an ordered pair within some curve, such that $(x, y) \in D$. Thus, the range of f, G = ${x, y, f(x,y) | (x, y) \in D} \subseteq{R^{n+1}}$.
 Functions are defined as one-to-one if for f(x, y), $(x, y), (u, v) \in D, f(x, y) = f(u, v)$ iff (if and only if) x = u $\wedge$ (and) y = v (such that for every z value, there is only one point that will create it.
 
-\subsection{Distance}
+\subsubsection{Bolzano-Weirstrauss in Higher Dimensions}
+\underline{Theorem:} A bounded sequence $\in \mathbb{R^d}$ has a convergent subsequence.
+
+\underline{Lemma:} If $(x_n)_{n=1}^\infty$ converges to $x \in \mathbb{R}$, then every subsequence $(x_{n_k})_{k=1}^\infty$ also converges to x, following from the definition of convergence and limits ($\forall \epsilon > 0, \exists N, \forall n \geq N: |x_n - x| < \epsilon,$ thus $\exists K, \forall k \geq K: n_k \geq N$, since $n_k \to \infty$ as $k \to \infty$, such that $|x_{n_k} - x| < \epsilon$).
+
+\underline{Proof for $d = 2$:} Let $P_n = (x_n, y_n)$. Consider $(x_n)_{n=1}^\infty \in \mathbb{R}$. Since $\forall x_n, -M \leq x_n \leq M, (x_n)_{n=1}^\infty$ is bounded. For some $(x_{n_k})_{k=1}^\infty$, converging to some $x \in \mathbb{R}$. Consider $(y_{n_k})_{k=1}^\infty$ is bounded by the same rationale, thus $(y_{n_{k_j}})^\infty_{j=1}$ converges to some $y \in \mathbb{R}$. Since $(x_{n_{k_j}})_{j=1}^\infty$ is a subsequence of a converging sequence, it converges to the same value, x. Thus, $P_{n_{k_j}} = (x_{n_{k_j}}, y_{n_{k_j}}) \to (x, y) = P$.
+
 \subsection{Distance Functions}
 In axiomatic geometry, certain axioms including the definition of euclidean distance are taken as assumed. In actuality, standard distance functions must qualify under several non-geometric requirements, of which only the Euclidean distance qualifies.
 
@@ -255,7 +261,7 @@ Let $f: D \to \mathbb{R}, D \subseteq \mathbb{R^2}, D \neq \emptyset, and (a, b)
 For the extreme value theorem to apply to a domain, the set must be compact, such that it must be bounded and closed over limits. On the $\mathbb{R}$ dimension, this applies to all closed intervals, as well as the empty set, though functions except the empty set cannot accept it as a domain.
 
 \subsubsection{Bounded}
-$If D \subseteq \mathbb(R^2)$ is bounded if $\exists M > 0: D \subseteq [-M, M] x [-M, M]$.
+$If D \subseteq \mathbb(R^2)$ is bounded if $\exists M > 0: D \subseteq [-M, M] x [-M, M]$. Thus, a sequence is considered bounded if the set of all values within the sequence is bounded.
 
 \subsubsection{Closed}
 The term closed is used to apply to sets which are closed under limits. On $mathbb{R}$, if $x_n \in [a, b] for \forall n \in mathbb{N}, and x_n \to x \in \mathbb{R}, then x \in [a, b]$.
@@ -281,6 +287,11 @@ $\exists+ r > 0:B_r(a, b)\subseteq D$. $\exists+ N, \forall n \geq
 \mathbb{N}, (x_n, y_n) \in B_r(a, b)$ since $(x_n, y_n)\to(a,b)$. But we
 assumed that $(x_n, y_n) \in D^c$, and $(x_n, y_n) \in D$. But $D \cap D^c =
 \emptyset$. Therefore $D^c$ is closed under taking limits.
+
+\subsubsection{Cauchy Sequence}
+A cauchy sequence in $\mathbb{R}$ is a sequence $(x_n)^\infty_{n=1}$ such that: $\forall \epsilon > 0, \exists N, \forall n, m \geq N: |x_n - x_m| < \epsilon$. This defines a sequence where as $n \to \infty$, the distance between values of points on the sequence decreases.
+
+\underline{Cauchy's Convergence Theorem:} In $\mathbb{R}$, every cauchy sequence converges.
 
 \section{Inequalities}
 \subsection{Level of Operations}
@@ -433,5 +444,7 @@ If u = (a, b) and v = (c, d), then $(|a+c|^p + |b+d|^p)^{\frac{1}{p}p} = |a+c|^p
 Then, by the Holder inequality, that is $\leq (|a|^p + |b|^p)^{1/p}(|a+c|^{(p-1)q} + |b+d|^{(p-1)q})^{\frac{1}{q}} + ... = ||u||_p||v||_p||u+v||_p^{\frac{p}{q}}$
 
 This can be divided to get the inequality.
+
+\underline{Add proof of the equality definition}
 
 \end{document}
