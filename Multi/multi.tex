@@ -7,6 +7,7 @@
 \usepackage{tikz}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{amssymb}
 
 \begin{document}
 
@@ -128,10 +129,92 @@ Functions are defined as one-to-one if for f(x, y), $(x, y), (u, v) \in D, f(x, 
 
 \underline{Proof for $d = 2$:} Let $P_n = (x_n, y_n)$. Consider $(x_n)_{n=1}^\infty \in \mathbb{R}$. Since $\forall x_n, -M \leq x_n \leq M, (x_n)_{n=1}^\infty$ is bounded. For some $(x_{n_k})_{k=1}^\infty$, converging to some $x \in \mathbb{R}$. Consider $(y_{n_k})_{k=1}^\infty$ is bounded by the same rationale, thus $(y_{n_{k_j}})^\infty_{j=1}$ converges to some $y \in \mathbb{R}$. Since $(x_{n_{k_j}})_{j=1}^\infty$ is a subsequence of a converging sequence, it converges to the same value, x. Thus, $P_{n_{k_j}} = (x_{n_{k_j}}, y_{n_{k_j}}) \to (x, y) = P$.
 
+\subsubsection{Cauchy Sequence}
+A cauchy sequence in $\mathbb{R}$ is a sequence $(x_n)^\infty_{n=1}$ such that: $\forall \epsilon > 0, \exists N, \forall n, m \geq N: |x_n - x_m| < \epsilon$. This defines a sequence where as $n \to \infty$, the distance between values of points on the sequence decreases.
+
+\subsubsection{Convergence $\to$ Cauchy}
+Note that any convergent sequence is cauchy, because as terms get together
+to a limit, they also go very closely together.
+
+\textbf{``Formal'' Proof}:
+
+Let $(x_n)_{n = 1}^\infty$ be convergent, with limit $x \in \mathbb{R}$.
+Then, by definition, $\forall \epsilon > 0, \exists+ N_\epsilon, \forall
+n \geq N_\epsilon :
+|x_n - x| < \epsilon$. Note that we can replace $\epsilon$ with
+$\frac{\epsilon}{2}$, all we have to change is the cutoff point from
+$N_{\epsilon}$ to $N_{\frac{\epsilon}{2}}$. Now if we take two subscripts
+$n, m \geq N_{\frac{\epsilon}{2}} \longrightarrow |+x_n - x_m+| = |+(x_n -
+x) + (x - x_m)+| \leq |+x_n - x+| + |+x_m - x+|$ because of the Triangle
+Inequality for Absolute Values. However, note that $|+x_n - x+| \leq
+\frac{\epsilon}{2}$ and $|+x_m - x+| \leq \frac{\epsilon}{2}$.
+Therefore, $|+x_n - x_m+| \leq |+x_n - x+| + |+x_m - x+| \leq \epsilon
++\blacksquare$
+
+\subsubsection{Cauchy's Convergence Theorem}
+
+In $\mathbb{R}$, every cauchy sequence converges to a limit in $\mathbb{R}$.
+
+\vspace{0.3cm}
+
+\textbf{Lemma \#1}: Every cauchy sequence is bounded.
+
+Let us take $\epsilon = 1$, then the definition of ``cauchiness'' becomes:
+$$\exists+ N_1, \forall n, m \geq N_1 : |+x_n - x_m+| < 1$$
+
+Let $M := \max\{|x_1|, |x_2|, \dots, |x_{N_1 - 1}|, |x_{N_1}| + 1\}$. We claim
+that $|x_n| \leq M$, for all $n \geq 1$. This is true because when $n \in \{1, 2, \dots, N_1
+- 1\}$, the statement is true by definition of $M$. When $n \geq N_1$, we know
+that $|x_n| \leq |x_{N_1}| + 1 \leq M$ because we can let $m = N_1$, then by the
+definition of ``cauchiness,'' we know that $|x_n - x_{N_1}| < 1$.
+
+Now we see that $M$ is a bound on the sequence for all $n \geq 1$. Therefore the
+sequence is bounded.
+
+\textbf{Lemma \#2}: If a subsequence of a cauchy sequence converges to $x \in \mathbb{R}$, the
+whole sequence must converge to $x$.
+
+Say $(x_n)_{n=1}^\infty$ is cauchy, and $(x_{n_k})_{k = 1}^\infty$ converges to
+$x$. For any arbitrary $\epsilon > 0$, we try to find $N$ such that $\forall
+n \geq N: |x_n - x| < \epsilon$. If we prove the existence of $N$ for all
+$\epsilon$, we will have proven that the original sequence converges.
+
+We know that $\forall \epsilon > 0, \exists + K_\epsilon, \forall k \geq
+K_\epsilon: |x_{n_k} - x| < \epsilon$. We add and subtract $x_{n_k}$ and
+group terms, and use the Triangle Inequality: $|x_n - x| = |(x_n - x_{n_k}) + (x_{n_k} - x)| \leq
+|x_n - x_{n_k}| + |x_{n_k} - x|$. Note that $|x_{n_k} - x| < \epsilon$
+provided $k \geq K_{\epsilon}$ from the convergent subsequence condition. We
+also know that $|x_n - x_{n_k}| < \epsilon$ provided that $n, n_k \geq
+N_{\epsilon}$, which we call the ``cauchy cutoff.'' This is true from the
+``cauchiness'' condition.
+
+We know that $k\to\infty$ implies $n_k \to \infty$. This means eventually
+$n_k > N_\epsilon$ provided that $k > L_{N_\epsilon}$. Now let $k =
+\max\{L_{N_\epsilon}, K_\epsilon\}$ and $n \geq N_\epsilon$, which
+implies $|x_n - x_{n_k}| < \epsilon$ and $|x_{n_k} - x| < \epsilon$.
+Now we know: $|x_n - x| \leq 2\epsilon$ provided $n \geq N_{\epsilon}$.
+Therefore the cauchy sequence converges to $x$.
+
+\vspace{0.3cm}
+
+With these two lemmas, the theorem becomes very easy to prove:
+
+Because of Lemma \#1 and the Bolzano-Weierstrass Theorem, we know that for all
+cauchy sequences, there is a bounded subsequence that converges to some value
+$x$. Then by Lemma \#2, we know that the entire cauchy sequence converges to $x$
+as well, therefore the sequence converges. 
+
+\subsubsection{Cauchy Sequences in Higher Dimensions}
+
+$(P_n)_{n=1}^\infty$ is cauchy if $\forall \epsilon > 0, \exists +
+N_\epsilon, \forall n, m \geq N_\epsilon: dist(P_n, P_m) < \epsilon$.
+This is easy to prove due to the coordinate nature of $\mathbb{R}^d$.
+
+
 \subsection{Distance Functions}
 In axiomatic geometry, certain axioms including the definition of euclidean distance are taken as assumed. In actuality, standard distance functions must qualify under several non-geometric requirements, of which only the Euclidean distance qualifies.
 
-Distance functions must be \underline{translation-invariant}, or for any translation of two points, the distance must remain the same, such that $T_{h, k}: (x, y) \mapsto (maps to) (x+h, y+k), then dist(x+h, y+k; x'+h, y'+k) = dist(x, y; x', y')$. 
+Distance functions must be \underline{translation-iniant}, or for any translation of two points, the distance must remain the same, such that $T_{h, k}: (x, y) \mapsto (maps to) (x+h, y+k), then dist(x+h, y+k; x'+h, y'+k) = dist(x, y; x', y')$. 
 
 Thus, $dist(x,y; \tilde(x), \tilde(y)) = f(|x-\tilde(x)|, |y-\tilde(y)|)$, where f the distance function defined on $[0, \infty) x [0, \infty).$ As a result, it must be \underline{symmetrical}, such that $dist(x, y; \tilde(x), \tilde(y)) = dist(\tilde(x), \tilde(y); x, y)$.
 
@@ -287,11 +370,6 @@ $\exists+ r > 0:B_r(a, b)\subseteq D$. $\exists+ N, \forall n \geq
 \mathbb{N}, (x_n, y_n) \in B_r(a, b)$ since $(x_n, y_n)\to(a,b)$. But we
 assumed that $(x_n, y_n) \in D^c$, and $(x_n, y_n) \in D$. But $D \cap D^c =
 \emptyset$. Therefore $D^c$ is closed under taking limits.
-
-\subsubsection{Cauchy Sequence}
-A cauchy sequence in $\mathbb{R}$ is a sequence $(x_n)^\infty_{n=1}$ such that: $\forall \epsilon > 0, \exists N, \forall n, m \geq N: |x_n - x_m| < \epsilon$. This defines a sequence where as $n \to \infty$, the distance between values of points on the sequence decreases.
-
-\underline{Cauchy's Convergence Theorem:} In $\mathbb{R}$, every cauchy sequence converges.
 
 \section{Inequalities}
 \subsection{Level of Operations}
