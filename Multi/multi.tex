@@ -356,7 +356,7 @@ This applies the definition of limits to sequences, such that $(x_n, y_n) \to (a
 Thus, $D \subseteq \mathbb{R^2}$ is closed if for any sequence $((x_n, y_n))^\infty_{n=1}$ in D that converges, the limit poiint (a, b) of the sequence also lies in D.
 
 \subsubsection{Open Set Theorem}
-$D \subseteq \mathbb{R^2}$ is open if $\forall (a, b) \in D, \exists r > 0:$ the disk of radius r, $B_r(a, b) \subseteq D$.
+$D \subseteq \mathbb{R^2}$ is open if $\forall (a, b) \in D, \exists r > 0:$ the disk of radius r, $B_r(a, b) \subseteq D$, such that D = Interior of D
 
 It follows that for any open set, the complement set within the space is a closed set.
 
@@ -365,11 +365,21 @@ Assume $D$ is open, we prove $D^c$ is closed. Choose any convergent sequence
 $((x_n, y_n))_{n = 1}^\infty$, converging to $(a, b)$, where $(x_n, y_n) \in
 D^c$ for all $n \geq 1$.
 
-We prove this by contradiction. Assume that $(a, b) \in D$. Since $D$ is ipen,
+We prove this by contradiction. Assume that $(a, b) \in D$. Since $D$ is open,
 $\exists+ r > 0:B_r(a, b)\subseteq D$. $\exists+ N, \forall n \geq
 \mathbb{N}, (x_n, y_n) \in B_r(a, b)$ since $(x_n, y_n)\to(a,b)$. But we
 assumed that $(x_n, y_n) \in D^c$, and $(x_n, y_n) \in D$. But $D \cap D^c =
 \emptyset$. Therefore $D^c$ is closed under taking limits.
+
+For the other direction, we can pick some point within D, then assume there is no ball, such that any ball contains some ball not in D, even as radius $\to 0$, creating a sequence of points converging on the point, P, a contradiction.
+
+\subsubsection{Extreme-Value Theorem}
+Let $f:D \to \mathbb{R}$ be continuous, where D $\subseteq \mathbb{R^d}$ is compact. Then $\exists P, Q \in D$, which do not need to be unique, such that $\forall X \in D: f(P) \leq f(x) \leq f(Q)$.
+
+\underline{Proof}:
+Assume that f is not bounded above, such that $\forall n \geq 1, f(P_n) > n$, where $P_n \in D$. For some subsequence $P_{n_k} \in D$ converging to P by the Balzano-Weirstrauss, by closure of D, $P \in D$. This is a contradiction since $f(P_{n_k}) \to \infty$ and $\to f(P)$, such that it must be bounded from above.
+
+Thus, $\exists M = sup_{x \in D}f(x)$. We can find $P_n \in D$, with $f(P_n) \to M$. For some convergent subsequence $P_{n_k} \in D, P_{n_k} \to Q$.
 
 \section{Inequalities}
 \subsection{Level of Operations}
