@@ -28,4 +28,10 @@
 
 \section{Heine-Borel Theorem and Uniform Continuity}
 
+\subsection{Heine-Borel Theorem}
+Let K be a compact set in $\mathbb{R^d}$, and let ${U_\lambda | \lambda \in \Lambda}$ be a family of open sets in $\mathbb{R^d}$, which covers K, such that $K \subseteq \cup_{x \in \Lambda}U_\lambda$. Then $\exists \lambda_1, \lambda_2, \lamda_3 \text{... such that} K \subseteq U_{\lambda_1} \cup U_{\lambda_2} \cup \text{...} \cup U_{\lambda_n}.$
+
+\subsubsection{Proof}
+Since K is bounded, it can be fully contained within some rectangle (R), which can then be split into 4 congruent parts, $R_{i_1} (R_1, R_2, R_3, R_4)$. Suppose one quadrant cannot be covered by any finite collection of $U_\lambda$. By extension, if that quadrant is divided further, one of the subquadrants ($R_{i_1i_2}$) cannot be covered. This can continue for countable infinity divisions (able to be counted with an infinite amount of integer). Since $R_{i_1i_2...i_n} \neq \emptyset$, let $P_n$ be any point in $K \cap R_{i_1i_2...i_n}$, such that there is a bounded sequence of points in K. Thus it must have a convergent subsequence such that $P_{n_k} \to P, P \in K$. Thus, $P \in U_{\lambda^*}$ for some $\lambda^* \in \Lambda$. Since $U_{\lambda^*}$ is open, $\exists r > 0, \text{such that} B_r(P) \subseteq U_{\lambda^*}. Diameter/diagonal length (diam) R_{i_1i_2...i_n} = frac{diam(R)}{2^n} < r$ as $n \to \infty$. Thus, $R_{i_1i_2...i_n} \subseteq B_r(P)$ as $n_k \to \infty$. $dist(P, P_{n_k}) < \frac{r}{2}$ and $dist(P_{n_k}, x) \leq diam(R_{i_1i_2...i_n})$ and by the triangle inequality, $diam(R_{i_1i_2...i_n}) < \frac{r}{2}$. Thus, there is a contradiction, and it must be covered by a finite number of sets.
+
 \end{document}
