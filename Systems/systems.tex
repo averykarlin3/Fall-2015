@@ -197,6 +197,12 @@ item Libraries are added, either .h files from the current directory through \#i
 \item ABC is the permissions of an area in binary, where A = read, B = write, C = execute, such that it can be converted into a number 0-7 in octal (which must be written in code with a 0 first, to tell the compiler it is octal)
 \end{enumerate}
 
+\subsection{Bitwise Operators}
+\begin{enumerate}
+\item & is the bitwise AND operator, | is OR, ~ is NOT, and \^ is XOR
+\item Bitwise operators are used to modify the actual binary of equal lengths, going bit by bit
+\end{enumerate}
+
 \subsection{File Usage}
 \begin{enumerate}
 \item The file table is a list of all files used by a program while it it running, containing basic information such as location and size
@@ -207,13 +213,12 @@ item Libraries are added, either .h files from the current directory through \#i
 \item File descriptor 2 (or STDERR\_FILENO) refers to stderr (standard error), which contains all error messages produced by the compiler, similar to stdout
 \item These are automatically opened on the opening of a C program
 \end{enumerate}
-\item Most file control functions are within ``fcntl.h''
-\begin{enumerate}
-\item open(\textit{file\_path, flags, mode}) - Opens/adds the file to the next file table space, returning the file descriptor
+\item open(\textit{file\_path, flags, mode}) - Opens/adds the file to the first open file table space, returning the file descriptor
 \begin{enumerate}
 \item File descriptor -1 is returned when the file opened does not exist, or there is not permission to access the file
 \item When open() fails, the variable ``errno'' in ``errno.h'' is automatically set for the specific type of error
 \item strerror(\textit{int}) in ``string.h'' returns a string describing the integer stored in errno
+\item Found within ``fcntl.h''
 \item Flags are used to declare what the file is being used for, while mode is only used if creating the file, setting the permissions as an octal number
 \item Flags can be:
 \begin{itemize}
@@ -226,6 +231,22 @@ item Libraries are added, either .h files from the current directory through \#i
 \item O\_EXCL - Can be combined with O\_CREAT to return an error if it exists
 \end{itemize}
 \end{enumerate}
+\item close(\textit{file\_descriptor}) removes the file from the file table, found within ``unistd.h''
+\item read(\texit{file\_descriptor, buffer, amount}) reads text from a file, where buffer is a pointer to where the text is placed, and amount is the bytes read
+\begin{enumerate}
+\item Returns the number of bytes read, or -1 if it fails (setting the errno value)
+\end{enumerate}
+\item unmask(\textit{mask}) sets the file creation permission mask, found within ``sys/stat.h''
+\begin{enumerate}
+\item Files are not initially given the permissions in the mode argument when opened, when they are created, such that a mask must be applied to modify
+\item The new permissions when opened are thus ~mask & mode, shutting off all permission from the mask
+\item The mask should be in octal form, adding a new mask to the permissions
+\end{enumerate}
+\item lseek(\textit{file\_descriptor, offset, whence}) sets the current position in an open file, where offset is the number of bytes to move by
+\begin{enumerate}
+\item Whence can either be SEEK\_SET (beginning of the file), SEEK\_CUR (current position in the file), or SEEK\_END (end of the file)
+\item Returns the number of bytes from the current position to the start of the file, or -1 in case of error, setting errno
+\item Found within ``unistd.h''
 \end{enumerate}
 \end{enumerate}
 
