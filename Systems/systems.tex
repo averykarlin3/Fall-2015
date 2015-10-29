@@ -199,7 +199,7 @@ item Libraries are added, either .h files from the current directory through \#i
 
 \subsection{Bitwise Operators}
 \begin{enumerate}
-\item & is the bitwise AND operator, | is OR, ~ is NOT, and \^ is XOR
+\item \& is the bitwise AND operator, | is OR, ~ is NOT, and \^ is XOR
 \item Bitwise operators are used to modify the actual binary of equal lengths, going bit by bit
 \end{enumerate}
 
@@ -232,14 +232,14 @@ item Libraries are added, either .h files from the current directory through \#i
 \end{itemize}
 \end{enumerate}
 \item close(\textit{file\_descriptor}) removes the file from the file table, found within ``unistd.h''
-\item read(\texit{file\_descriptor, buffer, amount}) reads text from a file, where buffer is a pointer to where the text is placed, and amount is the bytes read
+\item read(\textit{file\_descriptor, buffer, amount}) reads text from a file, where buffer is a pointer to where the text is placed, and amount is the bytes read
 \begin{enumerate}
 \item Returns the number of bytes read, or -1 if it fails (setting the errno value)
 \end{enumerate}
 \item unmask(\textit{mask}) sets the file creation permission mask, found within ``sys/stat.h''
 \begin{enumerate}
 \item Files are not initially given the permissions in the mode argument when opened, when they are created, such that a mask must be applied to modify
-\item The new permissions when opened are thus ~mask & mode, shutting off all permission from the mask
+\item The new permissions when opened are thus ~mask \& mode, shutting off all permission from the mask
 \item The mask should be in octal form, adding a new mask to the permissions
 \end{enumerate}
 \item lseek(\textit{file\_descriptor, offset, whence}) sets the current position in an open file, where offset is the number of bytes to move by
