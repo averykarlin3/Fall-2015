@@ -248,6 +248,30 @@ item Libraries are added, either .h files from the current directory through \#i
 \item Returns the number of bytes from the current position to the start of the file, or -1 in case of error, setting errno
 \item Found within ``unistd.h''
 \end{enumerate}
+\item write(\textit{file\_descriptor, buffer, amount}) writes to the file the data from the buffer (which must be a pointer), where amount is the number of bytes written
+\begin{enumerate}
+\item Returns the int number of bytes written
+\item Found within ``unistd.h''
 \end{enumerate}
+\end{enumerate}
+
+\subsection{Metadata}
+\begin{enumerate}
+\item Metadata is information stored in the filesystem outside of files
+\item ``struct stat'' is a built-in struct for metadata, where the stat(\textit{path, stat\_buffer}), where the stat buffer is the pointer to the stat struct, setting the struct to refer to the file
+\item Stat struct fields include:
+\begin{itemize}
+\item st\_size - int, file size in bytes
+\item st\_uid - int, user id
+\item st\_gid - int, group id
+\item st\_mode - int, file permissions
+\item st\_atime - time\_t, last access time
+\item st\_mtime - time\_t, last modification time
+\end{itemize}
+\end{enumerate}
+
+\subsection{Directories}
+
+\subsection{Inputs}
 
 \end{document}
