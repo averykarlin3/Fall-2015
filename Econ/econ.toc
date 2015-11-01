@@ -22,5 +22,5 @@
 \contentsline {section}{\numberline {5}Chapter 4 - National Income and Price Determination}{15}
 \contentsline {subsection}{\numberline {5.1}Income and Expenditure}{15}
 \contentsline {subsection}{\numberline {5.2}Aggregate Demand and Determinants}{16}
-\contentsline {subsection}{\numberline {5.3}Aggregate Supply and Determinants}{16}
+\contentsline {subsection}{\numberline {5.3}Aggregate Supply and Determinants}{17}
 \contentsline {subsection}{\numberline {5.4}Equilibrium in the AD-AS Model}{17}
