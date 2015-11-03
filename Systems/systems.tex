@@ -271,7 +271,29 @@ item Libraries are added, either .h files from the current directory through \#i
 \end{enumerate}
 
 \subsection{Directories}
+\begin{enumerate}
+\item Directory streams are stored within the DIR variable, and its pointer, stored along with their functions in ``dirent.h''
+\item opendir(\textit{path}) - Returns a pointer to the directory stream, but does not change the current working directory (cwd)
+\item closedir(\textit{directory\_stream}) - Closes the directory, and frees the stream variable automatically
+\item readdir(\textit{directory\_stream}) - Returns a pointer to the next entry within the directory stream, or null if the stream is at the end
+\item rewinddir(\textit{directory\_stream}) - Moves the directory stream to the start
+\item ``struct dirent'' is a built-in struct for entries within a directory streams, stored within ``sys/types.h''
+\begin{itemize}
+\item d\_name - char[], name of files within the directory
+\item d\_type - int, file type
+\end{itemize}
+\end{enumerate}
 
 \subsection{Inputs}
+\begin{enumerate}
+\item scanf(\textit{format\_string, var1, var2, ...}) - Takes a string from stdin, matching the items from the string to variables within the format string (made up of placeholders), stored within the pointers, var1, var2, ...
+\begin{enumerate}
+\item sscanf(\textit{string, format\_string, var1, var2, ...}) - Takes the string, scanning data from it similarly to scanf
+\end{enumerate}
+\item fgets(\textit{string\_pointer, bytes, file\_pointer}) - Reads data from the file pointer to the string pointer
+\begin{enumerate}
+\item It stops after writing the byte number - 1 (giving space for \\0), first newline, or the end of file character, placing \\0 (null at the end)
+\end{enumerate}
+\end{enumerate}
 
 \end{document}
