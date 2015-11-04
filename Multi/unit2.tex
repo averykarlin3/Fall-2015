@@ -183,116 +183,6 @@ $(P_n)_{n=1}^\infty$ is cauchy if $\forall \epsilon > 0, \exists +
 N_\epsilon, \forall n, m \geq N_\epsilon: dist(P_n, P_m) < \epsilon$.
 This is easy to prove due to the coordinate nature of $\mathbb{R}^d$.
 
-
-\subsection{Distance Functions}
-In axiomatic geometry, certain axioms including the definition of euclidean distance are taken as assumed. In actuality, standard distance functions must qualify under several non-geometric requirements, of which only the Euclidean distance qualifies.
-
-Distance functions must be \underline{translation-iniant}, or for any translation of two points, the distance must remain the same, such that $T_{h, k}: (x, y) \mapsto (maps to) (x+h, y+k), then dist(x+h, y+k; x'+h, y'+k) = dist(x, y; x', y')$. 
-
-Thus, $dist(x,y; \tilde(x), \tilde(y)) = f(|x-\tilde(x)|, |y-\tilde(y)|)$, where f the distance function defined on $[0, \infty) x [0, \infty).$ As a result, it must be \underline{symmetrical}, such that $dist(x, y; \tilde(x), \tilde(y)) = dist(\tilde(x), \tilde(y); x, y)$.
-
-In addition, it must have \underline{basic reflection symmetry (isotropy)}, such that $dist(x, y; 0, 0) = dist(y, x; 0, 0)$. Thus, f(u, v) = f(v, u) for any $u \geq 0, v \geq 0$. It must also have the \underline{self-distance of (0, 0)}, such that dist(0,0; 0,0) = 0.
-
-It must \underline{recreate the standard distance function on each axis}, such that $dist(x,0; \tilde(x), 0) = |x - \tilde(x)|, dist(0, y; 0, \tilde(y)) = |y - \tilde(y)|. Therefore, f(u, 0) = u, f(0, v) = v \forall u \geq 0, v \geq 0$.
-
-As a result, it must have \underline{asymptotic flatness}, where if a line is drawn to (x, y), where y is fixed, such that $dist(0,0; 0, y) = v_0, while dist(0, 0; x, 0) = u. Then, \lim_{u \to \infty} f(u, v_0)/u = 1$. This also applies in the opposite direction, where x is fixed.
-
-It must be \underline{continuous} in its variables, such that with a minute movement of a point, the distance changes minutely as well.
-
-\underline{The set of isometries} (distance preserving one-to-one functions) that fix the origin onto itself (f(0) = 0) is an infinite set.
-
-Based on these requirements, an ansatz (educated guess, verified by later results) is made, such that $f(u, v) = F(G(u) + G(v)), where F: [0, \infty) \to \mathbb{R} and G: [0, \infty) \to \mathbb{R}$. The use of G(u) and G(v) is needed to assure symmetry. The use of addition is mandated by symmetry, using addition rather than another symmetrical operation simply due to ease of calculations.
-
-\underline{Theorem:} $\exists only one suitable pair F, G; G(x) = x^2, F(x) = \sqrt{x}, that fits all requirements. If G(x) = x^n, F(x) = \sqrt[n]{x}$, it would have all required properties except infinite set of isometries.
-
-\underline{Property:} If $dist(p; q) = 0$, then $p = q$, where p and q are asome vector $\in \mathbb{R}$
-
-\subsubsection{Euclidean Distance}
-The distance function in one space between two points $a$ and $b$ is simply $|a
-- b|$. However, we can also write it in the following way: $\sqrt{(a - b)^2}$
-
-In $\mathbb{R}^2$, the distance function is:
-$$dist(x, y++;+a,b) := \sqrt{(x - a)^2 + (y - b)^2}$$
-
-And in $\mathbb{R}^3$, the distance function is:
-$$dist(x, y, z+;+ a,b,c) := \sqrt{(x - a)^2 + (y - b)^2 + (c - z)^2}$$
-
-The generalized form of Euclidean Distance in $N$ space is:
-$$dist(\vec{p}, \vec{q}) = \sqrt{\sum_{j = 1}^N (p_j - q_j)^2}$$
-
-This is known as the \underline{Euclidean Distance}. We use this specific
-definition of distance because this is preserved under an infinite set of rigid
-or isometric motions, such as rotation, reflection, translation, etc.
-
-\subsubsection{Geometric Distance}
-\underline{Please add here}
-
-\textbf{Basic Transformations}:
-\begin{itemize}
-\item $T_h : x \mapsto x+h$
-\item $R: x \mapsto -x$
-\end{itemize}
-
-\textbf{Properties}:
-\begin{enumerate}
-\item $dist(\vec{p}, \vec{q}) = dist(\vec{q}, \vec{p})$
-\item $dist(\vec{p}, \vec{q}) \geq 0$
-\item $dist(\vec{p}, \vec{q}) = 0 \leftrightarrow \vec{p} = \vec{q}$
-\end{enumerate}
-
-\subsubsection{Basic Distance Bounds Lemma}
-$\forall \vec{p}, \vec{q} \in
-\mathbb{R}^d$, and $\forall j \in \{1,2,3,\dots,d\}$:
-$$|p_j - q_j| \leq dist(\vec{p}, \vec{q}) \leq \sqrt{d} \max_{1 \leq k \leq
-d} |p_k - q_k|$$
-
-\textbf{Proof}
-Note that $(p_j - q_j)^2 \leq \sum_{k = 1}^d (p_k - q_k)^2$ is trivial, because
-you can only add positive number when you add squares. Now let's take the square
-root, and we get
-$$\sqrt{(p_j - q_j)^2} = |p_j - q_j| \leq \sqrt{\sum_{k = 1}^d (p_k - q_k)^2} =
-dist(\vec{p}, \vec{q})$$
-
-To prove the other inequality, it is trivial as well. We can just factor out the
-length of the vector $d$ and multiply that with the maximum value of the
-distance vector. Then we get:
-
-$$dist(\vec{p}, \vec{q}) = \sqrt{\sum_{k = 1}^d (p_k - q_k)^2} \leq \sqrt{d \max_{1 \leq k \leq d} (p_k -
-q_k)^2} = \sqrt{d} \max_{1 \leq k \leq
-d} |p_k - q_k|$$
-
-\textbf{Cor}: Componentwise Nature of Convergence
-
-Let $(\vec{p}_n)_{n = 1}^\infty$ be a sequence in $\mathbb{R}^d$, and let
-$\vec{p} \in \mathbb{R}^d$. Then $\vec{p}_n \to \vec{p}$ if and only if
-$p_{n|j} \to p_j$ ($\vec{p} = (p_1, p_2, p_3, \dots, p_d)$ and $\vec{p}_n =
-(p_{n|1}, p_{n|2}, \dots, p_{n|d})$). Otherwise known as convergence of points
-can be reduced to conversion of dimensions.
-
-This follows directly from the inequality, because if the total distance goes to
-0, then $|p_j - q_j|$ goes to 0. Therefore if the points converge, the
-corresponding coordinates must converge.
-
-To prove the converse, we prove using the other side of the distance bounds. If
-all $d$ coordinates are going to 0, then if we take the maximum, that would be
-going to 0. (the maximum of a sequence is less than the sum of the sequence, but
-if every term of the sum is going to 0, then the sum is going to 0, then the
-maximum is going to 0). Therefore the distance must also be going to 0. Thus the two points converges.
-
-\subsubsection{Triangle Inequality}
-$$dist(\vec{p}, \vec{q}) + dist(\vec{q}, \vec{r}) \geq dist(\vec{p}, \vec{r})$$
-
-This can be generalized by mathematical induction to $dist(\vec{p_0}, \vec{q_n})
-\leq \sum_{j = 1}^n dist(\vec{p}_{j - 1}, \vec{p}_{j})$ (Otherwise known that the
-shortest distance between two points is the straight line, or the \textbf{Generalized
-Triangle Inequality} or the ``Broken Line Inequality'')
-
-\subsubsection{Other Distance}
-Of course, there are other distance formulas, like the \underline{Minkowski Distance}
-$$((x - a)^p + (y - b)^p)^{\frac{1}{p}} ++++ (p > 1)$$
-This is another distance formula, but under this, only reflection preserves
-distance.
-
 \subsection{Metric Topology in $\mathbb{R^n}$}
 \subsubsection{Continuity}
 Let $f: D\to\mathbb{R}$, $D\subseteq\mathbb{R}^2$, $D\neq\emptyset$. Let $(a, b)\in D$. We say that $f$ is \underline{continuous} at $(a, b)$ if:
@@ -346,13 +236,123 @@ assumed that $(x_n, y_n) \in D^c$, and $(x_n, y_n) \in D$. But $D \cap D^c =
 
 For the other direction, we can pick some point within D, then assume there is no ball, such that any ball contains some ball not in D, even as radius $\to 0$, creating a sequence of points converging on the point, P, a contradiction.
 
-\subsubsection{Extreme-Value Theorem}
+\subsection{Extreme-Value Theorem}
 Let $f:D \to \mathbb{R}$ be continuous, where D $\subseteq \mathbb{R^d}$ is compact. Then $\exists P, Q \in D$, which do not need to be unique, such that $\forall X \in D: f(P) \leq f(x) \leq f(Q)$.
 
 \underline{Proof}:
 Assume that f is not bounded above, such that $\forall n \geq 1, f(P_n) > n$, where $P_n \in D$. For some subsequence $P_{n_k} \in D$ converging to P by the Balzano-Weirstrauss, by closure of D, $P \in D$. This is a contradiction since $f(P_{n_k}) \to \infty$ and $\to f(P)$, such that it must be bounded from above.
 
 Thus, $\exists M = sup_{x \in D}f(x)$. We can find $P_n \in D$, with $f(P_n) \to M$. For some convergent subsequence $P_{n_k} \in D, P_{n_k} \to Q$.
+
+\section{Distance Functions}
+In axiomatic geometry, certain axioms including the definition of euclidean distance are taken as assumed. In actuality, standard distance functions must qualify under several non-geometric requirements, of which only the Euclidean distance qualifies.
+
+Distance functions must be \underline{translation-iniant}, or for any translation of two points, the distance must remain the same, such that $T_{h, k}: (x, y) \mapsto (maps to) (x+h, y+k), then dist(x+h, y+k; x'+h, y'+k) = dist(x, y; x', y')$. 
+
+Thus, $dist(x,y; \tilde(x), \tilde(y)) = f(|x-\tilde(x)|, |y-\tilde(y)|)$, where f the distance function defined on $[0, \infty) x [0, \infty).$ As a result, it must be \underline{symmetrical}, such that $dist(x, y; \tilde(x), \tilde(y)) = dist(\tilde(x), \tilde(y); x, y)$.
+
+In addition, it must have \underline{basic reflection symmetry (isotropy)}, such that $dist(x, y; 0, 0) = dist(y, x; 0, 0)$. Thus, f(u, v) = f(v, u) for any $u \geq 0, v \geq 0$. It must also have the \underline{self-distance of (0, 0)}, such that dist(0,0; 0,0) = 0.
+
+It must \underline{recreate the standard distance function on each axis}, such that $dist(x,0; \tilde(x), 0) = |x - \tilde(x)|, dist(0, y; 0, \tilde(y)) = |y - \tilde(y)|. Therefore, f(u, 0) = u, f(0, v) = v \forall u \geq 0, v \geq 0$.
+
+As a result, it must have \underline{asymptotic flatness}, where if a line is drawn to (x, y), where y is fixed, such that $dist(0,0; 0, y) = v_0, while dist(0, 0; x, 0) = u. Then, \lim_{u \to \infty} f(u, v_0)/u = 1$. This also applies in the opposite direction, where x is fixed.
+
+It must be \underline{continuous} in its variables, such that with a minute movement of a point, the distance changes minutely as well.
+
+\underline{The set of isometries} (distance preserving one-to-one functions) that fix the origin onto itself (f(0) = 0) is an infinite set.
+
+Based on these requirements, an ansatz (educated guess, verified by later results) is made, such that $f(u, v) = F(G(u) + G(v)), where F: [0, \infty) \to \mathbb{R} and G: [0, \infty) \to \mathbb{R}$. The use of G(u) and G(v) is needed to assure symmetry. The use of addition is mandated by symmetry, using addition rather than another symmetrical operation simply due to ease of calculations.
+
+\underline{Theorem:} $\exists only one suitable pair F, G; G(x) = x^2, F(x) = \sqrt{x}, that fits all requirements. If G(x) = x^n, F(x) = \sqrt[n]{x}$, it would have all required properties except infinite set of isometries.
+
+\underline{Property:} If $dist(p; q) = 0$, then $p = q$, where p and q are asome vector $\in \mathbb{R}$
+
+\subsection{Euclidean Distance}
+The distance function in one space between two points $a$ and $b$ is simply $|a
+- b|$. However, we can also write it in the following way: $\sqrt{(a - b)^2}$
+
+In $\mathbb{R}^2$, the distance function is:
+$$dist(x, y++;+a,b) := \sqrt{(x - a)^2 + (y - b)^2}$$
+
+And in $\mathbb{R}^3$, the distance function is:
+$$dist(x, y, z+;+ a,b,c) := \sqrt{(x - a)^2 + (y - b)^2 + (c - z)^2}$$
+
+The generalized form of Euclidean Distance in $N$ space is:
+$$dist(\vec{p}, \vec{q}) = \sqrt{\sum_{j = 1}^N (p_j - q_j)^2}$$
+
+This is known as the \underline{Euclidean Distance}. We use this specific
+definition of distance because this is preserved under an infinite set of rigid
+or isometric motions, such as rotation, reflection, translation, etc.
+
+\subsection{Geometric Distance}
+\underline{Please add here}
+
+\textbf{Basic Transformations}:
+\begin{itemize}
+\item $T_h : x \mapsto x+h$
+\item $R: x \mapsto -x$
+\end{itemize}
+
+\textbf{Properties}:
+\begin{enumerate}
+\item $dist(\vec{p}, \vec{q}) = dist(\vec{q}, \vec{p})$
+\item $dist(\vec{p}, \vec{q}) \geq 0$
+\item $dist(\vec{p}, \vec{q}) = 0 \leftrightarrow \vec{p} = \vec{q}$
+\end{enumerate}
+
+\subsection{Basic Distance Bounds Lemma}
+$\forall \vec{p}, \vec{q} \in
+\mathbb{R}^d$, and $\forall j \in \{1,2,3,\dots,d\}$:
+$$|p_j - q_j| \leq dist(\vec{p}, \vec{q}) \leq \sqrt{d} \max_{1 \leq k \leq
+d} |p_k - q_k|$$
+
+\textbf{Proof}
+Note that $(p_j - q_j)^2 \leq \sum_{k = 1}^d (p_k - q_k)^2$ is trivial, because
+you can only add positive number when you add squares. Now let's take the square
+root, and we get
+$$\sqrt{(p_j - q_j)^2} = |p_j - q_j| \leq \sqrt{\sum_{k = 1}^d (p_k - q_k)^2} =
+dist(\vec{p}, \vec{q})$$
+
+To prove the other inequality, it is trivial as well. We can just factor out the
+length of the vector $d$ and multiply that with the maximum value of the
+distance vector. Then we get:
+
+$$dist(\vec{p}, \vec{q}) = \sqrt{\sum_{k = 1}^d (p_k - q_k)^2} \leq \sqrt{d \max_{1 \leq k \leq d} (p_k -
+q_k)^2} = \sqrt{d} \max_{1 \leq k \leq
+d} |p_k - q_k|$$
+
+\textbf{Cor}: Componentwise Nature of Convergence
+
+Let $(\vec{p}_n)_{n = 1}^\infty$ be a sequence in $\mathbb{R}^d$, and let
+$\vec{p} \in \mathbb{R}^d$. Then $\vec{p}_n \to \vec{p}$ if and only if
+$p_{n|j} \to p_j$ ($\vec{p} = (p_1, p_2, p_3, \dots, p_d)$ and $\vec{p}_n =
+(p_{n|1}, p_{n|2}, \dots, p_{n|d})$). Otherwise known as convergence of points
+can be reduced to conversion of dimensions.
+
+This follows directly from the inequality, because if the total distance goes to
+0, then $|p_j - q_j|$ goes to 0. Therefore if the points converge, the
+corresponding coordinates must converge.
+
+To prove the converse, we prove using the other side of the distance bounds. If
+all $d$ coordinates are going to 0, then if we take the maximum, that would be
+going to 0. (the maximum of a sequence is less than the sum of the sequence, but
+if every term of the sum is going to 0, then the sum is going to 0, then the
+maximum is going to 0). Therefore the distance must also be going to 0. Thus the two points converges.
+
+\subsection{Triangle Inequality}
+$$dist(\vec{p}, \vec{q}) + dist(\vec{q}, \vec{r}) \geq dist(\vec{p}, \vec{r})$$
+
+This can be generalized by mathematical induction to $dist(\vec{p_0}, \vec{q_n})
+\leq \sum_{j = 1}^n dist(\vec{p}_{j - 1}, \vec{p}_{j})$ (Otherwise known that the
+shortest distance between two points is the straight line, or the \textbf{Generalized
+Triangle Inequality} or the ``Broken Line Inequality'')
+
+\subsection{Other Distance}
+Of course, there are other distance formulas, like the \underline{Minkowski Distance}
+$$((x - a)^p + (y - b)^p)^{\frac{1}{p}} ++++ (p > 1)$$
+This is another distance formula, but under this, only reflection preserves
+distance.
+
 
 \section{Inequalities}
 \subsection{Level of Operations}
@@ -507,5 +507,3 @@ Then, by the Holder inequality, that is $\leq (|a|^p + |b|^p)^{1/p}(|a+c|^{(p-1)
 This can be divided to get the inequality.
 
 \underline{Add proof of the equality definition}
-
-
