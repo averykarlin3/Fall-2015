@@ -79,8 +79,12 @@ The length of a vector in $d$ space is defined as:
 $$||\vec{a}|| := dist(\vec{0}, \vec{a}) = \sqrt{\sum_{i =
 1}^d a_i^2}$$
 
+\subsubsection{Space and Lines}
+$\mathbb{R^d} = \{(x_1, x_2, ..., x_d)|x_1, x_2, ... x_d \in \mathbb{R}\}$
+A line, l, can be defined such that l = $\{(a_1 + tb_1, a_2 + tb_2, ..., a_d, tb_d)|t \in \mathbb{R}\}$
+
 \subsection{Dot Product}
-\subsubsection{Definition}
+\subsubsection{Definition and Perpendicularity}
 The dot product arises naturally through the idea of geometric distance, such that if $a \neq \emptyset, b \neq \emptyset$, then $a \perp bi$ iff $dist(a; b)^2 = dist(\emptyset, a)^2 + dist(\emptyset, b)^2$, where $a = (a_1, a_2), b = (b_1, b_2)$. Thus, by expanding out, $a \perp b$ iff $a_1b_1 + a_2b_2 = 0$ where $a \neq \emptyset, b \neq \emptyset$. In addition, orthoganal refers to both perpendicular vectors and where $a = \emptyset$ and/or $b = \emptyset$, so that no vector can be perpendicular to itself.
 
 By extension, in $\mathbb{R^d}$, $a \dot b = a_1b_1 + a_2b_2 + a_3b_3 +...+ a_db_d$, such that it forms a scalar, rather than a vector.
@@ -93,6 +97,7 @@ The dot product is:
 \end{itemize}
 
 \subsection{Functions in Higher Dimensions}
+\subsubsection{Domain, Range, and One-to-One}
 The domain is a subset of $\mathbb{R^n}$.
 Let the function of f(x, y) be an ordered pair within some curve, such that $(x, y) \in D$. Thus, the range of f, G = ${x, y, f(x,y) | (x, y) \in D} \subseteq{R^{n+1}}$.
 Functions are defined as one-to-one if for f(x, y), $(x, y), (u, v) \in D, f(x, y) = f(u, v)$ iff (if and only if) x = u $\wedge$ (and) y = v (such that for every z value, there is only one point that will create it.
@@ -107,7 +112,7 @@ Functions are defined as one-to-one if for f(x, y), $(x, y), (u, v) \in D, f(x, 
 \subsubsection{Cauchy Sequence}
 A cauchy sequence in $\mathbb{R}$ is a sequence $(x_n)^\infty_{n=1}$ such that: $\forall \epsilon > 0, \exists N, \forall n, m \geq N: |x_n - x_m| < \epsilon$. This defines a sequence where as $n \to \infty$, the distance between values of points on the sequence decreases.
 
-\subsubsection{Convergence $\to$ Cauchy}
+\subsubsection{Convergence as Cauchy}
 Note that any convergent sequence is cauchy, because as terms get together
 to a limit, they also go very closely together.
 \underline{Proof:} Let $(x_n)_{n = 1}^\infty$ be convergent, with limit $x \in \mathbb{R}$.
@@ -218,7 +223,6 @@ It follows that for any open set, the complement set within the space is a close
 Assume $D$ is open, we prove $D^c$ is closed. Choose any convergent sequence
 $((x_n, y_n))_{n = 1}^\infty$, converging to $(a, b)$, where $(x_n, y_n) \in
 D^c$ for all $n \geq 1$.
-
 We prove this by contradiction. Assume that $(a, b) \in D$. Since $D$ is open,
 $\exists+ r > 0:B_r(a, b)\subseteq D$. $\exists+ N, \forall n \geq
 \mathbb{N}, (x_n, y_n) \in B_r(a, b)$ since $(x_n, y_n)\to(a,b)$. But we
@@ -226,6 +230,22 @@ assumed that $(x_n, y_n) \in D^c$, and $(x_n, y_n) \in D$. But $D \cap D^c =
 \emptyset$. Therefore $D^c$ is closed under taking limits.
 
 For the other direction, we can pick some point within D, then assume there is no ball, such that any ball contains some ball not in D, even as radius $\to 0$, creating a sequence of points converging on the point, P, a contradiction.
+
+\underline{Theorem}: An open-ball $B_r(\vec{p}) = \{\vec{x} \in \mathbb{R} \+|\+
+dist(\vec{x}, \vec{p}) < r\}$, $r > 0$, is an open set.
+
+\underline{Proof:} $\forall \vec{q} \in B_r(\vec{p})$, $B_\epsilon(\vec{q}) \subseteq
+B_r(\vec{p})$, $\epsilon > 0$.
+
+$d = dist(\vec{p}, \vec{q}) < r$. THerefore, $r - d > 0$. Take $\epsilon =
+\frac{1}{2} (r - d) > 0$. Let $\vec{x} = B_\epsilon(\vec{q})$, show $\vec{x}
+\in B_r(\vec{p})$.
+
+$dist(\vec{x}, \vec{q}) < \epsilon$
+
+$dist(\vec{x}, \vec{p}) \leq dist(\vec{x}, \vec{q}) + dist(\vec{q}, \vec{p}) <
+\epsilon + d = d + \frac{1}{2} r - \frac{1}{2} d = \frac{1}{2}r +
+\frac{1}{2}d < \frac{1}{2} \cdot 2 \cdot r = r$
 
 \subsection{Extreme-Value Theorem}
 Let $f:D \to \mathbb{R}$ be continuous, where D $\subseteq \mathbb{R^d}$ is compact. Then $\exists P, Q \in D$, which do not need to be unique, such that $\forall X \in D: f(P) \leq f(x) \leq f(Q)$.
@@ -256,7 +276,7 @@ Based on these requirements, an ansatz (educated guess, verified by later result
 
 \underline{Theorem:} $\exists only one suitable pair F, G; G(x) = x^2, F(x) = \sqrt{x}, that fits all requirements. If G(x) = x^n, F(x) = \sqrt[n]{x}$, it would have all required properties except infinite set of isometries.
 
-\underline{Property:} If $dist(p; q) = 0$, then $p = q$, where p and q are asome vector $\in \mathbb{R}$
+\underline{Property:} Iff $dist(p; q) = 0$, then $p = q$, where p and q are asome vector $\in \mathbb{R}$
 
 \subsection{Euclidean Distance}
 The distance function in one space between two points $a$ and $b$ is simply $|a
@@ -276,7 +296,6 @@ definition of distance because this is preserved under an infinite set of rigid
 or isometric motions, such as rotation, reflection, translation, etc.
 
 \subsection{Geometric Distance}
-\underline{Please add here}
 
 \textbf{Basic Transformations}:
 \begin{itemize}
@@ -330,22 +349,14 @@ going to 0. (the maximum of a sequence is less than the sum of the sequence, but
 if every term of the sum is going to 0, then the sum is going to 0, then the
 maximum is going to 0). Therefore the distance must also be going to 0. Thus the two points converges.
 
-\subsection{Triangle Inequality}
-$$dist(\vec{p}, \vec{q}) + dist(\vec{q}, \vec{r}) \geq dist(\vec{p}, \vec{r})$$
-
-This can be generalized by mathematical induction to $dist(\vec{p_0}, \vec{q_n})
-\leq \sum_{j = 1}^n dist(\vec{p}_{j - 1}, \vec{p}_{j})$ (Otherwise known that the
-shortest distance between two points is the straight line, or the \textbf{Generalized
-Triangle Inequality} or the ``Broken Line Inequality'')
-
 \subsection{Other Distance}
 Of course, there are other distance formulas, like the \underline{Minkowski Distance}
 $$((x - a)^p + (y - b)^p)^{\frac{1}{p}} ++++ (p > 1)$$
 This is another distance formula, but under this, only reflection preserves
 distance.
 
-
 \section{Inequalities}
+
 \subsection{Level of Operations}
 Powers/root $\to$ Multiplation/division $\to$ addition/subtraction $\to$
 succession/pretrition
@@ -445,7 +456,7 @@ what we've just said about limits, we know that:
 $$ab \leq \lim_{n\to\infty} \frac{a^{p_n}}{p_n} + \frac{b^{q_n}}{q_n} =
 \frac{a^p}{p} + \frac{b^q}{q}$$
 
-\subsection{H\"{o}lder's Inequality}:
+\subsection{H\"{o}lder's Inequality}
 \subsubsection{$p$-norm}
 In $\mathbb{R}^2$: let $||(a, b)||_p = (|a^p| + |b^p|)^{1/p}$ for any $p \in
 \mathbb{R} > 1$, this is known as the $p$-norm of a vector. Note that $||(a,
@@ -457,6 +468,32 @@ $$ 0 \leq |ac| + |bd| \leq ||(a, b)||_p||(c, d)||_q$$
 
 Equality happens iff $(\frac{a}{s})^p = (\frac{c}{t})^q$ and $(\frac{b}{s})^p =
 (\frac{d}{t})^q$ where $s = ||(a, b)||_p$ and $t = ||(c, d)||_q$, such that $||(a, b)||_p||(c, d)||_q = (|a|^p + |b|^p)^{1/p}(|c|^q + |d|^q)^{1/q}$
+
+\subsubsection{Proof}
+We know that the absolute value of the product is equal to the product of the
+absolute value. If we apply Young's Inequality to $|\frac{a}{s}||\frac{c}{t}|$
+and $|\frac{b}{s}||\frac{d}{t}|$, we get:
+
+$$|\frac{a}{s}||\frac{c}{t}| \leq \frac{|a|^p}{p|s|^p} + \frac{|c|^q}{q|t|^q}$$
+$$|\frac{b}{s}||\frac{d}{t}| \leq \frac{|b|^p}{p|s|^p} + \frac{|d|^q}{q|t|^q}$$
+
+Now we add:
+
+$$\frac{1}{st}(|ac| + |bd|) \leq \frac{|a|^p + |b|^p}{p|s|^p} + \frac{|c|^q +
+|d|^q}{q|t|^q}$$
+
+Note that $|a|^p + |b|^p = |s|^p$ and $|c|^q + |d|^q$, so everything cancels
+
+$$\frac{1}{st}(|ac| + |bd|) \leq \frac{1}{p} + \frac{1}{q}$$
+
+But we know that $q = p^*$, therefore, $\frac{1}{p} + \frac{1}{q} = 1$, and we
+get:
+
+$$|ac| + |bd| \leq st = ||(a, b)||_p \cdot ||(c, d)||_q$$
+
+The equality case occurs at basically the same way as Young's Inequality's
+equality case.
+
 
 \subsection{Cauchy-Schwarz Inequality}
 This is a special case of H\"{o}lder's Inequality, where $p = q = 2$. (This is very important, 2 is the \textit{only} value that is its own conjugate, this is why Euclidean distance is so special)
@@ -479,22 +516,42 @@ Triangle Inequality} or the ``Broken Line Inequality'')
 This can be thought of algebraically, such that $|a + b| \leq |a| + |b|$ with equality iff $ab \geq 0$
 
 \subsection{Minkowski's Inequality}
-In $\mathbb{R}^2$: let $||(a, b)||_p = (|a^p| + |b^p|)^{1/p}$ for any $p \in \mathbb{R} > 1$, this is known as the $p$-norm of a vector. Note that $||(a,b)||_2 = ||(a, b)|| = \sqrt{a^2 + b^2}$
-
 Mikowski's states that $||u + v||_p \leq ||u||_p + ||v||_p$, with equality if v = tu or u = tv for some $t \geq 0$.
 
 This can be thought of as the triangle inequality for the p-norm, rather than the ordinary norm.
 
-\subsubsection{P-Norm}
-In $\mathbb{R^2}$, the p-norm of a vector, $||(a, b)||_p = (|a|^p + |b|^p)^{frac{1}{p}}$ for any p > 1, where p $\in \mathbb{Q}$.
+\subsubsection{Rational Power Proof}
 The rational power of some number, m,  exists if there is some sequence, qn, where $n \to \infty, qn \to$ the rational number, only true if for any sequence which does this, the limit is equal.
 This is proven by for any two sequences, qn and rn, $m^{qn}/m^{rn} = m^{qn-rn}$, such that as $n \to \infty$, it equals 1.
 
 \subsubsection{Proof}
-If u = (a, b) and v = (c, d), then $(|a+c|^p + |b+d|^p)^{\frac{1}{p}p} = |a+c|^p + |c+d|^p = |a+c||a+c|^{p-1} + |b+d||b+d|^{p-1} \leq (|a| + |c|)|a+c|^{p-1} + (|b| + |d|)|b+d|^{p-1} = |a||a+c|^{p-1} + |b||b+d|^{p-1} + |c||a+c|^{p-1} + |d||b+d|^{p-1}$.
+The calculation works in any dimension, for simplicity's sake, let's work in
+$\varmathbb{R}^2$, let $\vec{u} = (a, b)$ and $\vec{v} = (c, d)$
 
-Then, by the Holder inequality, that is $\leq (|a|^p + |b|^p)^{1/p}(|a+c|^{(p-1)q} + |b+d|^{(p-1)q})^{\frac{1}{q}} + ... = ||u||_p||v||_p||u+v||_p^{\frac{p}{q}}$
+\begin{align*}
+||\+\vec{u} + \vec{v}\+||_p^p = |\+a + c\+|^p + |\+b + d\+|^p &= |\+a + c\+||\+a + c\+|^{p - 1} + |\+b + d\+||\+b + d\+|^{p - 1}\\
+\intertext{Now we factor and use the Triangle Inequality for Absolute Value:}
+&\leq (|a| + |c|)|\+a + c\+|^{p - 1} + (|b| + |d|)|\+b + d\+|^{p - 1}\\
+\intertext{Now we rearrange the terms:}
+&= (|a||a + c|^{p - 1} + |b||b + d|^{p - 1}) + (|c||a + c|^{p - 1} + |d||b +
+d|^{p - 1})\\
+\intertext{Now we apply H\"{o}lder's Inequality, we get:}
+&\leq (|a|^p + |b|^p)^{\frac{1}{p}}(|a + c|^{(p - 1)q} + |b + d|^{(p -
+1)q})^{\frac{1}{q}} + (|c|^p + |d|^p)^{\frac{1}{p}}(\dots)\\
+\intertext{Note that $q = p^*$, therefore $(p - 1)q = p$:}
+&= (||\+\vec{u}\+||_p + ||\+\vec{v}\+||_p) ||\+\vec{u} + \vec{v}\+||_p^{\frac{p}{q}}\\
+\intertext{Since $q = p^*$, we know that $\frac{p}{q} = p - 1$, and if we bring the
+inequality to the original left hand side:}
+&\leq (||\+\vec{u}\+||_p + ||\+\vec{v}\+||_p)\+||\+\vec{u} + \vec{v}\+||_p^{p - 1}
+\end{align*}
+Now we divide:
+$$||\+\vec{u} + \vec{v}\+||_p \leq ||\+\vec{u}\+||_p + ||\+\vec{v}\+||_p$$
 
-This can be divided to get the inequality.
+Now let's consider the equality cases. If one of the vectors is 0, then the
+inequality is trivially true.
 
-\underline{Add proof of the equality definition}
+If neither vectors are the 0 vector, we see the equality cases of all the
+inequalities used to prove Minkowski's. First we used the triangle inequality,
+which only has equality when $ac \geq 0$ and $bd \geq 0$. Next we applied
+H\"{o}lder's, which has equality case when both coordinates are proportional.
+Therefore, the two vectors must be positive multiples of one another.

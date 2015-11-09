@@ -27,12 +27,87 @@
 \input{unit1.tex} %R^1 and EVT in R^2
 \input{unit2.tex} %Inequalities and EVT in R^n
 
-\section{Heine-Borel Theorem and Uniform Continuity}
+\section{Heine-Borel Theorem and Domain Properties}
 
 \subsection{Heine-Borel Theorem}
 Let K be a compact set in $\mathbb{R^d}$, and let ${U_\lambda | \lambda \in \Lambda}$ be a family of open sets in $\mathbb{R^d}$, which covers K, such that $K \subseteq \cup_{x \in \Lambda}U_\lambda$. Then $\exists \lambda_1, \lambda_2, \lambda_3 \text{... such that} K \subseteq U_{\lambda_1} \cup U_{\lambda_2} \cup \text{...} \cup U_{\lambda_n}.$
 
 \subsubsection{Proof}
 Since K is bounded, it can be fully contained within some rectangle (R), which can then be split into 4 congruent parts, $R_{i_1} (R_1, R_2, R_3, R_4)$. Suppose one quadrant cannot be covered by any finite collection of $U_\lambda$. By extension, if that quadrant is divided further, one of the subquadrants ($R_{i_1i_2}$) cannot be covered. This can continue for countable infinity divisions (able to be counted with an infinite amount of integer). Since $R_{i_1i_2...i_n} \neq \emptyset$, let $P_n$ be any point in $K \cap R_{i_1i_2...i_n}$, such that there is a bounded sequence of points in K. Thus it must have a convergent subsequence such that $P_{n_k} \to P, P \in K$. Thus, $P \in U_{\lambda^*}$ for some $\lambda^* \in \Lambda$. Since $U_{\lambda^*}$ is open, $\exists r > 0, \text{such that} B_r(P) \subseteq U_{\lambda^*}. Diameter/diagonal length (diam) R_{i_1i_2...i_n} = frac{diam(R)}{2^n} < r$ as $n \to \infty$. Thus, $R_{i_1i_2...i_n} \subseteq B_r(P)$ as $n_k \to \infty$. $dist(P, P_{n_k}) < \frac{r}{2}$ and $dist(P_{n_k}, x) \leq diam(R_{i_1i_2...i_n})$ and by the triangle inequality, $diam(R_{i_1i_2...i_n}) < \frac{r}{2}$. Thus, there is a contradiction, and it must be covered by a finite number of sets.
+
+\subsection{Uniform Continuity}
+Let $f: D \to \mathbb{R}$, where $D \subseteq \mathbb{R}^d$. We say $f$ is
+uniformally continuous on $D$ if:
+$$\forall \epsilon > 0, \exists\+\delta > 0: \forall \vec{x}, \vec{y} \in D,
+||\+\vec{x} - \vec{y}\+|| < \delta \to |f(\vec{x}) - f(\vec{y})| < \epsilon$$
+
+The difference between this and regular continuity is that the $\delta$ in
+regular continuity is defined by both $\epsilon$ and the specific point we
+are considering. Uniform continuity, however, the value $\delta$ is independent
+to the point you chose within the domain and is just dependent on $\epsilon$.
+
+For example, consider $y = \tan{x}$ where $D = (-\frac{\pi}{2}, \frac{\pi}{2})$.
+the value required for $\delta$ for a fixed $\epsilon$ gets smaller and
+smaller as $x$ approaches both endpoints. This function is continuous but not
+uniformally so. If it were uniformally continuous,
+that $\delta$ value would NOT change.
+
+\underline{Theorem}: If $f$ is uniformally continuous on $D$, then $f$ is continuous
+for every point in $D$.
+
+i\subsubsection{Definition}
+$D \subseteq \mathbb{R}^d$ is said to be connected if $\forall \vec{p},
+\vec{q} \in D$, $\exists$ a continuous function $\vec{\gamma}:[a, b] \to
+\mathbb{R}^d$ that $\vec{\gamma}(a) = \vec{p}$, $\vec{\gamma}(b) = \vec{q}$,
+and $\forall t \in [a, b], \vec{\gamma}(t) \in D$
+
+\subsubsection{Theorem}
+
+Let $D \subseteq \varmathbb{R}^d$ be connected, $D \neq \emptyset$. Suppose $D =
+A \cup B$, where $A$ and $B$ are open. Such that $A \cap B = \emptyset$. Then $A
+= \emptyset$ or $B = \emptyset$.
+
+\underline{Proof}:
+
+Assume that $D$ can be broken up into two open, non-empty sets $A$ and $B$ such
+that $D = A \cup B$. Because $A \neq \emptyset$, we can pick $\vec{p} \in A$ and
+similarly we can pick $\vec{q} \in B$. Clearly, $\vec{p}, \vec{q} \in D$. Since
+$D$ is connected, $\exists$ continuous $\vec{\gamma}: [a, b] \to D$ such that
+$\vec{\gamma}(a) = \vec{p}$, $\vec{\gamma}(b) = \vec{q}$. Let $S = \{t \in [a,b]
+\+|\+ \vec{\gamma}(t) \in A\}$. We know that $a \in S$, so $S \neq \emptyset$.
+Note that $S \leq b$, and since it has a bound, it has a supremum. Let $t_0 =
+\sup S$, note that $a \leq t_0 \leq b$. Since $\vec{\gamma}(t_0) \in D$, it is
+either in $A$ or in $B$ (since $A \cap B = \emptyset$). Suppose
+$\vec{\gamma}(t_0) \in A$. Since $A$ is open, we can draw an open ball
+($B_\varepsilon$) around $\vec{\gamma}(t_0)$. Now consider $\vec{\gamma}(t_0 +
+\delta)$ for some small positive $\delta$. If $\delta$ is small enough, $\delta
+\in B_\varepsilon \in A$. This is a contradiction, as then it means that $t_0 +
+\delta \in S$. This is a contradiction, as then $t_0 \neq \sup S$. A similar
+contradiction can be made for the case that $\vec{\gamma}(t_0) \in B$. Therefore
+the original assumption was false.
+
+\section{Intermediate Value Theorem}
+
+\subsection{Theorem in \mathbb{R}}
+If f: [a, b] $\to \mathbb{R}$ is continuous, and $f(a) \neq f(b)$, $\forall y \in (f(a), f(b))$, then $\exists c \in (a, b): f(c) = y.$
+
+\subsubsection{Proof}
+Let there exist y, without loss of generality, such that $f(a) < y < f(b)$. Take the set $S = \{x \in [a, b] | f(x) \leq
+y\}$. Since $a \in S$, $S \neq \emptyset$, we also know that $S \leq b$. Now
+take $c = \sup S$, $a \leq c \leq b$ ($c \in [a, b]$). There are three possible
+cases, $f(c)$ is either $> y, < y$, or $= y$.
+
+Consider the case in which $f(c) < y$. If this is the case, then we can chose an
+arbitrarily small $\delta > 0$ such that $f(c + delta) < y$. However, then $c +
+\delta \in S$. But this causes a contradiction because $c = \sup S$ and there
+should not be any element of $S$ that's larger than $c$. Therefore, this case is
+impossible.
+
+Now consider the case in which $f(c) > y$. Take some arbitrarily small $u \in
+[0, \delta], \delta > 0$ such that $f(c - u) > y$. However, then $c - \delta$ is
+therefore an upper bound of the set $S$, we once again reach the same
+contradiction.
+
+Therefore, since $c$ exists, $f(c) = y$.
 
 \end{document}
