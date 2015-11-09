@@ -231,7 +231,7 @@ assumed that $(x_n, y_n) \in D^c$, and $(x_n, y_n) \in D$. But $D \cap D^c =
 
 For the other direction, we can pick some point within D, then assume there is no ball, such that any ball contains some ball not in D, even as radius $\to 0$, creating a sequence of points converging on the point, P, a contradiction.
 
-\underline{Theorem}: An open-ball $B_r(\vec{p}) = \{\vec{x} \in \mathbb{R} \+|\+
+\underline{Theorem}: An open-ball $B_r(\vec{p}) = \{\vec{x} \in \mathbb{R} +|+
 dist(\vec{x}, \vec{p}) < r\}$, $r > 0$, is an open set.
 
 \underline{Proof:} $\forall \vec{q} \in B_r(\vec{p})$, $B_\epsilon(\vec{q}) \subseteq
@@ -318,7 +318,7 @@ d} |p_k - q_k|$$
 
 \textbf{Proof}
 Note that $(p_j - q_j)^2 \leq \sum_{k = 1}^d (p_k - q_k)^2$ is trivial, because
-you can only add positive number when you add squares. Now let's take the square
+you can only add positive nunder when you add squares. Now let's take the square
 root, and we get
 $$\sqrt{(p_j - q_j)^2} = |p_j - q_j| \leq \sqrt{\sum_{k = 1}^d (p_k - q_k)^2} =
 dist(\vec{p}, \vec{q})$$
@@ -521,17 +521,17 @@ Mikowski's states that $||u + v||_p \leq ||u||_p + ||v||_p$, with equality if v 
 This can be thought of as the triangle inequality for the p-norm, rather than the ordinary norm.
 
 \subsubsection{Rational Power Proof}
-The rational power of some number, m,  exists if there is some sequence, qn, where $n \to \infty, qn \to$ the rational number, only true if for any sequence which does this, the limit is equal.
+The rational power of some nunder, m,  exists if there is some sequence, qn, where $n \to \infty, qn \to$ the rational nunder, only true if for any sequence which does this, the limit is equal.
 This is proven by for any two sequences, qn and rn, $m^{qn}/m^{rn} = m^{qn-rn}$, such that as $n \to \infty$, it equals 1.
 
 \subsubsection{Proof}
 The calculation works in any dimension, for simplicity's sake, let's work in
-$\varmathbb{R}^2$, let $\vec{u} = (a, b)$ and $\vec{v} = (c, d)$
+$\mathbb{R}^2$, let $\vec{u} = (a, b)$ and $\vec{v} = (c, d)$
 
 \begin{align*}
-||\+\vec{u} + \vec{v}\+||_p^p = |\+a + c\+|^p + |\+b + d\+|^p &= |\+a + c\+||\+a + c\+|^{p - 1} + |\+b + d\+||\+b + d\+|^{p - 1}\\
+||+\vec{u} + \vec{v}+||_p^p = |+a + c+|^p + |+b + d+|^p &= |+a + c+||+a + c+|^{p - 1} + |+b + d+||+b + d+|^{p - 1}\\
 \intertext{Now we factor and use the Triangle Inequality for Absolute Value:}
-&\leq (|a| + |c|)|\+a + c\+|^{p - 1} + (|b| + |d|)|\+b + d\+|^{p - 1}\\
+&\leq (|a| + |c|)|+a + c+|^{p - 1} + (|b| + |d|)|+b + d+|^{p - 1}\\
 \intertext{Now we rearrange the terms:}
 &= (|a||a + c|^{p - 1} + |b||b + d|^{p - 1}) + (|c||a + c|^{p - 1} + |d||b +
 d|^{p - 1})\\
@@ -539,13 +539,13 @@ d|^{p - 1})\\
 &\leq (|a|^p + |b|^p)^{\frac{1}{p}}(|a + c|^{(p - 1)q} + |b + d|^{(p -
 1)q})^{\frac{1}{q}} + (|c|^p + |d|^p)^{\frac{1}{p}}(\dots)\\
 \intertext{Note that $q = p^*$, therefore $(p - 1)q = p$:}
-&= (||\+\vec{u}\+||_p + ||\+\vec{v}\+||_p) ||\+\vec{u} + \vec{v}\+||_p^{\frac{p}{q}}\\
+&= (||+\vec{u}+||_p + ||+\vec{v}+||_p) ||+\vec{u} + \vec{v}+||_p^{\frac{p}{q}}\\
 \intertext{Since $q = p^*$, we know that $\frac{p}{q} = p - 1$, and if we bring the
 inequality to the original left hand side:}
-&\leq (||\+\vec{u}\+||_p + ||\+\vec{v}\+||_p)\+||\+\vec{u} + \vec{v}\+||_p^{p - 1}
+&\leq (||+\vec{u}+||_p + ||+\vec{v}+||_p)+||+\vec{u} + \vec{v}+||_p^{p - 1}
 \end{align*}
 Now we divide:
-$$||\+\vec{u} + \vec{v}\+||_p \leq ||\+\vec{u}\+||_p + ||\+\vec{v}\+||_p$$
+$$||+\vec{u} + \vec{v}+||_p \leq ||+\vec{u}+||_p + ||+\vec{v}+||_p$$
 
 Now let's consider the equality cases. If one of the vectors is 0, then the
 inequality is trivially true.

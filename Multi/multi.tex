@@ -38,8 +38,8 @@ Since K is bounded, it can be fully contained within some rectangle (R), which c
 \subsection{Uniform Continuity}
 Let $f: D \to \mathbb{R}$, where $D \subseteq \mathbb{R}^d$. We say $f$ is
 uniformally continuous on $D$ if:
-$$\forall \epsilon > 0, \exists\+\delta > 0: \forall \vec{x}, \vec{y} \in D,
-||\+\vec{x} - \vec{y}\+|| < \delta \to |f(\vec{x}) - f(\vec{y})| < \epsilon$$
+$$\forall \epsilon > 0, \exists+\delta > 0: \forall \vec{x}, \vec{y} \in D,
+||+\vec{x} - \vec{y}+|| < \delta \to |f(\vec{x}) - f(\vec{y})| < \epsilon$$
 
 The difference between this and regular continuity is that the $\delta$ in
 regular continuity is defined by both $\epsilon$ and the specific point we
@@ -55,7 +55,49 @@ that $\delta$ value would NOT change.
 \underline{Theorem}: If $f$ is uniformally continuous on $D$, then $f$ is continuous
 for every point in $D$.
 
-i\subsubsection{Definition}
+\subsubsection{Uniform Continuity Theorem}
+
+\underline{Theorem:}
+If $f: K \to \mathbb{R}$, where $K \subseteq \mathbb{R}^d$ is compact, and
+$f$ is continuous at each $\vec{x} \in K$. Then $f$ is uniformally continuous on
+$K$.
+
+\underline{Proof:}
+Fix $\varepsilon > 0$. For each $\vec{x} \in K$, let $u_{\vec{x}}$ be an open ball, centered at
+$\vec{x}$ such that for any $\vec{y} \in K \cap 2u_{\vec{x}}$ [$2u_{\vec{x}}$ is
+an open ball centered at $\vec{x}$ with twice the radius of $u_{\vec{x}}$], $|f(\vec{x}) -
+f(\vec{y})| < \frac{\varepsilon}{2}$. Because the function is continuous at
+$\vec{x}$, there is a radius $2\delta$ around $\vec{x}$ such that $|f(\vec{x}) -
+f(\vec{y})| < \frac{\varepsilon}{2}$. Now we see that every $\vec{x} \in K$ is
+covered by at least one such open ball, namely $u_{\vec{x}}$. The collection
+$\{u_{\vec{x}} +|+ \vec{x} \in K\}$ is an open covering of $K$. By
+Heine-Borel, we can select a finite set of points $\vec{x}_1, \vec{x}_2, \dots,
+\vec{x}_n$ such that $K$ is covered by $u_{\vec{x}_1} \cup u_{\vec{x}_2} \cup \dots
+\cup u_{\vec{x}_n}$. Take $\delta = \min\{\delta_1, \delta_2, \dots, \delta_n\}
+> 0$  where $\delta_j$ is the radius of $u_{\vec{x}_j}$ for $j = 1,2,3,\dots,n$.
+
+Let $\vec{p}, \vec{q} \in K$ such that $||+\vec{p} - \vec{q}+|| < \delta$. We
+need to prove that $|f(\vec{p}) - f(\vec{q})| < \varepsilon$. $\vec{p} \in K \to
+\exists + j : \vec{p} \in u_{\vec{x}_j} \to ||+\vec{p} - \vec{x}_j+|| <
+\delta_j$. But we know that $||+\vec{p} - \vec{q}+|| < \delta_j$. Now by the
+Triangle Inequality, we get:
+
+$$||+\vec{q} - \vec{x}_j+|| \leq ||+\vec{q} - \vec{p}+|| + ||+\vec{p} - \vec{x}_j+||
+\leq 2 \delta_{\vec{x}_j}$$
+
+This means that $\vec{q} \in 2u_{\vec{x}_j}$. By the way we picked our $\delta$,
+we know that $|f(\vec{q}) - f(\vec{x}_j)| < \frac{\varepsilon}{2}$. Similarly,
+we also have $|f(\vec{p}) - f(\vec{x}_j)| < \frac{\varepsilon}{2}$. Now if we
+apply the triangle inequality again, we get:
+
+$$|f(\vec{p}) - f(\vec{q})| = |f(\vec{p}) - f(\vec{x}_j) + f(\vec{x}_j)- f(\vec{q})|\leq |f(\vec{p}) - f(\vec{x}_j)| + |f(\vec{q}) -
+f(\vec{x}_j)| < \varepsilon$$
+
+Therefore, $f$ is uniformally continuous over $K$.
+
+\subsection{Connected}
+
+\subsubsection{Definition}
 $D \subseteq \mathbb{R}^d$ is said to be connected if $\forall \vec{p},
 \vec{q} \in D$, $\exists$ a continuous function $\vec{\gamma}:[a, b] \to
 \mathbb{R}^d$ that $\vec{\gamma}(a) = \vec{p}$, $\vec{\gamma}(b) = \vec{q}$,
@@ -63,7 +105,7 @@ and $\forall t \in [a, b], \vec{\gamma}(t) \in D$
 
 \subsubsection{Theorem}
 
-Let $D \subseteq \varmathbb{R}^d$ be connected, $D \neq \emptyset$. Suppose $D =
+Let $D \subseteq \mathbb{R}^d$ be connected, $D \neq \emptyset$. Suppose $D =
 A \cup B$, where $A$ and $B$ are open. Such that $A \cap B = \emptyset$. Then $A
 = \emptyset$ or $B = \emptyset$.
 
@@ -74,7 +116,7 @@ that $D = A \cup B$. Because $A \neq \emptyset$, we can pick $\vec{p} \in A$ and
 similarly we can pick $\vec{q} \in B$. Clearly, $\vec{p}, \vec{q} \in D$. Since
 $D$ is connected, $\exists$ continuous $\vec{\gamma}: [a, b] \to D$ such that
 $\vec{\gamma}(a) = \vec{p}$, $\vec{\gamma}(b) = \vec{q}$. Let $S = \{t \in [a,b]
-\+|\+ \vec{\gamma}(t) \in A\}$. We know that $a \in S$, so $S \neq \emptyset$.
++|+ \vec{\gamma}(t) \in A\}$. We know that $a \in S$, so $S \neq \emptyset$.
 Note that $S \leq b$, and since it has a bound, it has a supremum. Let $t_0 =
 \sup S$, note that $a \leq t_0 \leq b$. Since $\vec{\gamma}(t_0) \in D$, it is
 either in $A$ or in $B$ (since $A \cap B = \emptyset$). Suppose
@@ -109,5 +151,203 @@ therefore an upper bound of the set $S$, we once again reach the same
 contradiction.
 
 Therefore, since $c$ exists, $f(c) = y$.
+
+\subsection{Theorem in $\mathbb{R^n}$}
+
+If $f : D \to \mathbb{R}$ where $D \subseteq \mathbb{R}^d$ is connected
+and continuous. $\forall \vec{p}, \vec{q} \in D$ such that $f(\vec{p}) \neq
+f(\vec{q})$ and if $y \in \mathbb{R}$ is between $f(\vec{p})$ and $\vec{q}$,
+then $\exists \vec{r} \in D$ such that $f(\vec{r}) = y$.
+
+\subsubsection{Proof}
+
+Without loss of generality, let us assume $f(\vec{p}) < f(\vec{q})$.
+
+Since $D$ is connected, there is some path $\vec{\gamma}(t) = (x(t), y(t)) \in
+D$, $a \leq t \leq b$ such that $\vec{\gamma}(a) = \vec{p}$ and $\vec{\gamma}(b)
+= \vec{q}$ and is continuous over $[a, b]$. Now we construct $g(t) =
+f(\vec{r}(t)) = (f\cdot\vec{r})(t) \in mathbb{R}$. Because $g(t)$ is a
+composition of continuous functions, $g(t)$ is also continuous. $g(a) =
+f(\vec{\gamma}(a)) = f(\vec{p})$ and $g(b) = f(\vec{\gamma}(b)) = f(\vec{q})$.
+Now we see that $g(a) < y < g(b)$. Therefore, by the IVT for single-variable
+functions, $\exists+t_0$ such that $g(t_0) = y$. Now we plug $t_0$ into
+$\vec{\gamma}$, $\vec{r} = \vec{\gamma}(t_0) \in D$. Then $f(\vec{r}) =
+f(\vec{\gamma}(t_0)) = g(t_0) = y$.
+
+ection{Vector Valued Functions}
+
+\subsection{Definition}
+
+$f: D \to \mathbb{R}$, $D \subseteq \mathbb{R}^d$ is known as
+\textbf{real-valued} functions.
+
+$\vec{f}: D \to \mathbb{R}^e$, $D \subseteq \mathbb{R}^d$ is known as
+\textbf{vector-valued/point-valued} functions.
+
+$\vec{f}(\vec{p}) = (f_1{\vec{p}}, f_2{\vec{p}}, \dots, f_e(\vec{p}))$ where
+$f_1, f_2, \dots, f_e$ are real-valued and are called the \textbf{component
+functions} of $f$.
+
+\subsection{Continuity}
+$f: \mathbb{R}^d \to \mathbb{R}^e$ is continuous at $\vec{a} = (a_1, a_2,
+a_3, \dots, a_d) \in D$ iff $\forall \varepsilon, \exists+\delta > 0 : \forall \vec{x} \in D$:
+
+$$||+\vec{x} - \vec{a}+||_d < \delta \to ||+f(\vec{x}) - f(\vec{a})+||_e <
+\varepsilon$$
+
+\subsubsection{Component-wise Nature of Continuity}
+$f: D \to \mathbb{R}^e$ is continuous at a point $\vec{a} \in D$ iff $f_1,
+f_2, \dots, f_e$ are all continuous at $\vec{a}$.
+
+\textbf{Proof}:
+
+First fix an $\varepsilon$, then by the basic distances bound lemma, we get a
+bunch of inequalities:
+
+Then let $\delta = \min\{\delta_1, \delta_2, \dots, \delta_e\} > 0$, which must
+exist and satisfy all the distance inequalities, specifically $\max_{1 \leq j
+\leq e}(|f_j(\vec{x}) - f_j(\vec{p})|)$. Then again, by the basic distance
+bounds lemma, we know that $||+\vec{f}(\vec{x}) - \vec{f}(\vec{p})+||_e \leq \max_{1 \leq j
+\leq e}(|f_j(\vec{x}) - f_j(\vec{p})|)$. Therefore we get that for any fixed
+$\varepsilon$, we can find a $\delta$ such that $||+\vec{x} - \vec{p}+||_d <
+\delta \to ||+f(\vec{x}) - f(\vec{p})+||_e < \varepsilon$
+
+\subsubsection{Composition of Continuous Functions}
+If $\vec{f}: D \to E$, where $D \subseteq \mathbb{R}^d$, $E
+\subseteq \mathbb{R}^e$ and $\vec{g}: E \to \mathbb{R}^k$ are both
+continuous on their respective domains. Then $\vec{h} = \vec{g} \circ \vec{f}$
+is continuous on $D$
+
+\textbf{Proof}:
+
+To prove this, fix $\varepsilon > 0$. There's a $\eta > 0$ such that
+$\forall \vec{y} \in E \cap B_\eta(\vec{f}(\vec{p}))$, because we know that
+$\vec{g}$ is continuous at $\vec{f}(\vec{p})$, we get:
+
+$$||+\vec{g}(\vec{y}) - \vec{g}(\vec{f}(\vec{p}))+|| < \varepsilon$$
+
+To guarantee that $\vec{y} = \vec{f}(\vec{x})$ lies within $\eta$ units of
+$\vec{f}(\vec{p})$ i.e. $||+\vec{f}(\vec{x}) - \vec{f}(\vec{p})+|| < \eta$, we
+can take $\vec{x} \in D \cap B_\delta(\vec{p})$ where $\delta > 0$ corresponding
+to $\eta$ [using the continuity of $\vec{f}$ at $vec{p} \in D$].
+
+Now, as long as $\vec{x} \in D \cap B_\delta(\vec{p})$, we have
+$\vec{f}(\vec{x}) \in E \cap B_\eta(\vec{f}(\vec{p}))$. Thus, if we take
+$\vec{y} = \vec{f}(\vec{p})$, we get: $||+\vec{g}(\vec{f}(\vec{x})) -
+\vec{g}(\vec{f}(\vec{p}))+|| < \varepsilon$, or $||+\vec{h}(\vec{x}) -
+\vec{h}(\vec{p})+|| < \varepsilon$. So $\vec{h}$ is continuous at $\vec{p}$.
+
+\subsection{Compactness Theorem}
+
+\subsubsection{Theorem}
+
+Let $\vec{f} : D \to \mathbb{R}^e$ be a contnuous function, where $D \subseteq
+\mathbb{R}^d$ is compact. Then its \textit{range} $\vec{f}(D) := \{f(\vec{p}) +|+
+\vec{p} \in D\}$ is also compact. In other words: compactness is preserved under
+continuous mappings. Note that this is the generalization of the Extreme Value
+Theorem.
+
+\subsubsection{Proof}
+
+To prove this, write $R := f(D)$. We need to show that $R$ is closed and bounded
+in $\mathbb{R}^e$. Boundedness is easy. Since each component function $f_j$
+of $f$ is real valued, by EVT each component function $f_j$ has an absolute
+bound $M_j$, so that $|+f_j(\vec{p})+| \leq M_j$ for all $\vec{p} \in D$. 
+Take $M := \max\{M_1, M_2, \dots, M_e\}$. Then for all $\vec{p} \in D$, we have
+
+$$||+\vec{f}(\vec{p})+|| = \sqrt{f_1(\vec{p})^2 + \dots + f_e(\vec{p})^2} \leq
+\sqrt{e \times M^2} = M \sqrt{e}$$
+
+This says that the range $R$ lies within the closed ball of radius $M\sqrt{e}$
+centered at $\vec{0}$ in $\mathbb{R}^e$. It therefore certainly lies within
+some closed cube centered at $\vec{0}$, and hence is bounded.
+
+To prove closedness, let $(\vec{y}_n)_{n = 1}^\infty$ be a convergent sequence in
+$\mathbb{R}^e$ with limit $\vec{y}$, such that $\vec{y}_n \in R$ for each $n
+\geq 1$. We need to prove that $\vec{y} \in R$. Since $R$ is the range of $f$,
+we must have $\vec{y} = \vec{f}(\vec{x_n})$, where $\vec{x_n} \in D$. Because
+$D$ is bounded, we can pick a convergent subsequence $\vec{x}_{n_k} \to
+\vec{x}$. But because $D$ is closed, we know that $\vec{x} \in D$. Because
+$\vec{f}$ is continuous, we get that $\vec{y}_{n_k} = \vec{f}(\vec{x}_{n_k}) \to
+\vec{f}(\vec{x})$. However, we know that $\vec{y}_{n_k} \to \vec{y}$. But since
+each sequence converges to one point, we know that $\vec{y} = \vec{f}(\vec{x})$,
+where $\vec{x} \in D$. Therefore, $\vec{y} \in R$.
+
+Therefore, $R$ is closed and bounded.
+
+\subsection{Connectedness Theorem}
+
+\subsubsection{Theorem}
+
+$\vec{f}: D \to \mathbb{R}^e$, $D \in \mathbb{R}^d$ is continuous on $D$.
+If $D$ is connected, $E = \vec{f}(D)$ (the range of the domain), is also
+connected. Note that this is the generalization of the Intermediate Value
+Theorem.
+
+\subsubsection{Proof}
+
+$\forall \vec{u}, \vec{v} \in E$, we can find two points $\vec{p}, \vec{q}$ such
+that $\vec{f}(\vec{p}) = \vec{u}$ and $\vec{f}(\vec{q}) = \vec{v}$. Now because
+$D$ is connected, $\exists+ \vec{\gamma}: [a, b] \to \mathbb{R}^d$,
+$\vec{\gamma}([a, b]) \subseteq D$. Now we consider $\vec{\delta} =
+\vec{f}(\vec{\gamma}(t))$, $\vec{\delta} : [a, b] \to \mathbb{R}^e$. Since
+it's a composition of continuous functions, $\vec{\delta}$ is also continuous.
+And $\forall t \in [a, b]$, $\vec{\delta}(t) = \vec{f}(\vec{\gamma}(t)) \in E$.
+We also know that $\vec{\delta}(a) = \vec{f}(\vec{\gamma}(a)) = \vec{f}(\vec{p})
+= \vec{u}$, and $\vec{\delta}(b) = \vec{f}(\vec{\gamma}(b)) = \vec{f}(\vec{q})
+= \vec{v}$. Therefore, $\forall \vec{u}, \vec{v} \in E$, there is a
+continuous path that connects $\vec{u}$ to $\vec{v}$ and stays within $E$.
+Therefore, $E$ is connected.
+
+\section{Sequences of Functions}
+\subsection{Infinity Norm}
+For $f: [a,b] \to \mathbb{R}$ that is bounded, we say:
+
+$$||+f+||_\infty := \sup_{x\in[a,b]} |f(x)|$$
+
+\subsection{Pointwise Convergence}
+$f_n : [a,b] \to \mathbb{R}$ for $n \geq 1$, and assume that they are all
+bounded on $[a,b]$. ($\exists+ M_n > 0 : |f_n(x)| \leq M_n$ for all $x \in
+[a,b]$).
+$f:[a,b] \to \mathbb{R}$, $f$ is bounded ($\exists+ M > 0: |f(x)| \leq M$
+for all $x \in [a,b]$).
+If $\forall x \in [a,b]: \lim_{n\to\infty} f_n(x) = f(x)$, then we say that $f_n
+\overset{p}{\to} f(x)$ ($f_n$ converges ``pointwise'' to $f$).
+
+\subsubsection{Example}
+$f_n(x) = x^n$, $n \geq 1$ on $[0, 1]$
+If the domain is $[0, 1)$, then $f_n \overset{p}{\to} f$ where $f(x) = 0$.
+On $[0, 1]$, $f_n \overset{p}{\to} \~{f}$, where $\~{f}$ is $0$ for $0 \leq x < 0$, and $1$
+when $x = 1$
+
+\subsection{Uniform Convergence}
+$f_n : [a,b] \to \mathbb{R}$ for $n \geq 1$, and assume that they are all
+bounded on $[a,b]$. ($\exists+ M_n > 0 : |f_n(x)| \leq M_n$ for all $x \in
+[a,b]$).
+
+$f:[a,b] \to \mathbb{R}$, $f$ is bounded ($\exists+ M > 0: |f(x)| \leq M$
+for all $x \in [a,b]$).
+
+We then claim that $f_n \overset{u}{\to} f$ as $n \to \infty$ if $\forall
+\varepsilon$, $\exists+ N_\varepsilon$ such that $\forall n \geq
+N_\varepsilon : ||+f_n - f+||_\infty < \varepsilon$. In other words, this
+forces that the greatest vertical difference between the two functions will be
+arbitrarily small after $N_\varepsilon$. This forces the two functions to be
+``close'' as a whole.
+
+\subsubsection{$f_n \overset{u}{\to} f$ implies $f_n \overset{p}{\to} f$}
+Pick any $x \in [a,b]$, $0 \leq |f_n(x) - f(x)| \leq ||+f_n - f+||_\infty \to 0$ as
+$n \to \infty$. Then by the squeeze theorem, $|f_n(x) - f(x)| = 0$, therefore
+$f_n(x) \to f(x)$ as $n \to \infty$.
+Note the the converse is NOT true.
+
+\subsection{Uniform Convergence Theorem}
+\subsubsection{Theorem}
+If $f_n \overset{u}{\to} f$ on $[a, b]$, where each $f_n$ is continuous on
+$[a,b]$. Then $f$ is also continuous on $[a,b]$
+
+\subsubsection{Proof}
+$\forall x, y \in [a,b]$, by the triangle inequality:
+$$|f(x) - f(y)| \leq |f(x) - f_n(x)| + |f_n(x) f_n(y)| + |f_n(x) - f(y)|$$
 
 \end{document}
