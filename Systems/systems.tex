@@ -297,4 +297,31 @@ item Libraries are added, either .h files from the current directory through \#i
 \item ``int argc, char *argv[]'' can also be put as the parameters of the main() function, to allow command line arguments, starting from the bash commands themselves
 \end{enumerate}
 
+\section{Processing}
+\subsection{Processes}
+\begin{enumerate}
+\item Each running program is a process, such that each core in a processor can handle one process per cycle, only appearing to multitask due to the high speed
+\item Each process has a unique PID, recycled when the machine is restarted
+\item PIDs can be stored in pid\_t type variables, found in ``sys/types.h'', displayed as an integer number
+\end{enumerate}
+
+\subsection{Process Functions}
+\begin{enumerate}
+\item getpid() - Returns the current PID, stored within ``unistd.h''
+\item getppid() - Returns the current process's parent PID, stored within ``unistd.h''
+\item sleep(\textit{int seconds}) - Makes the processor rest for that many seconds, stored within ``stdlib.h''
+\item fork() - Stored within ``unistd.h'', creating a child subprocess from the parent
+\begin{enumerate}
+\item All aspects of the parent, including memory and file table are copied to the child process when it is forked, continuing from the same line in the child
+\item Threads are different from child processes, such that they do not have their own copied memory, rather sharing the same memory
+\item 0 is returned to the child, while the child PID is returned to the parent
+\item If it fails, -1 is returned and errno is set
+\end{enumerate}
+\item wait(\&status) - Waits in the parent process until at least one child process has returned information, setting the ``int status'' variable, which must have been declared
+\begin{enumerate}
+\item status stores a return value as the first byte, followed by other info, such that WEXITSTATUS(status) gives only the return value
+\item Returns the PID of the child exited, or -1 (setting errno) if it fails
+\end{enumerate}
+\end{enumerate}
+
 \end{document}
