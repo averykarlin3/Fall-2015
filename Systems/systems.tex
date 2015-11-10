@@ -322,13 +322,17 @@ item Libraries are added, either .h files from the current directory through \#i
 \item status stores a return value as the first byte from the process (not the C return, but the process return), followed by other info, such that WEXITSTATUS(status) gives only the return value
 \item Returns the PID of the child exited, or -1 (setting errno) if it fails
 \end{enumerate}
-\item waitpid(\textit{pid, &status, options}) - Waits for a specific chid to complete, where options defaults to 0 for normal behavior
+\item waitpid(\textit{pid, \&status, options}) - Waits for a specific chid to complete, where options defaults to 0 for normal behavior, and where -1 as the pid waits for any child
 \item exit(\textit{int return}) - Ends the process and returns the process return value, found in ``unistd.h''
 \end{enumerate}
 
 \subsection{Exec Function Family}
 \begin{enumerate}
-\item 
+\item Exec functions can be used to run other programs within programs, such that the other program replaces the program within the process, such that code after is ignored
+\item Exec functions are found within ``unistd.h''
+\item execl(\textit{path-to-including-command, command, arg1, arg2, ...,}, NULL) - Runs the command program, found at the path,  where all non-NULL variables are strings, args are command line arguments, and NULL shows the end of the arguments
+\item execlp(\textit{path, command, arg1, arg2, ...,}, NULL) - Runs similar to execl, except using the PATH variable for the start of the path
+\item execvp(\textit{path, argument-array}) - Runs similar to execl, except with an array of the command and command line argument strings
 \end{enumerate}
 
 \end{document}
