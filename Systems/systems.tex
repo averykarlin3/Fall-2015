@@ -317,11 +317,18 @@ item Libraries are added, either .h files from the current directory through \#i
 \item 0 is returned to the child, while the child PID is returned to the parent
 \item If it fails, -1 is returned and errno is set
 \end{enumerate}
-\item wait(\&status) - Waits in the parent process until at least one child process has returned information, setting the ``int status'' variable, which must have been declared
+\item wait(\&\textit{int status}) - Waits in the parent process until at least one child process has returned information
 \begin{enumerate}
-\item status stores a return value as the first byte, followed by other info, such that WEXITSTATUS(status) gives only the return value
+\item status stores a return value as the first byte from the process (not the C return, but the process return), followed by other info, such that WEXITSTATUS(status) gives only the return value
 \item Returns the PID of the child exited, or -1 (setting errno) if it fails
 \end{enumerate}
+\item waitpid(\textit{pid, &status, options}) - Waits for a specific chid to complete, where options defaults to 0 for normal behavior
+\item exit(\textit{int return}) - Ends the process and returns the process return value, found in ``unistd.h''
+\end{enumerate}
+
+\subsection{Exec Function Family}
+\begin{enumerate}
+\item 
 \end{enumerate}
 
 \end{document}
