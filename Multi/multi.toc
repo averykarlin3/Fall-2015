@@ -86,13 +86,14 @@
 \contentsline {subsection}{\numberline {8.1}Heine-Borel Theorem}{22}
 \contentsline {subsubsection}{\numberline {8.1.1}Proof}{22}
 \contentsline {subsection}{\numberline {8.2}Uniform Continuity}{22}
-\contentsline {subsubsection}{\numberline {8.2.1}Uniform Continuity Theorem}{22}
-\contentsline {subsection}{\numberline {8.3}Connected}{23}
-\contentsline {subsubsection}{\numberline {8.3.1}Definition}{23}
-\contentsline {subsubsection}{\numberline {8.3.2}Theorem}{23}
+\contentsline {subsection}{\numberline {8.3}Uniform Pointwise Convergence:}{22}
+\contentsline {subsubsection}{\numberline {8.3.1}Uniform Continuity Theorem}{23}
+\contentsline {subsection}{\numberline {8.4}Connected}{23}
+\contentsline {subsubsection}{\numberline {8.4.1}Definition}{23}
+\contentsline {subsubsection}{\numberline {8.4.2}Theorem}{23}
 \contentsline {section}{\numberline {9}Intermediate Value Theorem}{23}
-\contentsline {subsection}{\numberline {9.1}Theorem in \mathbb {R}}{23}
-\contentsline {subsubsection}{\numberline {9.1.1}Proof}{23}
+\contentsline {subsection}{\numberline {9.1}Theorem in $\mathbb {R}$}{23}
+\contentsline {subsubsection}{\numberline {9.1.1}Proof}{24}
 \contentsline {subsection}{\numberline {9.2}Theorem in $\mathbb {R^n}$}{24}
 \contentsline {subsubsection}{\numberline {9.2.1}Proof}{24}
 \contentsline {subsection}{\numberline {9.3}Definition}{24}

@@ -55,20 +55,29 @@ that $\delta$ value would NOT change.
 \underline{Theorem}: If $f$ is uniformally continuous on $D$, then $f$ is continuous
 for every point in $D$.
 
-\subsubsection{Uniform Continuity Theorem}
 
+\subsection{Uniform Pointwise Convergence:}
+\underline{Theorem:}
+If $\vec{f_n}, vec{f}: \mathbb{R^d} \to \mathbb{R^e}$, then $\vec{f_n} \to^p \vec{f} on D: \vec{f_n}(\vec{x}) \to \vec{f}(vec{x}) for every point \vec{x} \in D (for any converging sequences, any point will also converge similarly, such that uniform convergence implies pointwise convergence, though the converse is untrue)$
+
+\underline{Proof:}
+$\vec{f_n} \to^u \vec{f} on D (uniform convergence): ||\vec{f_n} - \vec{f}||_D = sup_{\vec{x} \in D} ||\vec{f_n}(\vec{x}) - \vec{f}(\vec{x})|| \to 0 as n \to \infty. Then 0 \leq ||f_n(x) - f(x)|| \leq  ||f_n - f|| \to 0.$
+
+Then for a uniform sequences, $f_n(x) \to f(x) on D$, giving pointwise convergence.
+
+\subsubsection{Uniform Continuity Theorem}
 \underline{Theorem:}
 If $f: K \to \mathbb{R}$, where $K \subseteq \mathbb{R}^d$ is compact, and
 $f$ is continuous at each $\vec{x} \in K$. Then $f$ is uniformally continuous on
 $K$.
 
 \underline{Proof:}
-Fix $\varepsilon > 0$. For each $\vec{x} \in K$, let $u_{\vec{x}}$ be an open ball, centered at
+Fix $\epsilon > 0$. For each $\vec{x} \in K$, let $u_{\vec{x}}$ be an open ball, centered at
 $\vec{x}$ such that for any $\vec{y} \in K \cap 2u_{\vec{x}}$ [$2u_{\vec{x}}$ is
 an open ball centered at $\vec{x}$ with twice the radius of $u_{\vec{x}}$], $|f(\vec{x}) -
-f(\vec{y})| < \frac{\varepsilon}{2}$. Because the function is continuous at
+f(\vec{y})| < \frac{\epsilon}{2}$. Because the function is continuous at
 $\vec{x}$, there is a radius $2\delta$ around $\vec{x}$ such that $|f(\vec{x}) -
-f(\vec{y})| < \frac{\varepsilon}{2}$. Now we see that every $\vec{x} \in K$ is
+f(\vec{y})| < \frac{\epsilon}{2}$. Now we see that every $\vec{x} \in K$ is
 covered by at least one such open ball, namely $u_{\vec{x}}$. The collection
 $\{u_{\vec{x}} +|+ \vec{x} \in K\}$ is an open covering of $K$. By
 Heine-Borel, we can select a finite set of points $\vec{x}_1, \vec{x}_2, \dots,
@@ -77,7 +86,7 @@ Heine-Borel, we can select a finite set of points $\vec{x}_1, \vec{x}_2, \dots,
 > 0$  where $\delta_j$ is the radius of $u_{\vec{x}_j}$ for $j = 1,2,3,\dots,n$.
 
 Let $\vec{p}, \vec{q} \in K$ such that $||+\vec{p} - \vec{q}+|| < \delta$. We
-need to prove that $|f(\vec{p}) - f(\vec{q})| < \varepsilon$. $\vec{p} \in K \to
+need to prove that $|f(\vec{p}) - f(\vec{q})| < \epsilon$. $\vec{p} \in K \to
 \exists + j : \vec{p} \in u_{\vec{x}_j} \to ||+\vec{p} - \vec{x}_j+|| <
 \delta_j$. But we know that $||+\vec{p} - \vec{q}+|| < \delta_j$. Now by the
 Triangle Inequality, we get:
@@ -86,12 +95,12 @@ $$||+\vec{q} - \vec{x}_j+|| \leq ||+\vec{q} - \vec{p}+|| + ||+\vec{p} - \vec{x}_
 \leq 2 \delta_{\vec{x}_j}$$
 
 This means that $\vec{q} \in 2u_{\vec{x}_j}$. By the way we picked our $\delta$,
-we know that $|f(\vec{q}) - f(\vec{x}_j)| < \frac{\varepsilon}{2}$. Similarly,
-we also have $|f(\vec{p}) - f(\vec{x}_j)| < \frac{\varepsilon}{2}$. Now if we
+we know that $|f(\vec{q}) - f(\vec{x}_j)| < \frac{\epsilon}{2}$. Similarly,
+we also have $|f(\vec{p}) - f(\vec{x}_j)| < \frac{\epsilon}{2}$. Now if we
 apply the triangle inequality again, we get:
 
 $$|f(\vec{p}) - f(\vec{q})| = |f(\vec{p}) - f(\vec{x}_j) + f(\vec{x}_j)- f(\vec{q})|\leq |f(\vec{p}) - f(\vec{x}_j)| + |f(\vec{q}) -
-f(\vec{x}_j)| < \varepsilon$$
+f(\vec{x}_j)| < \epsilon$$
 
 Therefore, $f$ is uniformally continuous over $K$.
 
@@ -121,16 +130,16 @@ Note that $S \leq b$, and since it has a bound, it has a supremum. Let $t_0 =
 \sup S$, note that $a \leq t_0 \leq b$. Since $\vec{\gamma}(t_0) \in D$, it is
 either in $A$ or in $B$ (since $A \cap B = \emptyset$). Suppose
 $\vec{\gamma}(t_0) \in A$. Since $A$ is open, we can draw an open ball
-($B_\varepsilon$) around $\vec{\gamma}(t_0)$. Now consider $\vec{\gamma}(t_0 +
+($B_\epsilon$) around $\vec{\gamma}(t_0)$. Now consider $\vec{\gamma}(t_0 +
 \delta)$ for some small positive $\delta$. If $\delta$ is small enough, $\delta
-\in B_\varepsilon \in A$. This is a contradiction, as then it means that $t_0 +
+\in B_\epsilon \in A$. This is a contradiction, as then it means that $t_0 +
 \delta \in S$. This is a contradiction, as then $t_0 \neq \sup S$. A similar
 contradiction can be made for the case that $\vec{\gamma}(t_0) \in B$. Therefore
 the original assumption was false.
 
 \section{Intermediate Value Theorem}
 
-\subsection{Theorem in \mathbb{R}}
+\subsection{Theorem in $\mathbb{R}$}
 If f: [a, b] $\to \mathbb{R}$ is continuous, and $f(a) \neq f(b)$, $\forall y \in (f(a), f(b))$, then $\exists c \in (a, b): f(c) = y.$
 
 \subsubsection{Proof}
@@ -190,10 +199,10 @@ functions} of $f$.
 
 \subsection{Continuity}
 $f: \mathbb{R}^d \to \mathbb{R}^e$ is continuous at $\vec{a} = (a_1, a_2,
-a_3, \dots, a_d) \in D$ iff $\forall \varepsilon, \exists+\delta > 0 : \forall \vec{x} \in D$:
+a_3, \dots, a_d) \in D$ iff $\forall \epsilon, \exists+\delta > 0 : \forall \vec{x} \in D$:
 
 $$||+\vec{x} - \vec{a}+||_d < \delta \to ||+f(\vec{x}) - f(\vec{a})+||_e <
-\varepsilon$$
+\epsilon$$
 
 \subsubsection{Component-wise Nature of Continuity}
 $f: D \to \mathbb{R}^e$ is continuous at a point $\vec{a} \in D$ iff $f_1,
@@ -201,7 +210,7 @@ f_2, \dots, f_e$ are all continuous at $\vec{a}$.
 
 \textbf{Proof}:
 
-First fix an $\varepsilon$, then by the basic distances bound lemma, we get a
+First fix an $\epsilon$, then by the basic distances bound lemma, we get a
 bunch of inequalities:
 
 Then let $\delta = \min\{\delta_1, \delta_2, \dots, \delta_e\} > 0$, which must
@@ -209,8 +218,8 @@ exist and satisfy all the distance inequalities, specifically $\max_{1 \leq j
 \leq e}(|f_j(\vec{x}) - f_j(\vec{p})|)$. Then again, by the basic distance
 bounds lemma, we know that $||+\vec{f}(\vec{x}) - \vec{f}(\vec{p})+||_e \leq \max_{1 \leq j
 \leq e}(|f_j(\vec{x}) - f_j(\vec{p})|)$. Therefore we get that for any fixed
-$\varepsilon$, we can find a $\delta$ such that $||+\vec{x} - \vec{p}+||_d <
-\delta \to ||+f(\vec{x}) - f(\vec{p})+||_e < \varepsilon$
+$\epsilon$, we can find a $\delta$ such that $||+\vec{x} - \vec{p}+||_d <
+\delta \to ||+f(\vec{x}) - f(\vec{p})+||_e < \epsilon$
 
 \subsubsection{Composition of Continuous Functions}
 If $\vec{f}: D \to E$, where $D \subseteq \mathbb{R}^d$, $E
@@ -220,11 +229,11 @@ is continuous on $D$
 
 \textbf{Proof}:
 
-To prove this, fix $\varepsilon > 0$. There's a $\eta > 0$ such that
+To prove this, fix $\epsilon > 0$. There's a $\eta > 0$ such that
 $\forall \vec{y} \in E \cap B_\eta(\vec{f}(\vec{p}))$, because we know that
 $\vec{g}$ is continuous at $\vec{f}(\vec{p})$, we get:
 
-$$||+\vec{g}(\vec{y}) - \vec{g}(\vec{f}(\vec{p}))+|| < \varepsilon$$
+$$||+\vec{g}(\vec{y}) - \vec{g}(\vec{f}(\vec{p}))+|| < \epsilon$$
 
 To guarantee that $\vec{y} = \vec{f}(\vec{x})$ lies within $\eta$ units of
 $\vec{f}(\vec{p})$ i.e. $||+\vec{f}(\vec{x}) - \vec{f}(\vec{p})+|| < \eta$, we
@@ -234,8 +243,8 @@ to $\eta$ [using the continuity of $\vec{f}$ at $vec{p} \in D$].
 Now, as long as $\vec{x} \in D \cap B_\delta(\vec{p})$, we have
 $\vec{f}(\vec{x}) \in E \cap B_\eta(\vec{f}(\vec{p}))$. Thus, if we take
 $\vec{y} = \vec{f}(\vec{p})$, we get: $||+\vec{g}(\vec{f}(\vec{x})) -
-\vec{g}(\vec{f}(\vec{p}))+|| < \varepsilon$, or $||+\vec{h}(\vec{x}) -
-\vec{h}(\vec{p})+|| < \varepsilon$. So $\vec{h}$ is continuous at $\vec{p}$.
+\vec{g}(\vec{f}(\vec{p}))+|| < \epsilon$, or $||+\vec{h}(\vec{x}) -
+\vec{h}(\vec{p})+|| < \epsilon$. So $\vec{h}$ is continuous at $\vec{p}$.
 
 \subsection{Compactness Theorem}
 
@@ -329,10 +338,10 @@ $f:[a,b] \to \mathbb{R}$, $f$ is bounded ($\exists+ M > 0: |f(x)| \leq M$
 for all $x \in [a,b]$).
 
 We then claim that $f_n \overset{u}{\to} f$ as $n \to \infty$ if $\forall
-\varepsilon$, $\exists+ N_\varepsilon$ such that $\forall n \geq
-N_\varepsilon : ||+f_n - f+||_\infty < \varepsilon$. In other words, this
+\epsilon$, $\exists+ N_\epsilon$ such that $\forall n \geq
+N_\epsilon : ||+f_n - f+||_\infty < \epsilon$. In other words, this
 forces that the greatest vertical difference between the two functions will be
-arbitrarily small after $N_\varepsilon$. This forces the two functions to be
+arbitrarily small after $N_\epsilon$. This forces the two functions to be
 ``close'' as a whole.
 
 \subsubsection{$f_n \overset{u}{\to} f$ implies $f_n \overset{p}{\to} f$}
