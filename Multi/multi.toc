@@ -1,118 +1,118 @@
 \contentsline {section}{\numberline {1}Multivariable Calculus Basics}{5}
 \contentsline {subsection}{\numberline {1.1}Green's Theorem}{5}
 \contentsline {subsection}{\numberline {1.2}Generalized FTC}{5}
-\contentsline {section}{\numberline {2}Real Number Set}{5}
-\contentsline {subsection}{\numberline {2.1}Definitions of Number Structures}{5}
-\contentsline {subsubsection}{\numberline {2.1.1}$\mathbb {N}$}{5}
+\contentsline {section}{\numberline {2}Real Number Set}{6}
+\contentsline {subsection}{\numberline {2.1}Definitions of Number Structures}{6}
+\contentsline {subsubsection}{\numberline {2.1.1}$\mathbb {N}$}{6}
 \contentsline {subsubsection}{\numberline {2.1.2}$\mathbb {Z}$}{6}
 \contentsline {subsubsection}{\numberline {2.1.3}$\mathbb {Q}$}{6}
 \contentsline {subsubsection}{\numberline {2.1.4}$\mathbb {R}$}{6}
-\contentsline {subsection}{\numberline {2.2}Basic Structure of $\mathbb {R}^1$}{6}
+\contentsline {subsection}{\numberline {2.2}Basic Structure of $\mathbb {R}^1$}{7}
 \contentsline {subsection}{\numberline {2.3}Properties of $\mathbb {R}^n$}{7}
 \contentsline {subsection}{\numberline {2.4}Basic Axioms for $\mathbb {R}^1$}{7}
 \contentsline {subsection}{\numberline {2.5}The Seperation Axiom}{8}
 \contentsline {subsubsection}{\numberline {2.5.1}Proof of Irrationals}{8}
-\contentsline {section}{\numberline {3}Sequence Theorems}{8}
-\contentsline {subsection}{\numberline {3.1}The Least Upper Bound Theorem}{8}
-\contentsline {subsubsection}{\numberline {3.1.1}Proof}{8}
+\contentsline {section}{\numberline {3}Sequence Theorems}{9}
+\contentsline {subsection}{\numberline {3.1}The Least Upper Bound Theorem}{9}
+\contentsline {subsubsection}{\numberline {3.1.1}Proof}{9}
 \contentsline {subsection}{\numberline {3.2}Bounded Monotone Sequence Theorem}{9}
 \contentsline {subsubsection}{\numberline {3.2.1}Proof}{9}
-\contentsline {subsection}{\numberline {3.3}Archimedean Property}{9}
-\contentsline {subsubsection}{\numberline {3.3.1}Proof}{9}
-\contentsline {subsubsection}{\numberline {3.3.2}Consequences}{9}
-\contentsline {subsection}{\numberline {3.4}Sunrise Lemma}{9}
+\contentsline {subsection}{\numberline {3.3}Archimedean Property}{10}
+\contentsline {subsubsection}{\numberline {3.3.1}Proof}{10}
+\contentsline {subsubsection}{\numberline {3.3.2}Consequences}{10}
+\contentsline {subsection}{\numberline {3.4}Sunrise Lemma}{10}
 \contentsline {subsubsection}{\numberline {3.4.1}Well-Ordering Property}{10}
 \contentsline {subsubsection}{\numberline {3.4.2}Proof}{10}
-\contentsline {subsection}{\numberline {3.5}Bolzano-Weierstrass Theorem}{10}
-\contentsline {subsubsection}{\numberline {3.5.1}Proof}{10}
-\contentsline {section}{\numberline {4}Extreme Value Theorem}{10}
-\contentsline {subsection}{\numberline {4.1}Proof}{10}
-\contentsline {subsubsection}{\numberline {4.1.1}$\exists M>0$ such that $f(x) \leq < M \forall x \in [a,b]$ (f(x) is bounded above)}{10}
-\contentsline {subsubsection}{\numberline {4.1.2}The function reaches the supremum and infimum}{10}
-\contentsline {section}{\numberline {5}Higher Dimensional Mathematics}{11}
-\contentsline {subsection}{\numberline {5.1}Higher Dimensions}{11}
-\contentsline {subsubsection}{\numberline {5.1.1}Cartesian Product}{11}
-\contentsline {subsubsection}{\numberline {5.1.2}Shapes}{11}
-\contentsline {subsubsection}{\numberline {5.1.3}Boundary}{11}
-\contentsline {subsubsection}{\numberline {5.1.4}Interior}{11}
-\contentsline {subsubsection}{\numberline {5.1.5}Exterior}{11}
-\contentsline {subsubsection}{\numberline {5.1.6}Closure}{11}
-\contentsline {subsubsection}{\numberline {5.1.7}Ordered Pair}{11}
-\contentsline {subsubsection}{\numberline {5.1.8}Vector and Points}{12}
-\contentsline {subsubsection}{\numberline {5.1.9}Space and Lines}{12}
-\contentsline {subsection}{\numberline {5.2}Dot Product}{12}
-\contentsline {subsubsection}{\numberline {5.2.1}Definition and Perpendicularity}{12}
-\contentsline {subsubsection}{\numberline {5.2.2}Properties}{12}
-\contentsline {subsection}{\numberline {5.3}Functions in Higher Dimensions}{12}
-\contentsline {subsubsection}{\numberline {5.3.1}Domain, Range, and One-to-One}{12}
-\contentsline {subsubsection}{\numberline {5.3.2}Bolzano-Weirstrauss in Higher Dimensions}{13}
-\contentsline {subsubsection}{\numberline {5.3.3}Cauchy Sequence}{13}
-\contentsline {subsubsection}{\numberline {5.3.4}Convergence as Cauchy}{13}
-\contentsline {subsubsection}{\numberline {5.3.5}Cauchy's Convergence Theorem}{13}
-\contentsline {subsubsection}{\numberline {5.3.6}Cauchy Sequences in Higher Dimensions}{14}
-\contentsline {subsection}{\numberline {5.4}Metric Topology in $\mathbb {R^n}$}{14}
-\contentsline {subsubsection}{\numberline {5.4.1}Continuity}{14}
-\contentsline {subsubsection}{\numberline {5.4.2}Directional Limits}{14}
-\contentsline {subsubsection}{\numberline {5.4.3}Limits in Higher Dimensions}{14}
-\contentsline {subsection}{\numberline {5.5}Properties of Domain}{14}
-\contentsline {subsubsection}{\numberline {5.5.1}Bounded}{15}
-\contentsline {subsubsection}{\numberline {5.5.2}Closed}{15}
-\contentsline {subsubsection}{\numberline {5.5.3}Open Set Theorem}{15}
-\contentsline {subsection}{\numberline {5.6}Extreme-Value Theorem}{15}
-\contentsline {section}{\numberline {6}Distance Functions}{15}
-\contentsline {subsection}{\numberline {6.1}Euclidean Distance}{16}
-\contentsline {subsection}{\numberline {6.2}Geometric Distance}{17}
-\contentsline {subsection}{\numberline {6.3}Basic Distance Bounds Lemma}{17}
-\contentsline {subsection}{\numberline {6.4}Other Distance}{17}
-\contentsline {section}{\numberline {7}Inequalities}{18}
-\contentsline {subsection}{\numberline {7.1}Level of Operations}{18}
-\contentsline {subsection}{\numberline {7.2}AM-GM}{18}
-\contentsline {subsubsection}{\numberline {7.2.1}AM-GM Inequality}{18}
-\contentsline {subsubsection}{\numberline {7.2.2}Proof}{18}
-\contentsline {subsection}{\numberline {7.3}Young's Inequality}{19}
-\contentsline {subsubsection}{\numberline {7.3.1}H\"{o}lder Conjugate}{19}
-\contentsline {subsubsection}{\numberline {7.3.2}Young's Inequality}{19}
-\contentsline {subsubsection}{\numberline {7.3.3}Proof}{19}
-\contentsline {subsection}{\numberline {7.4}H\"{o}lder's Inequality}{20}
-\contentsline {subsubsection}{\numberline {7.4.1}$p$-norm}{20}
-\contentsline {subsubsection}{\numberline {7.4.2}H\"{o}lder's Inequality}{20}
-\contentsline {subsubsection}{\numberline {7.4.3}Proof}{20}
-\contentsline {subsection}{\numberline {7.5}Cauchy-Schwarz Inequality}{20}
-\contentsline {subsection}{\numberline {7.6}Triangle Inequality}{21}
-\contentsline {subsection}{\numberline {7.7}Minkowski's Inequality}{21}
-\contentsline {subsubsection}{\numberline {7.7.1}Rational Power Proof}{21}
-\contentsline {subsubsection}{\numberline {7.7.2}Proof}{21}
-\contentsline {section}{\numberline {8}Heine-Borel Theorem and Domain Properties}{22}
-\contentsline {subsection}{\numberline {8.1}Heine-Borel Theorem}{22}
-\contentsline {subsubsection}{\numberline {8.1.1}Proof}{22}
-\contentsline {subsection}{\numberline {8.2}Uniform Continuity}{22}
-\contentsline {subsection}{\numberline {8.3}Uniform Pointwise Convergence:}{22}
-\contentsline {subsubsection}{\numberline {8.3.1}Uniform Continuity Theorem}{23}
-\contentsline {subsection}{\numberline {8.4}Connected}{23}
-\contentsline {subsubsection}{\numberline {8.4.1}Definition}{23}
-\contentsline {subsubsection}{\numberline {8.4.2}Theorem}{23}
-\contentsline {section}{\numberline {9}Intermediate Value Theorem}{23}
-\contentsline {subsection}{\numberline {9.1}Theorem in $\mathbb {R}$}{23}
-\contentsline {subsubsection}{\numberline {9.1.1}Proof}{24}
-\contentsline {subsection}{\numberline {9.2}Theorem in $\mathbb {R^n}$}{24}
-\contentsline {subsubsection}{\numberline {9.2.1}Proof}{24}
-\contentsline {section}{\numberline {10}Vector Valued Functions}{24}
-\contentsline {subsection}{\numberline {10.1}Definition}{24}
-\contentsline {subsection}{\numberline {10.2}Continuity}{24}
-\contentsline {subsubsection}{\numberline {10.2.1}Component-wise Nature of Continuity}{24}
-\contentsline {subsubsection}{\numberline {10.2.2}Composition of Continuous Functions}{25}
-\contentsline {subsection}{\numberline {10.3}Compactness Theorem}{25}
-\contentsline {subsubsection}{\numberline {10.3.1}Theorem}{25}
-\contentsline {subsubsection}{\numberline {10.3.2}Proof}{25}
-\contentsline {subsection}{\numberline {10.4}Connectedness Theorem}{26}
-\contentsline {subsubsection}{\numberline {10.4.1}Theorem}{26}
-\contentsline {subsubsection}{\numberline {10.4.2}Proof}{26}
-\contentsline {section}{\numberline {11}Sequences of Functions}{26}
-\contentsline {subsection}{\numberline {11.1}Infinity Norm}{26}
-\contentsline {subsection}{\numberline {11.2}Pointwise Convergence}{26}
-\contentsline {subsubsection}{\numberline {11.2.1}Example}{26}
-\contentsline {subsection}{\numberline {11.3}Uniform Convergence}{26}
-\contentsline {subsubsection}{\numberline {11.3.1}$f_n \begingroup \setbox \z@ \hbox {\thinmuskip 0mu \medmuskip \m@ne mu\thickmuskip \@ne mu \setbox \tw@ \hbox {$\to \mathsurround \z@ $}\kern -\wd \tw@ ${}\to {}\mathsurround \z@ $}\edef \par }{26}
-\contentsline {subsection}{\numberline {11.4}Uniform Convergence Theorem}{27}
-\contentsline {subsubsection}{\numberline {11.4.1}Theorem}{27}
-\contentsline {subsubsection}{\numberline {11.4.2}Proof}{27}
+\contentsline {subsection}{\numberline {3.5}Bolzano-Weierstrass Theorem}{11}
+\contentsline {subsubsection}{\numberline {3.5.1}Proof}{11}
+\contentsline {section}{\numberline {4}Extreme Value Theorem}{11}
+\contentsline {subsection}{\numberline {4.1}Proof}{11}
+\contentsline {subsubsection}{\numberline {4.1.1}$\exists M>0$ such that $f(x) \leq < M \forall x \in [a,b]$ (f(x) is bounded above)}{11}
+\contentsline {subsubsection}{\numberline {4.1.2}The function reaches the supremum and infimum}{11}
+\contentsline {section}{\numberline {5}Higher Dimensional Mathematics}{12}
+\contentsline {subsection}{\numberline {5.1}Higher Dimensions}{12}
+\contentsline {subsubsection}{\numberline {5.1.1}Cartesian Product}{12}
+\contentsline {subsubsection}{\numberline {5.1.2}Shapes}{12}
+\contentsline {subsubsection}{\numberline {5.1.3}Boundary}{12}
+\contentsline {subsubsection}{\numberline {5.1.4}Interior}{12}
+\contentsline {subsubsection}{\numberline {5.1.5}Exterior}{12}
+\contentsline {subsubsection}{\numberline {5.1.6}Closure}{12}
+\contentsline {subsubsection}{\numberline {5.1.7}Ordered Pair}{13}
+\contentsline {subsubsection}{\numberline {5.1.8}Vector and Points}{13}
+\contentsline {subsubsection}{\numberline {5.1.9}Space and Lines}{13}
+\contentsline {subsection}{\numberline {5.2}Dot Product}{13}
+\contentsline {subsubsection}{\numberline {5.2.1}Definition and Perpendicularity}{13}
+\contentsline {subsubsection}{\numberline {5.2.2}Properties}{14}
+\contentsline {subsection}{\numberline {5.3}Functions in Higher Dimensions}{14}
+\contentsline {subsubsection}{\numberline {5.3.1}Domain, Range, and One-to-One}{14}
+\contentsline {subsubsection}{\numberline {5.3.2}Bolzano-Weirstrauss in Higher Dimensions}{14}
+\contentsline {subsubsection}{\numberline {5.3.3}Cauchy Sequence}{14}
+\contentsline {subsubsection}{\numberline {5.3.4}Convergence as Cauchy}{14}
+\contentsline {subsubsection}{\numberline {5.3.5}Cauchy's Convergence Theorem}{15}
+\contentsline {subsubsection}{\numberline {5.3.6}Cauchy Sequences in Higher Dimensions}{15}
+\contentsline {subsection}{\numberline {5.4}Metric Topology in $\mathbb {R^n}$}{16}
+\contentsline {subsubsection}{\numberline {5.4.1}Continuity}{16}
+\contentsline {subsubsection}{\numberline {5.4.2}Directional Limits}{16}
+\contentsline {subsubsection}{\numberline {5.4.3}Limits in Higher Dimensions}{16}
+\contentsline {subsection}{\numberline {5.5}Properties of Domain}{16}
+\contentsline {subsubsection}{\numberline {5.5.1}Bounded}{16}
+\contentsline {subsubsection}{\numberline {5.5.2}Closed}{17}
+\contentsline {subsubsection}{\numberline {5.5.3}Open Set Theorem}{17}
+\contentsline {subsection}{\numberline {5.6}Extreme-Value Theorem}{17}
+\contentsline {section}{\numberline {6}Distance Functions}{18}
+\contentsline {subsection}{\numberline {6.1}Euclidean Distance}{18}
+\contentsline {subsection}{\numberline {6.2}Geometric Distance}{19}
+\contentsline {subsection}{\numberline {6.3}Basic Distance Bounds Lemma}{19}
+\contentsline {subsection}{\numberline {6.4}Other Distance}{20}
+\contentsline {section}{\numberline {7}Inequalities}{20}
+\contentsline {subsection}{\numberline {7.1}Level of Operations}{20}
+\contentsline {subsection}{\numberline {7.2}AM-GM}{20}
+\contentsline {subsubsection}{\numberline {7.2.1}AM-GM Inequality}{20}
+\contentsline {subsubsection}{\numberline {7.2.2}Proof}{21}
+\contentsline {subsection}{\numberline {7.3}Young's Inequality}{21}
+\contentsline {subsubsection}{\numberline {7.3.1}H\"{o}lder Conjugate}{21}
+\contentsline {subsubsection}{\numberline {7.3.2}Young's Inequality}{22}
+\contentsline {subsubsection}{\numberline {7.3.3}Proof}{22}
+\contentsline {subsection}{\numberline {7.4}H\"{o}lder's Inequality}{22}
+\contentsline {subsubsection}{\numberline {7.4.1}$p$-norm}{22}
+\contentsline {subsubsection}{\numberline {7.4.2}H\"{o}lder's Inequality}{23}
+\contentsline {subsubsection}{\numberline {7.4.3}Proof}{23}
+\contentsline {subsection}{\numberline {7.5}Cauchy-Schwarz Inequality}{23}
+\contentsline {subsection}{\numberline {7.6}Triangle Inequality}{24}
+\contentsline {subsection}{\numberline {7.7}Minkowski's Inequality}{24}
+\contentsline {subsubsection}{\numberline {7.7.1}Rational Power Proof}{24}
+\contentsline {subsubsection}{\numberline {7.7.2}Proof}{24}
+\contentsline {section}{\numberline {8}Heine-Borel Theorem and Domain Properties}{25}
+\contentsline {subsection}{\numberline {8.1}Heine-Borel Theorem}{25}
+\contentsline {subsubsection}{\numberline {8.1.1}Proof}{25}
+\contentsline {subsection}{\numberline {8.2}Uniform Continuity}{25}
+\contentsline {subsection}{\numberline {8.3}Uniform Pointwise Convergence:}{26}
+\contentsline {subsubsection}{\numberline {8.3.1}Uniform Continuity Theorem}{26}
+\contentsline {subsection}{\numberline {8.4}Connected}{26}
+\contentsline {subsubsection}{\numberline {8.4.1}Definition}{26}
+\contentsline {subsubsection}{\numberline {8.4.2}Theorem}{27}
+\contentsline {section}{\numberline {9}Intermediate Value Theorem}{27}
+\contentsline {subsection}{\numberline {9.1}Theorem in $\mathbb {R}$}{27}
+\contentsline {subsubsection}{\numberline {9.1.1}Proof}{27}
+\contentsline {subsection}{\numberline {9.2}Theorem in $\mathbb {R^n}$}{27}
+\contentsline {subsubsection}{\numberline {9.2.1}Proof}{28}
+\contentsline {section}{\numberline {10}Vector Valued Functions}{28}
+\contentsline {subsection}{\numberline {10.1}Definition}{28}
+\contentsline {subsection}{\numberline {10.2}Continuity}{28}
+\contentsline {subsubsection}{\numberline {10.2.1}Component-wise Nature of Continuity}{28}
+\contentsline {subsubsection}{\numberline {10.2.2}Composition of Continuous Functions}{28}
+\contentsline {subsection}{\numberline {10.3}Compactness Theorem}{29}
+\contentsline {subsubsection}{\numberline {10.3.1}Theorem}{29}
+\contentsline {subsubsection}{\numberline {10.3.2}Proof}{29}
+\contentsline {subsection}{\numberline {10.4}Connectedness Theorem}{29}
+\contentsline {subsubsection}{\numberline {10.4.1}Theorem}{29}
+\contentsline {subsubsection}{\numberline {10.4.2}Proof}{30}
+\contentsline {section}{\numberline {11}Sequences of Functions}{30}
+\contentsline {subsection}{\numberline {11.1}Infinity Norm}{30}
+\contentsline {subsection}{\numberline {11.2}Pointwise Convergence}{30}
+\contentsline {subsubsection}{\numberline {11.2.1}Example}{30}
+\contentsline {subsection}{\numberline {11.3}Uniform Convergence}{30}
+\contentsline {subsubsection}{\numberline {11.3.1}$f_n \begingroup \setbox \z@ \hbox {\thinmuskip 0mu \medmuskip \m@ne mu\thickmuskip \@ne mu \setbox \tw@ \hbox {$\to \mathsurround \z@ $}\kern -\wd \tw@ ${}\to {}\mathsurround \z@ $}\edef \par }{31}
+\contentsline {subsection}{\numberline {11.4}Uniform Convergence Theorem}{31}
+\contentsline {subsubsection}{\numberline {11.4.1}Theorem}{31}
+\contentsline {subsubsection}{\numberline {11.4.2}Proof}{31}
