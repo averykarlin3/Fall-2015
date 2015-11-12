@@ -96,22 +96,23 @@
 \contentsline {subsubsection}{\numberline {9.1.1}Proof}{24}
 \contentsline {subsection}{\numberline {9.2}Theorem in $\mathbb {R^n}$}{24}
 \contentsline {subsubsection}{\numberline {9.2.1}Proof}{24}
-\contentsline {subsection}{\numberline {9.3}Definition}{24}
-\contentsline {subsection}{\numberline {9.4}Continuity}{24}
-\contentsline {subsubsection}{\numberline {9.4.1}Component-wise Nature of Continuity}{24}
-\contentsline {subsubsection}{\numberline {9.4.2}Composition of Continuous Functions}{25}
-\contentsline {subsection}{\numberline {9.5}Compactness Theorem}{25}
-\contentsline {subsubsection}{\numberline {9.5.1}Theorem}{25}
-\contentsline {subsubsection}{\numberline {9.5.2}Proof}{25}
-\contentsline {subsection}{\numberline {9.6}Connectedness Theorem}{25}
-\contentsline {subsubsection}{\numberline {9.6.1}Theorem}{25}
-\contentsline {subsubsection}{\numberline {9.6.2}Proof}{26}
-\contentsline {section}{\numberline {10}Sequences of Functions}{26}
-\contentsline {subsection}{\numberline {10.1}Infinity Norm}{26}
-\contentsline {subsection}{\numberline {10.2}Pointwise Convergence}{26}
-\contentsline {subsubsection}{\numberline {10.2.1}Example}{26}
-\contentsline {subsection}{\numberline {10.3}Uniform Convergence}{26}
-\contentsline {subsubsection}{\numberline {10.3.1}$f_n \begingroup \setbox \z@ \hbox {\thinmuskip 0mu \medmuskip \m@ne mu\thickmuskip \@ne mu \setbox \tw@ \hbox {$\to \mathsurround \z@ $}\kern -\wd \tw@ ${}\to {}\mathsurround \z@ $}\edef \par }{26}
-\contentsline {subsection}{\numberline {10.4}Uniform Convergence Theorem}{26}
+\contentsline {section}{\numberline {10}Vector Valued Functions}{24}
+\contentsline {subsection}{\numberline {10.1}Definition}{24}
+\contentsline {subsection}{\numberline {10.2}Continuity}{24}
+\contentsline {subsubsection}{\numberline {10.2.1}Component-wise Nature of Continuity}{24}
+\contentsline {subsubsection}{\numberline {10.2.2}Composition of Continuous Functions}{25}
+\contentsline {subsection}{\numberline {10.3}Compactness Theorem}{25}
+\contentsline {subsubsection}{\numberline {10.3.1}Theorem}{25}
+\contentsline {subsubsection}{\numberline {10.3.2}Proof}{25}
+\contentsline {subsection}{\numberline {10.4}Connectedness Theorem}{26}
 \contentsline {subsubsection}{\numberline {10.4.1}Theorem}{26}
-\contentsline {subsubsection}{\numberline {10.4.2}Proof}{27}
+\contentsline {subsubsection}{\numberline {10.4.2}Proof}{26}
+\contentsline {section}{\numberline {11}Sequences of Functions}{26}
+\contentsline {subsection}{\numberline {11.1}Infinity Norm}{26}
+\contentsline {subsection}{\numberline {11.2}Pointwise Convergence}{26}
+\contentsline {subsubsection}{\numberline {11.2.1}Example}{26}
+\contentsline {subsection}{\numberline {11.3}Uniform Convergence}{26}
+\contentsline {subsubsection}{\numberline {11.3.1}$f_n \begingroup \setbox \z@ \hbox {\thinmuskip 0mu \medmuskip \m@ne mu\thickmuskip \@ne mu \setbox \tw@ \hbox {$\to \mathsurround \z@ $}\kern -\wd \tw@ ${}\to {}\mathsurround \z@ $}\edef \par }{26}
+\contentsline {subsection}{\numberline {11.4}Uniform Convergence Theorem}{27}
+\contentsline {subsubsection}{\numberline {11.4.1}Theorem}{27}
+\contentsline {subsubsection}{\numberline {11.4.2}Proof}{27}
