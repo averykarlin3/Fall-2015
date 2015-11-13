@@ -117,4 +117,6 @@
 \contentsline {subsection}{\numberline {11.4}Uniform Convergence Theorem}{32}
 \contentsline {subsubsection}{\numberline {11.4.1}Theorem}{32}
 \contentsline {subsubsection}{\numberline {11.4.2}Proof}{32}
-\contentsline {section}{\numberline {12}Differentiable}{32}
+\contentsline {section}{\numberline {12}Differentiation}{32}
+\contentsline {subsection}{\numberline {12.1}Differentiable in $\mathbb {R}$}{32}
+\contentsline {subsection}{\numberline {12.2}Differentiable in $\mathbb {R^n}$}{32}

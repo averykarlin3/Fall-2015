@@ -376,6 +376,25 @@ $\frac{\epsilon}{3}$ because $\vec{f}_n$ is uniformally continuous.
 Therefore, we know that $||\vec{f}(\vec{p}) - \vec{f}(\vec{p})|| \le
 \epsilon$ for any $\delta$ we pick. $\therefore \vec{f}$ is continuous on $D$
 
-\section{Differentiable}
+\section{Differentiation}
+
+\subsection{Differentiable in $\mathbb{R}$}
+Let $f: [a, b] \to \mathbb{R},$ let $p \in (a, b) = [a, b]^o (int [a, b]),$, then f is \underline{differentiable} at p if $ \exists a \in \mathbb{R}$ such that $a = \lim{h \to 0} \frac{f(p+h) - f(p)}{h}$, called the \underline{derivative} at point p $(a = f'(p) = \frac{df}{dx}(p)).$
+
+\subsection{Differentiable in $\mathbb{R^n}$}
+This is generalized to high dimensions, such that for $f: D \subseteq \mathbb{R^d} \to \mathbb{R}$, and $\vec{p} \in D^o (\exists r > 0: B_r(\vec{p} \subseteq D)$. Thus, it can be approached from any given direction, due to the ball existing in all directions.
+
+$\vec{h} \to \vec{0}$ iff $h_d \to 0$, such that it can be substituted for the limit. Due to the lack of vector division though, the definition of the derivative has to be changed.
+
+By the previous definition, $\lim{h \to 0} |\frac{f(p+h) - f(p)}{h} - a| = 0$, rewritten  $\lim{h \to 0} \gamma(p, h) = 0$. $$ |h|\gamma(p, h) = |f(p+h) - f(p) - ah| < \epsilon|h| \text{as} h \to 0 (|h| < \delta).$$ $\exists a \in \mathbb{R}$, such that $\forall \epsilon > 0, \exists \delta > 0: |h| < \delta$, then $|f(p + h) - f(p) - ah| < \epsilon|h|$, defining a as the derivative at p.
+
+This is due to the idea that for some function, g(x), with linear approximation l(x), $\frac{|g(x) - l(x)|}{|x|} \to 0$ as $x \to 0$, such that the y distance decreases far faster than the x decay, called super-linear (suplinear) decay. Then, there must at most be 1 line that can superlinearly approximate g at x = 0. The superlinear decay curve is then the derivative function, where f(p + h) - f(p) = g(x) and ah = l(x).
+
+\underline{Proof:}
+Assume there are two function, l(x) = ax and m(x) = bx, then $\frac{|g(x) - ax|}{|x|} \to 0$ as $x \to 0$ and $\frac{|g(x) - bx|}{|x|} \to 0$ as $x \to 0$. Then $0 \geq |a - b| \frac{|ax - bx|}{|x|} = \frac{|(g(x) - bx) - (g(x) - ax|)}{|x|} \geq \frac{|g(x) - bx|}{|x|} + \frac{|g(x) - ax|}{|x|} \to 0$ as $x \to 0$, such that a = b. 
+
+The definition can now be easily moved to higher dimensions, such that $\exists a \in \mathbb{R}$ such that $\forall \epsilon > 0, \exists \delta > 0: ||\vec{h}|| < \delta$, then $|f(\vec{p} + \vec{h}) - f(\vec{p}) - \vec{a}\dot\vec{h}| < \epsilon||\vec{h}||$.
+
+This is then defined such that $\vec{a} = (\vec{\nabla}f)(p)$, or the gradient of f at p.
 
 \end{document}
