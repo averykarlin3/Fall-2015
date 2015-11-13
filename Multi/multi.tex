@@ -34,7 +34,7 @@
 Let K be a compact set in $\mathbb{R^d}$, and let ${U_\lambda | \lambda \in \Lambda}$ be a family of open sets in $\mathbb{R^d}$, which covers K, such that $K \subseteq \cup_{x \in \Lambda}U_\lambda$. Then $\exists \lambda_1, \lambda_2, \lambda_3 \text{... such that} K \subseteq U_{\lambda_1} \cup U_{\lambda_2} \cup \text{...} \cup U_{\lambda_n}.$
 
 \subsubsection{Proof}
-Since K is bounded, it can be fully contained within some rectangle (R), which can then be split into 4 congruent parts, $R_{i_1} (R_1, R_2, R_3, R_4)$. Suppose one quadrant cannot be covered by any finite collection of $U_\lambda$. By extension, if that quadrant is divided further, one of the subquadrants ($R_{i_1i_2}$) cannot be covered. This can continue for countable infinity divisions (able to be counted with an infinite amount of integer). Since $R_{i_1i_2...i_n} \neq \emptyset$, let $P_n$ be any point in $K \cap R_{i_1i_2...i_n}$, such that there is a bounded sequence of points in K. Thus it must have a convergent subsequence such that $P_{n_k} \to P, P \in K$. Thus, $P \in U_{\lambda^*}$ for some $\lambda^* \in \Lambda$. Since $U_{\lambda^*}$ is open, $\exists r > 0, \text{such that} B_r(P) \subseteq U_{\lambda^*}. Diameter/diagonal length (diam) R_{i_1i_2...i_n} = frac{diam(R)}{2^n} < r$ as $n \to \infty$. Thus, $R_{i_1i_2...i_n} \subseteq B_r(P)$ as $n_k \to \infty$. $dist(P, P_{n_k}) < \frac{r}{2}$ and $dist(P_{n_k}, x) \leq diam(R_{i_1i_2...i_n})$ and by the triangle inequality, $diam(R_{i_1i_2...i_n}) < \frac{r}{2}$. Thus, there is a contradiction, and it must be covered by a finite number of sets.
+Since K is bounded, it can be fully contained within some rectangle (R), which can then be split into 4 congruent parts, $R_{i_1} (R_1, R_2, R_3, R_4)$. Suppose one quadrant cannot be covered by any finite collection of $U_\lambda$. By extension, if that quadrant is divided further, one of the subquadrants ($R_{i_1i_2}$) cannot be covered. This can continue for countable infinity divisions (able to be counted with an infinite amount of integer). Since $R_{i_1i_2...i_n} \neq \emptyset$, let $P_n$ be any point in $K \cap R_{i_1i_2...i_n}$, such that there is a bounded sequence of points in K. Thus it must have a convergent subsequence such that $P_{n_k} \to P, P \in K$. Thus, $P \in U_{\lambda^*}$ for some $\lambda^* \in \Lambda$. Since $U_{\lambda^*}$ is open, $\exists r > 0, \text{such that} B_r(P) \subseteq U_{\lambda^*}$. Diameter/diagonal length (diam) of $ R_{i_1i_2...i_n} = \frac{diam(R)}{2^n} < r$ as $n \to \infty$. Thus, $R_{i_1i_2...i_n} \subseteq B_r(P)$ as $n_k \to \infty$. $dist(P, P_{n_k}) < \frac{r}{2}$ and $dist(P_{n_k}, x) \leq diam(R_{i_1i_2...i_n})$ and by the triangle inequality, $diam(R_{i_1i_2...i_n}) < \frac{r}{2}$. Thus, there is a contradiction, and it must be covered by a finite number of sets.
 
 \subsection{Uniform Continuity}
 Let $f: D \to \mathbb{R}$, where $D \subseteq \mathbb{R}^d$. We say $f$ is
@@ -56,17 +56,7 @@ that $\delta$ value would NOT change.
 \underline{Theorem}: If $f$ is uniformally continuous on $D$, then $f$ is continuous
 for every point in $D$.
 
-
-\subsection{Uniform Pointwise Convergence:}
-\underline{Theorem:}
-If $\vec{f_n}, vec{f}: \mathbb{R^d} \to \mathbb{R^e}$, then $\vec{f_n} \to^p \vec{f} on D: \vec{f_n}(\vec{x}) \to \vec{f}(vec{x}) for every point \vec{x} \in D (for any converging sequences, any point will also converge similarly, such that uniform convergence implies pointwise convergence, though the converse is untrue)$
-
-\underline{Proof:}
-$\vec{f_n} \to^u \vec{f} on D (uniform convergence): ||\vec{f_n} - \vec{f}||_D = sup_{\vec{x} \in D} ||\vec{f_n}(\vec{x}) - \vec{f}(\vec{x})|| \to 0 as n \to \infty. Then 0 \leq ||f_n(x) - f(x)|| \leq  ||f_n - f|| \to 0.$
-
-Then for a uniform sequences, $f_n(x) \to f(x) on D$, giving pointwise convergence.
-
-\subsubsection{Uniform Continuity Theorem}
+\subsection{Uniform Continuity Theorem}
 \underline{Theorem:}
 If $f: K \to \mathbb{R}$, where $K \subseteq \mathbb{R}^d$ is compact, and
 $f$ is continuous at each $\vec{x} \in K$. Then $f$ is uniformally continuous on
@@ -209,10 +199,18 @@ $$||+\vec{x} - \vec{a}+||_d < \delta \to ||+f(\vec{x}) - f(\vec{a})+||_e <
 $f: D \to \mathbb{R}^e$ is continuous at a point $\vec{a} \in D$ iff $f_1,
 f_2, \dots, f_e$ are all continuous at $\vec{a}$.
 
-\undeline{Proof}:
+\underline{Proof}:
 
 First fix an $\epsilon$, then by the basic distances bound lemma, we get a
 bunch of inequalities:
+
+\begin{align*}
+    |f_1(\vec{x}) - f_1(\vec{p})| < \frac{\epsilon}{\sqrt{e}}, &\forall \vec{x} \in D \cap B_{\delta_1}(\vec{p})\\
+    |f_2(\vec{x}) - f_2(\vec{p})| < \frac{\epsilon}{\sqrt{e}}, &\forall \vec{x} \in D \cap B_{\delta_2}(\vec{p})\\
+    ... \text{ } ... \text{ } & \text{ } ... \text{ }...\\
+    |f_e(\vec{x}) - f_e(\vec{p})| < \frac{\epsilon}{\sqrt{e}}, &\forall
+    \vec{x} \in D \cap B_{\delta_e}(\vec{p})
+\end{align*}
 
 Then let $\delta = \min\{\delta_1, \delta_2, \dots, \delta_e\} > 0$, which must
 exist and satisfy all the distance inequalities, specifically $\max_{1 \leq j
@@ -239,7 +237,7 @@ $$||+\vec{g}(\vec{y}) - \vec{g}(\vec{f}(\vec{p}))+|| < \epsilon$$
 To guarantee that $\vec{y} = \vec{f}(\vec{x})$ lies within $\eta$ units of
 $\vec{f}(\vec{p})$ i.e. $||+\vec{f}(\vec{x}) - \vec{f}(\vec{p})+|| < \eta$, we
 can take $\vec{x} \in D \cap B_\delta(\vec{p})$ where $\delta > 0$ corresponding
-to $\eta$ [using the continuity of $\vec{f}$ at $vec{p} \in D$].
+to $\eta$ [using the continuity of $\vec{f}$ at $\vec{p} \in D$].
 
 Now, as long as $\vec{x} \in D \cap B_\delta(\vec{p})$, we have
 $\vec{f}(\vec{x}) \in E \cap B_\eta(\vec{f}(\vec{p}))$. Thus, if we take
@@ -315,20 +313,20 @@ For $f: [a,b] \to \mathbb{R}$ that is bounded, we say:
 
 $$||+f+||_\infty := \sup_{x\in[a,b]} |f(x)|$$
 
-\subsection{Pointwise Convergence}
-$f_n : [a,b] \to \mathbb{R}$ for $n \geq 1$, and assume that they are all
-bounded on $[a,b]$. ($\exists+ M_n > 0 : |f_n(x)| \leq M_n$ for all $x \in
-[a,b]$).
-$f:[a,b] \to \mathbb{R}$, $f$ is bounded ($\exists+ M > 0: |f(x)| \leq M$
-for all $x \in [a,b]$).
-If $\forall x \in [a,b]: \lim_{n\to\infty} f_n(x) = f(x)$, then we say that $f_n
-\overset{p}{\to} f(x)$ ($f_n$ converges ``pointwise'' to $f$).
+\subsection{Pointwise Convergence:}
 
-\subsubsection{Example}
-$f_n(x) = x^n$, $n \geq 1$ on $[0, 1]$
-If the domain is $[0, 1)$, then $f_n \overset{p}{\to} f$ where $f(x) = 0$.
-On $[0, 1]$, $f_n \overset{p}{\to} \~{f}$, where $\~{f}$ is $0$ for $0 \leq x < 0$, and $1$
-when $x = 1$
+\underline{Definition:}
+For $f_n : [a,b] \to \mathbb{R}$ for $n \geq 1$, and assume that they are all bounded on $[a,b]$. ($\exists+ M_n > 0 : |f_n(x)| \leq M_n$ for all $x \in [a,b]$), and $f:[a,b] \to \mathbb{R}$, $f$ is bounded ($\exists+ M > 0: |f(x)| \leq M$ for all $x \in [a,b]$).
+
+If $\forall x \in [a,b]: \lim_{n\to\infty} f_n(x) = f(x)$, then we say that $f_n \overset{p}{\to} f(x)$ ($f_n$ converges ``pointwise'' to $f$).
+
+\underline{Theorem:}
+If $\vec{f_n} \overset{u \text{(uniform)}}{\to} \vec{f}: \mathbb{R^d} \to \mathbb{R^e}$, then $\vec{f_n} \overset{p \text{(pointwise)}}{\to} \vec{f} on D: \vec{f_n}(\vec{x}) \to \vec{f}(\vec{x})$ for every point $\vec{x} \in D$ (for any converging sequences, any point will also converge similarly, such that uniform convergence implies pointwise convergence, though the converse is untrue)
+
+\underline{Proof:}
+$\vec{f_n} \overset{u}{\to} \vec{f}$ on D (uniform convergence): $||\vec{f_n} - \vec{f}||_D = sup_{\vec{x} \in D} ||\vec{f_n}(\vec{x}) - \vec{f}(\vec{x})|| \to 0$ as $n \to \infty.$ $Then 0 \leq ||\vec{f_n}(\vec{x}) - \vec{f}(\vec{x})|| \leq  ||\vec{f_n} - \vec{f}|| \to 0.$
+
+Then for a uniform sequences, $f_n(x) \to f(x)$ on D, giving pointwise convergence.
 
 \subsection{Uniform Convergence}
 $f_n : [a,b] \to \mathbb{R}$ for $n \geq 1$, and assume that they are all
@@ -359,5 +357,7 @@ $[a,b]$. Then $f$ is also continuous on $[a,b]$
 \subsubsection{Proof}
 $\forall x, y \in [a,b]$, by the triangle inequality:
 $$|f(x) - f(y)| \leq |f(x) - f_n(x)| + |f_n(x) f_n(y)| + |f_n(x) - f(y)|$$
+
+\section{Differentiable}
 
 \end{document}

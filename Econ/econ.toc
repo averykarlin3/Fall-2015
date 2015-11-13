@@ -1,29 +1,32 @@
 \contentsline {section}{\numberline {1}CORE Chapter 1}{3}
 \contentsline {subsection}{\numberline {1.1}National Differences}{3}
 \contentsline {subsection}{\numberline {1.2}Average Living Standards}{3}
-\contentsline {subsection}{\numberline {1.3}Environmental Impact}{4}
-\contentsline {subsection}{\numberline {1.4}Capitalism}{4}
+\contentsline {subsection}{\numberline {1.3}The Modern World}{3}
+\contentsline {subsection}{\numberline {1.4}Environmental Impact}{4}
+\contentsline {subsection}{\numberline {1.5}Capitalism}{4}
 \contentsline {section}{\numberline {2}CORE Chapter 14 - Monetary Policy}{5}
 \contentsline {subsection}{\numberline {2.1}Inflation vs Unemployment}{5}
-\contentsline {section}{\numberline {3}Chapter 1}{5}
-\contentsline {subsection}{\numberline {3.1}Study of Economics}{5}
-\contentsline {subsection}{\numberline {3.2}Intro to Macro}{6}
-\contentsline {subsection}{\numberline {3.3}Production Possibility Curve Model}{7}
+\contentsline {subsection}{\numberline {2.2}Monetary Policy}{6}
+\contentsline {section}{\numberline {3}Chapter 1}{6}
+\contentsline {subsection}{\numberline {3.1}Study of Economics}{6}
+\contentsline {subsection}{\numberline {3.2}Intro to Macro}{7}
+\contentsline {subsection}{\numberline {3.3}Production Possibility Curve Model}{8}
 \contentsline {subsection}{\numberline {3.4}Comparative Advantage and Trade}{8}
-\contentsline {section}{\numberline {4}Chapter 2 - Supply and Demand}{8}
-\contentsline {subsection}{\numberline {4.1}Intro to Demand}{8}
+\contentsline {section}{\numberline {4}Chapter 2 - Supply and Demand}{9}
+\contentsline {subsection}{\numberline {4.1}Intro to Demand}{9}
 \contentsline {subsection}{\numberline {4.2}Supply and Equilibrium}{9}
-\contentsline {subsection}{\numberline {4.3}Changes in Equilibrium}{9}
+\contentsline {subsection}{\numberline {4.3}Changes in Equilibrium}{10}
 \contentsline {section}{\numberline {5}Chapter 3 - Economic Performance Measurement}{10}
 \contentsline {subsection}{\numberline {5.1}Circular Flow and GDP}{10}
-\contentsline {subsection}{\numberline {5.2}Real GDP}{11}
+\contentsline {subsection}{\numberline {5.2}Real GDP}{12}
 \contentsline {subsection}{\numberline {5.3}Unemployment}{12}
 \contentsline {subsection}{\numberline {5.4}Causes and Catagories of Unemployment}{13}
 \contentsline {subsection}{\numberline {5.5}Inflation}{14}
 \contentsline {subsection}{\numberline {5.6}Measuring Inflation}{15}
-\contentsline {section}{\numberline {6}Chapter 4 - National Income and Price Determination}{15}
-\contentsline {subsection}{\numberline {6.1}Income and Expenditure}{15}
+\contentsline {section}{\numberline {6}Chapter 4 - National Income and Price Determination}{16}
+\contentsline {subsection}{\numberline {6.1}Income and Expenditure}{16}
 \contentsline {subsection}{\numberline {6.2}Aggregate Demand and Determinants}{17}
-\contentsline {subsection}{\numberline {6.3}Aggregate Supply and Determinants}{17}
-\contentsline {subsection}{\numberline {6.4}Equilibrium in the AD-AS Model}{18}
+\contentsline {subsection}{\numberline {6.3}Aggregate Supply and Determinants}{18}
+\contentsline {subsection}{\numberline {6.4}Equilibrium in the AD-AS Model}{19}
 \contentsline {subsection}{\numberline {6.5}Economic Policy and the AD-AS Model}{19}
+\contentsline {subsection}{\numberline {6.6}Fiscal Policy and the Multiplier}{20}

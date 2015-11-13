@@ -355,6 +355,12 @@ $$((x - a)^p + (y - b)^p)^{\frac{1}{p}} ++++ (p > 1)$$
 This is another distance formula, but under this, only reflection preserves
 distance.
 
+\subsection{Distances Between Sets}
+
+We define the distance between a point $\vec{p}$ and a set $D$ as: $$dist(\vec{p}; D) = \inf_{\vec{d} \in D} dist(\vec{d} ; \vec{p})$$
+
+We also define the distance between two sets $D_1$ and $D_2$ as: $$dist(D_1 ; D_2) = \inf_{\substack{\vec{p} \in D_1\\\vec{q} \in D_2}} dist(\vec{p} ; \vec{q})$$
+
 \section{Inequalities}
 
 \subsection{Level of Operations}
@@ -514,6 +520,29 @@ shortest distance between two points is the straight line, or the \textbf{Genera
 Triangle Inequality} or the ``Broken Line Inequality'')
 
 This can be thought of algebraically, such that $|a + b| \leq |a| + |b|$ with equality iff $ab \geq 0$
+
+\subsection{Reverse Triangle Inequality}
+
+From the Triangle Inequality we know:
+
+$$||+\vec{x} + \vec{y}+|| \leq ||+\vec{x}+|| + ||+\vec{y}+||$$
+
+Let $\vec{z} = \vec{x} + \vec{y}$, then we subtract, we get:
+
+$$||+\vec{z}+|| \leq ||+\vec{x}+|| + ||+\vec{z} - \vec{x}+||$$
+$$||+\vec{z}+|| - ||+\vec{x}+|| \leq ||+\vec{z} - \vec{x}+||$$
+
+Because $\vec{x}$ and $\vec{z}$ are just variables, we can switch them, and we
+get:
+
+$$||+\vec{x}+|| - ||+\vec{z}+|| \leq ||+\vec{x} - \vec{z}+|| = ||+\vec{z}
+- \vec{x}+||$$
+
+Since the right hand side is greater than both of the above qualities, we can
+just say it's greater than the absolute value of the difference. Hence we get
+the Reverse Triangle Inequality:
+
+$$||+\vec{z} - \vec{x}+|| \geq |||+\vec{z}+|| - ||+\vec{x}+|||$$
 
 \subsection{Minkowski's Inequality}
 Mikowski's states that $||u + v||_p \leq ||u||_p + ||v||_p$, with equality if v = tu or u = tv for some $t \geq 0$.
