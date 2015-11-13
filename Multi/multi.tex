@@ -311,7 +311,7 @@ Therefore, $E$ is connected.
 \subsection{Infinity Norm}
 For $f: [a,b] \to \mathbb{R}$ that is bounded, we say:
 
-$$||+f+||_\infty := \sup_{x\in[a,b]} |f(x)|$$
+$$||f||_\infty := ||f||_D := \sup_{x\in[a,b]} |f(x)|$$
 
 \subsection{Pointwise Convergence:}
 
@@ -321,14 +321,15 @@ For $f_n : [a,b] \to \mathbb{R}$ for $n \geq 1$, and assume that they are all bo
 If $\forall x \in [a,b]: \lim_{n\to\infty} f_n(x) = f(x)$, then we say that $f_n \overset{p}{\to} f(x)$ ($f_n$ converges ``pointwise'' to $f$).
 
 \underline{Theorem:}
-If $\vec{f_n} \overset{u \text{(uniform)}}{\to} \vec{f}: \mathbb{R^d} \to \mathbb{R^e}$, then $\vec{f_n} \overset{p \text{(pointwise)}}{\to} \vec{f} on D: \vec{f_n}(\vec{x}) \to \vec{f}(\vec{x})$ for every point $\vec{x} \in D$ (for any converging sequences, any point will also converge similarly, such that uniform convergence implies pointwise convergence, though the converse is untrue)
+If $\vec{f_n} \overset{u \text{(uniform)}}{\to} \vec{f}: \mathbb{R^d} \to \mathbb{R^e}$, then $\vec{f_n} \overset{p \text{(pointwise)}}{\to} \vec{f}$ on D: $\vec{f_n}(\vec{x}) \to \vec{f}(\vec{x})$ for every point $\vec{x} \in D$ (for any converging sequences, any point will also converge similarly, such that uniform convergence implies pointwise convergence, though the converse is untrue)
 
 \underline{Proof:}
 $\vec{f_n} \overset{u}{\to} \vec{f}$ on D (uniform convergence): $||\vec{f_n} - \vec{f}||_D = sup_{\vec{x} \in D} ||\vec{f_n}(\vec{x}) - \vec{f}(\vec{x})|| \to 0$ as $n \to \infty.$ $Then 0 \leq ||\vec{f_n}(\vec{x}) - \vec{f}(\vec{x})|| \leq  ||\vec{f_n} - \vec{f}|| \to 0.$
 
-Then for a uniform sequences, $f_n(x) \to f(x)$ on D, giving pointwise convergence.
+Then, by the squeeze theorem, for a uniform sequences, $f_n(x) \to f(x)$ on D, giving pointwise convergence.
 
 \subsection{Uniform Convergence}
+\subsubsection{In $\mathbb{R}$}
 $f_n : [a,b] \to \mathbb{R}$ for $n \geq 1$, and assume that they are all
 bounded on $[a,b]$. ($\exists+ M_n > 0 : |f_n(x)| \leq M_n$ for all $x \in
 [a,b]$).
@@ -343,11 +344,13 @@ forces that the greatest vertical difference between the two functions will be
 arbitrarily small after $N_\epsilon$. This forces the two functions to be
 ``close'' as a whole.
 
-\subsubsection{$f_n \overset{u}{\to} f$ implies $f_n \overset{p}{\to} f$}
-Pick any $x \in [a,b]$, $0 \leq |f_n(x) - f(x)| \leq ||+f_n - f+||_\infty \to 0$ as
-$n \to \infty$. Then by the squeeze theorem, $|f_n(x) - f(x)| = 0$, therefore
-$f_n(x) \to f(x)$ as $n \to \infty$.
-Note the the converse is NOT true.
+\subsubsection{In $\mathbb{R^n}$}
+
+Let $D \in \mathbb{R}^d$ be a non-empty set, and let $\vec{f}:
+D\to\mathbb{R}^e$ and $\vec{f}_n: D \to \mathbb{R}^e$ for $n \geq 1$. We
+say that $\vec{f_n} - \vec{f}$ on $D$ if:
+
+$$||+f_n - f+||_D \to 0 \text{ as } n \to \infty$$
 
 \subsection{Uniform Convergence Theorem}
 \subsubsection{Theorem}
@@ -355,8 +358,22 @@ If $f_n \overset{u}{\to} f$ on $[a, b]$, where each $f_n$ is continuous on
 $[a,b]$. Then $f$ is also continuous on $[a,b]$
 
 \subsubsection{Proof}
-$\forall x, y \in [a,b]$, by the triangle inequality:
-$$|f(x) - f(y)| \leq |f(x) - f_n(x)| + |f_n(x) f_n(y)| + |f_n(x) - f(y)|$$
+Pick any $\vec{p} \in D$, and fix $\epsilon > 0$. We need to find $\delta$
+such that $\forall \vec{x} \in D$ with $||\vec{x} - \vec{p}|| < \delta$,
+then $||\vec{f}(\vec{x}) - \vec{f}(\vec{p})|| < \epsilon$. 
+We can apply the triangle inequality and we get:
+
+$$||\vec{f}(\vec{p}) - \vec{f}(\vec{p})|| \leq ||\vec{f}(\vec{x}) 
+\vec{f}_n(\vec{x})|| + ||\vec{f}_n(\vec{x}) - \vec{f}_n(\vec{p})|| +
+||\vec{f}_n(\vec{p}) - \vec{f}(\vec{p})||$$
+
+For large enough $n$, we know that $||\vec{f}_n - \vec{f}||_D < \frac{\epsilon}{3}$
+because $\vec{f}_n - \vec{f}$. Now we know that the first and third ter
+are bounded by $\frac{\epsilon}{3}$. The second term is bounded b
+$\frac{\epsilon}{3}$ because $\vec{f}_n$ is uniformally continuous.
+
+Therefore, we know that $||\vec{f}(\vec{p}) - \vec{f}(\vec{p})|| \le
+\epsilon$ for any $\delta$ we pick. $\therefore \vec{f}$ is continuous on $D$
 
 \section{Differentiable}
 

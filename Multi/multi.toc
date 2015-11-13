@@ -102,18 +102,19 @@
 \contentsline {subsection}{\numberline {10.2}Continuity}{28}
 \contentsline {subsubsection}{\numberline {10.2.1}Component-wise Nature of Continuity}{29}
 \contentsline {subsubsection}{\numberline {10.2.2}Composition of Continuous Functions}{29}
-\contentsline {subsection}{\numberline {10.3}Compactness Theorem}{29}
-\contentsline {subsubsection}{\numberline {10.3.1}Theorem}{29}
-\contentsline {subsubsection}{\numberline {10.3.2}Proof}{29}
+\contentsline {subsection}{\numberline {10.3}Compactness Theorem}{30}
+\contentsline {subsubsection}{\numberline {10.3.1}Theorem}{30}
+\contentsline {subsubsection}{\numberline {10.3.2}Proof}{30}
 \contentsline {subsection}{\numberline {10.4}Connectedness Theorem}{30}
 \contentsline {subsubsection}{\numberline {10.4.1}Theorem}{30}
 \contentsline {subsubsection}{\numberline {10.4.2}Proof}{30}
-\contentsline {section}{\numberline {11}Sequences of Functions}{30}
-\contentsline {subsection}{\numberline {11.1}Infinity Norm}{30}
-\contentsline {subsection}{\numberline {11.2}Pointwise Convergence:}{30}
+\contentsline {section}{\numberline {11}Sequences of Functions}{31}
+\contentsline {subsection}{\numberline {11.1}Infinity Norm}{31}
+\contentsline {subsection}{\numberline {11.2}Pointwise Convergence:}{31}
 \contentsline {subsection}{\numberline {11.3}Uniform Convergence}{31}
-\contentsline {subsubsection}{\numberline {11.3.1}$f_n \begingroup \setbox \z@ \hbox {\thinmuskip 0mu \medmuskip \m@ne mu\thickmuskip \@ne mu \setbox \tw@ \hbox {$\to \mathsurround \z@ $}\kern -\wd \tw@ ${}\to {}\mathsurround \z@ $}\edef \par }{31}
-\contentsline {subsection}{\numberline {11.4}Uniform Convergence Theorem}{31}
-\contentsline {subsubsection}{\numberline {11.4.1}Theorem}{31}
-\contentsline {subsubsection}{\numberline {11.4.2}Proof}{31}
-\contentsline {section}{\numberline {12}Differentiable}{31}
+\contentsline {subsubsection}{\numberline {11.3.1}In $\mathbb {R}$}{31}
+\contentsline {subsubsection}{\numberline {11.3.2}In $\mathbb {R^n}$}{31}
+\contentsline {subsection}{\numberline {11.4}Uniform Convergence Theorem}{32}
+\contentsline {subsubsection}{\numberline {11.4.1}Theorem}{32}
+\contentsline {subsubsection}{\numberline {11.4.2}Proof}{32}
+\contentsline {section}{\numberline {12}Differentiable}{32}
