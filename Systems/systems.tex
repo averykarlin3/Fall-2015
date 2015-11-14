@@ -177,7 +177,7 @@ item Libraries are added, either .h files from the current directory through \#i
 \item strncat and strncpy has an integer as a final parameter, using only the first n characters of the source string, such that if it is longer than the string, it uses up to the null character 
 \item char* strsep(char* source, char* delimeter) - Replaces each occurance of the delimeter, replacing the first character of the first occurance of the delimeter with NULL
 \begin{enumerate}
-\item The source must be a pointer to the string pointer (not array) variable, and is modified such that it points to the character after the delimeter, or null if there is no instance
+\item The source must be a pointer to the string pointer (not array, due to needing to be mutable) variable, and is modified such that it points to the character after the delimeter, or null if there is no instance
 \item Returns the original source, before changed
 \end{enumerate}
 \end{enumerate}
