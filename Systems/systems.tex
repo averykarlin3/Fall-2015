@@ -175,7 +175,12 @@ item Libraries are added, either .h files from the current directory through \#i
 \item char* strcpy (char *destination, char *source) copies the string to destination, assuming the allocated destination space is the same size or larger
 \item char* strcat (char *destination, char *source) adds source to the end of destination
 \item strncat and strncpy has an integer as a final parameter, using only the first n characters of the source string, such that if it is longer than the string, it uses up to the null character 
+\item char* strsep(char* source, char* delimeter) - Replaces each occurance of the delimeter, replacing the first character of the first occurance of the delimeter with NULL
+\begin{enumerate}
+\item The source must be a pointer to the string, and is modified such that it points to the character after the delimeter
 \end{enumerate}
+\end{enumerate}
+
 \subsection{Struct}
 \begin{enumerate}
 \item Structs are a collection of values within a single data type, declared by struct\{\textit{type1 var1; type2 var2}\} as the type name
