@@ -177,7 +177,7 @@ item Libraries are added, either .h files from the current directory through \#i
 \item strncat and strncpy has an integer as a final parameter, using only the first n characters of the source string, such that if it is longer than the string, it uses up to the null character 
 \item char* strsep(char* source, char* delimeter) - Replaces each occurance of the delimeter, replacing the first character of the first occurance of the delimeter with NULL
 \begin{enumerate}
-\item The source must be a pointer to the string, and is modified such that it points to the character after the delimeter, or null if there is no instance
+\item The source must be a pointer to the string pointer variable, and is modified such that it points to the character after the delimeter, or null if there is no instance
 \item Returns the original source, before changed
 \end{enumerate}
 \end{enumerate}
@@ -338,7 +338,7 @@ item Libraries are added, either .h files from the current directory through \#i
 \item Exec functions are found within ``unistd.h''
 \item execl(\textit{path-to-including-command, command, arg1, arg2, ...,}, NULL) - Runs the command program, found at the path,  where all non-NULL variables are strings, args are command line arguments, and NULL shows the end of the arguments
 \item execlp(\textit{path, command, arg1, arg2, ...,}, NULL) - Runs similar to execl, except using the PATH variable for the start of the path
-\item execvp(\textit{path, argument-array}) - Runs similar to execl, except with an array of the command and command line argument strings
+\item execvp(\textit{path, argument-array}) - Runs similar to execlp, except with an array of the command and command line argument strings
 \end{enumerate}
 
 \end{document}
