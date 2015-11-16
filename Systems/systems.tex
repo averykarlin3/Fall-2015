@@ -1,4 +1,3 @@
-\documentclass[11 pt, twoside]{article}
 \usepackage{textcomp}
 \usepackage[margin=1in]{geometry}
 \usepackage[utf8]{inputenc}
@@ -350,6 +349,7 @@ item Libraries are added, either .h files from the current directory through \#i
 \item 2> and 2>> - Redirects stderr instead of stdout
 \item &> and &>> - Redirects both stdout and stderr 
 \item \textit{command} < \textit{new\_input} - Redirects stdin from the file into the command
+\item \textit{command1} | \textit{command2} - Pipes from command1 to command2, or puts the stdout of command1 as the stdin of command2
 \end{enumerate}
 
 \end{document}
