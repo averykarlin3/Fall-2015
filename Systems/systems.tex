@@ -352,4 +352,10 @@ item Libraries are added, either .h files from the current directory through \#i
 \item \textit{command1} | \textit{command2} - Pipes from command1 to command2, or puts the stdout of command1 as the stdin of command2
 \end{enumerate}
 
+\subsection{C Redirection}
+\begin{enumerate}
+\item dup2(\textit{fd1, fd2}) - Redirects the fd2 file descriptor value to refer to fd1, found in ``unistd.h''
+\item int dup(\textit{fd1}) - Creates a new entry in the file table, the decriptor of which is returned, which refers to the same file as fd1, found in ``unistd.h''
+\end{enumerate}
+
 \end{document}
