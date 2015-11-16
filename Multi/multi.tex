@@ -386,15 +386,15 @@ This is generalized to high dimensions, such that for $f: D \subseteq \mathbb{R^
 
 $\vec{h} \to \vec{0}$ iff $h_d \to 0$, such that it can be substituted for the limit. Due to the lack of vector division though, the definition of the derivative has to be changed.
 
-By the previous definition, $\lim{h \to 0} |\frac{f(p+h) - f(p)}{h} - a| = 0$, rewritten  $\lim{h \to 0} \gamma(p, h) = 0$. $$ |h|\gamma(p, h) = |f(p+h) - f(p) - ah| < \epsilon|h| \text{as} h \to 0 (|h| < \delta).$$ $\exists a \in \mathbb{R}$, such that $\forall \epsilon > 0, \exists \delta > 0: |h| < \delta$, then $|f(p + h) - f(p) - ah| < \epsilon|h|$, defining a as the derivative at p.
+By the previous definition, $\lim{h \to 0} |\frac{f(p+h) - f(p)}{h} - a| = 0$, rewritten  $\lim{h \to 0} \gamma(p, h) = 0$. $$ |h|\gamma(p, h) = |f(p+h) - f(p) - ah| < \epsilon|h| \text{ as } h \to 0 (|h| < \delta).$$ $\exists a \in \mathbb{R}$, such that $\forall \epsilon > 0, \exists \delta > 0: |h| < \delta$, then $|f(p + h) - f(p) - ah| < \epsilon|h|$, defining a as the derivative at p.
 
 This is due to the idea that for some function, g(x), with linear approximation l(x), $\frac{|g(x) - l(x)|}{|x|} \to 0$ as $x \to 0$, such that the y distance decreases far faster than the x decay, called super-linear (suplinear) decay. Then, there must at most be 1 line that can superlinearly approximate g at x = 0. The superlinear decay curve is then the derivative function, where f(p + h) - f(p) = g(x) and ah = l(x).
 
 \underline{Proof:}
-Assume there are two function, l(x) = ax and m(x) = bx, then $\frac{|g(x) - ax|}{|x|} \to 0$ as $x \to 0$ and $\frac{|g(x) - bx|}{|x|} \to 0$ as $x \to 0$. Then $0 \geq |a - b| \frac{|ax - bx|}{|x|} = \frac{|(g(x) - bx) - (g(x) - ax|)}{|x|} \geq \frac{|g(x) - bx|}{|x|} + \frac{|g(x) - ax|}{|x|} \to 0$ as $x \to 0$, such that a = b. 
+Assume there are two function, l(x) = ax and m(x) = bx, then $\frac{|g(x) - ax|}{|x|} \to 0$ as $x \to 0$ and $\frac{|g(x) - bx|}{|x|} \to 0$ as $x \to 0$. Then $0 \leq |a - b| \frac{|ax - bx|}{|x|} = \frac{|(g(x) - bx) - (g(x) - ax|)}{|x|} \leq \frac{|g(x) - bx|}{|x|} + \frac{|g(x) - ax|}{|x|} \to 0$ as $x \to 0$, such that a = b. This prove can be done in each component for higher dimensions, using the dot product to remove all other components, by the properties of the dot product.
 
-The definition can now be easily moved to higher dimensions, such that $\exists a \in \mathbb{R}$ such that $\forall \epsilon > 0, \exists \delta > 0: ||\vec{h}|| < \delta$, then $|f(\vec{p} + \vec{h}) - f(\vec{p}) - \vec{a}\dot\vec{h}| < \epsilon||\vec{h}||$.
+The definition can now be easily moved to higher dimensions, such that $\exists !$ (exists exactly one) or $~\exists \vec{a} \in \mathbb{R}$ such that $\forall \epsilon > 0, \exists \delta > 0: ||\vec{h}|| < \delta$, then $|f(\vec{p} + \vec{h}) - f(\vec{p}) - \vec{a}\vec{h}| < \epsilon||\vec{h}||$. If the latter is true, f(x) is said to be \underline{differentiable} at $\vec{p}$, since it is a unique value, denoted f'(p). 
 
-This is then defined such that $\vec{a} = (\vec{\nabla}f)(p)$, or the gradient of f at p.
+This is then defined specifically such that $\vec{a} = (\vec{\nabla}f)(p)$, or the gradient of f at p.
 
 \end{document}

@@ -341,4 +341,15 @@ item Libraries are added, either .h files from the current directory through \#i
 \item execvp(\textit{path, argument-array}) - Runs similar to execlp, except with an array of the command and command line argument strings
 \end{enumerate}
 
+\section{File Redirection}
+
+\subsection{Command-Line Redirection}
+\begin{enumerate}
+\item \textit{command} > \textit{new\_output} - Redirects stdout from the command into the new\_output file, overwriting the file
+\item >> - Redirects, but appends instead of overwrites
+\item 2> and 2>> - Redirects stderr instead of stdout
+\item &> and &>> - Redirects both stdout and stderr 
+\item \textit{command} < \textit{new\_input} - Redirects stdin from the file into the command
+\end{enumerate}
+
 \end{document}
