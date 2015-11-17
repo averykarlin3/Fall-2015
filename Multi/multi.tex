@@ -391,10 +391,25 @@ By the previous definition, $\lim{h \to 0} |\frac{f(p+h) - f(p)}{h} - a| = 0$, r
 This is due to the idea that for some function, g(x), with linear approximation l(x), $\frac{|g(x) - l(x)|}{|x|} \to 0$ as $x \to 0$, such that the y distance decreases far faster than the x decay, called super-linear (suplinear) decay. Then, there must at most be 1 line that can superlinearly approximate g at x = 0. The superlinear decay curve is then the derivative function, where f(p + h) - f(p) = g(x) and ah = l(x).
 
 \underline{Proof:}
-Assume there are two function, l(x) = ax and m(x) = bx, then $\frac{|g(x) - ax|}{|x|} \to 0$ as $x \to 0$ and $\frac{|g(x) - bx|}{|x|} \to 0$ as $x \to 0$. Then $0 \leq |a - b| \frac{|ax - bx|}{|x|} = \frac{|(g(x) - bx) - (g(x) - ax|)}{|x|} \leq \frac{|g(x) - bx|}{|x|} + \frac{|g(x) - ax|}{|x|} \to 0$ as $x \to 0$, such that a = b. This prove can be done in each component for higher dimensions, using the dot product to remove all other components, by the properties of the dot product.
+Assume there are two function, l(x) = ax and m(x) = bx, then $\frac{|g(x) - ax|}{|x|} \to 0$ as $x \to 0$ and $\frac{|g(x) - bx|}{|x|} \to 0$ as $x \to 0$. Then $0 \leq |a - b| \frac{|ax - bx|}{|x|} = \frac{|(g(x) - bx) - (g(x) - ax|)}{|x|} \leq \frac{|g(x) - bx|}{|x|} + \frac{|g(x) - ax|}{|x|} \to 0$ as $x \to 0$, such that a = b. This proof can be done in each component for higher dimensions, using the dot product to remove all other components, by the properties of the dot product.
 
-The definition can now be easily moved to higher dimensions, such that $\exists !$ (exists exactly one) or $~\exists \vec{a} \in \mathbb{R}$ such that $\forall \epsilon > 0, \exists \delta > 0: ||\vec{h}|| < \delta$, then $|f(\vec{p} + \vec{h}) - f(\vec{p}) - \vec{a}\vec{h}| < \epsilon||\vec{h}||$. If the latter is true, f(x) is said to be \underline{differentiable} at $\vec{p}$, since it is a unique value, denoted f'(p). 
+The definition can now be easily moved to higher dimensions, by superlinear decay, such that there is only one object in $\mathbb{R^{n-1}}$, a hyperplane, or the set of all vectors orthoganal to the non-zero normal vector, all anchored to a specific point, $\vec{p_0}$, such that superlinear decay takes place.
+
+\underline{Definition:}
+A hyperplane in $\mathbb{R^{d+1}}$ is a set of the form, Q = \{$\vec{x} \in \mathbb{R^{d+1}} | (\vec{x} - \vec{p_0} \cdot \vec{n} = 0}$, where $\vec{p_0}, \vec{n} \in \mathbb{R^{d+1}}$ with $\vec{n} \neq \vec{0}$, where n is a normal of Q $(\vec{n} \perp Q)$.
+
+Thus, $\exists !$ (exists exactly one) or $~\exists \vec{a} \in \mathbb{R}$ such that $\forall \epsilon > 0, \exists \delta > 0: ||\vec{h}|| < \delta$, then $|f(\vec{p} + \vec{h}) - f(\vec{p}) - \vec{a}\vec{h}| < \epsilon||\vec{h}||$. If the latter is true, f(x) is said to be \underline{differentiable} at $\vec{p}$, since it is a unique value, denoted f'(p). 
 
 This is then defined specifically such that $\vec{a} = (\vec{\nabla}f)(p)$, or the gradient of f at p.
+
+\underline{Claim:}
+The graph of $y = f(\vec{p}) + \vec{a} \cdot (\vec{x} - \vec{p})$ is a hyperplane in $mathbb{R^{d+1}}$.
+
+\underline{Proof:}
+Let $\vec{N} \in \mathbb{R^{d+1}} = (-a_1, -a_2, ..., -a_d, 1), and \vec{P_0} \in \mathbb{R^{d+1}} = (p_1, p_2, ..., p_d, f(\vec{p}))$and $\vec{X} \in \mathbb{R^{d+1}} = (x_1, x_2, ..., x_d, y)$. Thus, $\vec(X) - \vec{P_0} = (x_1 - p_1, x_2 - p_2, ... x_d - p_d, y - f(\vec{p}))$, giving the equation of a hyperplane $(\vec{X} - \vec{P_0}) \cdot \vec{N} = 0$.
+
+If $\vec{p} + \vec{h} = \vec{X}$, then $|f(\vec{X}) - [f(\vec{p}) + \vec{a} \cdot (\vec{X} - \vec{p}) < \epsilon||\vec{h}||$.
+
+$y = f(\vec{p}) + (\nabla f)(\vec{P}) \cdot (\vec{x} - \vec{p})$
 
 \end{document}
