@@ -1,3 +1,4 @@
+\documentclass[11 pt, twoside]{article}
 \usepackage{textcomp}
 \usepackage[margin=1in]{geometry}
 \usepackage[utf8]{inputenc}
@@ -50,7 +51,7 @@
 \item C programs can be compiled into one executable, such that there is just one file after another in command line, though since they are compiled in the same namespace, they cannot have the same global variables or function names
 \item The same is true for files called within other files, though those are compiled automatically
 \item C programs must have exactly 1 main() function to compile, creating issues when multiple files have a main()
-\item ``gcc -o \textit{file.c}'' creates a binary object .o file, which can be run through other exectuable files, and can be compounded similarly during compiling
+\item ``gcc -c \textit{file.c}'' creates a binary object .o file, which can be run through other exectuable files, and can be compounded similarly during compiling
 \begin{enumerate}
 \item Binary object files are used for files without a main method, and are non-executable
 \item Binary object files can be linked to a .c file through compound compiling with the first file as the .c file
