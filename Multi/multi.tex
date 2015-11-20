@@ -396,14 +396,16 @@ Assume there are two function, l(x) = ax and m(x) = bx, then $\frac{|g(x) - ax|}
 The definition can now be easily moved to higher dimensions, by superlinear decay, such that there is only one object in $\mathbb{R^{n-1}}$, a hyperplane, or the set of all vectors orthoganal to the non-zero normal vector, all anchored to a specific point, $\vec{p_0}$, such that superlinear decay takes place.
 
 \underline{Definition:}
-A hyperplane in $\mathbb{R^{d+1}}$ is a set of the form, Q = \{$\vec{x} \in \mathbb{R^{d+1}} | (\vec{x} - \vec{p_0} \cdot \vec{n} = 0}$, where $\vec{p_0}, \vec{n} \in \mathbb{R^{d+1}}$ with $\vec{n} \neq \vec{0}$, where n is a normal of Q $(\vec{n} \perp Q)$.
+A hyperplane in $\mathbb{R^{d+1}}$ is a set of the form, Q = \{$\vec{x} \in \mathbb{R^{d+1}} | (\vec{x} - \vec{p_0} \cdot \vec{n} = 0)$, where $\vec{p_0}, \vec{n} \in \mathbb{R^{d+1}}$ with $\vec{n} \neq \vec{0}$, where n is a normal of Q $(\vec{n} \perp Q)$.
 
 Thus, $\exists !$ (exists exactly one) or $~\exists \vec{a} \in \mathbb{R}$ such that $\forall \epsilon > 0, \exists \delta > 0: ||\vec{h}|| < \delta$, then $|f(\vec{p} + \vec{h}) - f(\vec{p}) - \vec{a}\vec{h}| < \epsilon||\vec{h}||$. If the latter is true, f(x) is said to be \underline{differentiable} at $\vec{p}$, since it is a unique value, denoted f'(p). 
+
+\subsection{Gradient}
 
 This is then defined specifically such that $\vec{a} = (\vec{\nabla}f)(p)$, or the gradient of f at p.
 
 \underline{Claim:}
-The graph of $y = f(\vec{p}) + \vec{a} \cdot (\vec{x} - \vec{p})$ is a hyperplane in $mathbb{R^{d+1}}$.
+The graph of $y = f(\vec{p}) + \vec{a} \cdot (\vec{x} - \vec{p})$ is a hyperplane in $\mathbb{R^{d+1}}$.
 
 \underline{Proof:}
 Let $\vec{N} \in \mathbb{R^{d+1}} = (-a_1, -a_2, ..., -a_d, 1), and \vec{P_0} \in \mathbb{R^{d+1}} = (p_1, p_2, ..., p_d, f(\vec{p}))$and $\vec{X} \in \mathbb{R^{d+1}} = (x_1, x_2, ..., x_d, y)$. Thus, $\vec(X) - \vec{P_0} = (x_1 - p_1, x_2 - p_2, ... x_d - p_d, y - f(\vec{p}))$, giving the equation of a hyperplane $(\vec{X} - \vec{P_0}) \cdot \vec{N} = 0$.
@@ -411,5 +413,15 @@ Let $\vec{N} \in \mathbb{R^{d+1}} = (-a_1, -a_2, ..., -a_d, 1), and \vec{P_0} \i
 If $\vec{p} + \vec{h} = \vec{X}$, then $|f(\vec{X}) - [f(\vec{p}) + \vec{a} \cdot (\vec{X} - \vec{p}) < \epsilon||\vec{h}||$.
 
 $y = f(\vec{p}) + (\nabla f)(\vec{P}) \cdot (\vec{x} - \vec{p})$
+
+\subsection{Directional Derivative}
+
+Take $\vec{u} \in \mathbb{R}^d$, $\vec{u} \neq \vec{0}$ and take a point on the function $f$, $\vec{p}$, we define the \underline{directional derivative}
+$\partial_{\vec{u}}f(\vec{p})$ as:
+\begin{align*}
+\partial_{\vec{u}}f(\vec{p}) &= \lim_{h\to0} \frac{f(\vec{p} + h\vec{u}) - f(\vec{p})}{h}\\
+&= \frac{d}{dt}\big|_{t=0} f(\vec{p} + t\vec{u})\\
+\end{align*}
+This quality describes how fast the function $f$ is changing at $\vec{p}$ in the direction of $\vec{u}$.
 
 \end{document}

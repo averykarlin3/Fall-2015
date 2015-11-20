@@ -120,3 +120,5 @@
 \contentsline {section}{\numberline {12}Differentiation}{32}
 \contentsline {subsection}{\numberline {12.1}Differentiable in $\mathbb {R}$}{32}
 \contentsline {subsection}{\numberline {12.2}Differentiable in $\mathbb {R^n}$}{32}
+\contentsline {subsection}{\numberline {12.3}Gradient}{33}
+\contentsline {subsection}{\numberline {12.4}Directional Derivative}{33}
