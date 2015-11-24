@@ -396,21 +396,103 @@ Assume there are two function, l(x) = ax and m(x) = bx, then $\frac{|g(x) - ax|}
 The definition can now be easily moved to higher dimensions, by superlinear decay, such that there is only one object in $\mathbb{R^{n-1}}$, a hyperplane, or the set of all vectors orthoganal to the non-zero normal vector, all anchored to a specific point, $\vec{p_0}$, such that superlinear decay takes place.
 
 \underline{Definition:}
-A hyperplane in $\mathbb{R^{d+1}}$ is a set of the form, Q = \{$\vec{x} \in \mathbb{R^{d+1}} | (\vec{x} - \vec{p_0} \cdot \vec{n} = 0}$, where $\vec{p_0}, \vec{n} \in \mathbb{R^{d+1}}$ with $\vec{n} \neq \vec{0}$, where n is a normal of Q $(\vec{n} \perp Q)$.
+A hyperplane in $\mathbb{R^{d+1}}$ is a set of the form, Q = \{$\vec{x} \in \mathbb{R^{d+1}} | (\vec{x} - \vec{p_0} \cdot \vec{n} = 0)$, where $\vec{p_0}, \vec{n} \in \mathbb{R^{d+1}}$ with $\vec{n} \neq \vec{0}$, where n is a normal of Q $(\vec{n} \perp Q)$.
 
-Thus, $\exists !$ (exists exactly one) or $~\exists \vec{a} \in \mathbb{R}$ such that $\forall \epsilon > 0, \exists \delta > 0: ||\vec{h}|| < \delta$, then $|f(\vec{p} + \vec{h}) - f(\vec{p}) - \vec{a}\vec{h}| < \epsilon||\vec{h}||$. If the latter is true, f(x) is said to be \underline{differentiable} at $\vec{p}$, since it is a unique value, denoted f'(p). 
+Thus to summerize differentiability for real valued functions, $\exists !$ (exists exactly one) or $~\exists \vec{a} \in \mathbb{R}$ such that $\forall \epsilon > 0, \exists \delta > 0: ||\vec{h}|| < \delta$, then $|f(\vec{p} + \vec{h}) - f(\vec{p}) - \vec{a}\vec{h}| < \epsilon||\vec{h}||$. If the latter is true, f(x) is said to be \underline{differentiable} at $\vec{p}$, since it is a unique value, denoted f'(p). 
+
+\subsection{Gradient}
 
 This is then defined specifically such that $\vec{a} = (\vec{\nabla}f)(p)$, or the gradient of f at p.
 
 \underline{Claim:}
-The graph of $y = f(\vec{p}) + \vec{a} \cdot (\vec{x} - \vec{p})$ is a hyperplane in $mathbb{R^{d+1}}$.
+The graph of $y = f(\vec{p}) + \vec{a} \cdot (\vec{x} - \vec{p})$ is a hyperplane in $\mathbb{R^{d+1}}$, such that the gradient is a hyperplane.
 
 \underline{Proof:}
-Let $\vec{N} \in \mathbb{R^{d+1}} = (-a_1, -a_2, ..., -a_d, 1), and \vec{P_0} \in \mathbb{R^{d+1}} = (p_1, p_2, ..., p_d, f(\vec{p}))$and $\vec{X} \in \mathbb{R^{d+1}} = (x_1, x_2, ..., x_d, y)$. Thus, $\vec(X) - \vec{P_0} = (x_1 - p_1, x_2 - p_2, ... x_d - p_d, y - f(\vec{p}))$, giving the equation of a hyperplane $(\vec{X} - \vec{P_0}) \cdot \vec{N} = 0$.
+Let $\vec{N}$ (the normal vector to the hyperplane$ \in \mathbb{R^{d+1}} = (-a_1, -a_2, ..., -a_d, 1), and \vec{P_0} \in \mathbb{R^{d+1}} = (p_1, p_2, ..., p_d, f(\vec{p}))$and $\vec{X} \in \mathbb{R^{d+1}} = (x_1, x_2, ..., x_d, y)$. Thus, $\vec(X) - \vec{P_0} = (x_1 - p_1, x_2 - p_2, ... x_d - p_d, y - f(\vec{p}))$, giving the equation of a hyperplane $(\vec{X} - \vec{P_0}) \cdot \vec{N} = 0$.
 
-If $\vec{p} + \vec{h} = \vec{X}$, then $|f(\vec{X}) - [f(\vec{p}) + \vec{a} \cdot (\vec{X} - \vec{p}) < \epsilon||\vec{h}||$.
+If $\vec{p} + \vec{h} = \vec{X}$, then $|f(\vec{X}) - [f(\vec{p}) + \vec{a} \cdot (\vec{X} - \vec{p})|| < \epsilon||\vec{h}||$. This is equal to the difference between the point on the graph and the function approximation. This can also be seen to be easily equal to the equation of the hyperplane from above, such that the gradient is the hyperplane.
 
-$y = f(\vec{p}) + (\nabla f)(\vec{P}) \cdot (\vec{x} - \vec{p})$
+\subsubsection{Gradient Representation}
+
+Since $\vec{N}$ is the normal vector to the plane at that point, equal to $(-\vec{\nabla}f(\vec{p}), 1)$, or the projection of the negation of the normal vector onto the domain, such that it is the vector of the direction and magnitude of the fastest increase of the function at $\vec{p}$.
+
+\subsubsection{Gradient Calculation}
+
+Take $\vec{h} = h\vec{e}_j$ , where $h\to 0$ and the set of $\vec{e}_j$ is known
+as the \textit{standard basis vectors} in $\mathbb{R}^d$:
+
+\begin{equation*}
+\vec{e_j}=
+\begin{cases}
+\vec{e}_1 &= (1,0,0,\dots,0)\\
+\vec{e}_2 &= (0,1,0,\dots,0)\\
+\vdots & \vdots \hfill \vdots \hfill \vdots \hfill \vdots\\
+\vec{e}_d &= (0,0,0,\dots,1)\\
+\end{cases}
+\end{equation*}
+
+Note that because $||\vec{e}_j|| = 1$, $||\vec{h}|| = |h|||\vec{e}_j|| = |h|$. Now if we fix a $j \in \{1,2,3,\dots,d\}$ and apply the definition of differentiability, the unique gradient ($\vec{a}$) must satisfy:
+
+$$\forall \epsilon > 0, \exists \delta > 0: \forall h \text{ with } |h| < \delta \implies |f(\vec{p} + h\vec{e}_j) - f(\vec{p}) - \vec{a}\cdot h\vec{e}_j| < \epsilon|h|$$
+
+However, note that when we dot $\vec{a}$ with $\vec{e}_j$, the result is the $j^{th}$ component of $\vec{a}$, or $a_j$. Now if we divide through by $|h|$, we get:
+
+$$\left|\frac{f(\vec{p} + h\vec{e}_j) - f(\vec{p})}{h} - a_j\right| < \epsilon$$
+
+This says is that $\left|\frac{f(\vec{p} + h\vec{e}_j) - f(\vec{p})}{h}\right|$ approaches $a_j$ indefinitely, therefore, we can rewrite the relationship as a limit statement:
+
+$$\boxed{a_j = \lim_{h \to 0} \left|\frac{f(\vec{p} + h\vec{e}_j) - f(\vec{p})}{h}\right|}$$
+
+We call this $a_j$ as a \textbf{partial derivative} of $f(\vec{x})$ at $j^{th}$ component, which can be written as $\partial_{x_j} f(\vec{p})$ or $\frac{\partial f}{\partial x_j} (\vec{p})$.
+
+Note that: $$\partial_{x_j}f(\vec{p}) = \frac{d}{dx_j}\left|_{x_j = p_j} f(p_1, p_2, \dots, p_{j-1}, x_j, p_{j+1}, \dots, p_d)$$
+
+In other words, we can hold all other components of $f$ constant and differentiate based on only one component, and plug in the value $p_j$ after the differentiation. Now we know how to compute the gradient of $f$, it is simply the vector of all the partial derivatives:
+
+$$\vec{\nabla}f = (\partial_{x_1} f(\vec{p}), \partial_{x_2} f(\vec{p}), \dots, \partial_{x_d}f(\vec{p}))$$
+
+\subsection{Directional Derivative}
+
+Take $\vec{u} \in \mathbb{R}^d$, $\vec{u} \neq \vec{0}$ and take a point on the function $f$, $\vec{p}$, we define the \underline{directional derivative}
+$\partial_{\vec{u}}f(\vec{p})$ as:
+\begin{align*}
+\partial_{\vec{u}}f(\vec{p}) &= \lim_{h\to0} \frac{f(\vec{p} + h\vec{u}) - f(\vec{p})}{h}\\
+&= \frac{d}{dt}\big|_{t=0} f(\vec{p} + t\vec{u})\\
+\end{align*}
+This quality describes how fast the function $f$ is changing at $\vec{p}$ in the direction of $\vec{u}$.
+
+The latter definition gives the single variable function, such that g(t) = $\vec{p} + t\vec{u}$, where $\vec{u} \neq \vec{0}$, is called the uniform rectilinear motion curve, due to being a line with constant curve speed.
+
+\subsection{Vector Valued Directional Derivative}
+Given a vectored valued function $\vec{\gamma}(t)$:
+
+\begin{equation*}
+    \vec{\gamma}(t) = \left[
+    \begin{array}{c}
+        \gamma_1 (t)\\
+        \gamma_2 (t)\\
+        \vdots\\
+        \gamma_d (t)
+    \end{array} \right]
+\end{equation*}
+
+We define the ``speed'' vector of $\vec{\gamma}$ as its derivative, which is
+defined as:
+
+$$\frac{d\vec{\gamma}}{dt}(t) := \lim_{h\to0} \frac{\vec{\gamma}(t + h) - \vec{\gamma}(t)}{h}$$
+
+But because of the componentwise nature of limits, we can distribute the limit
+into each component of $\vec{\gamma}$, so we can rewrite the speed vector as:
+
+\begin{equation*}
+    \frac{d\vec{\gamma}}{dt}(t) = \left[
+    \begin{array}{c}
+        \gamma_1' (t)\\
+        \gamma_2' (t)\\
+        \vdots\\
+        \gamma_d' (t)
+    \end{array} \right]
+\end{equation*}
 
 If $f:D \subseteq \mathbb{R^d} \to \mathbb{R}$ is differentiable at $\vec{p} \in D^o$, then $\vec{u_0} = \frac{\vec{\nabla}f(\vec{p})}{||\vec{\nabla}f(\vec{p})||}$ is the direction of steepest ascent for f at $\vec{p}$, and $||\vec{\nabla}f(\vec{p})|| = max_{||\vec{u}||=1} \partial_\vec{u} f(\vec{p})$, where $\vec{u}$ is any unit vector, such that as a result, $\partial_{\vec{u}} f(\vec{p}) = \vec{\nabla}f(\vec{p}) \cdot \vec{u}$.
 
