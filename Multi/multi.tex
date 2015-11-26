@@ -416,6 +416,12 @@ If $\vec{p} + \vec{h} = \vec{X}$, then $|f(\vec{X}) - [f(\vec{p}) + \vec{a} \cdo
 
 Since $\vec{N}$ is the normal vector to the plane at that point, equal to $(-\vec{\nabla}f(\vec{p}), 1)$, or the projection of the negation of the normal vector onto the domain, such that it is the vector of the direction and magnitude of the fastest increase of the function at $\vec{p}$.
 
+\underline{Theorem:}
+If $f:D \subseteq \mathbb{R^d} \to \mathbb{R}$ is differentiable at $\vec{p} \in D^o$, then $\vec{u_0} = \frac{\vec{\nabla}f(\vec{p})}{||\vec{\nabla}f(\vec{p})||}$ is the direction of steepest ascent for f at $\vec{p}$, and $||\vec{\nabla}f(\vec{p})|| = max_{||\vec{u}||=1} \partial_\vec{u} f(\vec{p})$, where $\vec{u}$ is any unit vector, such that as a result, $\partial_{\vec{u}} f(\vec{p}) = \vec{\nabla}f(\vec{p}) \cdot \vec{u}$.
+
+This is by the Cauchy-Schwartz equality case $(-||\vec{u}||||\vec{v}|| \leq \vec{u} \cdot \vec{v} \leq ||\vec{u}||||\vec{v}||$, with equality with the lower bound if $\vec{u}$ and $\vec{v}$ are in opposite directions, the higher bound if in the same direction), such that $-\vec{u_0}$ is the direction of steepest descent for f at $\vec{p}$ and $-||\vec{\nabla}f(\vec{p})|| = min_{||\vec{u}||=1} \partial_{\vec{u}}f(\vec{p}).$ 
+
+
 \subsubsection{Gradient Calculation}
 
 Take $\vec{h} = h\vec{e}_j$ , where $h\to 0$ and the set of $\vec{e}_j$ is known
@@ -494,17 +500,113 @@ into each component of $\vec{\gamma}$, so we can rewrite the speed vector as:
     \end{array} \right]
 \end{equation*}
 
-If $f:D \subseteq \mathbb{R^d} \to \mathbb{R}$ is differentiable at $\vec{p} \in D^o$, then $\vec{u_0} = \frac{\vec{\nabla}f(\vec{p})}{||\vec{\nabla}f(\vec{p})||}$ is the direction of steepest ascent for f at $\vec{p}$, and $||\vec{\nabla}f(\vec{p})|| = max_{||\vec{u}||=1} \partial_\vec{u} f(\vec{p})$, where $\vec{u}$ is any unit vector, such that as a result, $\partial_{\vec{u}} f(\vec{p}) = \vec{\nabla}f(\vec{p}) \cdot \vec{u}$.
+\subsection{Differentiability Determination}
 
-This is by the Cauchy-Schwartz equality case $(-||\vec{u}||||\vec{v}|| \leq \vec{u} \cdot \vec{v} \leq ||\vec{u}||||\vec{v}||$, with equality with the lower bound if $\vec{u}$ and $\vec{v}$ are in opposite directions, the higher bound if in the same direction), such that $-\vec{u_0}$ is the direction of steepest descent for f at $\vec{p}$ and $-||\vec{\nabla}f(\vec{p})|| = min_{||\vec{u}||=1} \partial_{\vec{u}}f(\vec{p}).$ 
-
-\underline{Note:}
 The mere existance of the set of partial derivatives at $\vec{p}$ with respect to each variable is not enough to guarantee differentiability or continuity at $\vec{p}$, since there must exist some tangential hyperplane, but rather must have a partial derivative in all directions.
+
+\subsubsection{Sufficient Condition}
 
 \underline{Theorem:}
 There is a sufficient condition (true implies, but false does not imply the opposite) for differeniability, where if $f: D \subseteq \mathbb{R^d} \to \mathbb{R}$ and $\vec{p} \in D^o$, and if $\vec{\nabla}f(\vec{x})$ exists for all points $\vec{x} \in B_\delta (\vec{p}) (\exists \delta > 0)$ and is continuous at $\vec{p}$, then f is differentiable at $\vec{p}$.
 
 \underline{Proof:}
-Let $\vec{p_0} = \vec{p}, \vec{p_1} = \vec{p} + h_1\vec{e}_1$, where $\vec{h}$ is some displacement vector.
+Let $\vec{h} = (h_1, h_2, \dots, h_d)$ and consider the point $\vec{p} +
+\vec{h}$. We will construct a path from $\vec{p}$ to $\vec{p} + \vec{h}$ such
+that in each ``step'' we move $h_d$ in the $d^{th}$ axial direction, and we call
+each intermediate point $\vec{p}_d$ in the following manner where $\vec{e}_d$ is
+the $d^{th}$ standard basis vector.
+\begin{align*}
+    \vec{p}_0 &= \vec{p}\\
+    \vec{p}_1 &= \vec{p}_0 + h_1 \vec{e}_1\\
+    \vec{p}_2 &= \vec{p}_1 + h_2 \vec{e}_2\\
+    \vdots &= \text{     } \vdots \text{     } \vdots \text{     } \vdots\\
+    \vec{p}_d &= \vec{p}_{d-1} + h_d \vec{e}_d
+\end{align*}
+
+Now consider the function $\Delta f = f(\vec{p} - \vec{h}) - f(\vec{p})$, we can
+write this as a telescoping sum:
+
+$$\Delta f = \sum_{j=1}^d \{f(\vec{p}_j) - f(\vec{p}_{j-1})\}$$
+
+Within each term, we can use the mean value theorem from one dimensional
+calculus. We can do so because $\vec{p}_j$ and $\vec{p}_{j - 1}$ only differ in
+1 coordinate, like the following:
+
+\begin{align*}
+    \vec{p}_{j - 1} &= (p_1 + h_1, \dots p_{j-1} + h_{j-1}, \boxed{p_j}, \dots p_d)\\
+    \vec{p}_{j} &= (p_1 + h_1, \dots p_{j-1} + h_{j-1}, \boxed{p_j + h_j}, \dots p_d)
+\end{align*}
+
+We also know that the partial derivatives of $f$ exists for all points within
+$B_r(\vec{p})$, therefore we can indeed apply the Mean Value Theorem.
+
+Now we apply the MVT:
+
+$$\Delta f = \sum_{j=1}^d \partial_{x_j} f(\vec{q}_j) h_j$$
+
+Where $\vec{q}_j = (p_1 + h_1, \dots, p_{j-1} + h_{j-1}, p_j + \theta h_j,
+\dots, p_d)$ where $0 < \theta < 1$. In other words, $\vec{q}_j$ is somewhere
+between $\vec{p}_{j-1}$ and $\vec{p}_{j}$ in the $j^{th}$ coordinate.
+
+Now let us consider the definition of differentiability, we need to prove that 
+
+
+$$|\Delta f - \vec{\nabla}f(\vec{p}) \cdot \vec{h}| = |\sum_{j = 1}^d
+\partial_{x_j} f(\vec{q}) h_j - \sum_{j = 1}^d \partial_{x_j} f(\vec{p}) h_j|$$
+
+Now we can apply the triangle inequality on the summations and get:
+
+$$|\Delta f - \vec{\nabla}f(\vec{p}) \cdot \vec{h}| < \sum_{j=1}^d |\partial_{x_j} f(\vec{q}_j) - \partial_{x_j} f(\vec{p})|
+\+ |h_j|$$
+
+Now we divide both sides by the length of $\vec{h}$:
+
+\begin{align*}
+    \frac{|\Delta f - \gradient f(\vec{p}) \cdot \vec{h}|}{||\vec{h}||} &\leq
+    \sum_{j=1}^d |\partial_{x_j} f(\vec{q}_j) - \partial_{x_j} f(\vec{p})| \+
+    \frac{|h_j|}{||\vec{h}||}\\
+    &\leq \sum_{j=1}^d |\partial_{x_j} (\vec{q}_j) - \partial_{x_j} f(\vec{p})|
+\end{align*}
+
+Now let $\vec{h} \to \vec{0}$. Then each $\vec{q}_j$ approaches $\vec{p}$. Then
+we know:
+
+$$\sum_{j=1}^d |\partial_{x_j} (\vec{q}_j) - \partial_{x_j} f(\vec{p})| \to 0$$
+
+Since the number of terms in a sum is fixed and each term within the sum is
+going to 0, the entire sum is going to 0, which means $||\vec{h}|| <
+\delta(\epsilon)$, we can say that the sum is less than $\epsilon$, which
+means that
+
+$$\frac{|\Delta f - \gradient f(\vec{p}) \cdot \vec{h}|}{||\vec{h}||} \leq
+\sum_{j=1}^d |\partial_{x_j} f(\vec{q}_j) - \partial_{x_j} f(\vec{p})| \+
+\frac{|h_j|}{||\vec{h}||} \leq \epsilon$$
+
+Which means that a superlinear decay is possible, which means that $f$ is
+differentiable.
+
+\subsubsection{Mean Value Theorem}
+
+If $f : [a, b] \to \mathbb{R}$ is differentiable on $(a, b)$ and continuous
+on $[a, b]$, then $\Delta f = f(b) - f(a) = f'(c)(b - a)$ where $c \in (a, b)$.
+
+\subsection{Higher-Order Partial Derivatives}
+
+\subsubsection{Notations}
+$f \in C^2$ if $\partial_{x_i}\partial_{x_j} f$ is continuous for any $i, j \in
+\{1, 2, \dots, d\}$.
+
+Classically, we also define second order partial derivatives as follows:
+
+\begin{align*}
+    \partial_{x_i} \partial_{x_i} &= \partial_{x_i}^2 f = \frac{\partial^2 f}
+    {\partial x_i^2}\\
+    \partial_{x_i} \partial_{x_j} &= \partial_{x_i} \partial_{x_j} f =
+    \frac{\partial^2 f}{\partial x_i \partial x_j}
+\end{align*}
+
+\subsubsection{Theorem}
+If $f \in C^2$ and $\vec{p} \in D^\circ$, then
+$\partial_{x_j}\partial_{x_i} f(\vec{p}) = \partial_{x_i}\partial_{x_j} f(\vec{p})$
 
 \end{document}
