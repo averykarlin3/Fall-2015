@@ -605,13 +605,28 @@ Classically, we also define second order partial derivatives as follows:
     \frac{\partial^2 f}{\partial x_i \partial x_j}
 \end{align*}
 
-\subsubsection{Theorem}
+\subsubsection{Partial Equality Theorem}
 If $f:D \subseteq \mathbb{R^d} \to \mathbb{R}$ is C^2$ (On $B_r(\vec{p}) \partial_{x_j}\partial{x_j}$ is continuous for any $i, j \in {1, 2, 3, ..., d}$)$ near $\vec{p} \in D^o$, then $\partial_{x_j}\partial_{x_i} f(\vec{p}) = \partial_{x_i}\partial_{x_j} f(\vec{p})$.
 
 \underline{Corollary:}
 If f is $C^k$ on $B_r(\vec{p})$ for $k \geq 2 [\partial{x_{i_1}}\partial{x_{i_2}}...\partial{x_{i_k}}$ is continuous on $B_r(\vec{p})$ for all $i_1, i_2, ..., i_k \in {1, 2, ..., d}$, and if $(i_1, i_2, ..., i_k)$ and $(j_1, j_2, ..., j_k)$ are permutations of one another, then $\partial_{x_{i_1}}...\partial{x_{i_k}}f(\vec{p}) = \partial{x_{j_1}}\partial{x_{j_k}}f(\vec{p})$.
 
+This is proven fairly trivially by grouping the initially done partials (since function composition is associative), such that there are only 2 partials either grouped, or not grouped, which can then be switched by the theorem.
+
+\subsubsection{Partial Continuity-Differentiability Theorems}
 \underline{Theorem:}
-If f is $C^k (k \geq 1)$, then f is also $C^{k-1}$. Thus, a function can be said to be $C^0$ if it is continuous itself on that region.
+If f is $C^k (k \geq 1)$, then f is also $C^{k-1}$. Thus, a function can be said to be $C^0$ if it is continuous itself on that region. 
+
+\underline{Theorem:}
+If f is differentiable at $\vec{p} \in D^o$, then f is continuous at $\vec{p}$.
+
+\underline{Proof:}
+$\forall \epsilon > 0, \exists \delta > 0, \forall \vec{h}$ with $||\vec{h}|| < \delta, |f(\vec{p} + \vec{h}) - f(\vec{p}) - \vec{\nabla}f(\vec{p}) \cdot \vec{h}| < \epsilon||\vec{h}||$.
+
+Next, by the triangle and Cauchy-Schwartz inequalities, $|f(\vec{p} + \vec{h}) - f(\vec{p})| = |f(\vec{p} + \vec{h}) - f(\vec{p}) - \vec{a} \cdot \vec{h} + \vec{a} \cdot \vec{h}| \leq |f(\vec{p} + \vec{h}) - f(\vec{p}) - \vec{a} \cdot \vec{h}| + |\vec{a} \cdot \vec{h}| < \epsilon||\vec{h}|| + ||\vec{a}||||\vec{h}|| = (1 + ||\vec{a}||)||\vec{h}|| = M||\vec{h}||$ (where M is some constant), such that it can be made less than any constant, showinng continuity.
+
+This is due to the fact that if the partial derivatives exist and are continuous around the point, then it must be differentiable, and as a result, continuous.
+
+Thus, the base case of $C^1$, then $C^0$ is true, and it can be done by induction, using the induction step, stating $\partial_{x_{i_1}}\partial_{x_{i_2}}...\partial{x_{i_k}}f = \partial{x_{i_1}}g$, which must be continuous for any $i_1 \in {1, ..., d}$, since the original function was continuous. Thus, g is $C^1$, such that g must be continuous.
 
 \end{document}
