@@ -131,4 +131,4 @@
 \contentsline {subsection}{\numberline {12.7}Higher-Order Partial Derivatives}{38}
 \contentsline {subsubsection}{\numberline {12.7.1}Notations}{38}
 \contentsline {subsubsection}{\numberline {12.7.2}Partial Equality Theorem}{39}
-\contentsline {subsubsection}{\numberline {12.7.3}Partial Continuity-Differentiability Theorems}{39}
+\contentsline {subsubsection}{\numberline {12.7.3}Partial Continuity-Differentiability Theorems}{40}
