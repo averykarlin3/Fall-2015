@@ -675,4 +675,15 @@ This is due to the fact that if the partial derivatives exist and are continuous
 
 Thus, the base case of $C^1$, then $C^0$ is true, and it can be done by induction, using the induction step, stating $\partial_{x_{i_1}}\partial_{x_{i_2}}...\partial{x_{i_k}}f = \partial{x_{i_1}}g$, which must be continuous for any $i_1 \in {1, ..., d}$, since the original function was continuous. Thus, g is $C^1$, such that g must be continuous.
 
+\subsection{Differentiability of Vector-Valued Functions}
+
+\subsubsection{Linear Functions}
+Consider a vector-valued linear function, $\vec{l}: \mathbb{R^d} \to \mathbb{R^e}$, mapping a line in d-space onto at most a line in e-space (such that it could be a point).
+
+For a linear function, it is sufficient to have the properties of:
+\begin{itemize}
+\item Additivity: $\vec{l}(\vec{x} + \vec{y}) = \vec{l}(\vec{x}) = \vec{l}(\vec{y})$
+\item Homogeneity: $\vec{l}(c\vec{x}) = c\vec{l}(\vec{x})
+\end{itemize}
+
 \end{document}
