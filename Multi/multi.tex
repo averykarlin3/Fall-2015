@@ -28,448 +28,145 @@
 
 \input{unit1.tex} %R^1 and EVT in R^2
 \input{unit2.tex} %Inequalities and EVT in R^n
+\input{unit3.tex} %Differentiability
 
-\section{Heine-Borel Theorem and Domain Properties}
+\section{Linear Algebra}
+\subsection{Linear Mappings/Functions}
 
-\subsection{Heine-Borel Theorem}
-Let K be a compact set in $\mathbb{R^d}$, and let ${U_\lambda | \lambda \in \Lambda}$ be a family of open sets in $\mathbb{R^d}$, which covers K, such that $K \subseteq \cup_{x \in \Lambda}U_\lambda$. Then $\exists \lambda_1, \lambda_2, \lambda_3 \text{... such that} K \subseteq U_{\lambda_1} \cup U_{\lambda_2} \cup \text{...} \cup U_{\lambda_n}.$
+Consider a function $\vec{l}: \mathbb{R}^d \to \mathbb{R}^e$. $\vec{l}$ is
+called a \textbf{linear mapping} if the image of any k-flat in $\mathbb{R}^d$
+($0 \leq k \leq d$) is a \~{k}-flat in $\mathbb{R}^e$, where $\~{k} \leq k$.
+Basically these definitions ``preserve flatness.''
 
-\subsubsection{Proof}
-Since K is bounded, it can be fully contained within some rectangle (R), which can then be split into 4 congruent parts, $R_{i_1} (R_1, R_2, R_3, R_4)$. Suppose one quadrant cannot be covered by any finite collection of $U_\lambda$. By extension, if that quadrant is divided further, one of the subquadrants ($R_{i_1i_2}$) cannot be covered. This can continue for countable infinity divisions (able to be counted with an infinite amount of integer). Since $R_{i_1i_2...i_n} \neq \emptyset$, let $P_n$ be any point in $K \cap R_{i_1i_2...i_n}$, such that there is a bounded sequence of points in K. Thus it must have a convergent subsequence such that $P_{n_k} \to P, P \in K$. Thus, $P \in U_{\lambda^*}$ for some $\lambda^* \in \Lambda$. Since $U_{\lambda^*}$ is open, $\exists r > 0, \text{such that} B_r(P) \subseteq U_{\lambda^*}$. Diameter/diagonal length (diam) of $ R_{i_1i_2...i_n} = \frac{diam(R)}{2^n} < r$ as $n \to \infty$. Thus, $R_{i_1i_2...i_n} \subseteq B_r(P)$ as $n_k \to \infty$. $dist(P, P_{n_k}) < \frac{r}{2}$ and $dist(P_{n_k}, x) \leq diam(R_{i_1i_2...i_n})$ and by the triangle inequality, $diam(R_{i_1i_2...i_n}) < \frac{r}{2}$. Thus, there is a contradiction, and it must be covered by a finite number of sets.
+\subsection{Sufficient Conditions for Linear Mapping}
+For $\vec{l}$ to be a linear function, it must have the following properties:
 
-\subsection{Uniform Continuity}
-Let $f: D \to \mathbb{R}$, where $D \subseteq \mathbb{R}^d$. We say $f$ is
-uniformally continuous on $D$ if:
-$$\forall \epsilon > 0, \exists+\delta > 0: \forall \vec{x}, \vec{y} \in D,
-||+\vec{x} - \vec{y}+|| < \delta \to |f(\vec{x}) - f(\vec{y})| < \epsilon$$
+\begin{enumerate}
+    \item Additivity: $\vec{l}(\vec{x} + \vec{y}) = \vec{l}(\vec{x}) +
+        \vec{l}(\vec{y})$
+    \item Homogeneity: $\vec{l}(c\vec{x}) = c\vec{l}(\vec{x})$
+\end{enumerate}
+\vspace{0.2cm}
 
-The difference between this and regular continuity is that the $\delta$ in
-regular continuity is defined by both $\epsilon$ and the specific point we
-are considering. Uniform continuity, however, the value $\delta$ is independent
-to the point you chose within the domain and is just dependent on $\epsilon$.
+\textbf{Proof}: Take k-flat in $\mathbb{R}^d$ $F = \{t_1\vec{a}_1 +
+t_2\vec{a}_2 + \dots + t_k\vec{a}_k \+|\+ t_1, t_2, \dots, t_k \in
+\mathbb{R}\}$. Here, $\vec{a}_1, \vec{a}_2, \dots, \vec{a}_k \in
+\mathbb{R}^d$ such that all of them are independent of each other, i.e. no
+$\vec{a}_i$ is a linear combination of $\{\vec{a}_j \+|\+ j \neq i\}$. Because
+otherwise $\vec{a}_i$ can be broken up and the dimension of $F$ will be reduced.
+This can also be phrased as the set of $\vec{a}_i$ must satisfy the following condition:
+$F = \vec{0} \implies t_1 = t_2 = \dots = t_k = 0$. Because if there exists a
+non-trivial solution, we can subtract all the terms with their coefficient being
+0, and divide through the non-zero coefficient, then we would express
+$\vec{a}_i$ as a linear combination of others. Therefore, if all the vectors are
+independent, the equation $F = \vec{0}$ only has the trivial solution.
 
-For example, consider $y = \tan{x}$ where $D = (-\frac{\pi}{2}, \frac{\pi}{2})$.
-the value required for $\delta$ for a fixed $\epsilon$ gets smaller and
-smaller as $x$ approaches both endpoints. This function is continuous but not
-uniformally so. If it were uniformally continuous,
-that $\delta$ value would NOT change.
+So now consider the linear mapping $\vec{l}$. We can distribute because the
+mapping is additive, and we can factor out the coefficients because it is
+homogeneous.
 
-\underline{Theorem}: If $f$ is uniformally continuous on $D$, then $f$ is continuous
-for every point in $D$.
+\begin{align*}
+    \vec{l}(F) &= \{\vec{l}(t_1\vec{a}_1 + \dots + t_k\vec{a}_k) \+|\+ t_1, \dots, t_k \in \mathbb{R}\}\\
+               &= \{t_1 \vec{l}(\vec{a}_1) + \dots + t_k \vec{l}(\vec{a}_k)\}
+\end{align*}
 
-\subsection{Uniform Continuity Theorem}
-\underline{Theorem:}
-If $f: K \to \mathbb{R}$, where $K \subseteq \mathbb{R}^d$ is compact, and
-$f$ is continuous at each $\vec{x} \in K$. Then $f$ is uniformally continuous on
-$K$.
+If we denote $\vec{l}(\vec{a}_i) := b_i$, we can rewrite $\vec{l}(F) = \{t_1
+b_1 + \dots + t_k b_k\}$. This is a \~{k}-flat for some \~{k} $\leq$ k, because
+we can always pick a subset of $\vec{b}_i$ such that they are all independent of
+each other (unless they are all $\vec{0}$, but in that case $\vec{l}(F)$ is just
+the 0-flat), and then we reduce, and the final result would be a \~{k}-flat.
+\vspace{0.2cm}
 
-\underline{Proof:}
-Fix $\epsilon > 0$. For each $\vec{x} \in K$, let $u_{\vec{x}}$ be an open ball, centered at
-$\vec{x}$ such that for any $\vec{y} \in K \cap 2u_{\vec{x}}$ [$2u_{\vec{x}}$ is
-an open ball centered at $\vec{x}$ with twice the radius of $u_{\vec{x}}$], $|f(\vec{x}) -
-f(\vec{y})| < \frac{\epsilon}{2}$. Because the function is continuous at
-$\vec{x}$, there is a radius $2\delta$ around $\vec{x}$ such that $|f(\vec{x}) -
-f(\vec{y})| < \frac{\epsilon}{2}$. Now we see that every $\vec{x} \in K$ is
-covered by at least one such open ball, namely $u_{\vec{x}}$. The collection
-$\{u_{\vec{x}} +|+ \vec{x} \in K\}$ is an open covering of $K$. By
-Heine-Borel, we can select a finite set of points $\vec{x}_1, \vec{x}_2, \dots,
-\vec{x}_n$ such that $K$ is covered by $u_{\vec{x}_1} \cup u_{\vec{x}_2} \cup \dots
-\cup u_{\vec{x}_n}$. Take $\delta = \min\{\delta_1, \delta_2, \dots, \delta_n\}
-> 0$  where $\delta_j$ is the radius of $u_{\vec{x}_j}$ for $j = 1,2,3,\dots,n$.
+\textbf{Example}: Homogeneity but not additive and therefore non-linear.
 
-Let $\vec{p}, \vec{q} \in K$ such that $||+\vec{p} - \vec{q}+|| < \delta$. We
-need to prove that $|f(\vec{p}) - f(\vec{q})| < \epsilon$. $\vec{p} \in K \to
-\exists + j : \vec{p} \in u_{\vec{x}_j} \to ||+\vec{p} - \vec{x}_j+|| <
-\delta_j$. But we know that $||+\vec{p} - \vec{q}+|| < \delta_j$. Now by the
-Triangle Inequality, we get:
+Note that if we are dealing with one dimension, all functions that have an
+unlimit range are linear mappings. However, in $\mathbb{R}^2$, homogeneity is
+not enough.
 
-$$||+\vec{q} - \vec{x}_j+|| \leq ||+\vec{q} - \vec{p}+|| + ||+\vec{p} - \vec{x}_j+||
-\leq 2 \delta_{\vec{x}_j}$$
+Consider the function:
 
-This means that $\vec{q} \in 2u_{\vec{x}_j}$. By the way we picked our $\delta$,
-we know that $|f(\vec{q}) - f(\vec{x}_j)| < \frac{\epsilon}{2}$. Similarly,
-we also have $|f(\vec{p}) - f(\vec{x}_j)| < \frac{\epsilon}{2}$. Now if we
-apply the triangle inequality again, we get:
+\[
+    \vec{f}(x, y) =
+        \begin{cases}
+            (\frac{x^3 + y^3}{x^2 + y^2}, \frac{xy^2}{x^2+y^2}) & \mbox{if } (x,
+            y) \neq (0, 0)\\
+            (0, 0) & \mbox{if } (x, y) = (0,0)
+        \end{cases}
+\]
 
-$$|f(\vec{p}) - f(\vec{q})| = |f(\vec{p}) - f(\vec{x}_j) + f(\vec{x}_j)- f(\vec{q})|\leq |f(\vec{p}) - f(\vec{x}_j)| + |f(\vec{q}) -
-f(\vec{x}_j)| < \epsilon$$
+$\vec{f}$ is homogeneous as it is a composition of homogeneous functions, but it
+does not preserve flatness for obvious reasons, and that is because this
+function is not additive.
 
-Therefore, $f$ is uniformally continuous over $K$.
-
-\subsection{Connected}
-
+\subsection{Matrices}
 \subsubsection{Definition}
-$D \subseteq \mathbb{R}^d$ is said to be connected if $\forall \vec{p},
-\vec{q} \in D$, $\exists$ a continuous function $\vec{\gamma}:[a, b] \to
-\mathbb{R}^d$ that $\vec{\gamma}(a) = \vec{p}$, $\vec{\gamma}(b) = \vec{q}$,
-and $\forall t \in [a, b], \vec{\gamma}(t) \in D$
+Matrices are list of vectors, with each column being a single vector. For
+example, $((1,2,0),(-1, 3, 4))$ can be rewritten as
 
-\subsubsection{Theorem}
+$$\left|\begin{array}{cc}
+    1 & -1\\
+    2 & 3\\
+    0 & 4\\
+\end{array} \right|$$
 
-Let $D \subseteq \mathbb{R}^d$ be connected, $D \neq \emptyset$. Suppose $D =
-A \cup B$, where $A$ and $B$ are open. Such that $A \cap B = \emptyset$. Then $A
-= \emptyset$ or $B = \emptyset$.
+This is known as a matrix, and an element of a matrix can be denoted with two
+subscripts with the lower case of the matrix' name, with the first subscript denoting the row number, and the second denoting the
+column number. If the above matrix is $A$, then $a_{11} = 1$ and $a_{31} = 0$.
 
-\underline{Proof}:
+\subsubsection{Operations}
 
-Assume that $D$ can be broken up into two open, non-empty sets $A$ and $B$ such
-that $D = A \cup B$. Because $A \neq \emptyset$, we can pick $\vec{p} \in A$ and
-similarly we can pick $\vec{q} \in B$. Clearly, $\vec{p}, \vec{q} \in D$. Since
-$D$ is connected, $\exists$ continuous $\vec{\gamma}: [a, b] \to D$ such that
-$\vec{\gamma}(a) = \vec{p}$, $\vec{\gamma}(b) = \vec{q}$. Let $S = \{t \in [a,b]
-+|+ \vec{\gamma}(t) \in A\}$. We know that $a \in S$, so $S \neq \emptyset$.
-Note that $S \leq b$, and since it has a bound, it has a supremum. Let $t_0 =
-\sup S$, note that $a \leq t_0 \leq b$. Since $\vec{\gamma}(t_0) \in D$, it is
-either in $A$ or in $B$ (since $A \cap B = \emptyset$). Suppose
-$\vec{\gamma}(t_0) \in A$. Since $A$ is open, we can draw an open ball
-($B_\epsilon$) around $\vec{\gamma}(t_0)$. Now consider $\vec{\gamma}(t_0 +
-\delta)$ for some small positive $\delta$. If $\delta$ is small enough, $\delta
-\in B_\epsilon \in A$. This is a contradiction, as then it means that $t_0 +
-\delta \in S$. This is a contradiction, as then $t_0 \neq \sup S$. A similar
-contradiction can be made for the case that $\vec{\gamma}(t_0) \in B$. Therefore
-the original assumption was false.
+There is also a transpose operation, if $B = A^T$ (if $B$ is $A$ transposed),
+then $b_{ij} = b_{ji}$
 
-\section{Intermediate Value Theorem}
-
-\subsection{Theorem in $\mathbb{R}$}
-If f: [a, b] $\to \mathbb{R}$ is continuous, and $f(a) \neq f(b)$, $\forall y \in (f(a), f(b))$, then $\exists c \in (a, b): f(c) = y.$
-
-\subsubsection{Proof}
-Let there exist y, without loss of generality, such that $f(a) < y < f(b)$. Take the set $S = \{x \in [a, b] | f(x) \leq
-y\}$. Since $a \in S$, $S \neq \emptyset$, we also know that $S \leq b$. Now
-take $c = \sup S$, $a \leq c \leq b$ ($c \in [a, b]$). There are three possible
-cases, $f(c)$ is either $> y, < y$, or $= y$.
-
-Consider the case in which $f(c) < y$. If this is the case, then we can chose an
-arbitrarily small $\delta > 0$ such that $f(c + delta) < y$. However, then $c +
-\delta \in S$. But this causes a contradiction because $c = \sup S$ and there
-should not be any element of $S$ that's larger than $c$. Therefore, this case is
-impossible.
-
-Now consider the case in which $f(c) > y$. Take some arbitrarily small $u \in
-[0, \delta], \delta > 0$ such that $f(c - u) > y$. However, then $c - \delta$ is
-therefore an upper bound of the set $S$, we once again reach the same
-contradiction.
-
-Therefore, since $c$ exists, $f(c) = y$.
-
-\subsection{Theorem in $\mathbb{R^n}$}
-
-If $f : D \to \mathbb{R}$ where $D \subseteq \mathbb{R}^d$ is connected
-and continuous. $\forall \vec{p}, \vec{q} \in D$ such that $f(\vec{p}) \neq
-f(\vec{q})$ and if $y \in \mathbb{R}$ is between $f(\vec{p})$ and $\vec{q}$,
-then $\exists \vec{r} \in D$ such that $f(\vec{r}) = y$.
-
-\subsubsection{Proof}
-
-Without loss of generality, let us assume $f(\vec{p}) < f(\vec{q})$.
-
-Since $D$ is connected, there is some path $\vec{\gamma}(t) = (x(t), y(t)) \in
-D$, $a \leq t \leq b$ such that $\vec{\gamma}(a) = \vec{p}$ and $\vec{\gamma}(b)
-= \vec{q}$ and is continuous over $[a, b]$. Now we construct $g(t) =
-f(\vec{r}(t)) = (f\cdot\vec{r})(t) \in mathbb{R}$. Because $g(t)$ is a
-composition of continuous functions, $g(t)$ is also continuous. $g(a) =
-f(\vec{\gamma}(a)) = f(\vec{p})$ and $g(b) = f(\vec{\gamma}(b)) = f(\vec{q})$.
-Now we see that $g(a) < y < g(b)$. Therefore, by the IVT for single-variable
-functions, $\exists+t_0$ such that $g(t_0) = y$. Now we plug $t_0$ into
-$\vec{\gamma}$, $\vec{r} = \vec{\gamma}(t_0) \in D$. Then $f(\vec{r}) =
-f(\vec{\gamma}(t_0)) = g(t_0) = y$.
-
-\section{Vector Valued Functions}
-
-\subsection{Definition}
-
-$f: D \to \mathbb{R}$, $D \subseteq \mathbb{R}^d$ is known as
-\underline{real-valued} functions.
-
-$\vec{f}: D \to \mathbb{R}^e$, $D \subseteq \mathbb{R}^d$ is known as
-\underline{vector-valued/point-valued} functions.
-
-$\vec{f}(\vec{p}) = (f_1{\vec{p}}, f_2{\vec{p}}, \dots, f_e(\vec{p}))$ where
-$f_1, f_2, \dots, f_e$ are real-valued and are called the \underline{component
-functions} of $f$.
-
-\subsection{Continuity}
-$f: \mathbb{R}^d \to \mathbb{R}^e$ is continuous at $\vec{a} = (a_1, a_2,
-a_3, \dots, a_d) \in D$ iff $\forall \epsilon, \exists+\delta > 0 : \forall \vec{x} \in D$:
-
-$$||+\vec{x} - \vec{a}+||_d < \delta \to ||+f(\vec{x}) - f(\vec{a})+||_e <
-\epsilon$$
-
-\subsubsection{Component-wise Nature of Continuity}
-$f: D \to \mathbb{R}^e$ is continuous at a point $\vec{a} \in D$ iff $f_1,
-f_2, \dots, f_e$ are all continuous at $\vec{a}$.
-
-\underline{Proof}:
-
-First fix an $\epsilon$, then by the basic distances bound lemma, we get a
-bunch of inequalities:
+If we have two collections of items $A = [\vec{a}_1, \vec{a}_2, \dots, \vec{a}_n]$
+and $B = [\vec{b}_1, \vec{b_2}, \dots, \vec{a}_p]$, we can generate all possible
+dot products by a matrix product. $C = AB$ means:
 
 \begin{align*}
-    |f_1(\vec{x}) - f_1(\vec{p})| < \frac{\epsilon}{\sqrt{e}}, &\forall \vec{x} \in D \cap B_{\delta_1}(\vec{p})\\
-    |f_2(\vec{x}) - f_2(\vec{p})| < \frac{\epsilon}{\sqrt{e}}, &\forall \vec{x} \in D \cap B_{\delta_2}(\vec{p})\\
-    ... \text{ } ... \text{ } & \text{ } ... \text{ }...\\
-    |f_e(\vec{x}) - f_e(\vec{p})| < \frac{\epsilon}{\sqrt{e}}, &\forall
-    \vec{x} \in D \cap B_{\delta_e}(\vec{p})
+    c_{ij} &= (i\mbox{-th row of } A)^T \cdot (j\mbox{-th column of } B)\\
+           &= \sum_n a_{in} b_{nj}
 \end{align*}
 
-Then let $\delta = \min\{\delta_1, \delta_2, \dots, \delta_e\} > 0$, which must
-exist and satisfy all the distance inequalities, specifically $\max_{1 \leq j
-\leq e}(|f_j(\vec{x}) - f_j(\vec{p})|)$. Then again, by the basic distance
-bounds lemma, we know that $||+\vec{f}(\vec{x}) - \vec{f}(\vec{p})+||_e \leq \max_{1 \leq j
-\leq e}(|f_j(\vec{x}) - f_j(\vec{p})|)$. Therefore we get that for any fixed
-$\epsilon$, we can find a $\delta$ such that $||+\vec{x} - \vec{p}+||_d <
-\delta \to ||+f(\vec{x}) - f(\vec{p})+||_e < \epsilon$
+As a whole, the $C$ column would look like this (here we denote $\vec{\alpha}_i$
+as the $i^{th}$ row of $A$ and suppose $A$ has $m$ rows). Then:
 
-\subsubsection{Composition of Continuous Functions}
-If $\vec{f}: D \to E$, where $D \subseteq \mathbb{R}^d$, $E
-\subseteq \mathbb{R}^e$ and $\vec{g}: E \to \mathbb{R}^k$ are both
-continuous on their respective domains. Then $\vec{h} = \vec{g} \circ \vec{f}$
-is continuous on $D$
+\[
+    C = \left|\begin{array}{ccc}
+        \vec{\alpha}_1 \cdot \vec{b}_1 & \dots & \vec{\alpha}_1 \cdot
+        \vec{b}_j\\
+        \vdots & \ddots & \vdots\\
+        \vec{\alpha}_m \cdot \vec{b}_1 & \dots & \vec{\alpha}_m \cdot
+        \vec{b}_j
+    \end{array}\right|
+\]
 
-\underline{Proof}:
+\textbf{Size Requirement for Matrix Multiplication}
 
-To prove this, fix $\epsilon > 0$. There's a $\eta > 0$ such that
-$\forall \vec{y} \in E \cap B_\eta(\vec{f}(\vec{p}))$, because we know that
-$\vec{g}$ is continuous at $\vec{f}(\vec{p})$, we get:
+For $AB$ to be rigorously defined, the two matrices must be of the form: $A
+\subseteq \mathbb{R}^{d\times k}$ and $B \subseteq \mathbb{R}^{k \times
+e}$.
 
-$$||+\vec{g}(\vec{y}) - \vec{g}(\vec{f}(\vec{p}))+|| < \epsilon$$
 
-To guarantee that $\vec{y} = \vec{f}(\vec{x})$ lies within $\eta$ units of
-$\vec{f}(\vec{p})$ i.e. $||+\vec{f}(\vec{x}) - \vec{f}(\vec{p})+|| < \eta$, we
-can take $\vec{x} \in D \cap B_\delta(\vec{p})$ where $\delta > 0$ corresponding
-to $\eta$ [using the continuity of $\vec{f}$ at $\vec{p} \in D$].
-
-Now, as long as $\vec{x} \in D \cap B_\delta(\vec{p})$, we have
-$\vec{f}(\vec{x}) \in E \cap B_\eta(\vec{f}(\vec{p}))$. Thus, if we take
-$\vec{y} = \vec{f}(\vec{p})$, we get: $||+\vec{g}(\vec{f}(\vec{x})) -
-\vec{g}(\vec{f}(\vec{p}))+|| < \epsilon$, or $||+\vec{h}(\vec{x}) -
-\vec{h}(\vec{p})+|| < \epsilon$. So $\vec{h}$ is continuous at $\vec{p}$.
-
-\subsection{Compactness Theorem}
-
+\subsection{Unique Expression of Linear Functions}
 \subsubsection{Theorem}
-
-Let $\vec{f} : D \to \mathbb{R}^e$ be a contnuous function, where $D \subseteq
-\mathbb{R}^d$ is compact. Then its \textit{range} $\vec{f}(D) := \{f(\vec{p}) +|+
-\vec{p} \in D\}$ is also compact. In other words: compactness is preserved under
-continuous mappings. Note that this is the generalization of the Extreme Value
-Theorem.
-
-\subsubsection{Proof}
-
-To prove this, write $R := f(D)$. We need to show that $R$ is closed and bounded
-in $\mathbb{R}^e$. Boundedness is easy. Since each component function $f_j$
-of $f$ is real valued, by EVT each component function $f_j$ has an absolute
-bound $M_j$, so that $|+f_j(\vec{p})+| \leq M_j$ for all $\vec{p} \in D$. 
-Take $M := \max\{M_1, M_2, \dots, M_e\}$. Then for all $\vec{p} \in D$, we have
-
-$$||+\vec{f}(\vec{p})+|| = \sqrt{f_1(\vec{p})^2 + \dots + f_e(\vec{p})^2} \leq
-\sqrt{e \times M^2} = M \sqrt{e}$$
-
-This says that the range $R$ lies within the closed ball of radius $M\sqrt{e}$
-centered at $\vec{0}$ in $\mathbb{R}^e$. It therefore certainly lies within
-some closed cube centered at $\vec{0}$, and hence is bounded.
-
-To prove closedness, let $(\vec{y}_n)_{n = 1}^\infty$ be a convergent sequence in
-$\mathbb{R}^e$ with limit $\vec{y}$, such that $\vec{y}_n \in R$ for each $n
-\geq 1$. We need to prove that $\vec{y} \in R$. Since $R$ is the range of $f$,
-we must have $\vec{y} = \vec{f}(\vec{x_n})$, where $\vec{x_n} \in D$. Because
-$D$ is bounded, we can pick a convergent subsequence $\vec{x}_{n_k} \to
-\vec{x}$. But because $D$ is closed, we know that $\vec{x} \in D$. Because
-$\vec{f}$ is continuous, we get that $\vec{y}_{n_k} = \vec{f}(\vec{x}_{n_k}) \to
-\vec{f}(\vec{x})$. However, we know that $\vec{y}_{n_k} \to \vec{y}$. But since
-each sequence converges to one point, we know that $\vec{y} = \vec{f}(\vec{x})$,
-where $\vec{x} \in D$. Therefore, $\vec{y} \in R$.
-
-Therefore, $R$ is closed and bounded.
-
-\subsection{Connectedness Theorem}
-
-\subsubsection{Theorem}
-
-$\vec{f}: D \to \mathbb{R}^e$, $D \in \mathbb{R}^d$ is continuous on $D$.
-If $D$ is connected, $E = \vec{f}(D)$ (the range of the domain), is also
-connected. Note that this is the generalization of the Intermediate Value
-Theorem.
-
-\subsubsection{Proof}
-
-$\forall \vec{u}, \vec{v} \in E$, we can find two points $\vec{p}, \vec{q}$ such
-that $\vec{f}(\vec{p}) = \vec{u}$ and $\vec{f}(\vec{q}) = \vec{v}$. Now because
-$D$ is connected, $\exists+ \vec{\gamma}: [a, b] \to \mathbb{R}^d$,
-$\vec{\gamma}([a, b]) \subseteq D$. Now we consider $\vec{\delta} =
-\vec{f}(\vec{\gamma}(t))$, $\vec{\delta} : [a, b] \to \mathbb{R}^e$. Since
-it's a composition of continuous functions, $\vec{\delta}$ is also continuous.
-And $\forall t \in [a, b]$, $\vec{\delta}(t) = \vec{f}(\vec{\gamma}(t)) \in E$.
-We also know that $\vec{\delta}(a) = \vec{f}(\vec{\gamma}(a)) = \vec{f}(\vec{p})
-= \vec{u}$, and $\vec{\delta}(b) = \vec{f}(\vec{\gamma}(b)) = \vec{f}(\vec{q})
-= \vec{v}$. Therefore, $\forall \vec{u}, \vec{v} \in E$, there is a
-continuous path that connects $\vec{u}$ to $\vec{v}$ and stays within $E$.
-Therefore, $E$ is connected.
-
-\section{Sequences of Functions}
-\subsection{Infinity Norm}
-For $f: [a,b] \to \mathbb{R}$ that is bounded, we say:
-
-$$||f||_\infty := ||f||_D := \sup_{x\in[a,b]} |f(x)|$$
-
-\subsection{Pointwise Convergence:}
-
-\underline{Definition:}
-For $f_n : [a,b] \to \mathbb{R}$ for $n \geq 1$, and assume that they are all bounded on $[a,b]$. ($\exists+ M_n > 0 : |f_n(x)| \leq M_n$ for all $x \in [a,b]$), and $f:[a,b] \to \mathbb{R}$, $f$ is bounded ($\exists+ M > 0: |f(x)| \leq M$ for all $x \in [a,b]$).
-
-If $\forall x \in [a,b]: \lim_{n\to\infty} f_n(x) = f(x)$, then we say that $f_n \overset{p}{\to} f(x)$ ($f_n$ converges ``pointwise'' to $f$).
-
-\underline{Theorem:}
-If $\vec{f_n} \overset{u \text{(uniform)}}{\to} \vec{f}: \mathbb{R^d} \to \mathbb{R^e}$, then $\vec{f_n} \overset{p \text{(pointwise)}}{\to} \vec{f}$ on D: $\vec{f_n}(\vec{x}) \to \vec{f}(\vec{x})$ for every point $\vec{x} \in D$ (for any converging sequences, any point will also converge similarly, such that uniform convergence implies pointwise convergence, though the converse is untrue)
-
-\underline{Proof:}
-$\vec{f_n} \overset{u}{\to} \vec{f}$ on D (uniform convergence): $||\vec{f_n} - \vec{f}||_D = sup_{\vec{x} \in D} ||\vec{f_n}(\vec{x}) - \vec{f}(\vec{x})|| \to 0$ as $n \to \infty.$ $Then 0 \leq ||\vec{f_n}(\vec{x}) - \vec{f}(\vec{x})|| \leq  ||\vec{f_n} - \vec{f}|| \to 0.$
-
-Then, by the squeeze theorem, for a uniform sequences, $f_n(x) \to f(x)$ on D, giving pointwise convergence.
-
-\subsection{Uniform Convergence}
-\subsubsection{In $\mathbb{R}$}
-$f_n : [a,b] \to \mathbb{R}$ for $n \geq 1$, and assume that they are all
-bounded on $[a,b]$. ($\exists+ M_n > 0 : |f_n(x)| \leq M_n$ for all $x \in
-[a,b]$).
-
-$f:[a,b] \to \mathbb{R}$, $f$ is bounded ($\exists+ M > 0: |f(x)| \leq M$
-for all $x \in [a,b]$).
-
-We then claim that $f_n \overset{u}{\to} f$ as $n \to \infty$ if $\forall
-\epsilon$, $\exists+ N_\epsilon$ such that $\forall n \geq
-N_\epsilon : ||+f_n - f+||_\infty < \epsilon$. In other words, this
-forces that the greatest vertical difference between the two functions will be
-arbitrarily small after $N_\epsilon$. This forces the two functions to be
-``close'' as a whole.
-
-\subsubsection{In $\mathbb{R^n}$}
-
-Let $D \in \mathbb{R}^d$ be a non-empty set, and let $\vec{f}:
-D\to\mathbb{R}^e$ and $\vec{f}_n: D \to \mathbb{R}^e$ for $n \geq 1$. We
-say that $\vec{f_n} - \vec{f}$ on $D$ if:
-
-$$||+f_n - f+||_D \to 0 \text{ as } n \to \infty$$
-
-\subsection{Uniform Convergence Theorem}
-\subsubsection{Theorem}
-If $f_n \overset{u}{\to} f$ on $[a, b]$, where each $f_n$ is continuous on
-$[a,b]$. Then $f$ is also continuous on $[a,b]$
-
-\subsubsection{Proof}
-Pick any $\vec{p} \in D$, and fix $\epsilon > 0$. We need to find $\delta$
-such that $\forall \vec{x} \in D$ with $||\vec{x} - \vec{p}|| < \delta$,
-then $||\vec{f}(\vec{x}) - \vec{f}(\vec{p})|| < \epsilon$. 
-We can apply the triangle inequality and we get:
-
-$$||\vec{f}(\vec{p}) - \vec{f}(\vec{p})|| \leq ||\vec{f}(\vec{x}) 
-\vec{f}_n(\vec{x})|| + ||\vec{f}_n(\vec{x}) - \vec{f}_n(\vec{p})|| +
-||\vec{f}_n(\vec{p}) - \vec{f}(\vec{p})||$$
-
-For large enough $n$, we know that $||\vec{f}_n - \vec{f}||_D < \frac{\epsilon}{3}$
-because $\vec{f}_n - \vec{f}$. Now we know that the first and third ter
-are bounded by $\frac{\epsilon}{3}$. The second term is bounded b
-$\frac{\epsilon}{3}$ because $\vec{f}_n$ is uniformally continuous.
-
-Therefore, we know that $||\vec{f}(\vec{p}) - \vec{f}(\vec{p})|| \le
-\epsilon$ for any $\delta$ we pick. $\therefore \vec{f}$ is continuous on $D$
-
-\section{Differentiation}
-
-\subsection{Differentiable in $\mathbb{R}$}
-Let $f: [a, b] \to \mathbb{R},$ let $p \in (a, b) = [a, b]^o (int [a, b]),$, then f is \underline{differentiable} at p if $ \exists a \in \mathbb{R}$ such that $a = \lim{h \to 0} \frac{f(p+h) - f(p)}{h}$, called the \underline{derivative} at point p $(a = f'(p) = \frac{df}{dx}(p)).$
-
-\subsection{Differentiable in $\mathbb{R^n}$}
-This is generalized to high dimensions, such that for $f: D \subseteq \mathbb{R^d} \to \mathbb{R}$, and $\vec{p} \in D^o (\exists r > 0: B_r(\vec{p} \subseteq D)$. Thus, it can be approached from any given direction, due to the ball existing in all directions.
-
-$\vec{h} \to \vec{0}$ iff $h_d \to 0$, such that it can be substituted for the limit. Due to the lack of vector division though, the definition of the derivative has to be changed.
-
-By the previous definition, $\lim{h \to 0} |\frac{f(p+h) - f(p)}{h} - a| = 0$, rewritten  $\lim{h \to 0} \gamma(p, h) = 0$. $$ |h|\gamma(p, h) = |f(p+h) - f(p) - ah| < \epsilon|h| \text{ as } h \to 0 (|h| < \delta).$$ $\exists a \in \mathbb{R}$, such that $\forall \epsilon > 0, \exists \delta > 0: |h| < \delta$, then $|f(p + h) - f(p) - ah| < \epsilon|h|$, defining a as the derivative at p.
-
-This is due to the idea that for some function, g(x), with linear approximation l(x), $\frac{|g(x) - l(x)|}{|x|} \to 0$ as $x \to 0$, such that the y distance decreases far faster than the x decay, called super-linear (suplinear) decay. Then, there must at most be 1 line that can superlinearly approximate g at x = 0. The superlinear decay curve is then the derivative function, where f(p + h) - f(p) = g(x) and ah = l(x).
-
-\underline{Proof:}
-Assume there are two function, l(x) = ax and m(x) = bx, then $\frac{|g(x) - ax|}{|x|} \to 0$ as $x \to 0$ and $\frac{|g(x) - bx|}{|x|} \to 0$ as $x \to 0$. Then $0 \leq |a - b| \frac{|ax - bx|}{|x|} = \frac{|(g(x) - bx) - (g(x) - ax|)}{|x|} \leq \frac{|g(x) - bx|}{|x|} + \frac{|g(x) - ax|}{|x|} \to 0$ as $x \to 0$, such that a = b. This proof can be done in each component for higher dimensions, using the dot product to remove all other components, by the properties of the dot product.
-
-The definition can now be easily moved to higher dimensions, by superlinear decay, such that there is only one object in $\mathbb{R^{n-1}}$, a hyperplane, or the set of all vectors orthoganal to the non-zero normal vector, all anchored to a specific point, $\vec{p_0}$, such that superlinear decay takes place.
-
-\underline{Definition:}
-A hyperplane in $\mathbb{R^{d+1}}$ is a set of the form, Q = \{$\vec{x} \in \mathbb{R^{d+1}} | (\vec{x} - \vec{p_0} \cdot \vec{n} = 0)$, where $\vec{p_0}, \vec{n} \in \mathbb{R^{d+1}}$ with $\vec{n} \neq \vec{0}$, where n is a normal of Q $(\vec{n} \perp Q)$.
-
-Thus to summerize differentiability for real valued functions, $\exists !$ (exists exactly one) or $~\exists \vec{a} \in \mathbb{R}$ such that $\forall \epsilon > 0, \exists \delta > 0: ||\vec{h}|| < \delta$, then $|f(\vec{p} + \vec{h}) - f(\vec{p}) - \vec{a}\vec{h}| < \epsilon||\vec{h}||$. If the latter is true, f(x) is said to be \underline{differentiable} at $\vec{p}$, since it is a unique value, denoted f'(p). 
-
-\subsection{Gradient}
-
-This is then defined specifically such that $\vec{a} = (\vec{\nabla}f)(p)$, or the gradient of f at p.
-
-\underline{Claim:}
-The graph of $y = f(\vec{p}) + \vec{a} \cdot (\vec{x} - \vec{p})$ is a hyperplane in $\mathbb{R^{d+1}}$, such that the gradient is a hyperplane.
-
-\underline{Proof:}
-Let $\vec{N}$ (the normal vector to the hyperplane$ \in \mathbb{R^{d+1}} = (-a_1, -a_2, ..., -a_d, 1), and \vec{P_0} \in \mathbb{R^{d+1}} = (p_1, p_2, ..., p_d, f(\vec{p}))$and $\vec{X} \in \mathbb{R^{d+1}} = (x_1, x_2, ..., x_d, y)$. Thus, $\vec(X) - \vec{P_0} = (x_1 - p_1, x_2 - p_2, ... x_d - p_d, y - f(\vec{p}))$, giving the equation of a hyperplane $(\vec{X} - \vec{P_0}) \cdot \vec{N} = 0$.
-
-If $\vec{p} + \vec{h} = \vec{X}$, then $|f(\vec{X}) - [f(\vec{p}) + \vec{a} \cdot (\vec{X} - \vec{p})|| < \epsilon||\vec{h}||$. This is equal to the difference between the point on the graph and the function approximation. This can also be seen to be easily equal to the equation of the hyperplane from above, such that the gradient is the hyperplane.
-
-\subsubsection{Gradient Representation}
-
-Since $\vec{N}$ is the normal vector to the plane at that point, equal to $(-\vec{\nabla}f(\vec{p}), 1)$, or the projection of the negation of the normal vector onto the domain, such that it is the vector of the direction and magnitude of the fastest increase of the function at $\vec{p}$.
-
-\underline{Theorem:}
-If $f:D \subseteq \mathbb{R^d} \to \mathbb{R}$ is differentiable at $\vec{p} \in D^o$, then $\vec{u_0} = \frac{\vec{\nabla}f(\vec{p})}{||\vec{\nabla}f(\vec{p})||}$ is the direction of steepest ascent for f at $\vec{p}$, and $||\vec{\nabla}f(\vec{p})|| = max_{||\vec{u}||=1} \partial_\vec{u} f(\vec{p})$, where $\vec{u}$ is any unit vector, such that as a result, $\partial_{\vec{u}} f(\vec{p}) = \vec{\nabla}f(\vec{p}) \cdot \vec{u}$.
-
-This is by the Cauchy-Schwartz equality case $(-||\vec{u}||||\vec{v}|| \leq \vec{u} \cdot \vec{v} \leq ||\vec{u}||||\vec{v}||$, with equality with the lower bound if $\vec{u}$ and $\vec{v}$ are in opposite directions, the higher bound if in the same direction), such that $-\vec{u_0}$ is the direction of steepest descent for f at $\vec{p}$ and $-||\vec{\nabla}f(\vec{p})|| = min_{||\vec{u}||=1} \partial_{\vec{u}}f(\vec{p}).$ 
-
-
-\subsubsection{Gradient Calculation}
-
-Take $\vec{h} = h\vec{e}_j$ , where $h\to 0$ and the set of $\vec{e}_j$ is known
-as the \textit{standard basis vectors} in $\mathbb{R}^d$:
-
-\begin{equation*}
-\vec{e_j}=
-\begin{cases}
-\vec{e}_1 &= (1,0,0,\dots,0)\\
-\vec{e}_2 &= (0,1,0,\dots,0)\\
-\vdots & \vdots \hfill \vdots \hfill \vdots \hfill \vdots\\
-\vec{e}_d &= (0,0,0,\dots,1)\\
-\end{cases}
-\end{equation*}
-
-Note that because $||\vec{e}_j|| = 1$, $||\vec{h}|| = |h|||\vec{e}_j|| = |h|$. Now if we fix a $j \in \{1,2,3,\dots,d\}$ and apply the definition of differentiability, the unique gradient ($\vec{a}$) must satisfy:
-
-$$\forall \epsilon > 0, \exists \delta > 0: \forall h \text{ with } |h| < \delta \implies |f(\vec{p} + h\vec{e}_j) - f(\vec{p}) - \vec{a}\cdot h\vec{e}_j| < \epsilon|h|$$
-
-However, note that when we dot $\vec{a}$ with $\vec{e}_j$, the result is the $j^{th}$ component of $\vec{a}$, or $a_j$. Now if we divide through by $|h|$, we get:
-
-$$\left|\frac{f(\vec{p} + h\vec{e}_j) - f(\vec{p})}{h} - a_j\right| < \epsilon$$
-
-This says is that $\left|\frac{f(\vec{p} + h\vec{e}_j) - f(\vec{p})}{h}\right|$ approaches $a_j$ indefinitely, therefore, we can rewrite the relationship as a limit statement:
-
-$$\boxed{a_j = \lim_{h \to 0} \left|\frac{f(\vec{p} + h\vec{e}_j) - f(\vec{p})}{h}\right|}$$
-
-We call this $a_j$ as a \textbf{partial derivative} of $f(\vec{x})$ at $j^{th}$ component, which can be written as $\partial_{x_j} f(\vec{p})$ or $\frac{\partial f}{\partial x_j} (\vec{p})$.
-
-Note that: $$\partial_{x_j}f(\vec{p}) = \frac{d}{dx_j}\left|_{x_j = p_j} f(p_1, p_2, \dots, p_{j-1}, x_j, p_{j+1}, \dots, p_d)$$
-
-In other words, we can hold all other components of $f$ constant and differentiate based on only one component, and plug in the value $p_j$ after the differentiation. Now we know how to compute the gradient of $f$, it is simply the vector of all the partial derivatives:
-
-$$\vec{\nabla}f = (\partial_{x_1} f(\vec{p}), \partial_{x_2} f(\vec{p}), \dots, \partial_{x_d}f(\vec{p}))$$
-
-\subsection{Directional Derivative}
-
-Take $\vec{u} \in \mathbb{R}^d$, $\vec{u} \neq \vec{0}$ and take a point on the function $f$, $\vec{p}$, we define the \underline{directional derivative}
-$\partial_{\vec{u}}f(\vec{p})$ as:
-\begin{align*}
-\partial_{\vec{u}}f(\vec{p}) &= \lim_{h\to0} \frac{f(\vec{p} + h\vec{u}) - f(\vec{p})}{h}\\
-&= \frac{d}{dt}\big|_{t=0} f(\vec{p} + t\vec{u})\\
-\end{align*}
-This quality describes how fast the function $f$ is changing at $\vec{p}$ in the direction of $\vec{u}$.
-
-The latter definition gives the single variable function, such that g(t) = $\vec{p} + t\vec{u}$, where $\vec{u} \neq \vec{0}$, is called the uniform rectilinear motion curve, due to being a line with constant curve speed.
-
-\subsection{Vector Valued Directional Derivative}
+For any linear map $\vec{l}: \mathbb{R}^d \to \mathbb{R}^e$.
+There is an unique matrix $A \in \mathbb{R}^{e \times d}$ ($d$ columns and
+$e$ rows) such that $\vec{l}(\vec{x}) = A\vec{x}$ where the right hand size is a
+matrix product, where $\vec{x}$ is regarded as a $d \times 1$ column.
+
+\section{Differentiability of Vector Valued Functions}
+\subsection{Definition of Differentiability}
+Take the function $\vec{f}: \mathbb{R}^d \to \mathbb{R}^e$, $\vec{f} =
+(f_1, f_2, \dots, f_e)$, $\vec{f}(\vec{x}) \in \mathbb{R}^e$. If we
+want to find the change in the output at a point $\vec{p} \in D^\circ$, it can
+be written as $\Delta \vec{f}(\vec{p}, \vec{h}) =
+\vec{f}(\vec{p} + \vec{h}) - \vec{f}(\vec{p}) \in \mathbb{R}^e$. We say that
+$\vec{f}$ is differentiable if there exists a linear function $\vec{l}(\vec{h})$:
+
+$$\boxed{\lim_{\vec{h}\to \vec{0}} \frac{|\+\Delta \vec{f}(\vec{p}, \vec{h}) -
+\vec{l}(\vec{h})\+|}{||\vec{h}||}}$$
+
+\subsection{Definition of Differentiability}
 Given a vectored valued function $\vec{\gamma}(t)$:
 
 \begin{equation*}
@@ -483,7 +180,7 @@ Given a vectored valued function $\vec{\gamma}(t)$:
 \end{equation*}
 
 We define the ``speed'' vector of $\vec{\gamma}$ as its derivative, which is
-defined as:
+defined as:-0
 
 $$\frac{d\vec{\gamma}}{dt}(t) := \lim_{h\to0} \frac{\vec{\gamma}(t + h) - \vec{\gamma}(t)}{h}$$
 
@@ -500,190 +197,5 @@ into each component of $\vec{\gamma}$, so we can rewrite the speed vector as:
     \end{array} \right]
 \end{equation*}
 
-\subsection{Differentiability Determination}
-
-The mere existance of the set of partial derivatives at $\vec{p}$ with respect to each variable is not enough to guarantee differentiability or continuity at $\vec{p}$, since there must exist some tangential hyperplane, but rather must have a partial derivative in all directions.
-
-\subsubsection{Sufficient Condition}
-
-\underline{Theorem:}
-There is a sufficient condition (true implies, but false does not imply the opposite) for differeniability, where if $f: D \subseteq \mathbb{R^d} \to \mathbb{R}$ and $\vec{p} \in D^o$, and if $\vec{\nabla}f(\vec{x})$ exists for all points $\vec{x} \in B_\delta (\vec{p}) (\exists \delta > 0)$ and is continuous at $\vec{p}$, then f is differentiable at $\vec{p}$.
-
-\underline{Proof:}
-Let $\vec{h} = (h_1, h_2, \dots, h_d)$ and consider the point $\vec{p} +
-\vec{h}$. We will construct a path from $\vec{p}$ to $\vec{p} + \vec{h}$ such
-that in each ``step'' we move $h_d$ in the $d^{th}$ axial direction, and we call
-each intermediate point $\vec{p}_d$ in the following manner where $\vec{e}_d$ is
-the $d^{th}$ standard basis vector.
-\begin{align*}
-    \vec{p}_0 &= \vec{p}\\
-    \vec{p}_1 &= \vec{p}_0 + h_1 \vec{e}_1\\
-    \vec{p}_2 &= \vec{p}_1 + h_2 \vec{e}_2\\
-    \vdots &= \text{     } \vdots \text{     } \vdots \text{     } \vdots\\
-    \vec{p}_d &= \vec{p}_{d-1} + h_d \vec{e}_d
-\end{align*}
-
-Now consider the function $\Delta f = f(\vec{p} - \vec{h}) - f(\vec{p})$, we can
-write this as a telescoping sum:
-
-$$\Delta f = \sum_{j=1}^d \{f(\vec{p}_j) - f(\vec{p}_{j-1})\}$$
-
-Within each term, we can use the mean value theorem from one dimensional
-calculus. We can do so because $\vec{p}_j$ and $\vec{p}_{j - 1}$ only differ in
-1 coordinate, like the following:
-
-\begin{align*}
-    \vec{p}_{j - 1} &= (p_1 + h_1, \dots p_{j-1} + h_{j-1}, \boxed{p_j}, \dots p_d)\\
-    \vec{p}_{j} &= (p_1 + h_1, \dots p_{j-1} + h_{j-1}, \boxed{p_j + h_j}, \dots p_d)
-\end{align*}
-
-We also know that the partial derivatives of $f$ exists for all points within
-$B_r(\vec{p})$, therefore we can indeed apply the Mean Value Theorem.
-
-Now we apply the MVT:
-
-$$\Delta f = \sum_{j=1}^d \partial_{x_j} f(\vec{q}_j) h_j$$
-
-Where $\vec{q}_j = (p_1 + h_1, \dots, p_{j-1} + h_{j-1}, p_j + \theta h_j,
-\dots, p_d)$ where $0 < \theta < 1$. In other words, $\vec{q}_j$ is somewhere
-between $\vec{p}_{j-1}$ and $\vec{p}_{j}$ in the $j^{th}$ coordinate.
-
-Now let us consider the definition of differentiability, we need to prove that 
-
-
-$$|\Delta f - \vec{\nabla}f(\vec{p}) \cdot \vec{h}| = |\sum_{j = 1}^d
-\partial_{x_j} f(\vec{q}) h_j - \sum_{j = 1}^d \partial_{x_j} f(\vec{p}) h_j|$$
-
-Now we can apply the triangle inequality on the summations and get:
-
-$$|\Delta f - \vec{\nabla}f(\vec{p}) \cdot \vec{h}| < \sum_{j=1}^d |\partial_{x_j} f(\vec{q}_j) - \partial_{x_j} f(\vec{p})|
-\+ |h_j|$$
-
-Now we divide both sides by the length of $\vec{h}$:
-
-\begin{align*}
-    \frac{|\Delta f - \gradient f(\vec{p}) \cdot \vec{h}|}{||\vec{h}||} &\leq
-    \sum_{j=1}^d |\partial_{x_j} f(\vec{q}_j) - \partial_{x_j} f(\vec{p})| \+
-    \frac{|h_j|}{||\vec{h}||}\\
-    &\leq \sum_{j=1}^d |\partial_{x_j} (\vec{q}_j) - \partial_{x_j} f(\vec{p})|
-\end{align*}
-
-Now let $\vec{h} \to \vec{0}$. Then each $\vec{q}_j$ approaches $\vec{p}$. Then
-we know:
-
-$$\sum_{j=1}^d |\partial_{x_j} (\vec{q}_j) - \partial_{x_j} f(\vec{p})| \to 0$$
-
-Since the number of terms in a sum is fixed and each term within the sum is
-going to 0, the entire sum is going to 0, which means $||\vec{h}|| <
-\delta(\epsilon)$, we can say that the sum is less than $\epsilon$, which
-means that
-
-$$\frac{|\Delta f - \gradient f(\vec{p}) \cdot \vec{h}|}{||\vec{h}||} \leq
-\sum_{j=1}^d |\partial_{x_j} f(\vec{q}_j) - \partial_{x_j} f(\vec{p})| \+
-\frac{|h_j|}{||\vec{h}||} \leq \epsilon$$
-
-Which means that a superlinear decay is possible, which means that $f$ is
-differentiable.
-
-\subsubsection{Mean Value Theorem}
-
-If $f : [a, b] \to \mathbb{R}$ is differentiable on $(a, b)$ and continuous
-on $[a, b]$, then $\Delta f = f(b) - f(a) = f'(c)(b - a)$ where $c \in (a, b)$.
-
-\subsection{Higher-Order Partial Derivatives}
-
-\subsubsection{Notations}
-$f \in C^2$ if $\partial_{x_i}\partial_{x_j} f$ is continuous for any $i, j \in
-\{1, 2, \dots, d\}$.
-
-Classically, we also define second order partial derivatives as follows:
-
-\begin{align*}
-    \partial_{x_i} \partial_{x_i} &= \partial_{x_i}^2 f = \frac{\partial^2 f}
-    {\partial x_i^2}\\
-    \partial_{x_i} \partial_{x_j} &= \partial_{x_i} \partial_{x_j} f =
-    \frac{\partial^2 f}{\partial x_i \partial x_j}
-\end{align*}
-
-\subsubsection{Partial Equality Theorem}
-If $f:D \subseteq \mathbb{R^d} \to \mathbb{R}$ is C^2$ (On $B_r(\vec{p}) \partial_{x_j}\partial{x_j}$ is continuous for any $i, j \in {1, 2, 3, ..., d}$)$ near $\vec{p} \in D^o$, then $\partial_{x_j}\partial_{x_i} f(\vec{p}) = \partial_{x_i}\partial_{x_j} f(\vec{p})$.
-
-\underline{Proof:}
-WLOG, assume $i \leq j$. Let $x = x_i$ and $y = x_j$.
-
-Define $g(x, y) = f(p_1,
-\dots, p_{i-1}, x, p_{i+1}, \dots, p_{j-1}, y, p_{j+1}, \dots, p_d)$.
-
-In terms of $g$, we
-can rewrite the partials:
-
-\begin{align*}
-    \partial_{x_j}\partial_{x_i} f(p_1, \dots, x, \dots, y, \dots p_d) &= \partial_y
-    \partial_x g(x, y)\\
-    \partial_{x_i}\partial_{x_j} f(p_1, \dots, x, \dots, y, \dots p_d) &= \partial_x
-    \partial_y g(x, y)\\
-\end{align*}
-
-We know that both partials exist in some neighborhood of $p_i, p_j$ and both are
-continuous at $p_i, p_j$.
-Conside a
-new function $\Delta(h) = g(x + h, y + h) + g(x, y) - g(x + h, y) - g(x, y +
-h)$. Let us rearrange some terms, $\Delta(h) = \{g(x + h,
-y + h) - g(x + h, y)\} - \{g(x, y + h) - g(x, y)\}$. If we define $G(x) = g(x,
-y+h) - g(x, y)$, we can rewrite $\Delta(h) = G(x+h) - G(x)$. Now apply the MVT, and we get:
-
-$$\Delta(h) = G'(x + \theta_h h) \times h \text{        where } 0 < \theta_h < 1$$
-
-Note that $G'(x) = \partial_x g(x, y+h) - \partial_x g(x, y)$. The derivates
-also must exist because $C^2 \implies C^1$. Now if we expand $\Delta(h)$, we
-get:
-
-$$\Delta(h) = [\partial_x g(x + \theta_h h, y + h) - \partial_x g(x + \theta_hh,
-y)] h$$
-
-Note that here only $y$ is changing, so let us apply the MVT again, and we get:
-
-$$\Delta(h) = \partial_y (\partial_x g) (x + \theta_h h, y + \phi h)h^2 \text{
-where } 0 < \phi < 1$$
-
-Now take the limit of $\frac{\Delta(h)}{h^2}$ as $h \to 0$, we get:
-
-$$\lim_{h\to0} \frac{\Delta(h)}{h^2} = \partial_y (\partial_x g)(x, y)$$
-
-But note that we could have first applied MVT on the $y$ and then on the $x$ due
-to the symmetry of the function $\Delta(h)$. Therefore, $\partial_y (\partial_x
-g)(x, y) = \partial_x (\partial_y g)(x, y)$
-
-\underline{Corollary:}
-If f is $C^k$ on $B_r(\vec{p})$ for $k \geq 2 [\partial{x_{i_1}}\partial{x_{i_2}}...\partial{x_{i_k}}$ is continuous on $B_r(\vec{p})$ for all $i_1, i_2, ..., i_k \in {1, 2, ..., d}$, and if $(i_1, i_2, ..., i_k)$ and $(j_1, j_2, ..., j_k)$ are permutations of one another, then $\partial_{x_{i_1}}...\partial{x_{i_k}}f(\vec{p}) = \partial{x_{j_1}}\partial{x_{j_k}}f(\vec{p})$.
-
-This is proven fairly trivially by grouping the initially done partials (since function composition is associative), such that there are only 2 partials either grouped, or not grouped, which can then be switched by the theorem.
-
-\subsubsection{Partial Continuity-Differentiability Theorems}
-\underline{Theorem:}
-If f is $C^k (k \geq 1)$, then f is also $C^{k-1}$. Thus, a function can be said to be $C^0$ if it is continuous itself on that region. 
-
-\underline{Theorem:}
-If f is differentiable at $\vec{p} \in D^o$, then f is continuous at $\vec{p}$.
-
-\underline{Proof:}
-$\forall \epsilon > 0, \exists \delta > 0, \forall \vec{h}$ with $||\vec{h}|| < \delta, |f(\vec{p} + \vec{h}) - f(\vec{p}) - \vec{\nabla}f(\vec{p}) \cdot \vec{h}| < \epsilon||\vec{h}||$.
-
-Next, by the triangle and Cauchy-Schwartz inequalities, $|f(\vec{p} + \vec{h}) - f(\vec{p})| = |f(\vec{p} + \vec{h}) - f(\vec{p}) - \vec{a} \cdot \vec{h} + \vec{a} \cdot \vec{h}| \leq |f(\vec{p} + \vec{h}) - f(\vec{p}) - \vec{a} \cdot \vec{h}| + |\vec{a} \cdot \vec{h}| < \epsilon||\vec{h}|| + ||\vec{a}||||\vec{h}|| = (1 + ||\vec{a}||)||\vec{h}|| = M||\vec{h}||$ (where M is some constant), such that it can be made less than any constant, showinng continuity.
-
-This is due to the fact that if the partial derivatives exist and are continuous around the point, then it must be differentiable, and as a result, continuous.
-
-Thus, the base case of $C^1$, then $C^0$ is true, and it can be done by induction, using the induction step, stating $\partial_{x_{i_1}}\partial_{x_{i_2}}...\partial{x_{i_k}}f = \partial{x_{i_1}}g$, which must be continuous for any $i_1 \in {1, ..., d}$, since the original function was continuous. Thus, g is $C^1$, such that g must be continuous.
-
-\subsection{Differentiability of Vector-Valued Functions}
-
-\subsubsection{Linear Functions}
-Consider a vector-valued linear function, $\vec{l}: \mathbb{R^d} \to \mathbb{R^e}$, mapping a line in d-space onto at most a line in e-space (such that it could be a point).
-
-For a linear function, it is sufficient to have the properties of:
-\begin{itemize}
-\item Additivity: $\vec{l}(\vec{x} + \vec{y}) = \vec{l}(\vec{x}) = \vec{l}(\vec{y})$
-\item Homogeneity: $\vec{l}(c\vec{x}) = c\vec{l}(\vec{x})
-\end{itemize}
 
 \end{document}
