@@ -166,6 +166,11 @@ item Libraries are added, either .h files from the current directory through \#i
 \end{enumerate}
 \end{enumerate}
 
+\subsection{Shared Memory}
+\begin{enumerate}
+\item 
+\end{enumerate}
+
 \section{Structural Functions}
 \subsection{String Functions}
 \begin{enumerate}
@@ -359,11 +364,34 @@ item Libraries are added, either .h files from the current directory through \#i
 \item int dup(\textit{fd1}) - Creates a new entry in the file table, the decriptor of which is returned, which refers to the same file as fd1, found in ``unistd.h''
 \end{enumerate}
 
-\section{Signals}
+\section{Signaling}
 
+\subsection{Command-Line Signals}
 \begin{enumerate}
 \item Signals are a limited way of sending information to a process
-\item kill - Command line utility to send signal 
+\item kill <PID> - Command line utility to send signal 15 (SIGTERM) to terminate the PID
+\begin{enumerate}
+\item kill <SIGNAL> <PID> - Sends the specified signal instead, such that the process may not be terminated
+\item killall <PROCESS\_NAME> - Sends the terminate signal to all processes with PROCESS\_NAME in the name
+\item killall <SIGNAL> <PROCESS\_NAME> - Sends the specified signal to those processes
+\end{enumerate}
+\end{enumerate}
+
+\subsection{Signals in C}
+\begin{enumerate}
+\item All signal functions are found within ``signal.h''
+\item kill(\textit{PID, SIGNAL}) - Sends the signal to the process, returning 0 if succeeding, -1 (with errno) otherwise
+\item signal(\textit{SIGNUMBER}, sighandler) - Attaches the signal to the signal handling function, such that it is redirected to the function
+\begin{enumerate}
+\item Signal handling function must have the header ``static void sighandler(int signo)''
+\item Sighandler is static, such that it can only be called from the function it is defined in
+\item Some signals, such as SIGKILL, cannot be attached to the sighandler function
+\end{enumerate}
+\end{enumerate}
+
+\subsection{Semaphores}
+\begin{enumerate}
+
 \end{enumerate}
 
 \end{document}
