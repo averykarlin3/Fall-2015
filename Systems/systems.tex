@@ -168,6 +168,7 @@ item Libraries are added, either .h files from the current directory through \#i
 
 \subsection{Shared Memory}
 \begin{enumerate}
+\item Shared memory is memory able to be used by multiple processes at a time, rather than being created and owned by a single process\
 \item 
 \end{enumerate}
 
@@ -196,6 +197,13 @@ item Libraries are added, either .h files from the current directory through \#i
 \end{enumerate}
 \item \textit{struct-name.subvar} is used to call a specific item within the struct
 \item Since . operator has precedence over *, pointers to structs either must get the struct data before getting a specific piece of data, or use ``\textit{pointer-to-struct} -> \textit{struct-var} to do 
+\end{enumerate}
+
+\subsection{Union}
+\begin{enumerate}
+\item Union data types are defined similarly to structs, using the keyword ``union'' instead, used to store multiple types of data within the same memory
+\item Unions only set the maximum size to the largest of the possible types, such that the data is used similarly to a struct item
+\item Unions are only able to store a single type of data at a time
 \end{enumerate}
 
 \section{File Programming}
@@ -391,7 +399,27 @@ item Libraries are added, either .h files from the current directory through \#i
 
 \subsection{Semaphores}
 \begin{enumerate}
-
+\item Semophores are IPC (interprocess communication) used to control access to shared resources, to prevent editing errors
+\begin{enumerate}
+\item These act as a counter to determine the number of slots for accessing a process, often used in pairs (one for read, one for write)
+\item Semaphore functions require ``sys/types.h'', ``sys/ipc.h'', and ``sys/sem.h'' to function
+\end{enumerate}
+\item semget(key_t key, int amount, int flags) - Creates/accesses a semaphore, returning the descriptor or -1/errno if it fails
+\begin{enumerate}
+\item The key is the unique semaphore indentifier, determined by ftok()
+\item Amount is the number of semaphores within the set, while flags are the permissions for the semaphore
+\item Using the bitwise OR, IPC\_CREAT (creates semaphore, setting to 0), and IPC\_EXCL (fails if IPC\_CREAT is used and semaphore exists) can be added to the flags for if being created
+\end{enumerate}
+\item semctl(\textit{semaphore-descriptor, index, operation, data}) - Controls the semaphore
+\begin{enumerate}
+\item Index is the index of the semaphore within the set/array identified by the descriptor, while data is only if a specific value is inputted to the semaphore operation
+\item This can be used to set, remove, get the value, and get information about the semaphore
+\item Operations include IMP\_RMID (remove), SETVAL (set), SETALL (sets all semaphores within the set), GETVAL (returns value), IPC_STAT (populates buffer with information about the semophore from \textit{data})
+\item Data is a union semun data type, able to store the data for any of the possible uses
+\begin{enumerate}
+\item The union is not included in the header, such that it must be written as: ``union semun {int val; struct semid_ds *buf; unsigned short *array; struct seminfo *__buff;};
+\end{enumerate}
+\end{enumerate}
 \end{enumerate}
 
 \end{document}
