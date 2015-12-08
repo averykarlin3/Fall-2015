@@ -9,6 +9,13 @@
 \usepackage{tikz}
 \usepackage{amsmath}
 %\usepackage{hyperref}
+%\hypersetup {
+%	colorlinks,
+%	citecolor=black,
+%	filecolor=black,
+%	linkcolor=black,
+%	urlcolor=black
+%}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 
@@ -140,12 +147,15 @@ as the $i^{th}$ row of $A$ and suppose $A$ has $m$ rows). Then:
     \end{array}\right|
 \]
 
-\textbf{Size Requirement for Matrix Multiplication}
+For $AB$ to be rigorously defined, the two matrices must be of the form: $A \subseteq \mathbb{R}^{d\times k}$ and $B \subseteq \mathbb{R}^{k \times e}$.
 
-For $AB$ to be rigorously defined, the two matrices must be of the form: $A
-\subseteq \mathbb{R}^{d\times k}$ and $B \subseteq \mathbb{R}^{k \times
-e}$.
+\underline{Defintion of Dot Product:}
+For $A \in \mathbb{R^{n \times d}}, B \in \mathbb{R^{d \times m}}$, AB := $A \cdot B$, such that the dot product is shown to be distributive, but not associative.
 
+On the other hand, AB := $A^T \cdot B$ is used instead as the matrix product.
+
+\underline{Proof of Associativity:}
+$A(BC)_{ij} = \sum_k a_{ik}[BC]_{kj} = \sum_k a_{ik}(\sum_l b_{kl}c_{lj}) = \sum_{(k, l)} a_{ik}b_{kl}c_{lj}$. The other associative version is shown to equal the same sum over (l, k), such that if A \in \mathbb
 
 \subsection{Unique Expression of Linear Functions}
 \subsubsection{Theorem}
@@ -197,5 +207,17 @@ into each component of $\vec{\gamma}$, so we can rewrite the speed vector as:
     \end{array} \right]
 \end{equation*}
 
+\section{The Gradient Operator}
+
+\subsection{Basic Rules}
+
+Since all rules of single-variable derivative operators apply to partial derivative operators, due to functioning similarly, just holding all but one variable constant:
+
+\begin{itemize}
+\item $\vec{\nabla}(f + g) = \vec{\nabla}f + \vec{\nabla}g$
+\item $\vec{\nabla}(cf) = c\vec{\nabla}f$
+\item $\vec{\nabla}(fg) = f\vec{\nabla}g + g\vec{\nabla}f$
+\item $\vec{\nabla}(\frac{f}{g}) = \frac{g\vec{\nabla}f - f\vec{\nabla}g}{g^2}$
+\end{itemize}
 
 \end{document}
