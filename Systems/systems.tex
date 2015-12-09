@@ -168,8 +168,24 @@ item Libraries are added, either .h files from the current directory through \#i
 
 \subsection{Shared Memory}
 \begin{enumerate}
-\item Shared memory is memory able to be used by multiple processes at a time, rather than being created and owned by a single process\
-\item  
+\item Shared memory is a segment of heap memory able to be accessed by multiple processes, not released when a program exits, accessed by a specific key
+\item Shared memory functions are within ``sys/shm.h'', ``sys/ipc.h'', and ``sys/types.h''
+\item Shared memory can be created or removed, as well as accessed or attached/deattached from a variable once per process
+\item shmget(\textit{key, size, flags}) - Creates or accesses a shared memory segment, where key is a unique identifier
+\begin{enumerate}
+\item Size is the number of bytes requested
+\item Flags are the permissions, able to be combined by bitwise OR with IPC_CREAT (creates the segment if it doesn't exist, setting all values to 0) 
+\item Returns the descriptor of the memory (or -1/errno if it fails)
+\end{enumerate}
+\item ftok(\textit{path, x}) - Generates a unique key, based on the path to some accessible file, and an integer
+\begin{enumerate}
+\item The generated key will be the same for the same path and integer, each time run
+\end{enumerate}
+\item shmdt(\textit{pointer}) - Deattaches pointer variable from shared memory, such that while the data is still in shared memory, it can no longer be accessed in the program
+\item shmctl(\textit{descriptor, command, buffer}) - Controls shared memory by the command (IPC\_STAT for populating buffer struct with metadata information, IPC\_SET for setting segment info to buffer, or IPC\_RMID for removing segment)
+\begin{enumerate}
+\item Meta-data is stored within a ``struct shmid\_ds'' containing last access, size, PID of creator, PID of last modification, etc
+\end{enumerate}
 \end{enumerate}
 
 \section{Structural Functions}
@@ -402,8 +418,9 @@ item Libraries are added, either .h files from the current directory through \#i
 \item Semophores are IPC (interprocess communication) used to control access to shared resources, to prevent editing errors
 \begin{enumerate}
 \item These act as a counter to determine the number of slots for accessing a process, often used in pairs (one for read, one for write)
-\item Semaphore functions require ``sys/types.h'', ``sys/ipc.h'', and ``sys/sem.h'' to function
+\item Semaphores can be set, created, removed, incremented (either signal(), P(), S++, or Up(S) as non-code notation), decremented (wait(), V(), S--, or Down(S))
 \end{enumerate}
+\item Semaphore functions require ``sys/types.h'', ``sys/ipc.h'', and ``sys/sem.h'' to function
 \item semget(key_t key, int amount, int flags) - Creates/accesses a semaphore, returning the descriptor or -1/errno if it fails
 \begin{enumerate}
 \item The key is the unique semaphore indentifier, determined by ftok()
@@ -419,6 +436,12 @@ item Libraries are added, either .h files from the current directory through \#i
 \begin{enumerate}
 \item The union is not included in the header, such that it must be written as: ``union semun {int val; struct semid_ds *buf; unsigned short *array; struct seminfo *__buff;};
 \end{enumerate}
+\end{enumerate}
+\item semop(\textit{descriptor, operation, amount}) - Modifies the value of the semaphore, as an atomic operation that the memory can not be seen changed until completion 
+\begin{enumerate}
+\item The amount is the number of semaphores in the set which are being operated on
+\item Operation is a pointer to a ``struct sembuf'', precreated, containing short sem\_flg, short sem\_num (index of semaphore), and short sem\_op (-n for down by n, n for up, 0 to have the process sleep until the semaphore is 0)
+\item Possible values for sem\_flg are SEM\_UNDO (allows the OS to release the semaphore automatically in case the program crashes, and was unable to release it), IPC_NOWAIT (if the semaphore is unavailable, it returns an error instead of waiting)
 \end{enumerate}
 \end{enumerate}
 
