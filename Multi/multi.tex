@@ -45,6 +45,8 @@ called a \textbf{linear mapping} if the image of any k-flat in $\mathbb{R}^d$
 ($0 \leq k \leq d$) is a \~{k}-flat in $\mathbb{R}^e$, where $\~{k} \leq k$.
 Basically these definitions ``preserve flatness.''
 
+Thus the rigorous definition of a linear function is if $\vec{l}: \mathbb{R^d} \to \mathbb{R^e}$ is linear, then $\exists A \in \mathbb{R^{e \times d}}$ such that $\vec{l}(\vec{x}) = A\vec{x}$, where $\vec{x}$ is viewed as a column matrix (d \times 1).
+
 \subsection{Sufficient Conditions for Linear Mapping}
 For $\vec{l}$ to be a linear function, it must have the following properties:
 
@@ -122,40 +124,127 @@ column number. If the above matrix is $A$, then $a_{11} = 1$ and $a_{31} = 0$.
 
 \subsubsection{Operations}
 
-There is also a transpose operation, if $B = A^T$ (if $B$ is $A$ transposed),
-then $b_{ij} = b_{ji}$
+\textbf{The Transpose operation}: $B = A^T$ ($B$ is $A$ transposed),
+then $b_{ij} = a_{ji}$
 
-If we have two collections of items $A = [\vec{a}_1, \vec{a}_2, \dots, \vec{a}_n]$
-and $B = [\vec{b}_1, \vec{b_2}, \dots, \vec{a}_p]$, we can generate all possible
-dot products by a matrix product. $C = AB$ means:
+\textbf{The dot product}: If we have $A = [\vec{a}_1 \vec{a}_2 \dots \vec{a}_n]
+\in \mathbb{R}^{d \times n}$ and $B = [\vec{b}_1 \vec{b}_2 \dots \vec{b}_m]
+\in \mathbb{R}^{d \times m}$, then we say that the dot product of the two is:
 
-\begin{align*}
-    c_{ij} &= (i\mbox{-th row of } A)^T \cdot (j\mbox{-th column of } B)\\
-           &= \sum_n a_{in} b_{nj}
-\end{align*}
+\[
+    A \cdot B = \left|\begin{array}{cccc}
+        \vec{a}_1 \cdot \vec{b}_1 & \vec{a}_1 \cdot \vec{b}_2 & \dots &
+        \vec{a}_1 \cdot \vec{b}_m \\
+        \vec{a}_2 \cdot \vec{b}_1 & \vec{a}_2 \cdot \vec{b}_2 & \dots &
+        \vec{a}_2 \cdot \vec{b}_m \\
+        \vdots & \vdots & \ddots & \vdots\\
+        \vec{a}_n \cdot \vec{b}_1 & \vec{a}_n \cdot \vec{b}_2 & \dots &
+        \vec{a}_n \cdot \vec{b}_m
+                      \end{array}\right|
+\]
+
+This operation is distributive, which means that $A \cdot (B + C) = A \cdot B +
+A \cdot C$. However, this product is not associative, i.e. $A \cdot (B \cdot C)
+\neq (A \cdot B) \cdot C$.
+
+To solve this problem, we have the matrix multiplication operator.
+
+\textbf{Matrix Multiplation}: For $A \in \mathbb{R}^{n\times d}$, $B \in
+\mathbb{R}^{d\times m}$, we define the matrix multiplication product to be:
+
+$$\boxed{AB := A^T \cdot B} \in \mathbb{R}^{n\times m}$$
+
+If we call $C = AB$, then we can say that
+
+$$c_{ij} = \sum_{k = 1}^d a_{ik} b_{kj} \text{  } (1 \leq i \leq n, 1 \leq j
+\leq m)$$
 
 As a whole, the $C$ column would look like this (here we denote $\vec{\alpha}_i$
-as the $i^{th}$ row of $A$ and suppose $A$ has $m$ rows). Then:
+as the $i^{th}$ row of $A$ and suppose $A$ has $p$ rows). Then:
 
 \[
     C = \left|\begin{array}{ccc}
         \vec{\alpha}_1 \cdot \vec{b}_1 & \dots & \vec{\alpha}_1 \cdot
-        \vec{b}_j\\
+        \vec{b}_m\\
         \vdots & \ddots & \vdots\\
-        \vec{\alpha}_m \cdot \vec{b}_1 & \dots & \vec{\alpha}_m \cdot
-        \vec{b}_j
+        \vec{\alpha}_p \cdot \vec{b}_1 & \dots & \vec{\alpha}_m \cdot
+        \vec{b}_m
     \end{array}\right|
 \]
 
-For $AB$ to be rigorously defined, the two matrices must be of the form: $A \subseteq \mathbb{R}^{d\times k}$ and $B \subseteq \mathbb{R}^{k \times e}$.
+Note this operation is both distribut and associative, quick proof:
 
-\underline{Defintion of Dot Product:}
-For $A \in \mathbb{R^{n \times d}}, B \in \mathbb{R^{d \times m}}$, AB := $A \cdot B$, such that the dot product is shown to be distributive, but not associative.
+$$A (BC) \overset{?}{=} (AB) C$$
 
-On the other hand, AB := $A^T \cdot B$ is used instead as the matrix product.
+$$[A(BC)]_{ij} = \sum_{k} a_{ik} [BC]_{kj} = \sum_k a_{ik} (\sum_l b_{kl} c_{lj})
+= \sum_{(k, l)} a_{ik} b_{kl} c_{lj}$$
 
-\underline{Proof of Associativity:}
-$A(BC)_{ij} = \sum_k a_{ik}[BC]_{kj} = \sum_k a_{ik}(\sum_l b_{kl}c_{lj}) = \sum_{(k, l)} a_{ik}b_{kl}c_{lj}$. The other associative version is shown to equal the same sum over (l, k), such that if A \in \mathbb
+$$[(AB)C]_{ij} = \sum_l [AB]_{il} c_{li} = \sum_l(\sum_k a_{ik} b_{kl})c_{lj} =
+\sum_{(l, k)} a_{ik} b_{kl} c_{lj}$$
+
+Therefore the values of the two matrices are the same. We also have to prove
+that they are the same size. If $A \in \mathbb{R}^{n \times d}$, $B \in
+\mathbb{R}^{d \times e}$ and $C \in \mathbb{R}^{e \times m}$. $BC \in
+\mathbb{R}^{d \times m}$ and $A(BC) \in \mathbb{R}^{n \times m}$. $AB \in
+\mathbb{R}^{n \times e}$ and $(AB)C \in \mathbb{R}^{n \times m}$.
+Therefore matrix multiplication is associative.
+
+\subsubsection{Examples}:
+
+\[
+    \left[\begin{array}{cc}
+        0 & 0 \\
+        0 & 1
+    \end{array}\right]
+    \left[\begin{array}{cc}
+        1 & 0 \\
+        0 & 0
+    \end{array}\right]
+    =
+    \left[\begin{array}{cc}
+        0 & 0 \\
+        0 & 0
+    \end{array}\right]
+    = O_{2 \times 2}
+    = O
+\]
+
+Note that in the world of matrices, the product of two non-zero matrices can
+result in the zero matrix.
+
+\[
+    \left[\begin{array}{cc}
+        1 & 0 \\
+        1 & 0
+    \end{array}\right]
+    \left[\begin{array}{cc}
+        1 & 0 \\
+        0 & 0
+    \end{array}\right]
+    =
+    \left[\begin{array}{cc}
+        1 & 0 \\
+        1 & 0
+    \end{array}\right]
+\]
+
+\[
+    \left[\begin{array}{cc}
+        1 & 0 \\
+        0 & 0
+    \end{array}\right]
+    \left[\begin{array}{cc}
+        1 & 0 \\
+        1 & 0
+    \end{array}\right]
+    =
+    \left[\begin{array}{cc}
+        1 & 0 \\
+        0 & 0
+    \end{array}\right]
+\]
+
+Note that the communicative property does not hold for matrix multiplication.
 
 \subsection{Unique Expression of Linear Functions}
 \subsubsection{Theorem}
@@ -164,17 +253,40 @@ There is an unique matrix $A \in \mathbb{R}^{e \times d}$ ($d$ columns and
 $e$ rows) such that $\vec{l}(\vec{x}) = A\vec{x}$ where the right hand size is a
 matrix product, where $\vec{x}$ is regarded as a $d \times 1$ column.
 
+\subsubsection{Proof}
+$\vec{l}(\vec{X}) = (l_1(\vec{x}), l_2(\vec{x}),...,l_e(\vec{x}))$, such that each $l_j$ is a linear real-valued function. 
+
+\underline{Claim:} A real valued linear function, $\Gamma: \mathbb{R^d} \to \mathbb{R}$ has the form $\Gamma(\vec{x}) = \vec{a} \cdot \vec{x}$ for some $\vec{a} \in \mathbb{R^d}$.
+
+$\vec{x} = x_1\vec{e}_1 + x_2\vec{e}_2 + ... + x_d\vec{e}_d = (x_1, x_2, ..., x_d)$, and $\Gamma(\vec{x}) = \Gamma(x_1\vec{e}_1 + ... + x_d\vec{e}_d) = \Gamma(\vec{e}_1)x_1 + \Gamma(\vec{e}_2)x_2 + ... + \Gamma(\vec{e}_d)x_d$. If each term, $\Gamma(\vec{e}_n)x_n = a_n$, then $\Gamma(\vec{x}) = \vec{a} \cdot \vec{x}$.
+
+\underline{Claim:} If \vec{a} $\cdot \vec{x}  = \vec{b} \cdot \vec{x}$ for all $\vec{x} \in \mathbb{R^d}$, where $\vec{a}$, $\vec{b} \in \mathbb{R^d}$, then $\vec{a} = \vec{b}$.
+
+For some $\vec{x} = \vec{e}_1 = (1, 0, 0, ..., 0)$, then $a_1 = \vec{a} \cdot \vec{e_1} = \vec{b} \cdot \vec{e_1} = b_1$, and so forth.
+
+Thus, $\vec{l}(\vec{x}) = (\vec{\alpha}_1 \cdot \vec{x}, \vec{\alpha}_2 \cdot \vec{x}, ..., \vec{\alpha}_d \cdot \vec{x})$, able to be written as a column matrix of the vector components, which by the definition of the dot product, can be written as a column matrix of $\alpha^T$, multiplied by $\vec{x}$ = A$\vec{x}$ = B$\vec{x}$.
+
 \section{Differentiability of Vector Valued Functions}
 \subsection{Definition of Differentiability}
-Take the function $\vec{f}: \mathbb{R}^d \to \mathbb{R}^e$, $\vec{f} =
-(f_1, f_2, \dots, f_e)$, $\vec{f}(\vec{x}) \in \mathbb{R}^e$. If we
-want to find the change in the output at a point $\vec{p} \in D^\circ$, it can
-be written as $\Delta \vec{f}(\vec{p}, \vec{h}) =
-\vec{f}(\vec{p} + \vec{h}) - \vec{f}(\vec{p}) \in \mathbb{R}^e$. We say that
-$\vec{f}$ is differentiable if there exists a linear function $\vec{l}(\vec{h})$:
+Let $\vec{f} : D \subseteq \mathbb{R}^d \to \mathbb{R}^e$. Let $\vec{p}
+\in D^\circ$. Then $\vec{f}$ is differentiable at $\vec{p}$ if $\exists \+A \in
+\mathbb{R}^{e \times d}$ such that
 
-$$\boxed{\lim_{\vec{h}\to \vec{0}} \frac{|\+\Delta \vec{f}(\vec{p}, \vec{h}) -
-\vec{l}(\vec{h})\+|}{||\vec{h}||}}$$
+$$\boxed{\forall \epsilon > 0, \exists \+ \delta > 0: 0 < ||\vec{h}|| < \delta
+\implies ||\vec{f}(\vec{p} + \vec{h}) - \vec{f}(\vec{p}) - A
+\vec{h}|| < \epsilon ||\vec{h}||}$$
+
+If $A$ exists, then we call it the derivative of $\vec{f}$ at point $\vec{p}$,
+we write it as $D\vec{f}(\vec{p}) \in \mathbb{R}^{e \times d}$, and
+$D\vec{f}(\vec{p})_{ij}$ (Jacobian derivative) $= \partial_{x_j} f_i (\vec{p})$.
+
+\underline{Claim:} The above definition decomposes componentwise.
+
+This is done by the basic norm bounds $(|v_j| \leq ||\vec{v}|| \leq \root{d}max_{1 \leq k \leq d} |v_k|)$.
+
+It can then be shown that $|f_i(\vec{p} + \vec{h}) - f_i(\vec{p}) - \vec{\alpha}_i \cdot \vec{h}| < \epsilon||\vec{h}||$, where $\vec{\alpha}_i^T$ is the i-th row of A. Thus, $\vec{\alpha}_i = \vec{\nabla}f_i(\vec{p})$, such that $\vec{\alpha}_i$ is unique.
+
+Then D$\vec{f}$ is the column matrix of the transposed gradient of each component function, or the column matrix of the Jacobian derivative of each component function, or the matrix of the partial derivatives, such that $[D\vec{f}]_ij$ (the ij-th entry) $= \partial_{x_j}f_i$.
 
 \subsection{Definition of Differentiability}
 Given a vectored valued function $\vec{\gamma}(t)$:
@@ -190,7 +302,7 @@ Given a vectored valued function $\vec{\gamma}(t)$:
 \end{equation*}
 
 We define the ``speed'' vector of $\vec{\gamma}$ as its derivative, which is
-defined as:-0
+defined as:
 
 $$\frac{d\vec{\gamma}}{dt}(t) := \lim_{h\to0} \frac{\vec{\gamma}(t + h) - \vec{\gamma}(t)}{h}$$
 
