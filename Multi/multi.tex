@@ -276,48 +276,17 @@ $$\boxed{\forall \epsilon > 0, \exists \+ \delta > 0: 0 < ||\vec{h}|| < \delta
 \implies ||\vec{f}(\vec{p} + \vec{h}) - \vec{f}(\vec{p}) - A
 \vec{h}|| < \epsilon ||\vec{h}||}$$
 
-If $A$ exists, then we call it the derivative of $\vec{f}$ at point $\vec{p}$,
-we write it as $D\vec{f}(\vec{p}) \in \mathbb{R}^{e \times d}$, and
-$D\vec{f}(\vec{p})_{ij}$ (Jacobian derivative) $= \partial_{x_j} f_i (\vec{p})$.
+If $A$ exists, then we call it the derivative of $\vec{f}$ at point $\vec{p}$, say that $\vec{f}$ is differentiable at $\vec{p}$. We write the derivative as $D\vec{f}(\vec{p}) \in \mathbb{R}^{e \times d}$, and $D\vec{f}(\vec{p})_{ij}$ (Jacobian derivative) $= \partial_{x_j} f_i (\vec{p})$.
+
+\subsection{The Jacobian Derivative}
 
 \underline{Claim:} The above definition decomposes componentwise.
 
-This is done by the basic norm bounds $(|v_j| \leq ||\vec{v}|| \leq \root{d}max_{1 \leq k \leq d} |v_k|)$.
+This is done by the basic norm bounds $(|v_j| \leq ||\vec{v}|| \leq \sqrt{d}max_{1 \leq k \leq d} |v_k|)$.
 
 It can then be shown that $|f_i(\vec{p} + \vec{h}) - f_i(\vec{p}) - \vec{\alpha}_i \cdot \vec{h}| < \epsilon||\vec{h}||$, where $\vec{\alpha}_i^T$ is the i-th row of A. Thus, $\vec{\alpha}_i = \vec{\nabla}f_i(\vec{p})$, such that $\vec{\alpha}_i$ is unique.
 
-Then D$\vec{f}$ is the column matrix of the transposed gradient of each component function, or the column matrix of the Jacobian derivative of each component function, or the matrix of the partial derivatives, such that $[D\vec{f}]_ij$ (the ij-th entry) $= \partial_{x_j}f_i$.
-
-\subsection{Definition of Differentiability}
-Given a vectored valued function $\vec{\gamma}(t)$:
-
-\begin{equation*}
-    \vec{\gamma}(t) = \left[
-    \begin{array}{c}
-        \gamma_1 (t)\\
-        \gamma_2 (t)\\
-        \vdots\\
-        \gamma_d (t)
-    \end{array} \right]
-\end{equation*}
-
-We define the ``speed'' vector of $\vec{\gamma}$ as its derivative, which is
-defined as:
-
-$$\frac{d\vec{\gamma}}{dt}(t) := \lim_{h\to0} \frac{\vec{\gamma}(t + h) - \vec{\gamma}(t)}{h}$$
-
-But because of the componentwise nature of limits, we can distribute the limit
-into each component of $\vec{\gamma}$, so we can rewrite the speed vector as:
-
-\begin{equation*}
-    \frac{d\vec{\gamma}}{dt}(t) = \left[
-    \begin{array}{c}
-        \gamma_1' (t)\\
-        \gamma_2' (t)\\
-        \vdots\\
-        \gamma_d' (t)
-    \end{array} \right]
-\end{equation*}
+Then D$\vec{f}$ is the column matrix of the transposed gradient of each component function, or the column matrix of the Jacobian derivative of each component function, or the matrix of the partial derivatives, such that $[D\vec{f}]_ij$ (the ij-th entry) $= \partial_{x_j}f_i = \frac{\partial f_i}{\partial x_j}$. The final interpretation is the row matrix of $\partial_{x_i}\vec{f}$.
 
 \section{The Gradient Operator}
 
@@ -331,5 +300,11 @@ Since all rules of single-variable derivative operators apply to partial derivat
 \item $\vec{\nabla}(fg) = f\vec{\nabla}g + g\vec{\nabla}f$
 \item $\vec{\nabla}(\frac{f}{g}) = \frac{g\vec{\nabla}f - f\vec{\nabla}g}{g^2}$
 \end{itemize}
+
+\subsection{Chain Rule}
+
+If $\vec{f}: D \subseteq \mathbb{R^d} \to \mathbb{R^e}$, $\vec{g}: E \subseteq \mathbb{R^e} \to mathbb{R^k}$, $\vec{f}(D) \cap E \neq \emptyset$, and $\vec{p} \in D^o$ such that $\vec{f}(\vec{p}) \in E^o$. Then, if $\vec{f}$ is differentiable at $\vec{p}$, and $\vec{g}$ is differentiable at $\vec{q} = \vec{f}(\vec{p})$, then $\vec{g} \circ \vec{f}$ is also differentiable at $\vec{p}$, and $D(\vec{g} \circ \vec{f})(\vec{p}) = D\vec{g}(\vec{f}(\vec{p}))D\vec{f}(\vec{p})$.
+
+Thus, it is the same rule as in single-variable calculus, though matrix multiplication is used rather than regular multiplication.
 
 \end{document}
