@@ -42,5 +42,5 @@
 \contentsline {subsection}{\numberline {7.5}Monetary Policy}{29}
 \contentsline {subsection}{\numberline {7.6}The Money Market}{30}
 \contentsline {subsection}{\numberline {7.7}The Loanable Funds Market}{31}
-\contentsline {subsection}{\numberline {7.8}Deficits and Public Debt from Fiscal Policy}{32}
-\contentsline {subsection}{\numberline {7.9}Monetary Policy}{32}
+\contentsline {subsection}{\numberline {7.8}Deficits and Fiscal Policy Implications}{32}
+\contentsline {subsection}{\numberline {7.9}Monetary Policy}{33}
