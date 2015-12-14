@@ -181,6 +181,11 @@ item Libraries are added, either .h files from the current directory through \#i
 \begin{enumerate}
 \item The generated key will be the same for the same path and integer, each time run
 \end{enumerate}
+\item shmat(\textit{descriptor, pointer, flags}) - Attaches the shared memory to the pointer, or to available memory space if null pointer is given
+\begin{enumerate}
+\item Returns the pointer or -1/errno if it fails
+\item SHM\_RDONLY attaches the shared memory as read-only, such that the pointer value cannot be modified
+\end{enumerate}
 \item shmdt(\textit{pointer}) - Deattaches pointer variable from shared memory, such that while the data is still in shared memory, it can no longer be accessed in the program
 \item shmctl(\textit{descriptor, command, buffer}) - Controls shared memory by the command (IPC\_STAT for populating buffer struct with metadata information, IPC\_SET for setting segment info to buffer, or IPC\_RMID for removing segment)
 \begin{enumerate}
@@ -419,9 +424,10 @@ item Libraries are added, either .h files from the current directory through \#i
 \begin{enumerate}
 \item These act as a counter to determine the number of slots for accessing a process, often used in pairs (one for read, one for write)
 \item Semaphores can be set, created, removed, incremented (either signal(), P(), S++, or Up(S) as non-code notation), decremented (wait(), V(), S--, or Down(S))
+\item Semaphores are not connected to any particular memory, but rather cause the program to wait until the change in the value is possible (without ending less than 0)
 \end{enumerate}
 \item Semaphore functions require ``sys/types.h'', ``sys/ipc.h'', and ``sys/sem.h'' to function
-\item semget(key_t key, int amount, int flags) - Creates/accesses a semaphore, returning the descriptor or -1/errno if it fails
+\item semget(key\_t key, int amount, int flags) - Creates/accesses a semaphore, returning the descriptor or -1/errno if it fails
 \begin{enumerate}
 \item The key is the unique semaphore indentifier, determined by ftok()
 \item Amount is the number of semaphores within the set, while flags are the permissions for the semaphore
@@ -431,17 +437,17 @@ item Libraries are added, either .h files from the current directory through \#i
 \begin{enumerate}
 \item Index is the index of the semaphore within the set/array identified by the descriptor, while data is only if a specific value is inputted to the semaphore operation
 \item This can be used to set, remove, get the value, and get information about the semaphore
-\item Operations include IMP\_RMID (remove), SETVAL (set), SETALL (sets all semaphores within the set), GETVAL (returns value), IPC_STAT (populates buffer with information about the semophore from \textit{data})
+\item Operations include IMP\_RMID (remove), SETVAL (set), SETALL (sets all semaphores within the set), GETVAL (returns value), IPC\_STAT (populates buffer with information about the semophore from \textit{data})
 \item Data is a union semun data type, able to store the data for any of the possible uses
 \begin{enumerate}
-\item The union is not included in the header, such that it must be written as: ``union semun {int val; struct semid_ds *buf; unsigned short *array; struct seminfo *__buff;};
+\item The union is not included in the header, such that it must be written as: ``union semun {int val; struct semid\_ds *buf; unsigned short *array; struct seminfo *\_\_buff;};
 \end{enumerate}
 \end{enumerate}
 \item semop(\textit{descriptor, operation, amount}) - Modifies the value of the semaphore, as an atomic operation that the memory can not be seen changed until completion 
 \begin{enumerate}
 \item The amount is the number of semaphores in the set which are being operated on
 \item Operation is a pointer to a ``struct sembuf'', precreated, containing short sem\_flg, short sem\_num (index of semaphore), and short sem\_op (-n for down by n, n for up, 0 to have the process sleep until the semaphore is 0)
-\item Possible values for sem\_flg are SEM\_UNDO (allows the OS to release the semaphore automatically in case the program crashes, and was unable to release it), IPC_NOWAIT (if the semaphore is unavailable, it returns an error instead of waiting)
+\item Possible values for sem\_flg are SEM\_UNDO (allows the OS to release the semaphore automatically in case the program crashes, and was unable to release it), IPC\_NOWAIT (if the semaphore is unavailable, it returns an error instead of waiting)
 \end{enumerate}
 \end{enumerate}
 
