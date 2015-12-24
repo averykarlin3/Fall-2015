@@ -30,3 +30,6 @@
 \contentsline {subsection}{\numberline {7.1}Command-Line Signals}{13}
 \contentsline {subsection}{\numberline {7.2}Signals in C}{13}
 \contentsline {subsection}{\numberline {7.3}Semaphores}{14}
+\contentsline {section}{\numberline {8}Connections}{15}
+\contentsline {subsection}{\numberline {8.1}Pipes}{15}
+\contentsline {subsection}{\numberline {8.2}Server-Client Protocol}{15}

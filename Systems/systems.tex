@@ -451,4 +451,37 @@ item Libraries are added, either .h files from the current directory through \#i
 \end{enumerate}
 \end{enumerate}
 
+\section{Connections}
+
+\subsection{Pipes}
+\begin{enumerate}
+\item Pipes are a conduit between two processes, with each pipe containing a read and write end, unidirectional (constant direction), acting like files to transfer data
+\item Unnamed pipes have no external identification, such as a name or descriptor
+\begin{enumerate}
+\item pipe(\textit{int descriptors[2]}) - Creates an unnamed pipe, found within ``unistd.h'', returning 0 if created, -1/errno if it fails
+\item The function stores in the descriptors array, the descriptors of the read end and the write end (in that order) of the pipe, such that the data written is stored in the pipe until read
+\end{enuemrate}
+\item Named pipes, also called FIFO (first in, first out), have a name that can be used to identify them from another program, unidirectional as well
+\begin{enumerate}
+\item mkfifo(\textit{char* name, int permission}) - Creates a named pipe, requiring ``sys/types.h'' and ``sys/stat.h'', returning 0 if success, -1/errno if it fails
+\item The FIFO acts as a file, with permissions inputted, blocking on open (unable to be written or read) until a connection is established on both ends
+\item The FIFO is not opened immediately after created, and is used otherwise the same as any other file
+\end{enumerate}
+\end{enumerate}
+
+\subsection{Server-Client Protocol}
+\begin{enumerate}
+\item The handshake procedure is used to ensure a connection is established, first created a named pipe, called a well-known pipe, by the server, which then waits for a connection
+\begin{enumerate}
+\item The client then creates a named pipe, called a private pipe, which connects to the well-known pipe, and sends the name of the private pipe, after which it waits for the connection
+\item The server then recieves the name of the private pipe, removes the well-known pipe, which then connects to the private pipe
+\end{enumerate}
+\item The basic server uses the handshake, followed by the connection, then after the client exits, the private pipe is removed and a new well-known pipe is created
+\item The forking server allows a subserver for each client, allowing for multiple client connections simultaneously
+\begin{enumerate}
+\item The handshake is done similarly until the point of connecting to the private pipe by the server, at which point it forks a subprocess, and has that connect, finishing the handshake process
+\item After the connection, the private pipe is removed by the subserver, which then ends, and the main server makes a new well-known pipe
+\end{enumerate}
+\end{enumerate}
+
 \end{document}
