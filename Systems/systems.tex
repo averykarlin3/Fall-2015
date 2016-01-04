@@ -486,7 +486,19 @@ item Libraries are added, either .h files from the current directory through \#i
 \item The variable to the location of the original well-known pipe is then kept by the subserver, but closed in the main server, to allow the new well-known pipe to be created
 \item After the connection, the private pipe is removed in the subserver, and the subprocess ends
 \end{enumerate}
-\item Central dispatch server maintains communication with each of the clients simultaneously through maintaining pipes to each of the subservers, allowing communication with clients
+\item Central dispatch server/Distributed server maintains communication with each of the clients simultaneously through maintaining pipes to each of the subservers, allowing inter-client communication as well
+\end{enumerate}
+
+\subsection{Networking}
+\begin{enumerate}
+\item The OSI 7-layer model is used to conceptualize the different parts of network connections, becoming more abstract (relient on code as the layers get lower), to allow the assumption that all other layers are in place properly, for simplification
+\begin{enumerate}
+\item The physical layer is the top layer, for the physical connection between computers, generally electrons through copper wires, though it can also be done through radio waves (wi-fi, bluetooth) or light pulses
+\begin{enumerate}
+\item Original physical layer was done through thicknet, consisting of a thick coaxial copper wire with heavy insulation, with a vampire tap to cut into and connect to the cable, to join computers, but as more devices are added, the connection degrades, and it is difficult to modify the setup
+\item Thinnet was later used, replacing the vampire taps with a cable splitter rather than a vampire tap, to avoid damaging the cable, allowing easily reshaping the networking, and allows repeaters to capture the signal and add electricity to prevent signal degredation
+\end{enumerate}
+\end{enumerate}
 \end{enumerate}
 
 \end{document}

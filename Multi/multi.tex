@@ -309,6 +309,14 @@ If $\vec{f}: D \subseteq \mathbb{R^d} \to \mathbb{R^e}$, $\vec{g}: E \subseteq \
 
 Thus, it is the same rule as in single-variable calculus, though matrix multiplication is used rather than regular multiplication.
 
+\subsection{Implicit Function Theorem}
+Let $F: D \subseteq \mathbb{R}^{d+1} \to \mathbb{R}$ be $C^1$ on $D^o$. Suppose $F(\vec{A}) = 0$, where $\vec{A} = (\vec{a}, \alpha), \vec{a} \in \mathbb{R}^d, \alpha \in \mathbb{R}$. Also suppose $\partial_yF(\vec{A}) \neq 0$. Here, we write $F(\vec{x}, y) = F(x_1, x_2, ..., x_d, y) = F(\vec{X})$. Then $\exists$ an open set $U \subseteq \mathbb{R}^d$ and an open interval $I \subseteq \mathbb{R}$, such that $\vec{a} \in U$ and $\alpha \in I$ and $U x I \subseteq D^o$, and $\exists$ a function $f: U \to I$, such that $\{\vec{X} \in U x I|F(\vec{X}) = 0\} = G_f := \{(\vec{x}, f(\vec{x}))|\vec{x} \in U\}$. Also f is also $C^1$, and $$\vec{\nabla}f(\vec{x}) = -\frac{1}{\partial_yF(\vec{x}, f(\vec{x}))}\vec{\nabla}_\vec{x}F(\vec{x}, f(\vec{x}))$$, where $\vec{\nabla}_\vec{x}F(\vec{x}) = (\partial_{x_1}F, \partial_{x_2}F, ..., \partial_{x_d}F)$, called the partial gradient.
 
+\subsubsection{Proof}
+The implicit function theorem is done in three parts, first by proving the existance of f, then proving the continuity of f, and finally that f is $C^1$, allowing the equation to be proved.
+
+For the first part, a cube is drawn with an axis from the center of the top and bottom faces, where the midpoint of the axes is said to be $\vec{A}$. $\partial_yF(\vec{A}) \neq 0$ and it can be assumed to be either positive or negative, not changing the proof. Let $g_\vec{a}(y) = F(\vec{a}, y)$. When $y = \alpha, g'_\vec{a}(y) > 0$, meaning $\partial_yF(\vec{x}, y)$ is continuous since F is $C^1$. By continuity, we can assume that the partial derivative is positive for all points within the cube, such that there exists a cube where that is true by the continuity. Thus, the derivative is defined on the axis, such that $\vec{a}$ is fixed. By the theorem assumptions, $F(\vec{A}) = 0, g_\vec{a}(\alpha) = 0$, such that $\exists$ some point $p > \alpha$ and $q < \alpha$, such that the function value is greater and less than 0 respectively.
+
+By the continuity of F, $g_\vec{a}(y)$ is continuous, such that a square can be drawn around  $g_\vec{a}(p)$, such that F > 0 for all points within by continuity. We can do the same for q, gaining edge lengths of $r^+$ and $r^-$ respectively, such that the minimum edge length forms the open boundary of U, and I := (p, q). For each $\vec{a}$ by the Intermediate Value Theorem and the derivative, there must be one point such that $F(\vec{a}, \alpha) = 0$, such that the function of those $\alpha$ is f.
 
 \end{document}
