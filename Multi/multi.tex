@@ -328,4 +328,12 @@ We take the absolute value of the two sides of the equation, such that $|-\parti
 
 For the third part, let $\vec{h} = h\vec{e}_j = (0, ..., 1, ..., 0)$, where the 1 is in the $j^{th}$ place. By the previous equation, $-h(\vec{\nabla}_\vec{x}F(\vec{X}^*) \cdot \vec{e}_j) = \partial_yF(\vec{X}^*)\delta f$, after which we divide by h on both sides. As $h \to 0, \frac{\delta f}{h} = -\frac{\vec{\nabla}_\vec{x}F(\vec{X}^*) \cdot \vec{e}_j}{\partial_y F(\vec{X}^*)} \to -\frac{\vec{\nabla}_\vec{x}F(\vec{x}, f(\vec{x})) \cdot \vec{e}_j}{\partial_yF(\vec{x}, f(\vec{x}))} = -\frac{\partial_{x_j}F(\vec{x}, f(\vec{x}))}{\partial_yF(\vec{x}, f(\vec{x})}.$ Since this is equal to $\partial_{x_j}f(\vec{x})$, both can be shown easily to be differentiable.
 
+\subsubsection{Theorem Summary}
+$F(\vec{x}, y) = 0$ can be written as $y = f(x)$ locally in a neighborhood (for all $(\vec{x}, y) \in U x I$) of some solution point, $(\vec{a}, \alpha) \in D_F^o \subseteq \mathbb{R}^{d+1}$, when $\partial_yF(\vec{a}, \alpha) \neq 0$ and F is $C^1$ on $D^o$.
+
+In addition, it follows that f is also $C^1$, and $\vec{\nabla}f = \frac{-1}{\partial_yF o (Id x f)}\vec{\nabla}_\vec{x}F o (Id x f)$, where $(Id x f)(\vec{x}) = (\vec{x}, f(\vec{x}))$, where Id is the identity function which makes that valid.
+
+\subsubsection{Vector-Valued Theorem}
+For some $\vec{F}(\vec{x}, \vec{y}) = \vec{0}$, it can be written for all $(\vec{x}, \vec{y}) \in U x V$ as $\vec{y} = \vec{f}(\vec{x})$, when $\vec{x} \in \mathbb{R}^d$ and 
+
 \end{document}
