@@ -495,8 +495,23 @@ item Libraries are added, either .h files from the current directory through \#i
 \begin{enumerate}
 \item The physical layer is the top layer, for the physical connection between computers, generally electrons through copper wires, though it can also be done through radio waves (wi-fi, bluetooth) or light pulses
 \begin{enumerate}
-\item Original physical layer was done through thicknet, consisting of a thick coaxial copper wire with heavy insulation, with a vampire tap to cut into and connect to the cable, to join computers, but as more devices are added, the connection degrades, and it is difficult to modify the setup
-\item Thinnet was later used, replacing the vampire taps with a cable splitter rather than a vampire tap, to avoid damaging the cable, allowing easily reshaping the networking, and allows repeaters to capture the signal and add electricity to prevent signal degredation
+\item Thicknet was originally used, consisting of a thick coaxial copper wire with heavy insulation, with a vampire tap to cut into and connect to the cable, to join computers, but as more devices are added, the connection degrades, and it is difficult to modify the setup
+\item Thinnet was later used, replacing the vampire taps with a cable T-splitter rather than a vampire tap, to avoid damaging the cable, allowing easily reshaping the networking, and allows repeaters to capture the signal and add electricity to prevent signal degredation
+\item The token ring was later invented, connecting every computer to the next and eventually to the first computer in a ring, to prevent signal degredation, preventing data collisions by only one computer having the token, or controlling the network, at one time, with others pausing until they are given the token
+\item The network equipment can easily transfer it, in between data usage, gaining full access for a short time, but it gets slower as more computers are added
+\item Thicknet, thinnet, and token rings sent all data to all computers automatically
+\item In modern day, the ethernet is used as an common alternative to token rings, with multiple computers connecting to a single hub/switch, but there is a possibility of collision and can slow, especially as it gets larger
+\item Hubs broadcast the data revieved from a computer to all other computers on the network, while a switch sends the data to a specific computer through the data link layer (routers often also act as switches)
+\item Ethernet eliminates the risk of a computer breaking down, causing the entire system to break down
+\end{enumerate}
+\item The second layer is the data link layer handles point-to-point transmission between devices on the same local network
+\begin{enumerate}
+\item Each device is given a unique 6-byte MAC (Media Access Control) address, set on the network card when they are made
+\item Data is packaged into frames based on the physical protocol, such that the ethernet frame has an 8 byte prefix, 6 byte destination MAC address, 6 byte source MAC address, 6 byte additional information based on ethernet version (...), 46-1500 bytes of data, and the 4 byte checksum 
+\item The prefix designates it as an ethernet frame, written by 10101010 seven times, then 10101011
+\item If the data is less than 46, it is padded with 0s at the end, while if it is more than 1500, it will be put in multiple frames
+\item 1500 bytes is called the maximum transmission unit (MTU)
+\item The checksum ensures data integrity by creating a hash of the data to ensure the data recieved and sent are the same
 \end{enumerate}
 \end{enumerate}
 \end{enumerate}
