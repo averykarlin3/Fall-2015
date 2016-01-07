@@ -513,6 +513,12 @@ item Libraries are added, either .h files from the current directory through \#i
 \item 1500 bytes is called the maximum transmission unit (MTU)
 \item The checksum ensures data integrity by creating a hash of the data to ensure the data recieved and sent are the same
 \end{enumerate}
+\item The third layer is the network layer, used to transmit data between two different local networks, the main needs of which are to determine where to send data, without requiring broadcasting the MAC address of every computer to every other switch
+\begin{enumerate}
+\item The network layer ignores the issue of data being sent successfully
+\item Internet protocol (IP) addresses are unique addresses, given whenever a computer connects to the internet, generally IPv4 (4 bytes, written as seperate integers with numbers between)
+\item IP addresses are given out in large groups, to allow computers to determine which router to send them to, simply based on a single part
+\end{enumerate}
 \end{enumerate}
 \end{enumerate}
 
