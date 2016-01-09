@@ -33,9 +33,9 @@ Thus, $F_{net} = (m_1 + m_2 + m_{pulley})a = m_1g - m_2g - f$, where f is the fo
 The acceleration of the actual experimental system is done through determining the time the mass takes to fall a specific distance, such that the equation, $$y = v_0t + \frac{1}{2}at^2,$$ can be used to find the acceleration of the system, assuming it is constant. It can then be modified due to starting from rest, solving for acceleration to: $$a = \frac2y}{t^2}.$$
 \section*{Procedures and Results}
 
-\begin{center}
-\includegraphics{lab1.jpg}
-\end{center}
+\begin{figure}[t]
+\includegraphics[scale=0.1, angle=270]{lab1.jpg}
+\end{figure}
 
 First, the entire Atwood machine setup must be built, with equal masses on both sides, adding mass to one side until a = 0, such that the added mass is $m_f$, the mass needed to compensate for friction, then we added mass to the descending side, and measuring the amount of time it took to fall a specific distance. After, we tested using different masses on both, but preserving the relative mass,  creating different frictional masses/forces on each, measuring the resultant acceleration.
 
@@ -61,26 +61,63 @@ Time of Travel, Run 2, $t_2$ (s) & 1.21 & 2.27 & & \\
 Time of Travel, Run 3, $t_3$ (s) & 1.31 & 2.18 & & \\
 \hline
 Average Time, $t_{avg}$ (s) & 1.33 & 2.183 & & \\
+\hline
 Measured Acceleration, $a_m$ ($kgm/s^2$) & 1.015 & & & \\
 \hline
 Total Mass, $m_t$ (kg) & 0.1529 & & & \\
 \hline
 Frictional Mass, $m_f$ (kg) & 0.00136 & 0.005 & & \\
 \hline
+Net Force, $F_{net}$ (N) & 0.098 & & & \\ 
+\hline
+Theoretical Acceleration, $a_t$ ($kg*m/s^2$) & 0.64 & & & \\
+\hline
+Percent Acceleration Error (\%) & 58.59 & & & \\
+\hline
+\end{tabular}
+\begin{tabular}
+{|m{7em}|m{7em}|m{7em}|m{7em}|m{7em}|}
+\hline
+Trial & 5 & 6 & 7 & 8 \\
+\hline
+Descending Mass, $m_2$ (kg) & & & & \\
+\hline
+Ascending Mass, $m_1$ (kg) & & & & \\
+\hline
+Distance of Travel, $y$ (m) & & & & \\
+\hline
+Time of Travel, Run 1, $t_1$ (s) & & & & \\
+\hline
+Time of Travel, Run 2, $t_2$ (s) & & & & \\
+\hline
+Time of Travel, Run 3, $t_3$ (s) & & & & \\
+\hline
+Average Time, $t_{avg}$ (s) & & & & \\
+\hline
+Measured Acceleration, $a_m$ ($kgm/s^2$) & & & & \\
+\hline
+Total Mass, $m_t$ (kg) & & & & \\
+\hline
+Frictional Mass, $m_f$ (kg) & & & & \\
+\hline
 Net Force, $F_{net}$ (N) & & & & \\ 
 \hline
 Theoretical Acceleration, $a_t$ ($kg*m/s^2$) & & & & \\
 \hline
-Percent Acceleration Error & & & & \\
+Percent Acceleration Error (\%) & & & & \\
 \hline
 \end{tabular}
+
 \end{center}
 
 \section*{Discussion}
-Calculations for the data for the first tests on differing frictional force are as shown:
+Sample calculations for the non-measured data are as shown:
 $$t_{avg} = \frac{t_1 + t_2 + t_3}{3} = \frac{1.47 + 1.21 + 1.31}{3} = 1.33$$
 $$a = \frac{2y}{t^2} = \frac{2*0.8984}{1.33^2} = 1.015$$
-$$m_t = m_1 + m_2 + m_{pulley}  = 0.06636 + 0.055 + 0.0316 = 0.1529$$
+$$m_t = m_1 + m_2 + m_{pulley} = 0.06636 + 0.055 + 0.0316 = 0.1529$$
+$$F_{net} = (m_2 - m_1 - m_f)g = (0.06636 - 0.055 - 0.00136)(9.8) = 0.098$$
+$$a_t = \frac{F_{net}}{m_t} = \frac{0.098}{0.1529} = 0.64$$
+$$\text{Percent Acceleration Error} = \frac{|a_t - a_m|}{a_t}*100\% = \frac{|0.64 - 1.015|}{0.64}*100\% = \frac{0.375}{0.64}*100\% = 58.59\%$$
 
 \section*{Conclusion}
 
