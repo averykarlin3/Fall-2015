@@ -148,3 +148,5 @@
 \contentsline {section}{\numberline {15}The Gradient Operator}{44}
 \contentsline {subsection}{\numberline {15.1}Basic Rules}{44}
 \contentsline {subsection}{\numberline {15.2}Chain Rule}{44}
+\contentsline {subsection}{\numberline {15.3}Implicit Function Theorem}{45}
+\contentsline {subsubsection}{\numberline {15.3.1}Proof}{45}
