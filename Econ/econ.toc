@@ -42,5 +42,9 @@
 \contentsline {subsection}{\numberline {7.5}Monetary Policy}{29}
 \contentsline {subsection}{\numberline {7.6}The Money Market}{30}
 \contentsline {subsection}{\numberline {7.7}The Loanable Funds Market}{31}
-\contentsline {subsection}{\numberline {7.8}Deficits and Fiscal Policy Implications}{32}
-\contentsline {subsection}{\numberline {7.9}Monetary Policy}{33}
+\contentsline {section}{\numberline {8}Chapter 6 - Inflation, Unemployment, and Stabilization Policies}{32}
+\contentsline {subsection}{\numberline {8.1}Deficits and Fiscal Policy Implications}{32}
+\contentsline {subsection}{\numberline {8.2}Monetary Policy}{33}
+\contentsline {subsection}{\numberline {8.3}Types of Inflation}{33}
+\contentsline {subsection}{\numberline {8.4}Phillips Curve}{34}
+\contentsline {subsection}{\numberline {8.5}Historical and Alternative Macroeconomics}{35}
