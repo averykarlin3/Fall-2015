@@ -523,7 +523,20 @@ item Libraries are added, either .h files from the current directory through \#i
 \item ISPs control a large section, routing it to those who control the subset of their IP addresses
 \item Routers give IP addresses to computers when they connect to the internet, often combined with gateways, and depending on the ISP, can change with each connection
 \item ISPs often use unowned IPs (192.168.x.x) as a private local IP system, which the router assigns each item within a household, with a single external IP address
+\item Data is broken into packets made up of a 2-byte header info, 2-byte packet length, 4-byte fragment info, 1-byte time-to-live, 1-byte protocol, 2-byte header checksum, 4-byte source, 4-byte destination, 4-byte <...>, and 20-65535 byte data
+\begin{enumerate}
+\item Packets do not have a set prefix, but do have the packet type (IPv4/6) in the header info, then the packet length to know the length of the data transmitted to make up for the prefix
+\item Fragment info is the number of packets the data is broken up into, including the current number of fragment
+\item Time-to-live is the maximum number of hops before the packet dies, and the protocol is TCP/UDP/etc
+\item The header checksum is the checksum purely for the header, due to the large amounts of data in the packet, though it is possible to do
 \end{enumerate}
+\item IPv6 was invented to replace IPv4 for more addresses, but has not been widely adopted, written as 8 groups of 4 hexadecimal digits, with colons between
+\begin{enumerate}
+\item IPv4 can be written as IPv6 with the first 4 groups as single digits, often leaving the dots for the last 4
+\item The MTU of IPv6 can be $2^32$ bytes, called a jumbogram, or 4 gigabytes, allowing lower levels to split up the data as needed instead of having the operating system do it automatically
+\end{enumerate}
+\end{enumerate}
+\item The fourth layer is the transport layer, used for 
 \end{enumerate}
 \end{enumerate}
 
