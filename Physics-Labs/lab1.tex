@@ -64,19 +64,7 @@ Time of Travel, Run 2, $t_2$ (s) & 1.21 & 2.27 & 2.48 & 3.4\\
 \hline
 Time of Travel, Run 3, $t_3$ (s) & 1.31 & 2.18 & 2.44 & 3.55\\
 \hline
-Average Time, $t_{avg}$ (s) & 1.33 & 2.183 & 2.486 & 3.41\\
-\hline
-Measured Acceleration, $a_m$ ($kgm/s^2$) & 1.015 & 0.359 & 0.196 & 0.105\\
-\hline
-Total Mass, $m_t$ (kg) & 0.1529 & 0.3466 & 0.547 & 0.7489\\
-\hline
 Frictional Mass, $m_f$ (kg) & 0.00136 & 0.005 & 0.00636 & 0.0073\\
-\hline
-Net Force, $F_{net}$ (N) & 0.098 & 0.163 & 0.149 & 0.098\\ 
-\hline
-Theoretical Acceleration, $a_t$ ($kg*m/s^2$) & 0.64 & 0.47 & 0.27 & 0.131\\
-\hline
-Percent Acceleration Error (\%) & 58.59 & 23.62 & 27.4 & 19.7\\
 \hline
 \end{tabular}
 \begin{tabular}
@@ -96,13 +84,49 @@ Time of Travel, Run 2, $t_2$ (s) & 6.35& 3.6 & 3.16 & 2\\
 \hline
 Time of Travel, Run 3, $t_3$ (s) & 8.15& 4.21 & 3.03 & 2.13\\
 \hline
+Frictional Mass, $m_f$ (kg) & 0.0073 & 0.0073 & 0.0073 & 0.0073\\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{Discussion}
+Sample calculations for the non-measured data are as shown using the formulas found above:
+$$t_{avg} = \frac{t_1 + t_2 + t_3}{3} = \frac{1.47 + 1.21 + 1.31}{3} = 1.33$$
+$$a = \frac{2y}{t^2} = \frac{2*0.8984}{1.33^2} = 1.015$$
+$$m_t = m_1 + m_2 + m_{pulley} = 0.06636 + 0.055 + 0.0316 = 0.1529$$
+$$F_{net} = (m_2 - m_1 - m_f)g = (0.06636 - 0.055 - 0.00136)(9.8) = 0.098$$
+$$a_t = \frac{F_{net}}{m_t} = \frac{0.098}{0.1529} = 0.64$$
+$$\text{Percent Acceleration Error} = \frac{|a_t - a_m|}{a_t}*100\% = \frac{|0.64 - 1.015|}{0.64}*100\% = \frac{0.375}{0.64}*100\% = 58.59\%$$
+
+\begin{center}
+\begin{tabular}
+{|m{7em}|m{7em}|m{7em}|m{7em}|m{7em}|}
+\hline
+Trial & 1 & 2 & 3 & 4 \\
+\hline
+Average Time, $t_{avg}$ (s) & 1.33 & 2.183 & 2.486 & 3.41\\
+\hline
+Measured Acceleration, $a_m$ ($kgm/s^2$) & 1.015 & 0.359 & 0.196 & 0.105\\
+\hline
+Total Mass, $m_t$ (kg) & 0.1529 & 0.3466 & 0.547 & 0.7489\\
+\hline
+Net Force, $F_{net}$ (N) & 0.098 & 0.163 & 0.149 & 0.098\\ 
+\hline
+Theoretical Acceleration, $a_t$ ($kg*m/s^2$) & 0.64 & 0.47 & 0.27 & 0.131\\
+\hline
+Percent Acceleration Error (\%) & 58.59 & 23.62 & 27.4 & 19.7\\
+\hline
+\end{tabular}
+\begin{tabular}
+{|m{7em}|m{7em}|m{7em}|m{7em}|m{7em}|}
+\hline
+Trial & 5 & 6 & 7 & 8 \\
+\hline
 Average Time, $t_{avg}$ (s) & 7.88 & 4.13 & 2.98 & 2.076 \\
 \hline
 Measured Acceleration, $a_m$ ($m/s^2$) & 0.0196 & 0.0715 & 0.137& 0.283\\
 \hline
 Total Mass, $m_t$ (kg) & 0.5589 & 0.5589 & 0.5589 & 0.5589\\
-\hline
-Frictional Mass, $m_f$ (kg) & 0.0073 & 0.0073 & 0.0073 & 0.0073\\
 \hline
 Net Force, $F_{net}$ (N) & 0.0098 & 0.049 & 0.0882 & 0.1862\\ 
 \hline
@@ -113,16 +137,7 @@ Percent Acceleration Error (\%) & 12 & 18.5 & 13.3 & 15.01 \\
 \end{tabular}
 \end{center}
 
-\section*{Discussion}
-Sample calculations for the non-measured data are as shown:
-$$t_{avg} = \frac{t_1 + t_2 + t_3}{3} = \frac{1.47 + 1.21 + 1.31}{3} = 1.33$$
-$$a = \frac{2y}{t^2} = \frac{2*0.8984}{1.33^2} = 1.015$$
-$$m_t = m_1 + m_2 + m_{pulley} = 0.06636 + 0.055 + 0.0316 = 0.1529$$
-$$F_{net} = (m_2 - m_1 - m_f)g = (0.06636 - 0.055 - 0.00136)(9.8) = 0.098$$
-$$a_t = \frac{F_{net}}{m_t} = \frac{0.098}{0.1529} = 0.64$$
-$$\text{Percent Acceleration Error} = \frac{|a_t - a_m|}{a_t}*100\% = \frac{|0.64 - 1.015|}{0.64}*100\% = \frac{0.375}{0.64}*100\% = 58.59\%$$
-
-%Add more discussion here
+The most likely cause of error
 
 \section*{Conclusion}
 
