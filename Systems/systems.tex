@@ -489,10 +489,9 @@ item Libraries are added, either .h files from the current directory through \#i
 \item Central dispatch server/Distributed server maintains communication with each of the clients simultaneously through maintaining pipes to each of the subservers, allowing inter-client communication as well
 \end{enumerate}
 
-\subsection{Networking}
+\subsection{OSI 7-Layer Model}
 \begin{enumerate}
 \item The OSI 7-layer model is used to conceptualize the different parts of network connections, becoming more abstract (relient on code as the layers get lower), to allow the assumption that all other layers are in place properly, for simplification
-\begin{enumerate}
 \item The physical layer is the top layer, for the physical connection between computers, generally electrons through copper wires, though it can also be done through radio waves (wi-fi, bluetooth) or light pulses
 \begin{enumerate}
 \item Thicknet was originally used, consisting of a thick coaxial copper wire with heavy insulation, with a vampire tap to cut into and connect to the cable, to join computers, but as more devices are added, the connection degrades, and it is difficult to modify the setup
@@ -526,18 +525,39 @@ item Libraries are added, either .h files from the current directory through \#i
 \item Data is broken into packets made up of a 2-byte header info, 2-byte packet length, 4-byte fragment info, 1-byte time-to-live, 1-byte protocol, 2-byte header checksum, 4-byte source, 4-byte destination, 4-byte <...>, and 20-65535 byte data
 \begin{enumerate}
 \item Packets do not have a set prefix, but do have the packet type (IPv4/6) in the header info, then the packet length to know the length of the data transmitted to make up for the prefix
-\item Fragment info is the number of packets the data is broken up into, including the current number of fragment
+\item Fragment info is the number of packets the data is broken up into, and the current number of the fragment
 \item Time-to-live is the maximum number of hops before the packet dies, and the protocol is TCP/UDP/etc
 \item The header checksum is the checksum purely for the header, due to the large amounts of data in the packet, though it is possible to do
 \end{enumerate}
+\item Packets are not guaranteed to be transmitted in the order required, such that they may have to be reconstructed later
 \item IPv6 was invented to replace IPv4 for more addresses, but has not been widely adopted, written as 8 groups of 4 hexadecimal digits, with colons between
 \begin{enumerate}
 \item IPv4 can be written as IPv6 with the first 4 groups as single digits, often leaving the dots for the last 4
 \item The MTU of IPv6 can be $2^32$ bytes, called a jumbogram, or 4 gigabytes, allowing lower levels to split up the data as needed instead of having the operating system do it automatically
 \end{enumerate}
 \end{enumerate}
-\item The fourth layer is the transport layer, used for 
+\item The fourth layer is the transport layer, used for computer to computer connections over multiple networks, ignoring individual hops of layer 3 packets through the internet
+\begin{enumerate}
+\item Each IP address has 65535 ports, such that those <1024 are reserved major ports, but those above can be requested, if available, from the Internet Assigned Numbers Authority (IANA)
+\item Port data is used when the data reaches the computer to determine which process to be sent to
+\item Firewalls are used to shut off unnecissary ports to protect harmful data from being sent
+\item Transmission Control Protocol (TCP) is a reliable connection, such that both ends are verified to be able to read and write, and it guarantees proper delivery of data in the order sent
+\begin{enumerate}
+\item It also reorders the data if it was delivered in the wrong order, such that it can virtually function as a pipe between sockets (network connections)
+\item The data is recieved as a continuous stream of data in the proper order, rather than in packets
+\item It connects by the threeway handshake, such that the server first binds to a port and waits, after which the client sends a SYN message to the server to confirm the connection, and the server responds with a SYN\_ACK, or synchonized acknoledgement message, and then the client sends a confirmation that it receieved it (ACK message)
 \end{enumerate}
+\item User Datagram Protocol (UDP) is an unreliable connection, such that there is not a verified connection
+\begin{enumerate}
+\item UDP also sends the data as a specific size datagram, rather than a continuous data stream, such that special read/write commands must be used for the particular size
+\item Datagrams may be recieved out of order, such that the data is in the incorrect format to read
+\item As a result, it is faster by avoiding the rebuilding/packet verification and the handshake, used commonly for media streaming, used commonly for videos due to a lost packet being not noticed
+\item It can also be used such that it is reconstructed at a lower layer by the program itself
+\end{enumerate}
+\end{enumerate}
+\item The fifth layer is the session layer, establishing the sessions of processes on different computers, as well as session security for data sent
+\item The sixth layer is the presentation layer, determining how the data is written to be sent, decrypted, and encrypted by each program and formatting
+\item The seventh layer is the application layer, determining how the data is accessed, displayed, and used by the user and process
 \end{enumerate}
 
 \end{document}
