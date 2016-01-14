@@ -574,7 +574,7 @@ item Libraries are added, either .h files from the current directory through \#i
 \begin{enumerate}
 \item sin\_family is the communications protocol domain as used when createing the socket
 \item sin\_port is the port number, stored within an in\_port\_t variable, such that the function htons(\textit{port}) converts it to network byte order from host (local) byte order, in case the computer renders ints differently from the network standard (big-endian)
-\item sin\_addr is the IP address, such that on a server, INADDR\_ANY is used to allow it to bind to any form of connection requesting\item inet\_aton(\textit{char* ip}, &(sock.sin\_addr)) can convert the string IP to a network address format (struct in\_addr) to be used in sin\_addr for a specific connection
+\item sin\_addr is the IP address, such that on a server, the variable ``sin\_addr.s\_addr'' is set to INADDR\_ANY is used to allow it to bind to any form of connection requesting\item inet\_aton(\textit{char* ip}, &(sock.sin\_addr)) can convert the string IP to a network address format (struct in\_addr) to be used in sin\_addr for a specific connection
 \end{enumerate}
 \item bind(\textit{socket\_id,} (struct sockaddr*)\textit{socket\_addr}, {sizeof(socket\_addr)}) - Binds the socket to the address
 \begin{enumerate}

@@ -34,3 +34,4 @@
 \contentsline {subsection}{\numberline {8.1}Pipes}{15}
 \contentsline {subsection}{\numberline {8.2}Server-Client Protocol}{15}
 \contentsline {subsection}{\numberline {8.3}OSI 7-Layer Model}{16}
+\contentsline {subsection}{\numberline {8.4}Sockets}{19}
