@@ -576,13 +576,13 @@ item Libraries are added, either .h files from the current directory through \#i
 \item sin\_port is the port number, stored within an in\_port\_t variable, such that the function htons(\textit{port}) converts it to network byte order from host (local) byte order, in case the computer renders ints differently from the network standard (big-endian)
 \item sin\_addr is the IP address, such that on a server, the variable ``sin\_addr.s\_addr'' is set to INADDR\_ANY is used to allow it to bind to any form of connection requesting\item inet\_aton(\textit{char* ip}, &(sock.sin\_addr)) can convert the string IP to a network address format (struct in\_addr) to be used in sin\_addr for a specific connection
 \end{enumerate}
-\item bind(\textit{socket\_id,} (struct sockaddr*)\textit{socket\_addr}, {sizeof(socket\_addr)}) - Binds the socket to the address
+\item bind(\textit{socket\_id,} (struct sockaddr*)\&\textit{socket\_addr}, {sizeof(socket\_addr)}) - Binds the socket to the address
 \begin{enumerate}
 \item The socket\_addr is the address struct created, while the ID is the descriptor
 \end{enumerate}
 \item listen(\textit{socket\_id}, 1) - Sets the socket to listening/turns the socket on for a connection by the server OS, but the program continues during
 \item accept(\textit{socket\_id}, NULL, NULL) - Waits for a connection on the server, blocking the program, until a connection is formed, returning the socket client descriptor id for the specific client, rather than the overall listening address
-\item connect(\textit{socket\_id}, (struct sockaddr*)\textit{socket\_addr}, sizeof(\textit{socket\_addr)}) - Connects the client to the server address
+\item connect(\textit{socket\_id}, (struct sockaddr*)\&\textit{socket\_addr}, sizeof(\textit{socket\_addr)}) - Connects the client to the server address
 \begin{enumerate}
 \item The same socket descriptor is used by the client that was used previously for forming the connection
 \end{enumerate}
