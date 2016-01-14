@@ -560,4 +560,32 @@ item Libraries are added, either .h files from the current directory through \#i
 \item The seventh layer is the application layer, determining how the data is accessed, displayed, and used by the user and process
 \end{enumerate}
 
+\subsection{Sockets}
+\begin{enumerate}
+\item Sockets require the headers ``sys/types.h'', ``sys/socket.h'', and ``netinet/in.h'' for the server, and those three and ``arpa/inet.h'' for the client
+\item socket(\textit{domain, type, protocol}) - Creates a socket by the OS, in preparation for connection
+\begin{enumerate}
+\item The domain is the communications protocol domain, such that AF\_INET is IPv4 and AF\_INET6 is IPv6
+\item The type is the communication protocol, such that SOCK\_STREAM sets the protocol as TCP and SOCK\_DGRAM is UDP
+\item The protocol can be used to use a different method of combination of domain and type processing, using 0 for the default
+\item Returns the socket file descriptor, or errno/-1
+\end{enumerate}
+\item ``struct sockaddr\_in \textit{name}'' - Stores socket information within sin\_family, sin\_addr, and sin\_port
+\begin{enumerate}
+\item sin\_family is the communications protocol domain as used when createing the socket
+\item sin\_port is the port number, stored within an in\_port\_t variable, such that the function htons(\textit{port}) converts it to network byte order from host (local) byte order, in case the computer renders ints differently from the network standard (big-endian)
+\item sin\_addr is the IP address, such that on a server, INADDR\_ANY is used to allow it to bind to any form of connection requesting\item inet\_aton(\textit{char* ip}, &(sock.sin\_addr)) can convert the string IP to a network address format (struct in\_addr) to be used in sin\_addr for a specific connection
+\end{enumerate}
+\item bind(\textit{socket\_id,} (struct sockaddr*)\textit{socket\_addr}, {sizeof(socket\_addr)}) - Binds the socket to the address
+\begin{enumerate}
+\item The socket\_addr is the address struct created, while the ID is the descriptor
+\end{enumerate}
+\item listen(\textit{socket\_id}, 1) - Sets the socket to listening/turns the socket on for a connection by the server OS, but the program continues during
+\item accept(\textit{socket\_id}, NULL, NULL) - Waits for a connection on the server, blocking the program, until a connection is formed, returning the socket client descriptor id for the specific client, rather than the overall listening address
+\item connect(\textit{socket\_id}, (struct sockaddr*)\textit{socket\_addr}, sizeof(\textit{socket\_addr)}) - Connects the client to the server address
+\begin{enumerate}
+\item The same socket descriptor is used by the client that was used previously for forming the connection
+\end{enumerate}
+\end{enumerate}
+
 \end{document}
