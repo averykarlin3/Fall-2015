@@ -25,7 +25,7 @@
 \end{center}
 
 \section*{Objective}
-The objective of the lab is to %Finish
+The objective of the lab is to create mechanical equilibrium, and determine moment arms, masses, and torque by creating mechanical equilibrium, both by measurement and calculation.
 \section*{Introduction}
 
 Static equilibrium is the idea of being fully stationary, such that net torque and net force equal 0, when velocity and rotational velocity are both 0. The former condition is that of translational equilibrium, such that there is no translational acceleration, while the latter is that of rotational equlibrium, such that there is no rotational acceleration. The torque is the result of force being applied at some moment arm, or distance from the axis of rotation, such that $\tau = \vec{F}\vec{r}$, where positive is the convention for counterclockwise torque, and clockwise torque is negative.
@@ -51,6 +51,8 @@ For the final two cases, the meter stick does not rotate about the center of gra
 
 \begin{center}
 $$\text{Center of Gravity} (x_0) = 0.5 m$$
+$$m_m \text{(Mass of Meterstick)} = 0.01663 kg$$
+$$m_c \text{(Mass of a Clamp)} = 0.0631 kg$$
 \begin{tabular}
 {|m{7em}|m{7em}|m{7em}|}
 \hline
@@ -64,7 +66,7 @@ Case 2b & $m_1 = 0.1, m_2 = 0.2, m_3 = 0.05$ & $x_1 = 0.2, x_2 = 0.6, x_3 = 0.69
 \hline
 Case 3 & $m_1 = 0.17, m_2 = 0.2$ & $x_1 = 0.1, x_2 = 0.845$ \\
 \hline
-Case 5 & $m_1 = 0.1$ & $x_1 = 0, x_o^ \text{(support point)} = 0.201$ \\
+Case 5 & $m_1 = 0.1$ & $x_1 = 0, x_o' \text{(support point)} = 0.201$ \\
 \hline
 Case 6a & $m_1 = 0.1, m_2 = 0.1$ & $x_1 = 0, x_2 = 0.6, x_o' = 0.351$\\
 \hline
@@ -80,24 +82,29 @@ Case 6d& $m_1 = 0.1, m_2 = 0.1$ & $x_1 = 0, x_2 = 0.9, x_o' = 0.462$ \\
 \section*{Discussion}
 Sample calculations for the non-measured data are as shown:
 $$\text{Moment/Lever Arm (Case 1)} (r_1) = |x_o - x_1| = |0.5 - 0.15| = 0.35$$
-$$\tau_{1} \text{(Case 1)} = r_1F_1 = r_1(m_1 + m_c)g = 0.35*(0.1 + )*9.8 = $$
-$$\tau_{cc} \text{(Case 2a)} = \tau_1 + \tau_3 = r_1F_1 + r_3F_3 = 
+$$\tau_{1} \text{(Case 1)} = r_1F_1 = r_1(m_1 + m_c)g = 0.35*(0.1 + 0.01663)*9.8 = 0.4$$
+$$\tau_{cc} \text{(Case 2a)} = \sum_{n}\tau^{\text{left}}_n = \tau_1 + \tau_3 = r_1F_1 + r_3F_3 = 0.2*(0.1 + 0.01663)*9.8 + 0.469*(0.05 + 0.01663)*9.8 = 0.535$$
+$$r_3 \text{(Case 2b, Calulated)} = $$
+$$m_1 \text{(Case 3, Calculated)} = $$
+$$x_o' \text{(Case 6d, Predicted)} = $$
+$$Percent Difference \text{(Case 1)} = \frac{|\tau_{cc} - \tau_{cw}|}{\tau{cc}} * 100\% = \frac{|0.4 - 0.376|}{0.4} * 100\% = 6\%$$
+$$Percent Error \text{(Case 2b)} = \frac{|r_{3calc} - r_{3meas}|}{r_{3calc}} * 100\% = $$
 
 \begin{center}
 \begin{tabular}
 {|m{7em}|m{7em}|m{7em}|}
 \hline
-Case Number & Moment/Lever Arms (m) & Counterclockwise Torque (N*m) & Clockwise Torque (N*m) \\
+Case Number & Moment/Lever Arms (m) & Counterclockwise Torque (N*m) & Clockwise Torque (N*m) & Percent Error \\
 \hline
-Case 1 & $r_1 = 0.35, r_2 = 0.177$ &  
+Case 1 & $r_1 = 0.35, r_2 = 0.177$ & 0.4 & 0.376 & 6 \\
 \hline
-Case 2a & $r_1 = 0.2, r_2 = 0.2, r_3 = 0.469$ &  
+Case 2a & $r_1 = 0.2, r_2 = 0.2, r_3 = 0.469$ & 0.535 & 0.425 & 25.8 \\
 \hline
-Case 2b & $r_1 = 0.3, r_2 = 0.1, r_3 = 0.193$ &
+Case 2b & $r_1 = 0.3, r_2 = 0.1, r_3 = 0.193$ & 
 \hline
 Case 3 & $r_1 = 0.4, r_2 = 0.345$
 \hline
-Case 5 &
+Case 5 & 
 \hline
 Case 6a &
 \hline

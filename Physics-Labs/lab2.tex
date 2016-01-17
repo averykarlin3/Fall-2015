@@ -27,9 +27,9 @@
 \section*{Objective}
 The objective of the lab is to measure the initial velocity of a projectile, both through a ballistic pendulum and through range distance measurements. 
 \section*{Introduction}
-The ballistic pendulum is an object which fires a metal ball from a spring gun, catched by a specific notch, which can then be used by conservation of momentum and mechanical energy to determine the initial velocity. Since all external forces are vertical, horizontal momentum is conserved during the collision, such that $$v_{x_o} = \frac{(m + M)V}{m}$$, where V is the velocity directly after the collision. By conservation of energy, ignoring rotational kinetic energy and loss of energy from friction and drag, kinetic directly after the collision is equal to the ending potential energy. Thus, $$\frac{1}{2}(m + M)V^2 = (m + M)gh$$, where V is the velocity directly after the collision once again. Thus, we can use these two equations to find $v_{x_o}$, without requiring V (after-collision). As a result, we get $$v_{x_o} = \frac{(M+m)\sqrt{2gh}}{m}$$.
+The ballistic pendulum is an object which fires a metal ball from a spring gun, catched by a specific notch, which can then be used by conservation of momentum and mechanical energy to determine the initial velocity. Since all external forces are vertical, horizontal momentum is conserved during the collision, such that $$v_{x_o} = \frac{(m + M)V}{m}$$, where V is the velocity directly after the collision. By conservation of energy, ignoring rotational kinetic energy and loss of energy from friction and drag, kinetic directly after the collision is equal to the ending potential energy. Thus, $$\frac{1}{2}(m + M)V^2 = (m + M)gh$$, where V is the velocity directly after the collision once again. Thus, we can use these two equations to find $v_{x_o}$, without requiring V (after-collision). As a result, we get $$v_o = v_{x_o} = \frac{(M+m)\sqrt{2gh}}{m}$$.
 
-Once we remove the pendulum, it functions as a horizontally-launched projectile %Finish
+Once we remove the pendulum, it functions as a horizontally-launched projectile, such that by the equations $x = v_{x_o}t$ and $y = frac{1}{2}gt^2$, such that $$v_o = v_{x_o} = \sqrt(\frac{gx^2}{2y}).$$ If we prop up the ballistic pendulum spring gun, it can function as a regular projectile, such that $x = v_{x_o}t$ and $0 = v_{y_o}t + \frac{1}{2}gt^2$, where $v_{y_o} = v_osin(\theta)$ and $v_{x_o} = v_ocos(\theta)$. Thus, we can solve for x, such that $$x = \frac{2v_o^2sin(\theta)cos(\theta)}{g},$$ giving us a formula for v_o, $$v_o = \sqrt{\frac{gx}{2sin(\theta)cos(\theta)}}.$$
 
 \section*{Procedures and Results}
 
@@ -102,21 +102,43 @@ $20^o$ & 3.23\\
 \hline
 $30^o$ & 3.82\\
 \hline
+$40^o$ & 4.08\\
+\hline
+$45^o$ & 4.31\\
+\hline
+$50^o$ & 4.12\\
+\hline
+$60^o$ & 3.64\\
+\hline
+$70^o$ & 3.44\\
+\end{tabular}
+\end{center}
+
+\section*{Discussion}
+Sample calculations for the non-measured data are as shown:
+
+$$v_o \text{Ballistic Pendulum} = \frac{(M+m)\sqrt{2gh}}{m} = \frac{(0.0691 + 0.28)\sqrt{2*9.8*0.038}}{0.0691} = 4.36 m/s$$
+$$v_o \text{Horizontal Projectile} = \sqrt{\frac{gx^2}{2y}} = \sqrt{\frac{9.8*2.1416^2}{2*0.5}} = 6.704 m/s$$
+$$\text{Ballistic Pendulum-Horizontal Projectile Percent Different} = \frac{|v_{horiz} - v_{ball}|}{v_{horiz}} * 100\% = 35\%$$ 
+
+\begin{center}
+\begin{tabular}
+{|m{7em}|m{7em}|}
+\hline
+Angle & \\
+\hline
+$20^o$ & \\
+\hline
+$30^o$ & \\
+\hline
 $40^o$ & \\
 \hline
 $45^o$ & \\
 \hline
 $50^o$ & \\
 \hline
-$60^o$ & \\
-\hline
-$70^o$ & \\
-\hline
 \end{tabular}
-
-\section*{Discussion}
-Sample calculations for the non-measured data are as shown:
-
+\end{center}
 
 \section*{Conclusion}
 
