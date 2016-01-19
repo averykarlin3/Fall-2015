@@ -32,7 +32,7 @@ Static equilibrium is the idea of being fully stationary, such that net torque a
 
 The center of gravity of a body is the point such that torques due to gravity about an axis through that point is 0. The center of mass, on the other hand, is the point such that translational motion is through that point. When the mass of a body is concentrated with even density around the center of mass, the center of mass is also the center of gravity.
 
-Uniform linear density allows the mass of lengths of the meter stick to be known, such that if mass is uniformly dispersed, there is some value, $\meu = \frac{m/L}$, such that mass can be found by multiplying the overall linear density by the length.
+Uniform linear density allows the mass of lengths of the meter stick to be known, such that if mass is uniformly dispersed, there is some value, $\mu = \frac{m/L}$, such that mass can be found by multiplying the overall linear density by the length.
 
 \section*{Procedures and Results}
 
@@ -51,10 +51,10 @@ For the final two cases, the meter stick does not rotate about the center of gra
 
 \begin{center}
 $$\text{Center of Gravity} (x_0) = 0.5 m$$
-$$m_m \text{(Mass of Meterstick)} = 0.01663 kg$$
-$$m_c \text{(Mass of a Clamp)} = 0.0631 kg$$
+$$m_m \text{(Mass of Meterstick)} = 0.0631 kg$$
+$$m_c \text{(Mass of a Clamp)} = 0.01663 kg$$
 \begin{tabular}
-{|m{7em}|m{7em}|m{7em}|}
+{|m{7em}|m{14em}|m{14em}|}
 \hline
 Case Number & Masses (kg) & Coordinate (m)\\
 \hline
@@ -81,41 +81,67 @@ Case 6d& $m_1 = 0.1, m_2 = 0.1$ & $x_1 = 0, x_2 = 0.9, x_o' = 0.462$ \\
 
 \section*{Discussion}
 Sample calculations for the non-measured data are as shown:
+
+$$\mu = \frac{m_{s}}{L} = \frac{0.0631}{1} = 0.0631 kg/m$$
 $$\text{Moment/Lever Arm (Case 1)} (r_1) = |x_o - x_1| = |0.5 - 0.15| = 0.35$$
-$$\tau_{1} \text{(Case 1)} = r_1F_1 = r_1(m_1 + m_c)g = 0.35*(0.1 + 0.01663)*9.8 = 0.4$$
-$$\tau_{cc} \text{(Case 2a)} = \sum_{n}\tau^{\text{left}}_n = \tau_1 + \tau_3 = r_1F_1 + r_3F_3 = 0.2*(0.1 + 0.01663)*9.8 + 0.469*(0.05 + 0.01663)*9.8 = 0.535$$
-$$r_3 \text{(Case 2b, Calulated)} = $$
-$$m_1 \text{(Case 3, Calculated)} = $$
-$$x_o' \text{(Case 6d, Predicted)} = $$
-$$Percent Difference \text{(Case 1)} = \frac{|\tau_{cc} - \tau_{cw}|}{\tau{cc}} * 100\% = \frac{|0.4 - 0.376|}{0.4} * 100\% = 6\%$$
-$$Percent Error \text{(Case 2b)} = \frac{|r_{3calc} - r_{3meas}|}{r_{3calc}} * 100\% = $$
+$$\tau_{1} \text{(Case 1)} = r_1F_1 = r_1(m_1 + m_c)g = 0.35*(0.1 + 0.01663)*9.8 = 0.4 N*m$$
+$$\tau_{cc} \text{(Case 2a)} = \sum_{n}\tau^{\text{left}}_n = \tau_1 + \tau_3 = 0.535 N*m$$
+$$\text{Percent Difference (Case 1)} = \frac{|\tau_{cc} - \tau_{cw}|}{\tau{cc}} * 100\%  = \frac{|0.4 - 0.376|}{0.4} * 100\% = 6\%$$
+$$\text{Percent Error (Case 2b)} = \frac{|r_{3calc} - r_{3meas}|}{r_{3calc}} * 100\% = \frac{|0.693 - 0.659|}{0.659} * 100\% = 5.16\%$$
+
+Other calculations:
+$$r_3 \text{(Case 2b, Calulated)} = \frac{\tau_{cc} - \tau_2}{g*(m_3+m_c)} = \frac{0.3429 - 9.8*0.2*0.1}{9.8*0.05} = 0.225 m$$
+$$m_1 \text{(Case 3, Calculated)} = \frac{\tau_{cw}}{g*r_1} = \frac{0.7324}{9.8*0.4} = 0.187 kg$$
+$$r_2 \text{(Case 5a)} = |x_0' - x_2| = |x_0' - (x_0' + \frac{L - x_0'}{2})| = \frac{L - x_0'}{2} = \frac{1 - 0.201}{2} = 0.3995 m$$
+$$m_2 \text{(Case 5a)} = m_{s} = 0.0631 kg$$
+$$m_2 \text{(Case 5b)} = \mu*l = \mu*(L - x_o') = 0.0631*(1 - 0.201) = 0.0504 kg$$
 
 \begin{center}
 \begin{tabular}
-{|m{7em}|m{7em}|m{7em}|}
+{|m{7em}|m{7em}|m{7em}|m{7em}|m{7em}|}
 \hline
-Case Number & Moment/Lever Arms (m) & Counterclockwise Torque (N*m) & Clockwise Torque (N*m) & Percent Error \\
+Case Number & Moment/Lever Arms (m) & Counterclockwise Torque (N*m) & Clockwise Torque (N*m) & Percent Error (Value)\\
 \hline
-Case 1 & $r_1 = 0.35, r_2 = 0.177$ & 0.4 & 0.376 & 6 \\
+Case 1 & $r_1 = 0.35, r_2 = 0.177$ & 0.4 & 0.376 & 6 (Torque)\\
 \hline
-Case 2a & $r_1 = 0.2, r_2 = 0.2, r_3 = 0.469$ & 0.535 & 0.425 & 25.8 \\
+Case 2a & $r_1 = 0.2, r_2 = 0.2, r_3 = 0.469$ & 0.535 & 0.425 & 25.8 (Torque)\\
 \hline
-Case 2b & $r_1 = 0.3, r_2 = 0.1, r_3 = 0.193$ & 0.3429 & 0.3383 & \\ 
+Case 2b & $r_1 = 0.3, r_2 = 0.1, r_3 = 0.193$ & 0.3429 & 0.3383 & 14.2 ($r_3$)\\ 
 \hline
-Case 3 & $r_1 = 0.4, r_2 = 0.345$ & 0.7316 & 0.7324 & \\
+Case 3 & $r_1 = 0.4, r_2 = 0.345$ & 0.7316 & 0.7324 & 9.09 ($m_1$)\\
 \hline
-Case 5 & $r_1 = 0.201$ 
+Case 5a & $r_1 = 0.201, r_2 = 0.3995$ & 0.2297 & 0.247 & 7.004 (Torque) \\
 \hline
-Case 6a & $r_1 = 0.351, r_2 = 0.249$
+Case 5b & $r_1 = 0.201, r_2 = 0.3995, r_3 = 0.1005$ & 0.2422 & 0.1973 & 18.54 (Torque) \\
 \hline
-Case 6b & $r_1 = 0.388, r_2 = 0.312$
+Case 6a & $r_1 = 0.351, r_2 = 0.249$ & - & - & - \\ 
 \hline
-Case 6c & $r_1 = 0.425, r_2 = 0.375$
+Case 6b & $r_1 = 0.388, r_2 = 0.312$ & - & - & - \\
 \hline
-Case 6d & $r_1 = 0.462, r_2 = 0.438$
+Case 6c & $r_1 = 0.425, r_2 = 0.375$ & - & - & - \\
+\hline
+Case 6d & $r_1 = 0.462, r_2 = 0.438$ & 0.594 & 0.59 & 0.673 (Torque) \\
 \hline
 \end{tabular}
 \end{center}
+
+Part 5 Torque Difference Percent Difference:
+$$\tau_{5a-diff} = |\tau_{5a-cc} - \tau_{5a-cw}| = |0.2297 - 0.247| = 0.0173 N*m$$
+$$\tau_{5b-diff} = 0.0449 N*m$$
+$$\text{Percent Difference} = 61.47\%$$
+
+Part 6 Predictions:
+$$\text{Part 6 Prediction} (x_o') = 0.462 m$$
+$$\text{Percent Difference} = 0\%$$
+
+\begin{figure}[p]
+\centering
+\hspace*{-12cm}
+\includegraphics[scale=0.9, angle=0]{graph4.jpg}
+\vspace*{0cm}
+\end{figure}
+
+
 
 \section*{Conclusion}
 
