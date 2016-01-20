@@ -26,9 +26,12 @@
 
 \section*{Objective}
 The objective of the lab is to measure the spring constant of springs, and the spring constant when they are in series, parallel, and on opposite sides.
+
 \section*{Introduction}
+The period of an oscillation is defined as the time for one full cycle of oscillation, while the frequency is defined as the number of cycles per second, such that $f = \frac{1}{T}$. Angular frequency is further defined as the number of radians per second, such that $\omega = 2\pi f$, defined on a spring oscillation as $\omega = \sqrt{\frac{k}{m}}$. As a result, we can use that to derive the formula $$k = \frac{4\pi^2m}{T^2}.$$
 
 \section*{Procedures and Results}
+% Explain procedure here
 
 \begin{figure}[p]
 \centering
@@ -52,7 +55,12 @@ Opposite & 2.7 & 2.78 & 2.68 & 2.83 & 2.65 \\
 \section*{Discussion}
 Sample calculations for the non-measured data are as shown:
 
-$$\text{Percent Error} = 
+$$k_t = k_1 + k_2 = 9.61 + 2.377 = 11.987 N*m$$
+$$k_t = \frac{1}{\frac{1}{k_1} + \frac{1}{k_2}} = \frac{1}{\frac{1}{9.61} + \frac{1}{2.377}} = 1.906 N*m$$
+
+$$\text{Series Percent Error} = \frac{|k_{act} - k_{exp}|}{k_{act}} * 100\% = \frac{|1.906 - 1.887|}{1.906} * 100\% = 0.996\% $$ 
+$$\text{Parallel Percent Error} = 5.98\% $$
+$$\text{Opposite Percent Error} = 6.53\% $$
 
 \begin{center}
 \begin{tabular}
@@ -66,8 +74,15 @@ Opposite & 2.728 & 1.364 & 11.204 \\
 \end{tabular}
 \end{center}
 
+It is clear by the data that for springs in series, $\frac{1}{k_T} = \frac{1}{k_1} + \frac{1}{k_2}$, and for springs in parallel, $k_T = k_1 + k_2$. In addition, springs can be placed on opposite sides, where the overall $k_T = k_1 + k_2$, such that it acts as if it was in series.
+
+The percent errors, especially that of the in series springs, are clearly %Finish
 
 \section*{Conclusion}
+It was found that in series springs have a spring constant of the reciprocal of the sum of the reciprocals of the individual spring constants, for a measured value of 1.887 N*m to the actual value of 1.906 N*m, for a percent error of 0.996\%.
 
+Parallel springs have a spring constant of the sum of the individual spring constants, for a measured value of 11.27 N*m to the actual value of 11.987 N*m, for a percent error of 5.98\%.
+
+Springs on opposite sides act as parallel springs for a spring constant of the sum of the individual spring constants, such that the measured value was 11.204 N*m to the actual value of 11.987 N*m for a percent error of 6.53\%.
 
 \end{document}
