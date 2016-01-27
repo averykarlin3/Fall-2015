@@ -50,5 +50,5 @@
 \contentsline {subsection}{\numberline {8.5}Historical and Alternative Macroeconomics}{35}
 \contentsline {section}{\numberline {9}International Trade and Finance}{37}
 \contentsline {subsection}{\numberline {9.1}Capital Flows and the Balance of Payment}{37}
-\contentsline {subsection}{\numberline {9.2}The Foreign Exchange Market}{37}
+\contentsline {subsection}{\numberline {9.2}The Foreign Exchange Market}{38}
 \contentsline {subsection}{\numberline {9.3}Exchange Rates and Macroeconomic Policy}{38}
