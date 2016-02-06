@@ -2442,8 +2442,343 @@ $F(\vec{x}, y) = 0$ can be written as $y = f(x)$ locally in a neighborhood (for 
 
 In addition, it follows that f is also $C^1$, and $\vec{\nabla}f = \frac{-1}{\partial_yF o (Id x f)}\vec{\nabla}_\vec{x}F o (Id x f)$, where $(Id x f)(\vec{x}) = (\vec{x}, f(\vec{x}))$, where Id is the identity function which makes that valid.
 
-\subsubsection{Vector-Valued Theorem}
-For some $\vec{F}(\vec{x}, \vec{y}) = \vec{0}$, it can be written for all $(\vec{x}, \vec{y}) \in U x V$ as $\vec{y} = \vec{f}(\vec{x})$, when $\vec{x} \in \mathbb{R}^d$ and 
+\subsubsection{Generalization}
+
+$F(\pvec{x}, y) = 0$ is equivalent to $y = f(\pvec{x})$ locally in a neighborhood
+of some solution point, $(\pvec{a}, \alpha)$ if $F$ is $C^1$, $F(\pvec{a}, \alpha) = 0$,
+$(\pvec{a}, \alpha) \in D_F^\circ \subseteq \varmathbb{R}^{d + 1}$ and
+$\partial_y F(\pvec{a}, \alpha)$
+
+However, if $\pvec{F}$ is a vector-valued function, we also have this type of
+equivalency ($\pvec{F}(\pvec{x}, \pvec{y}) = \pvec{0}$ is equivalent to $\pvec{y} =
+\pvec{f}(\pvec{x})$ for $\pvec{x} \in U \subseteq \varmathbb{R}^d$ and $\pvec{y} \in
+V \subseteq \varmathbb{R}^e$) locally around some solution point $\pvec{F}(\pvec{a}, \pvec{b})
+= \pvec{0} \in \varmathbb{R}^e$ if $\pvec{F}$ is $C^1$ on $D_{\pvec{F}}^\circ$\footnote{A vector valued
+function is $C^1$ if all of its component functions are $C^1$} and $(\pvec{a},
+\pvec{b}) \in D_{\pvec{F}}^\circ \subseteq \varmathbb{R}^{d + e}$ and
+$\partial_{\pvec{y}} \pvec{F}(\pvec{a}, \pvec{b}) \neq 0$ where $\partial_{\pvec{y}}
+\pvec{F} = \det D_{\pvec{y}} \pvec{F}$ where $D_{\pvec{y}}$ (known as the
+\textbf{partial Jacobian}) can be described as:
+
+$$D_{\pvec{y}} F = \left[\frac{\partial F_i}{\partial y_j}\right]_{\substack{1 \leq i \leq
+e \\ 1 \leq j \leq e}}$$
+
+Similarly, we know that if all the conditions are met, we know that $\pvec{f}$ is
+$C^1$. We also have a semi-explicit formula for the Jacobian of $f$:
+
+$$\boxed{D\pvec{f} = -(D_{\pvec{y}} \pvec{F})^{-1} D_{\pvec{x}} \pvec{F}}$$
+
+By
+definition we know $\pvec{F}(\pvec{x}, \pvec{f}(\pvec{x})) \equiv \pvec{0}$ for all
+$\pvec{x} \in U$. Now we can differentiate:
+
+$$D_{\pvec{x}} \pvec{F}(\pvec{x}, \pvec{f}(\pvec{x})) \equiv D_{\pvec{x}} \+ \pvec{0} = O
+\in \varmathbb{R}^{e \times d}$$
+
+But we can rewrite the left hand side as $D_{\pvec{x}} \+ [\pvec{F} \circ (Id
+\times \pvec{f})]$, here we can apply the chain rule:
+
+$$(D_{\pvec{x}} \pvec{F})(\pvec{x}, \pvec{f}(\pvec{x})) \+ (D_{\pvec{x}}(Id \times
+\pvec{f})) (\pvec{x}) = O$$
+
+We can express $(Id \times \pvec{f})(\pvec{x})$ as $(\pvec{x}, \pvec{f}(\pvec{x}))$,
+which can be written as
+
+$$\left[\begin{array}{c}
+x_1 \\
+\vdots \\
+x_d \\
+f_1 (\pvec{x})\\
+\vdots \\
+f_e (\pvec{x})
+\end{array}\right] =
+\left[\begin{array}{c}
+\pvec{x}\\
+\pvec{f}(\pvec{x})
+\end{array}\right]$$
+
+Since the Jacobian Operator works row by row, we can distribute it
+
+$$D_{\pvec{x}} \left[\begin{array}{c}
+\pvec{x}\\
+\pvec{f}(\pvec{x})
+\end{array}\right] =
+\left[\begin{array}{c}
+D_{\pvec{x}} \pvec{x} \\
+D_{\pvec{x}} \pvec{f}(\pvec{x})
+\end{array}\right] =
+\left[\begin{array}{c}
+I_d \\
+D \pvec{f}(\pvec{x})
+\end{array}\right]$$
+%}}}
+%{{{ TMP
+\subsubsection{Example}
+\[(*)
+\begin{cases}
+F(u, v, x, y, z) = 0 \\
+G(u, v, x, y, z) = 0 \\
+H(u, v, x, y, z) = 0 \\
+\end{cases}
+\]
+
+Suppose $(a, b, p, q, r)$ is a specific solution for $(u, v, x, y, z)$ in $(*)$
+where $(a, b, p, q, r) \in D^\circ$
+
+We can rewrite this as:
+
+\begin{align*}
+F&: px + qy + rz = -(au + bv) \\
+G&: p'x + q'y + r'z = -(a'u + b'v) \\
+H&: p''x + q''y + r''z = -(a''u + b''v)
+\end{align*}
+
+Here we can rewrite this as the matrix equation $A\pvec{x} = \pvec{b}$ where
+
+\[
+A = 
+\left[\begin{array}{ccc}
+p & q & r\\
+p' & q' & r'\\
+p'' & q'' & r''
+\end{array}\right]
+\hfill
+\pvec{x} =
+\left[\begin{array}{c}
+x\\
+y\\
+z\\
+\end{array}\right]
+\hfill
+\pvec{b} = 
+\left[\begin{array}{c}
+-(au + bv) \\
+-(a'u + b'v) \\
+-(a''u + b''v) \\
+\end{array}\right]
+\]
+
+To solve this matrix equation we need that $\det A \neq 0$. We can also write
+$A$ as:
+
+\[
+\left[\begin{array}{c}
+F \\
+G \\
+H \\
+\end{array}\right]
+\]
+
+We know that
+$$\partial_{(x, y, z)} (F, G, H) = \left|
+\begin{array}{ccc}
+\partial_x F & \partial_y F & \partial_z F \\
+\partial_x G & \partial_y G & \partial_z G \\
+\partial_x H & \partial_y H & \partial_z H
+\end{array}
+\right|$$
+
+The Implicit Function Theorem says that if $\partial_{(x, y, z)} (F, G, H)
+|_{(a, b, p, q, r)} \neq 0$ then $(*)$ is locally equivalent near $(a, b, p, q,
+r)$ to:
+
+\[
+\begin{cases}
+x = f(u, v) \\
+y = g(u, v) \\
+z = h(u, v)
+\end{cases}
+\]
+
+And we call the vector function $(f, g, h)$ $\pvec{f}$, we also know that $f, g,
+h$ are $C^1$ on their domain. We also have the semi-explicit representation of
+$D\pvec{f}$:
+
+\[
+D\left[\begin{array}{c}
+f \\
+g \\
+h \\
+\end{array}\right] = 
+\left[\begin{array}{cc}
+\partial_u f & \partial_v f \\
+\partial_u g & \partial_v g \\
+\partial_u h & \partial_v h \\
+\end{array}\right] =
+-\{D_{(x, y, z)}(F, G, H)\}^{-1} D_{(u, v)} (F, G, H)
+\]
+
+To prove this we use an inductive argument, the base case is 1 equation one
+variable ($F(\pvec{x}, y) = 0$), which is done. Suppose that we can solve 2
+equations in 2 unknowns locally and with $C^1$ solutions. We seek to prove that
+we can solve 3 equations in 3 unknows.
+
+To be definite, suppose $\partial_z H \neq 0$ in a neighborhood of $(a, b, p, q, r)$
+
+We have the following:
+$$H(u, v, x, y, z) = 0 \longleftrightarrow z = \phi(u, v, x, y)$$
+
+where $\phi$ is some $C^1$ explicit function in the neighborhood of $(a, b, p,
+q, r)$.
+
+Let us define $\~{F} (u, v, x, y) := F(u, v, x, y, \phi(u, v, x, y))$ and $\~{G}
+(u, v, x, y) := G(u, v, x, y, \phi(u, v, x, y))$. We know that both of these
+equal to 0, as well as the fact that $\~{F}$ and $\~{G}$ are $C^1$.
+
+Then we only need to show the following:
+
+\[
+\partial_{(x, y)} (\~{F}, \~{G}) =
+\left|\begin{array}{cc}
+\partial_x \~{F} & \partial_y \~{F}\\
+\partial_x \~{G} & \partial_y \~{G}\\
+\end{array}\right| \neq O
+\]
+
+To do this we use the chain rule:
+
+\begin{align*}
+\partial_x \~{F} &= \partial_x F + (\partial_z F)(\partial_x \phi) = F_x +
+F_z \phi_x\\
+\partial_y \~{F} &= \partial_y F + (\partial_z F)(\partial_y \phi) = G_x +
+G_z \phi_x\\
+\end{align*}
+
+The same holds true for $\partial_x \~{G}$ and $\partial_y \~{G}$. Note also
+that $\partial_x H = H_x + H_z \phi_x = 0$ and $\partial_y H = 0$ as well.
+Therefore:
+\[
+\partial_{(x, y)} (\~{F}, \~{G}) = 
+\left|\begin{array}{ccc}
+F_x + F_z \phi_x & F_y + F_z \phi_y \\
+G_x + G_z \phi_x & G_y + G_z \phi_y \\
+\end{array}\right| =
+\left|\begin{array}{ccc}
+F_x + F_z \phi_x & F_y + F_z \phi_y & F_z/H_z\\
+G_x + G_z \phi_x & G_y + G_z \phi_y & G_z/H_z\\
+H_x + H_z \phi_x & H_y + H_z \phi_y & 1\\
+\end{array}\right|
+\]
+
+We are given that
+
+\[
+\left|\begin{array}{ccc}
+F_x & F_y & F_z \\
+G_x & G_y & G_z \\
+H_x & H_y & H_z \\
+\end{array}\right| = H_z
+\left|\begin{array}{ccc}
+F_x & F_y & F_z/H_z \\
+G_x & G_y & G_z/H_z \\
+H_x & H_y & 1 \\
+\end{array}\right|\neq 0
+\]
+
+However, note that we can get from here to the original $3 \times 3$ determinant
+by column operations, therefore we know that $\partial_{(x, y)}(\~{F}, \~{G})
+\neq 0$. Therefore we have the degeneracy condition.
+
+Then we can write
+
+\[
+\begin{cases}
+x = f(u, v) \\
+y = g(u, v) \\
+\end{cases}
+\]
+
+by the assumption. Now we plug back into the formula for $z$ and we get:
+
+$$z = h(u, v) = \phi(u, v, f(u, v), g(u, v))$$
+
+Now we have successfully written all three components as $C^1$ functions of $u$
+and $v$.
+
+\subsubsection{FORM}
+
+$$D \pvec{f} = -\{D_{\pvec{x}} \pvec{F}\}^{-1} (D_{\pvec{u}} \pvec{F})$$
+
+Let $\pvec{G}(\pvec{u}) = \pvec{F}(\pvec{u}, \pvec{f}(\pvec{u})) \equiv \pvec{0}$
+
+Now we can Jacobian both sides
+$$D\pvec{G}(\pvec{u}) \equiv D\pvec{0} = O$$
+
+Note that $\pvec{G} = \pvec{F} \circ (Id \times \pvec{f})$. Now we can apply the
+chain rule:
+
+\begin{align*}
+D\pvec{G} &= D(\pvec{F} \circ (Id \times \pvec{f}))\\
+&= \{(D\pvec{F}) \circ (Id \times \pvec{f})\} D(Id \times \pvec{f})\\
+\end{align*}
+
+Now we try to write these out in a type of ``block decomposition.'' Let us start
+with $D(Id \times \pvec{f})$
+
+\[
+D(Id \times \pvec{f})(\pvec{u}) = \left[\begin{array}{c}
+D_{\pvec{u}}\pvec{u} \\
+(D\pvec{f})(\pvec{u}) \\
+\end{array}\right]
+= \left[\begin{array}{c}
+D(Id) \\
+D\pvec{f}\\
+\end{array}\right](\pvec{u})
+= \left[\begin{array}{c}
+I \\
+D\pvec{f}\\
+\end{array}\right] (\pvec{u})
+=  \left[\begin{array}{c}
+I \\
+D\pvec{f} (\pvec{u})\\
+\end{array}\right]
+\]
+
+We also have a block decomposition of $D\pvec{F}$. We know:
+
+\[
+\pvec{F}(\pvec{u}, \pvec{x}) = \left[\begin{array}{c}
+F_1(\pvec{u}, \pvec{x}) \\
+F_2(\pvec{u}, \pvec{x}) \\
+\vdots \\
+F_e(\pvec{u}, \pvec{x}) \\
+\end{array}\right]
+\]
+
+Therefore we know:
+
+\begin{align*}
+D\pvec{F} &= \left[\begin{array}{ccc|ccc}
+\partial_{u_1} F_1 & \dots & \partial_{u_d} F_1 & \partial_{x_1}
+F_1  & \dots & \partial_{x_e} F_1\\
+\vdots & & \vdots & \vdots & & \vdots \\
+\partial_{u_1} F_2 & \dots & \partial_{u_d} F_e & \partial_{x_1} F_e
+& \dots & \partial_{x_e} F_e\\
+\end{array}\right] \\
+&= [D_{\pvec{u}} \pvec{F} \+|\+ D_{\pvec{x}} \pvec{F}]
+\end{align*}
+
+Now we can bring everything back together and we have
+
+\begin{align*}
+D\pvec{G}(\pvec{u}) &= [D_{\pvec{u}} \pvec{F} \circ (Id \times \pvec{f}) \+|\+
+D_{\pvec{x}} \pvec{F} \circ (Id \times \pvec{f})]\left[\begin{array}{c}
+I \\
+D\pvec{f} (\pvec{u})\\
+\end{array}\right]\\
+&= D_{\pvec{u}} \pvec{F} \circ (Id \times \pvec{f}) + (D_{\pvec{x}}
+\pvec{F} \circ (Id \times \pvec{f}))(D\pvec{f}) \equiv O
+\end{align*}
+
+Now if we isolate $D\pvec{f}$, we get
+
+\[
+\boxed{D\pvec{f} = - (D\pvec{F})^{-1} (D_{\pvec{u}} F)}
+\]
+
+We know that the inverse matrix exists because we assumed that
+
+$$\det D_{\pvec{x}} F \neq 0$$
 
 \subsection{Inverse Function Theorem}
 \subsubsection{Theorem}
@@ -2499,7 +2834,7 @@ Id(\pvec{x}) - (D_{\pvec{u}}\pvec{f})(\pvec{u}) = -D\pvec{f}(\pvec{u})$
 
 \begin{align*}
 \partial_{\pvec{u}}\pvec{F} = \det D_{\pvec{u}}\pvec{F} &= \det (-D\pvec{f}(u))\\
-                            &= (-1)^d \det
+&= (-1)^d \det
 D\pvec{f}(\pvec{u})\\
 &= (-1)^d \partial \pvec{f}(\pvec{u}) \neq 0 \text{ at } (\pvec{a}, vec{b})\\
 \end{align*}
