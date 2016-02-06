@@ -2094,6 +2094,191 @@ If $\vec{f}: D \subseteq \mathbb{R^d} \to \mathbb{R^e}$, $\vec{g}: E \subseteq \
 
 Thus, it is the same rule as in single-variable calculus, though matrix multiplication is used rather than regular multiplication.
 
+In other words, $[D(\pvec{g} \circ
+\pvec{f})]_{ij} = \partial_{x_j}(g_i \circ \pvec{f})(\pvec{p})$. Classically, this
+has also been written as $\frac{\partial z_i}{\partial x_j} (\pvec{p})$. Note
+that $[D\pvec{g}(\pvec{q}) D\pvec{f}(\pvec{p})]_{ij} = \sum_{l = 1}^e \partial_{y_l} g_i
+(\pvec{q}) \partial_{x_j} f_l (\pvec{p})$. This has been classically been written
+as:
+
+\[
+\frac{\partial z_i}{\partial x_j} = \sum_{l = 1}^e \frac{\partial z_i}{\partial y_l} (\pvec{f}(\pvec{p}))
+\frac{\partial y_l}{\partial x_j} (\pvec{p})
+\]
+
+The ``legit'' definition of the chain rule is:
+
+\[
+\partial_{x_j} (g_i \circ \pvec{f})(\pvec{p}) = \sum_{l = 1}^e \partial_{y_l}
+g_i(\pvec{q}) \partial_{x_j f_l (\pvec{p})}
+\]
+
+This is also clasically written as:
+
+\[
+\frac{\partial z_i}{\partial x_j} = \sum_{l=1}^e \frac{\partial
+z_i}{\partial y_l} \frac{\partial y_l}{\partial x_j}
+\]
+
+\subsubsection{Proof}
+
+For simplicity's sake, let $B := D\pvec{g}(\pvec{f}(\pvec{p}))$ and $A :=
+D\pvec{f}(\pvec{p})$. We know that $A$ satisfies $\forall
+\varepsilon > 0, \exists\+\delta(\varepsilon) > 0, \forall \pvec{h}$ with
+$||\+\pvec{h}\+|| < \delta(\varepsilon)$:
+
+\[
+||\+\Delta \pvec{f}(\pvec{p}, \pvec{h}) - A \pvec{h}\+|| < \varepsilon
+||\+\pvec{h}\+||
+\]
+
+Let us call this condition $*_{\pvec{f}}$
+
+We also know that $B$ satisfies $\forall \varepsilon' > 0, \exists \+
+\delta'(\varepsilon') > 0, \forall \pvec{k}$ with
+$||\+\pvec{k}\+|| < \delta'(\varepsilon')$:
+
+\[
+||\+\Delta \pvec{g}(\pvec{q}, \pvec{k}) - B \pvec{k}\+|| < \varepsilon'
+||\+\pvec{k}\+||
+\]
+
+Let us call this condition $*_{\pvec{g}}$
+
+We seek to prove the following:
+
+$\forall \varepsilon_2 > 0, \exists\+\delta_2(\varepsilon_2) > 0, \forall
+\pvec{h}$ with $||\+\pvec{h}\+|| < \delta_2(\varepsilon_2)$:
+
+\[
+||\+(\pvec{g} \circ \pvec{f})(\pvec{p} + \pvec{h}) - (\pvec{g} \circ
+\pvec{f})(\pvec{p}) - (BA) \pvec{h}\+||
+\overset{?}{<} \varepsilon_2 ||\+\pvec{h}\+||
+\]
+
+Let's define a vector $\pvec{k} := \Delta \pvec{f} = \pvec{f}(\pvec{p} + \pvec{h}) -
+\pvec{f}(\pvec{p})$. Note that since $\pvec{q} = \pvec{f}(\pvec{p})$, $\pvec{q} +
+\pvec{k} = \pvec{f}(\pvec{p} + \pvec{h})$. We can therefore rewrite the equation as:
+
+\[
+||\+\pvec{g}(\pvec{q} + \pvec{k}) - \pvec{g}(\pvec{q}) - B\pvec{k} + B\pvec{k} - (BA) \pvec{h}\+||
+\overset{?}{<} \varepsilon_2 ||\+\pvec{h}\+||
+\]
+
+Now we left factor $B$ out of the left hand side:
+
+\[
+||\+\pvec{g}(\pvec{q} + \pvec{k}) - \pvec{g}(\pvec{q}) - B\pvec{k} + B(\pvec{k} - A
+\pvec{h})\+|| \overset{?}{<} \varepsilon_2 ||\+\pvec{h}\+||
+\]
+
+Now we can apply the triangle inequality and the generalized Cauchy-Schwarz
+Inequality to get the following:
+
+\[
+||\+\pvec{g}(\pvec{q} + \pvec{k}) - \pvec{g}(\pvec{q}) - B\pvec{k} + B(\pvec{k} - A
+\pvec{h})\+|| \leq ||\+\pvec{g}(\pvec{q} + \pvec{k}) - \pvec{g}(\pvec{q}) -
+B\pvec{k}\+|| + ||B||\+||\+\pvec{k} - A\pvec{h}\+||
+\]
+
+But note that the first part of the right hand side is condition $*_{\pvec{g}}$,
+so we get:
+
+\[
+||\+\pvec{g}(\pvec{q} + \pvec{k}) - \pvec{g}(\pvec{q}) - B\pvec{k}\+|| + ||B||\+
+||\+\pvec{k} - A\pvec{h}\+|| < \varepsilon' ||\+\pvec{k}\+|| + ||B||\+||\+\pvec{k} -
+A\pvec{h}\+|| = \varepsilon' ||\+\pvec{k} - A\pvec{h} + A\pvec{h}\+|| + ||B||\+
+||\+\pvec{k} - A\pvec{h}\+||
+\]
+
+Now we can apply the same trick, except WLOG we assume that $||\+\pvec{k}\+|| <
+\delta'(\varepsilon')$ and assume $\varepsilon' \leq 1$.  we get:
+\[
+\varepsilon' ||\+\pvec{k} - A\pvec{h} + A\pvec{h}\+|| + ||B||\+
+||\+\pvec{k} - A\pvec{h}\+|| \leq \varepsilon' ||\+\pvec{k} - A\pvec{h}\+|| +
+\varepsilon'||A||\+||\+\pvec{h}\+|| + ||B||\+||\+\pvec{k} - A\pvec{h}\+||
+\]
+
+Now we factor and apply the bounds on $\varepsilon'$:
+\[
+\varepsilon' ||\+\pvec{k} - A\pvec{h}\+|| +
+\varepsilon'||A||\+||\+\pvec{h}\+|| + ||B||\+||\+\pvec{k} - A\pvec{h}\+|| \leq
+(||B|| + 1) ||\+\pvec{k} - A\pvec{h}\+|| + ||A||\+||\+\pvec{h}\+||\varepsilon'
+\]
+
+Note that $||\+\pvec{k} - A\pvec{h}\+|| = ||\+\pvec{f}(\pvec{p} + \pvec{h}) -
+\pvec{f}(\pvec{p}) - A\pvec{h}\+|| < \varepsilon ||\+\pvec{h}\+||$. From this we
+get:
+
+\[
+(||B|| + 1) ||\+\pvec{k} - A\pvec{h}\+|| + ||A||\+||\+\pvec{h}\+||\varepsilon'
+\leq (||B|| + 1) \varepsilon ||\+\pvec{h}\+|| + ||A|| \+ ||\+\pvec{h}\+||
+\varepsilon'
+\]
+
+If we take $\varepsilon = \varepsilon'$, we get:
+
+\[
+(||B|| + 1) \varepsilon ||\+\pvec{h}\+|| + ||A|| \+ ||\+\pvec{h}\+||
+\varepsilon' \leq (||A|| + ||B|| + 1) \varepsilon ||\+\pvec{h}\+||
+\]
+
+Note that $(||A|| + ||B|| + 1) \varepsilon$ can be arbitarily small because it
+is a constant times an arbitarily small value. If we call this value
+$\varepsilon_2$, we get that
+
+\[
+||\+(\pvec{g} \circ \pvec{f})(\pvec{p} + \pvec{h}) - (\pvec{g} \circ
+\pvec{f})(\pvec{p}) - (BA) \pvec{h}\+||
+< \varepsilon_2 ||\+\pvec{h}\+||
+\]
+
+\subsubsection{Special Cases}
+
+Consider the following ``chain'': $\varmathbb{R}^d_{\pvec{x}} \supseteq D
+\overset{\pvec{f}}{\to} \varmathbb{R}^e_{\pvec{y}} \supseteq E \cap \pvec{f}(D)
+\overset{\pvec{g}}{\to} \varmathbb{R}^k_{\pvec{z}}$. The special case we're
+interested in is if $d = 1$ and $k = 1$. In this case, the original $\pvec{x}$-axis can be
+thought of as the time axis, and $\pvec{f}$ can be thought of as a path
+$\pvec{\gamma}: I \to \varmathbb{R}^e$ where $D = I$, an interval, $I \subseteq
+\varmathbb{R}$. The difference between this ans the general chain rule is that
+the domain is connected (because the domain is time). This way, the ``chain''
+reduces to: 
+$$\varmathbb{R} \supseteq D \overset{(g \circ
+\pvec{\gamma})}{\longrightarrow} \varmathbb{R}$$
+
+Therefore the derivative is an ordinary single-calculus derivative. However, to
+calculate the derivative with the chain rule, we have to do the following;
+
+$$(g \circ \pvec{\gamma})'(t) = Dg(\pvec{\gamma}(t))D\pvec{\gamma}(t)$$
+
+This can be written as:
+
+$$(g \circ \pvec{\gamma})'(t) = \gradient g(\pvec{\gamma}(t))^T \pvec{\gamma}'(t) =
+\boxed{\gradient g(\pvec{\gamma}(t))\cdot\pvec{\gamma}'(t)}$$
+
+Here, $\pvec{\gamma}'(t)$ is known as the \textbf{velocity vector} of the curve,
+which is the column matrix (vector) of the derivatives of the component
+functions of $\pvec{\gamma}$ evaluated at $t$. It turns out that this value is
+also equal to:
+
+$$\pvec{\gamma}'(t) = \lim_{h \to 0} \frac{\pvec{\gamma}(t + h) -
+\pvec{\gamma}(t)}{h}$$
+
+This is because all the operations used here distributes across components. This
+is the physics-y interpretation of the derivative. The magnitude of this vector
+is the instataneous speed of the curve.
+
+$$ ||\+\pvec{\gamma}'(t)\+|| = \left|\left|\+\lim_{h \to 0} \frac{\pvec{\gamma}(t + h) -
+\pvec{\gamma}(t)}{h}\+\right|\right| = \lim_{h \to 0^+} \frac{||\+\pvec{\gamma}(t + h) -
+\pvec{\gamma}(t)\+||}{h}$$
+
+However, this physical interpretation is also the same as the Jacobian
+Derivative of $\pvec{\gamma}$. But since there is only one input variable, there
+is only one partial to compute, $\partial_t \gamma_1$, otherwise known as
+$\gamma_1'$. Therefore, the Jacobian Derivative becomes a column vector of the
+derivatives of the component functions.
+
 \subsection{Rolle's Theorem}
 \subsubsection{Theorem}
 If $f$ is differentiable on $(a - r, b + r)$ where $r > 0$ and $a < b$, and
@@ -2259,6 +2444,107 @@ In addition, it follows that f is also $C^1$, and $\vec{\nabla}f = \frac{-1}{\pa
 
 \subsubsection{Vector-Valued Theorem}
 For some $\vec{F}(\vec{x}, \vec{y}) = \vec{0}$, it can be written for all $(\vec{x}, \vec{y}) \in U x V$ as $\vec{y} = \vec{f}(\vec{x})$, when $\vec{x} \in \mathbb{R}^d$ and 
+
+\subsection{Inverse Function Theorem}
+\subsubsection{Theorem}
+Suppose we have two sets of variables $\pvec{x}$ and $\pvec{u}$ where
+\[
+\begin{cases}
+x_1 &= f_1 (u_1, u_2, \dots, u_d) \\
+x_2 &= f_2 (u_1, u_2, \dots, u_d) \\
+\vdots & \\
+x_d &= f_d (u_1, u_2, \dots, u_d)\\
+\end{cases}
+\]
+or that $\pvec{x} = \pvec{f}(\pvec{u})$. Assume that we have a particular solution
+$\pvec{b} = \pvec{f}(\pvec{a})$ where $\pvec{f}$ is $C^1$ and $\pvec{a} \in (\dom
+\pvec{f})^\circ$ and $\partial_{\pvec{x}} \pvec{f}(\pvec{a}) \neq 0$. Then there exists an open set $U$ around $\pvec{a} \in
+\varmathbb{R}^d_{\pvec{u}}$ and there exists an open set $V$ around $\pvec{b} \in
+\varmathbb{R}^d_{\pvec{x}}$. There also exists a $C^1$ function $\pvec{g}: V \to
+U$ such that $\pvec{f} \circ \pvec{g} = Id_V$ and $\pvec{g} \circ
+\pvec{f}|_{\pvec{g}(V)} = Id_{\pvec{g}(V)}$. $\pvec{g}$ is known as the \textbf{local inverse}
+of $\pvec{f}$ near $\pvec{b}$.
+
+\subsubsection{Random Fact}
+
+If $\pvec{f}$ is linear, it can be written as $\pvec{x} = \pvec{f}(\pvec{u}) =
+A\pvec{u}$, and its inverse function would be $\pvec{u} = A^{-1}\pvec{x}$ (if we
+assume that $\det A \neq 0$). However, note that $\pvec{f}(\pvec{u}) = A\pvec{u}$
+means that $D\pvec{f}(\pvec{u}) \equiv A$.
+
+If we look at the component functions of $\pvec{f}$, we can see a list of
+partials
+\begin{align*}
+f_1(\pvec{u}) = A\pvec{u} \cdot \pvec{e}_1 &= a_{11}u_1 + a_{12}u_2 + \dots + a_{1d}u_d\\
+\partial_{u_1}f_1(\pvec{u}) &= a_{11}\\
+\partial_{u_2}f_1(\pvec{u}) &= a_{12}\\
+\end{align*}
+\[
+\boxed{\partial_{u_j} f_i (\pvec{u}) = a_{ij}}
+\]
+Therefore, $\det A = \partial \pvec{f}(\pvec{u}) \neq 0$ at $\pvec{a}$.
+
+\subsubsection{Proof}
+
+Let us create a function $\pvec{F} (\pvec{u}, \pvec{x}) := \pvec{x} -
+\pvec{f}(\pvec{u})$. By the Implicit Function Theorem, we know that this is
+equivalent to $\pvec{x} = \pvec{f}(\pvec{u})$. However, there is nothing in the
+Implicit Function Theorem that says we cannot solve for $\pvec{u}$. A couple of
+conditions must be met beforehand, however, including that $\pvec{F}$ has to be
+$C^1$, that $(\pvec{a}, \pvec{b}) \in (\dom \pvec{F})^\circ$, and that
+$\partial_{\pvec{u}} \pvec{F}(\pvec{a}, \pvec{b}) \neq 0$.
+
+Let us start with the last condition first. $D_{\pvec{u}} \pvec{F} = D_{\pvec{u}}
+Id(\pvec{x}) - (D_{\pvec{u}}\pvec{f})(\pvec{u}) = -D\pvec{f}(\pvec{u})$
+
+\begin{align*}
+\partial_{\pvec{u}}\pvec{F} = \det D_{\pvec{u}}\pvec{F} &= \det (-D\pvec{f}(u))\\
+                            &= (-1)^d \det
+D\pvec{f}(\pvec{u})\\
+&= (-1)^d \partial \pvec{f}(\pvec{u}) \neq 0 \text{ at } (\pvec{a}, vec{b})\\
+\end{align*}
+
+We also know that $\pvec{F}$ is $C^1$ by assumption. Now all we have to check is
+that $(\pvec{a}, \pvec{b}) \in (\dom \pvec{F})^\circ$. $\dom \pvec{F} = (\dom
+\pvec{f} \times \varmathbb{R}^d_{\pvec{x}}) \subseteq
+\varmathbb{R}^{2d}_{(\pvec{u}, \pvec{x})}$. So $\pvec{b}$ is not a problem. We also
+know that $\pvec{a} \in \dom \pvec{f}$ by assumption.
+
+Therefore we conclude, using the Implicit Function Theorem that $\exists\+$ open
+sets $U, V$ around $\pvec{a}, \pvec{b}$ respectively, and $\exists\+ \pvec{g}:
+V\toU$ such that $\pvec{F}(\pvec{g}(\pvec{x}), \pvec{x}) \equiv \pvec{0}$ for all
+$\pvec{x} \in V$. This implies that $\pvec{x} - \pvec{f}(\pvec{g}(\pvec{x})) =
+\pvec{0}$. Therefore $\boxed{\pvec{f}(\pvec{g}(\pvec{x})) \equiv \pvec{x} \text{ for
+all } \pvec{x} \in V}$.
+
+To prove the converse, take any point $\pvec{u} \in \pvec{g}(\pvec{V})$, plug in
+$\pvec{f}(\pvec{u})$ for $\pvec{x}$, then $\pvec{f}(\pvec{u}) =
+\pvec{f}(\pvec{g}(\pvec{x}_0)) = \pvec{x}_0 \in V$. Now we plug the thing back again
+and we get $\pvec{f}(\pvec{g}(\pvec{f}(\pvec{u}))) = \pvec{f}(\pvec{u})$. Now since
+$\pvec{f}$ is one-to-one locally, we can cancel out the outmost function, so we
+get $\pvec{g}(\pvec{f}(\pvec{u})) = \pvec{u}$. Therefore, we can say $\pvec{f}$ and
+$\pvec{g}$ are local inverses of each other.
+
+To prove that $\pvec{f}$ is one-to-one, suppose $\pvec{f}(\pvec{u}_1) =
+\pvec{f}(\pvec{u}_2)$ but $\pvec{u}_1 \neq \pvec{u}_2$, and $\pvec{u}_1, \pvec{u}_2
+\in \pvec{g}(V)$. Then we know, by the continuity of $\pvec{g}$ that there exists
+$\pvec{x}_1, \pvec{x}_2 \in V$ such that $\pvec{u}_1 = \pvec{g}(\pvec{x}_1)$ and
+$\pvec{u}_2 = \pvec{g}(\pvec{x}_2)$. However, then we know that
+$\pvec{f}(\pvec{g}(\pvec{x}_1)) = \pvec{f}(\pvec{g}(\pvec{x}_2))$, which implies that
+$x_1 = x_2$, which implies that $\pvec{g}(\pvec{x}_1) = \pvec{g}(\pvec{x}_2)$, which
+means $\pvec{u}_1 = \pvec{u}_2$. Therefore $\pvec{f}$ is one-to-one.
+
+\subsubsection{Implications}
+
+Let $\pvec{f}: D \subseteq \varmathbb{R}^d_{\pvec{u}} \to
+\varmathbb{R}^d_{\pvec{x}}$ be a $C^1$ transformation such that $\partial
+\pvec{f}(\pvec{u}) \neq 0$ for all $\pvec{u} \in D^\circ$. Let $K$ be a compact
+subset of $D^\circ$, Then $\pvec{f}(K^\circ) = [\pvec{f}(K)]^\circ$. In other
+words, the interior of the pre-image maps onto the interior of the image.
+
+Moreover, if $\pvec{f}$ is also one-to-one on some open superset $U$ of $K$, then
+$\pvec{f}(\partial K) = \partial \{\pvec{f}(K)\}$.
+
 
 \section{Lagrange Multiplier}
 \subsection{Level-Sets as Manifolds}
