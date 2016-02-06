@@ -952,28 +952,28 @@ which only has equality when $ac \geq 0$ and $bd \geq 0$. Next we applied
 H\"{o}lder's, which has equality case when both coordinates are proportional.
 Therefore, the two vectors must be positive multiples of one another.
 
-\section{Extreme Value Theorem in $\varmathbb{R}^n$}
+\section{Extreme Value Theorem in $\mathbb{R}^n$}
 \subsection{Theorem}
-Let $f : D \to \varmathbb{R}$ be a continuous function mapping from the compact
-set $D$ to the reals. Then $\exists\+ P, Q \in D$, not necessarily distinct,
-such that $\exists\+ x \in D: f(P) \leq f(x) \leq f(Q)$.
+Let $f : D \to \mathbb{R}$ be a continuous function mapping from the compact
+set $D$ to the reals. Then $\exists P, Q \in D$, not necessarily distinct,
+such that $\exists x \in D: f(P) \leq f(x) \leq f(Q)$.
 
 \subsection{Proof}
 First we prove that $f$ must be bounded from above. Assume that it is not, take
-a sequence $(\pvec{P_n})_{n=1}^\infty \in D$, the assumption implies that
-implies for every positive integer $n$, $f(\pvec{P_n}) > n$. Because it is bounded by
-$D$, we can pick a convergent subsequence $\pvec{P_{n_k}}$, which converges to
-$\pvec{P}$. However, since $D$ is closed, we know that $\pvec{P} \in D$. However, now we have a contradiction. Because
-$f$ is continuous, $\lim_{n\to\infty}f(\pvec{P_n}) \to \pvec{P}$. This is a contradiction,
-because the right hand side $\pvec{P}$ is finite (it's within $D$), but the left hand
+a sequence $(\vec{P_n})_{n=1}^\infty \in D$, the assumption implies that
+implies for every positive integer $n$, $f(\vec{P_n}) > n$. Because it is bounded by
+$D$, we can pick a convergent subsequence $\vec{P_{n_k}}$, which converges to
+$\vec{P}$. However, since $D$ is closed, we know that $\vec{P} \in D$. However, now we have a contradiction. Because
+$f$ is continuous, $\lim_{n\to\infty}f(\vec{P_n}) \to \vec{P}$. This is a contradiction,
+because the right hand side $\vec{P}$ is finite (it's within $D$), but the left hand
 side goes to infinity by the assumption. Therefore the assumption is false,
 thus the function $f$ is bounded from above.
 
 Now we know that $f$ is bounded from above, we know $M := \sup{(f(D))}$ exists
 where $0\leq M < \infty$. We can chose a sequence $(P_n)_{n = 1}^\infty \in D$
 such that $f(P_n) \to M$. The sequence is bounded, so it has a convergent
-subsequence, $\pvec{P_{n_k}} \to \pvec{P}$. By the closure of $D$, $\pvec{P} \in
-D$. Note that $f(\pvec{P}) = \lim_{k\to\infty} f(\pvec{P_{n_k}}) = M$ by the
+subsequence, $\vec{P_{n_k}} \to \vec{P}$. By the closure of $D$, $\vec{P} \in
+D$. Note that $f(\vec{P}) = \lim_{k\to\infty} f(\vec{P_{n_k}}) = M$ by the
 continuity of $f$. Therefore, the function actually takes on its maximum value
 at that point.
 
@@ -1418,34 +1418,34 @@ This quality describes how fast the function $f$ is changing at $\vec{p}$ in the
 
 The latter definition gives the single variable function, such that g(t) = $\vec{p} + t\vec{u}$, where $\vec{u} \neq \vec{0}$, is called the uniform rectilinear motion curve, due to being a line with constant curve speed.
 
-However, the magnitude of $\pvec{u}$ also has meaning, its magnitude is the rate
-of change of the function in the direction of $\pvec{u}$.
+However, the magnitude of $\vec{u}$ also has meaning, its magnitude is the rate
+of change of the function in the direction of $\vec{u}$.
 
-\textbf{Thm}: Let $\pvec{u}$ be any unit vector, then:
-$$\partial_{\pvec{u}}f(\pvec{p}) = \pvec{\nabla}f(\pvec{p}) \cdot \pvec{u}$$
+\textbf{Thm}: Let $\vec{u}$ be any unit vector, then:
+$$\partial_{\vec{u}}f(\vec{p}) = \vec{\nabla}f(\vec{p}) \cdot \vec{u}$$
 
 \subsection{Geometric Interpretation of the Gradient}
-If $f: D \subseteq \varmathbb{R}^d \to \varmathbb{R}$ is differentiable at
-$\pvec{p} \in D^\circ$, then:
+If $f: D \subseteq \mathbb{R}^d \to \mathbb{R}$ is differentiable at
+$\vec{p} \in D^\circ$, then:
 
-$$\pvec{u}_0 = \frac{\pvec{\nabla}f(\pvec{p})}{||\+\pvec{\nabla}f(\pvec{p})\+||}$$
+$$\vec{u}_0 = \frac{\vec{\nabla}f(\vec{p})}{||\vec{\nabla}f(\vec{p})||}$$
 
 i.e. the unit vector of the gradient is the direction of steepest ascent for $f$
-at $\pvec{p}$.
+at $\vec{p}$.
 
-$$||\+\pvec{\nabla}f(\pvec{p})\+|| = \max_{||\+\pvec{u}\+|| = 1}
-\partial_{\pvec{u}}f(\pvec{p})$$
+$$||\vec{\nabla}f(\vec{p})|| = \max_{||\vec{u}|| = 1}
+\partial_{\vec{u}}f(\vec{p})$$
 
 And the magnitude of the gradient is the rate at which the function is ascending
 at the point.
 
 This is a combination of the Cauchy-Schwarz Inequality and the theorem which states that
-$\partial_{\pvec{u}}f(\pvec{p}) = \pvec{\nabla}f(\pvec{p}) \cdot \pvec{u}$.
+$\partial_{\vec{u}}f(\vec{p}) = \vec{\nabla}f(\vec{p}) \cdot \vec{u}$.
 By the Cauchy-Schwarz Inequality, we know that the length of the gradient is an
 upper bound of the directional derivative. This maximum is also obtained,
 because in Cauchy-Schwarz inequality, the equality case happens when the two
 vector have the same direction. Therefore, we know that the gradient is the direction of
-fastest ascent of a function at any given point $\pvec{p}$
+fastest ascent of a function at any given point $\vec{p}$
 
 However, the Cauchy-Schwarz inequality also states that the dot product is
 bounded from below by negative of the product of the lengths, which is achieved
@@ -1453,8 +1453,8 @@ when the two vector are anti-directional. Therefore we also know that the
 negative of the gradient points in the direction of steepest descent and the
 magnitude can be written as:
 
-$$-||\+\pvec{\nabla}f(\pvec{p})\+|| = \min_{||\+\pvec{u}\+|| = 1} \partial_{\pvec{u}}
-f(\pvec{p})$$
+$$-||\vec{\nabla}f(\vec{p})|| = \min_{||\vec{u}|| = 1} \partial_{\vec{u}}
+f(\vec{p})$$
 
 
 \subsection{Vector Valued Directional Derivative}
@@ -1545,13 +1545,13 @@ $$|\Delta f - \vec{\nabla}f(\vec{p}) \cdot \vec{h}| = |\sum_{j = 1}^d
 Now we can apply the triangle inequality on the summations and get:
 
 $$|\Delta f - \vec{\nabla}f(\vec{p}) \cdot \vec{h}| < \sum_{j=1}^d |\partial_{x_j} f(\vec{q}_j) - \partial_{x_j} f(\vec{p})|
-\+ |h_j|$$
+ |h_j|$$
 
 Now we divide both sides by the length of $\vec{h}$:
 
 \begin{align*}
 \frac{|\Delta f - \gradient f(\vec{p}) \cdot \vec{h}|}{||\vec{h}||} &\leq
-\sum_{j=1}^d |\partial_{x_j} f(\vec{q}_j) - \partial_{x_j} f(\vec{p})| \+
+\sum_{j=1}^d |\partial_{x_j} f(\vec{q}_j) - \partial_{x_j} f(\vec{p})| 
 \frac{|h_j|}{||\vec{h}||}\\
 &\leq \sum_{j=1}^d |\partial_{x_j} (\vec{q}_j) - \partial_{x_j} f(\vec{p})|
 \end{align*}
@@ -1567,7 +1567,7 @@ going to 0, the entire sum is going to 0, which means $||\vec{h}|| <
 means that
 
 $$\frac{|\Delta f - \gradient f(\vec{p}) \cdot \vec{h}|}{||\vec{h}||} \leq
-\sum_{j=1}^d |\partial_{x_j} f(\vec{q}_j) - \partial_{x_j} f(\vec{p})| \+
+\sum_{j=1}^d |\partial_{x_j} f(\vec{q}_j) - \partial_{x_j} f(\vec{p})| 
 \frac{|h_j|}{||\vec{h}||} \leq \epsilon$$
 
 Which means that a superlinear decay is possible, which means that $f$ is
@@ -1679,10 +1679,10 @@ For $\vec{l}$ to be a linear function, it must have the following properties:
 \vspace{0.2cm}
 
 \textbf{Proof}: Take k-flat in $\mathbb{R}^d$ $F = \{t_1\vec{a}_1 +
-t_2\vec{a}_2 + \dots + t_k\vec{a}_k \+|\+ t_1, t_2, \dots, t_k \in
+t_2\vec{a}_2 + \dots + t_k\vec{a}_k | t_1, t_2, \dots, t_k \in
 \mathbb{R}\}$. Here, $\vec{a}_1, \vec{a}_2, \dots, \vec{a}_k \in
 \mathbb{R}^d$ such that all of them are independent of each other, i.e. no
-$\vec{a}_i$ is a linear combination of $\{\vec{a}_j \+|\+ j \neq i\}$. Because
+$\vec{a}_i$ is a linear combination of $\{\vec{a}_j | j \neq i\}$. Because
 otherwise $\vec{a}_i$ can be broken up and the dimension of $F$ will be reduced.
 This can also be phrased as the set of $\vec{a}_i$ must satisfy the following condition:
 $F = \vec{0} \implies t_1 = t_2 = \dots = t_k = 0$. Because if there exists a
@@ -1696,7 +1696,7 @@ mapping is additive, and we can factor out the coefficients because it is
 homogeneous.
 
 \begin{align*}
-\vec{l}(F) &= \{\vec{l}(t_1\vec{a}_1 + \dots + t_k\vec{a}_k) \+|\+ t_1, \dots, t_k \in \mathbb{R}\}\\
+\vec{l}(F) &= \{\vec{l}(t_1\vec{a}_1 + \dots + t_k\vec{a}_k) | t_1, \dots, t_k \in \mathbb{R}\}\\
 &= \{t_1 \vec{l}(\vec{a}_1) + \dots + t_k \vec{l}(\vec{a}_k)\}
 \end{align*}
 
@@ -1745,21 +1745,21 @@ column number. If the above matrix is $A$, then $a_{11} = 1$ and $a_{31} = 0$.
 
 \subsubsection{Determinant}
 
-Geometrically, if you treat the matrix $A \in \varmathbb{R}^{d \times n}$ as an
+Geometrically, if you treat the matrix $A \in \mathbb{R}^{d \times n}$ as an
 $d$-dimensional strucutre composed of $n$ $d$-dimensional vectors, then the
 determinant is the ``volume'' of said structure.
 
 Algebraically
 
 \begin{align*}
-\det A &= \sum_{\sigma \in S_n} (sgn \+ \sigma) a_{1 \sigma_1} a_{2 \sigma_2}
+\det A &= \sum_{\sigma \in S_n} (sgn  \sigma) a_{1 \sigma_1} a_{2 \sigma_2}
 \dots a_{n\sigma_n}\\
 \sigma &= (\sigma_1, \sigma_2, \dots, \sigma_n)
 \end{align*}
 
 where 
 
-$$sgn \+ \sigma = \frac{\Pi_{i < j} (x_{\sigma_i} - x_{\sigma_j})}{\Pi_{i
+$$sgn  \sigma = \frac{\Pi_{i < j} (x_{\sigma_i} - x_{\sigma_j})}{\Pi_{i
 < j} (x_i - x_j)}$$
 
 where $x_1, x_2, \dots, x_n$ are distant values. This function, in a more
@@ -1906,11 +1906,11 @@ Note that the communicative property does not hold for matrix multiplication.
 
 \subsubsection{Norm}
 
-Given $A \in \varmathbb{R}^{e \times d} = [\vec{a}_1 \+ \vec{a}_2 \+ \dots \+
+Given $A \in \mathbb{R}^{e \times d} = [\vec{a}_1  \vec{a}_2  \dots 
 \vec{a}_d]$, we define the norm of $A$, $||A||$ as:
 
 \[
-||A|| := \sqrt{\sum_{j = 1}^d ||\+\vec{a}_j\+||^2} = \sqrt{\sum_{j=1}^d
+||A|| := \sqrt{\sum_{j = 1}^d ||\vec{a}_j||^2} = \sqrt{\sum_{j=1}^d
 \sum_{i=1}^e a_{ij}^2}
 \]
 
@@ -1926,8 +1926,8 @@ of every element in the matrix.
 \end{enumerate}
 
 To prove these, we first establish a correspondence between any matrix $A \in
-\varmathbb{R}^{e \times d}$ and a vector in $\varmathbb{R}^{ed}$, we define the
-mapping $\Psi$ from $\varmathbb{R}^{e \times d}$ to $\varmathbb{R}^{ed}$:
+\mathbb{R}^{e \times d}$ and a vector in $\mathbb{R}^{ed}$, we define the
+mapping $\Psi$ from $\mathbb{R}^{e \times d}$ to $\mathbb{R}^{ed}$:
 
 \[
 A \overset{\Psi}{\longleftrightarrow} (a_{11}, \dots, a_{1d}, a_{21}, \dots,
@@ -1946,8 +1946,8 @@ Let $C = AB$, then wwe know that
 \begin{align*}
 ||AB||^2 = \sum_i \sum_j \left(\sum_k a_{ik}b_{kj}\right)^2 &= \sum_i \sum_j
 (\vec{\alpha}_i \cdot \vec{b}_j)^2 \\
-&\leq \sum_i \sum_j ||\+\vec{\alpha}_i\+||^2 ||\+\vec{b}_j\+||^2\\
-&= (\sum_i ||\+\vec{\alpha}_i\+||^2)(\sum_j ||\+\vec{b}_j\+||^2)\\
+&\leq \sum_i \sum_j ||\vec{\alpha}_i||^2 ||\vec{b}_j||^2\\
+&= (\sum_i ||\vec{\alpha}_i||^2)(\sum_j ||\vec{b}_j||^2)\\
 &= ||A^T||^2 ||B||^2\\
 &= ||A||^2 ||B||^2
 \end{align*}
@@ -1956,8 +1956,8 @@ Therefore, $||AB|| \leq ||A|| ||B||$.
 
 \subsubsection{Inverses}
 
-Suppose there exists $A \in \varmathbb{R}^{n \times n}$ and $B \in
-\varmathbb{R}^{n \times n}$, we say that $B$ is a \textbf{two sided inverse} of
+Suppose there exists $A \in \mathbb{R}^{n \times n}$ and $B \in
+\mathbb{R}^{n \times n}$, we say that $B$ is a \textbf{two sided inverse} of
 $A$ if $AB = BA = I (= I_n)$, where $I$ is the identity matrix, which functions
 like the number one in real number multiplication.
 
@@ -1983,21 +1983,21 @@ Now it's clear that $\det A \neq 0$
 \subsubsection{Components of Linear Functions}
 \underline{Theorem}
 
-Given a linear mapping $\pvec{l}(\pvec{x}) \varmathbb{R}^d \to \varmathbb{R}^e = (l_1(\pvec{x}), l_2(\pvec{x}),
-\dots, l_e(\pvec{x}))$, then we know that each $l_i$ is linear ($\varmathbb{R}^d
-\to \varmathbb{R}$).
+Given a linear mapping $\vec{l}(\vec{x}) \mathbb{R}^d \to \mathbb{R}^e = (l_1(\vec{x}), l_2(\vec{x}),
+\dots, l_e(\vec{x}))$, then we know that each $l_i$ is linear ($\mathbb{R}^d
+\to \mathbb{R}$).
 
 \underline{Proof}
 
 Let us first check additivity:
 
 \[
-\pvec{l}(\pvec{x} + \pvec{y}) = (l_1(\pvec{x} + \pvec{y}), \dots, l_e(\pvec{x} +
-\pvec{y}))
+\vec{l}(\vec{x} + \vec{y}) = (l_1(\vec{x} + \vec{y}), \dots, l_e(\vec{x} +
+\vec{y}))
 \]
 \[
-\pvec{l}(\pvec{x}) + \pvec{l}(\pvec{y}) = (l_1(\pvec{x}) + l_1(\pvec{y}), \dots,
-l_e(\pvec{x}) + l_e(\pvec{y}))
+\vec{l}(\vec{x}) + \vec{l}(\vec{y}) = (l_1(\vec{x}) + l_1(\vec{y}), \dots,
+l_e(\vec{x}) + l_e(\vec{y}))
 \]
 
 Now if we inspect each element, each $l_i$ is additive. A similar argument can
@@ -2006,20 +2006,20 @@ be made to prove homogeneity. Therefore, each $l_i$ is a linear mapping.
 \subsubsection{Cancellation Law of the Dot Product}
 \underline{Theorem}
 
-If $\pvec{a} \cdot \pvec{x} = \pvec{b} \cdot \pvec{x}$ for all $\pvec{x} \in
-\varmathbb{R}^d$, where $\pvec{a}, \pvec{b} \in \varmathbb{R}^d$, then $\pvec{a} =
-\pvec{b}$.
+If $\vec{a} \cdot \vec{x} = \vec{b} \cdot \vec{x}$ for all $\vec{x} \in
+\mathbb{R}^d$, where $\vec{a}, \vec{b} \in \mathbb{R}^d$, then $\vec{a} =
+\vec{b}$.
 
 \underline{Proof}
 
-Take $\pvec{x} = \pvec{e}_1 = (1, 0, 0, \dots, 0)$, this yields that $a_1 = b_1$.
-Then we can take $\pvec{x}$ to any of the basic component vectors, we get that
-$a_2 = b_2, a_3 = b_3, \dots, a_d = b_d$. Therefore, $\pvec{a} = \pvec{b}$.
+Take $\vec{x} = \vec{e}_1 = (1, 0, 0, \dots, 0)$, this yields that $a_1 = b_1$.
+Then we can take $\vec{x}$ to any of the basic component vectors, we get that
+$a_2 = b_2, a_3 = b_3, \dots, a_d = b_d$. Therefore, $\vec{a} = \vec{b}$.
 
 \subsubsection{Matrix Valued Functions}
 
 It is entirely possible for functions to give out matrices as its output.
-Suppose $A : D \subseteq \varmathbb{R}^d \to \varmathbb{R}^{e \times k}$.
+Suppose $A : D \subseteq \mathbb{R}^d \to \mathbb{R}^{e \times k}$.
 Similar to how vector valued functions have component functions, matrix valued
 functions have entry functions. $A$ would look something like this:
 
@@ -2056,10 +2056,10 @@ Thus, $\vec{l}(\vec{x}) = (\vec{\alpha}_1 \cdot \vec{x}, \vec{\alpha}_2 \cdot \v
 \section{Differentiability of Vector Valued Functions}
 \subsection{Definition of Differentiability}
 Let $\vec{f} : D \subseteq \mathbb{R}^d \to \mathbb{R}^e$. Let $\vec{p}
-\in D^\circ$. Then $\vec{f}$ is differentiable at $\vec{p}$ if $\exists \+A \in
+\in D^\circ$. Then $\vec{f}$ is differentiable at $\vec{p}$ if $\exists A \in
 \mathbb{R}^{e \times d}$ such that
 
-$$\boxed{\forall \epsilon > 0, \exists \+ \delta > 0: 0 < ||\vec{h}|| < \delta
+$$\boxed{\forall \epsilon > 0, \exists  \delta > 0: 0 < ||\vec{h}|| < \delta
 \implies ||\vec{f}(\vec{p} + \vec{h}) - \vec{f}(\vec{p}) - A
 \vec{h}|| < \epsilon ||\vec{h}||}$$
 
@@ -2094,23 +2094,23 @@ If $\vec{f}: D \subseteq \mathbb{R^d} \to \mathbb{R^e}$, $\vec{g}: E \subseteq \
 
 Thus, it is the same rule as in single-variable calculus, though matrix multiplication is used rather than regular multiplication.
 
-In other words, $[D(\pvec{g} \circ
-\pvec{f})]_{ij} = \partial_{x_j}(g_i \circ \pvec{f})(\pvec{p})$. Classically, this
-has also been written as $\frac{\partial z_i}{\partial x_j} (\pvec{p})$. Note
-that $[D\pvec{g}(\pvec{q}) D\pvec{f}(\pvec{p})]_{ij} = \sum_{l = 1}^e \partial_{y_l} g_i
-(\pvec{q}) \partial_{x_j} f_l (\pvec{p})$. This has been classically been written
+In other words, $[D(\vec{g} \circ
+\vec{f})]_{ij} = \partial_{x_j}(g_i \circ \vec{f})(\vec{p})$. Classically, this
+has also been written as $\frac{\partial z_i}{\partial x_j} (\vec{p})$. Note
+that $[D\vec{g}(\vec{q}) D\vec{f}(\vec{p})]_{ij} = \sum_{l = 1}^e \partial_{y_l} g_i
+(\vec{q}) \partial_{x_j} f_l (\vec{p})$. This has been classically been written
 as:
 
 \[
-\frac{\partial z_i}{\partial x_j} = \sum_{l = 1}^e \frac{\partial z_i}{\partial y_l} (\pvec{f}(\pvec{p}))
-\frac{\partial y_l}{\partial x_j} (\pvec{p})
+\frac{\partial z_i}{\partial x_j} = \sum_{l = 1}^e \frac{\partial z_i}{\partial y_l} (\vec{f}(\vec{p}))
+\frac{\partial y_l}{\partial x_j} (\vec{p})
 \]
 
 The ``legit'' definition of the chain rule is:
 
 \[
-\partial_{x_j} (g_i \circ \pvec{f})(\pvec{p}) = \sum_{l = 1}^e \partial_{y_l}
-g_i(\pvec{q}) \partial_{x_j f_l (\pvec{p})}
+\partial_{x_j} (g_i \circ \vec{f})(\vec{p}) = \sum_{l = 1}^e \partial_{y_l}
+g_i(\vec{q}) \partial_{x_j f_l (\vec{p})}
 \]
 
 This is also clasically written as:
@@ -2122,105 +2122,105 @@ z_i}{\partial y_l} \frac{\partial y_l}{\partial x_j}
 
 \subsubsection{Proof}
 
-For simplicity's sake, let $B := D\pvec{g}(\pvec{f}(\pvec{p}))$ and $A :=
-D\pvec{f}(\pvec{p})$. We know that $A$ satisfies $\forall
-\varepsilon > 0, \exists\+\delta(\varepsilon) > 0, \forall \pvec{h}$ with
-$||\+\pvec{h}\+|| < \delta(\varepsilon)$:
+For simplicity's sake, let $B := D\vec{g}(\vec{f}(\vec{p}))$ and $A :=
+D\vec{f}(\vec{p})$. We know that $A$ satisfies $\forall
+\varepsilon > 0, \exists\delta(\varepsilon) > 0, \forall \vec{h}$ with
+$||\vec{h}|| < \delta(\varepsilon)$:
 
 \[
-||\+\Delta \pvec{f}(\pvec{p}, \pvec{h}) - A \pvec{h}\+|| < \varepsilon
-||\+\pvec{h}\+||
+||\Delta \vec{f}(\vec{p}, \vec{h}) - A \vec{h}|| < \varepsilon
+||\vec{h}||
 \]
 
-Let us call this condition $*_{\pvec{f}}$
+Let us call this condition $*_{\vec{f}}$
 
-We also know that $B$ satisfies $\forall \varepsilon' > 0, \exists \+
-\delta'(\varepsilon') > 0, \forall \pvec{k}$ with
-$||\+\pvec{k}\+|| < \delta'(\varepsilon')$:
+We also know that $B$ satisfies $\forall \varepsilon' > 0, \exists 
+\delta'(\varepsilon') > 0, \forall \vec{k}$ with
+$||\vec{k}|| < \delta'(\varepsilon')$:
 
 \[
-||\+\Delta \pvec{g}(\pvec{q}, \pvec{k}) - B \pvec{k}\+|| < \varepsilon'
-||\+\pvec{k}\+||
+||\Delta \vec{g}(\vec{q}, \vec{k}) - B \vec{k}|| < \varepsilon'
+||\vec{k}||
 \]
 
-Let us call this condition $*_{\pvec{g}}$
+Let us call this condition $*_{\vec{g}}$
 
 We seek to prove the following:
 
-$\forall \varepsilon_2 > 0, \exists\+\delta_2(\varepsilon_2) > 0, \forall
-\pvec{h}$ with $||\+\pvec{h}\+|| < \delta_2(\varepsilon_2)$:
+$\forall \varepsilon_2 > 0, \exists\delta_2(\varepsilon_2) > 0, \forall
+\vec{h}$ with $||\vec{h}|| < \delta_2(\varepsilon_2)$:
 
 \[
-||\+(\pvec{g} \circ \pvec{f})(\pvec{p} + \pvec{h}) - (\pvec{g} \circ
-\pvec{f})(\pvec{p}) - (BA) \pvec{h}\+||
-\overset{?}{<} \varepsilon_2 ||\+\pvec{h}\+||
+||(\vec{g} \circ \vec{f})(\vec{p} + \vec{h}) - (\vec{g} \circ
+\vec{f})(\vec{p}) - (BA) \vec{h}||
+\overset{?}{<} \varepsilon_2 ||\vec{h}||
 \]
 
-Let's define a vector $\pvec{k} := \Delta \pvec{f} = \pvec{f}(\pvec{p} + \pvec{h}) -
-\pvec{f}(\pvec{p})$. Note that since $\pvec{q} = \pvec{f}(\pvec{p})$, $\pvec{q} +
-\pvec{k} = \pvec{f}(\pvec{p} + \pvec{h})$. We can therefore rewrite the equation as:
+Let's define a vector $\vec{k} := \Delta \vec{f} = \vec{f}(\vec{p} + \vec{h}) -
+\vec{f}(\vec{p})$. Note that since $\vec{q} = \vec{f}(\vec{p})$, $\vec{q} +
+\vec{k} = \vec{f}(\vec{p} + \vec{h})$. We can therefore rewrite the equation as:
 
 \[
-||\+\pvec{g}(\pvec{q} + \pvec{k}) - \pvec{g}(\pvec{q}) - B\pvec{k} + B\pvec{k} - (BA) \pvec{h}\+||
-\overset{?}{<} \varepsilon_2 ||\+\pvec{h}\+||
+||\vec{g}(\vec{q} + \vec{k}) - \vec{g}(\vec{q}) - B\vec{k} + B\vec{k} - (BA) \vec{h}||
+\overset{?}{<} \varepsilon_2 ||\vec{h}||
 \]
 
 Now we left factor $B$ out of the left hand side:
 
 \[
-||\+\pvec{g}(\pvec{q} + \pvec{k}) - \pvec{g}(\pvec{q}) - B\pvec{k} + B(\pvec{k} - A
-\pvec{h})\+|| \overset{?}{<} \varepsilon_2 ||\+\pvec{h}\+||
+||\vec{g}(\vec{q} + \vec{k}) - \vec{g}(\vec{q}) - B\vec{k} + B(\vec{k} - A
+\vec{h})|| \overset{?}{<} \varepsilon_2 ||\vec{h}||
 \]
 
 Now we can apply the triangle inequality and the generalized Cauchy-Schwarz
 Inequality to get the following:
 
 \[
-||\+\pvec{g}(\pvec{q} + \pvec{k}) - \pvec{g}(\pvec{q}) - B\pvec{k} + B(\pvec{k} - A
-\pvec{h})\+|| \leq ||\+\pvec{g}(\pvec{q} + \pvec{k}) - \pvec{g}(\pvec{q}) -
-B\pvec{k}\+|| + ||B||\+||\+\pvec{k} - A\pvec{h}\+||
+||\vec{g}(\vec{q} + \vec{k}) - \vec{g}(\vec{q}) - B\vec{k} + B(\vec{k} - A
+\vec{h})|| \leq ||\vec{g}(\vec{q} + \vec{k}) - \vec{g}(\vec{q}) -
+B\vec{k}|| + ||B||||\vec{k} - A\vec{h}||
 \]
 
-But note that the first part of the right hand side is condition $*_{\pvec{g}}$,
+But note that the first part of the right hand side is condition $*_{\vec{g}}$,
 so we get:
 
 \[
-||\+\pvec{g}(\pvec{q} + \pvec{k}) - \pvec{g}(\pvec{q}) - B\pvec{k}\+|| + ||B||\+
-||\+\pvec{k} - A\pvec{h}\+|| < \varepsilon' ||\+\pvec{k}\+|| + ||B||\+||\+\pvec{k} -
-A\pvec{h}\+|| = \varepsilon' ||\+\pvec{k} - A\pvec{h} + A\pvec{h}\+|| + ||B||\+
-||\+\pvec{k} - A\pvec{h}\+||
+||\vec{g}(\vec{q} + \vec{k}) - \vec{g}(\vec{q}) - B\vec{k}|| + ||B||
+||\vec{k} - A\vec{h}|| < \varepsilon' ||\vec{k}|| + ||B||||\vec{k} -
+A\vec{h}|| = \varepsilon' ||\vec{k} - A\vec{h} + A\vec{h}|| + ||B||
+||\vec{k} - A\vec{h}||
 \]
 
-Now we can apply the same trick, except WLOG we assume that $||\+\pvec{k}\+|| <
+Now we can apply the same trick, except WLOG we assume that $||\vec{k}|| <
 \delta'(\varepsilon')$ and assume $\varepsilon' \leq 1$.  we get:
 \[
-\varepsilon' ||\+\pvec{k} - A\pvec{h} + A\pvec{h}\+|| + ||B||\+
-||\+\pvec{k} - A\pvec{h}\+|| \leq \varepsilon' ||\+\pvec{k} - A\pvec{h}\+|| +
-\varepsilon'||A||\+||\+\pvec{h}\+|| + ||B||\+||\+\pvec{k} - A\pvec{h}\+||
+\varepsilon' ||\vec{k} - A\vec{h} + A\vec{h}|| + ||B||
+||\vec{k} - A\vec{h}|| \leq \varepsilon' ||\vec{k} - A\vec{h}|| +
+\varepsilon'||A||||\vec{h}|| + ||B||||\vec{k} - A\vec{h}||
 \]
 
 Now we factor and apply the bounds on $\varepsilon'$:
 \[
-\varepsilon' ||\+\pvec{k} - A\pvec{h}\+|| +
-\varepsilon'||A||\+||\+\pvec{h}\+|| + ||B||\+||\+\pvec{k} - A\pvec{h}\+|| \leq
-(||B|| + 1) ||\+\pvec{k} - A\pvec{h}\+|| + ||A||\+||\+\pvec{h}\+||\varepsilon'
+\varepsilon' ||\vec{k} - A\vec{h}|| +
+\varepsilon'||A||||\vec{h}|| + ||B||||\vec{k} - A\vec{h}|| \leq
+(||B|| + 1) ||\vec{k} - A\vec{h}|| + ||A||||\vec{h}||\varepsilon'
 \]
 
-Note that $||\+\pvec{k} - A\pvec{h}\+|| = ||\+\pvec{f}(\pvec{p} + \pvec{h}) -
-\pvec{f}(\pvec{p}) - A\pvec{h}\+|| < \varepsilon ||\+\pvec{h}\+||$. From this we
+Note that $||\vec{k} - A\vec{h}|| = ||\vec{f}(\vec{p} + \vec{h}) -
+\vec{f}(\vec{p}) - A\vec{h}|| < \varepsilon ||\vec{h}||$. From this we
 get:
 
 \[
-(||B|| + 1) ||\+\pvec{k} - A\pvec{h}\+|| + ||A||\+||\+\pvec{h}\+||\varepsilon'
-\leq (||B|| + 1) \varepsilon ||\+\pvec{h}\+|| + ||A|| \+ ||\+\pvec{h}\+||
+(||B|| + 1) ||\vec{k} - A\vec{h}|| + ||A||||\vec{h}||\varepsilon'
+\leq (||B|| + 1) \varepsilon ||\vec{h}|| + ||A||  ||\vec{h}||
 \varepsilon'
 \]
 
 If we take $\varepsilon = \varepsilon'$, we get:
 
 \[
-(||B|| + 1) \varepsilon ||\+\pvec{h}\+|| + ||A|| \+ ||\+\pvec{h}\+||
-\varepsilon' \leq (||A|| + ||B|| + 1) \varepsilon ||\+\pvec{h}\+||
+(||B|| + 1) \varepsilon ||\vec{h}|| + ||A||  ||\vec{h}||
+\varepsilon' \leq (||A|| + ||B|| + 1) \varepsilon ||\vec{h}||
 \]
 
 Note that $(||A|| + ||B|| + 1) \varepsilon$ can be arbitarily small because it
@@ -2228,53 +2228,53 @@ is a constant times an arbitarily small value. If we call this value
 $\varepsilon_2$, we get that
 
 \[
-||\+(\pvec{g} \circ \pvec{f})(\pvec{p} + \pvec{h}) - (\pvec{g} \circ
-\pvec{f})(\pvec{p}) - (BA) \pvec{h}\+||
-< \varepsilon_2 ||\+\pvec{h}\+||
+||(\vec{g} \circ \vec{f})(\vec{p} + \vec{h}) - (\vec{g} \circ
+\vec{f})(\vec{p}) - (BA) \vec{h}||
+< \varepsilon_2 ||\vec{h}||
 \]
 
 \subsubsection{Special Cases}
 
-Consider the following ``chain'': $\varmathbb{R}^d_{\pvec{x}} \supseteq D
-\overset{\pvec{f}}{\to} \varmathbb{R}^e_{\pvec{y}} \supseteq E \cap \pvec{f}(D)
-\overset{\pvec{g}}{\to} \varmathbb{R}^k_{\pvec{z}}$. The special case we're
-interested in is if $d = 1$ and $k = 1$. In this case, the original $\pvec{x}$-axis can be
-thought of as the time axis, and $\pvec{f}$ can be thought of as a path
-$\pvec{\gamma}: I \to \varmathbb{R}^e$ where $D = I$, an interval, $I \subseteq
-\varmathbb{R}$. The difference between this ans the general chain rule is that
+Consider the following ``chain'': $\mathbb{R}^d_{\vec{x}} \supseteq D
+\overset{\vec{f}}{\to} \mathbb{R}^e_{\vec{y}} \supseteq E \cap \vec{f}(D)
+\overset{\vec{g}}{\to} \mathbb{R}^k_{\vec{z}}$. The special case we're
+interested in is if $d = 1$ and $k = 1$. In this case, the original $\vec{x}$-axis can be
+thought of as the time axis, and $\vec{f}$ can be thought of as a path
+$\vec{\gamma}: I \to \mathbb{R}^e$ where $D = I$, an interval, $I \subseteq
+\mathbb{R}$. The difference between this ans the general chain rule is that
 the domain is connected (because the domain is time). This way, the ``chain''
 reduces to: 
-$$\varmathbb{R} \supseteq D \overset{(g \circ
-\pvec{\gamma})}{\longrightarrow} \varmathbb{R}$$
+$$\mathbb{R} \supseteq D \overset{(g \circ
+\vec{\gamma})}{\longrightarrow} \mathbb{R}$$
 
 Therefore the derivative is an ordinary single-calculus derivative. However, to
 calculate the derivative with the chain rule, we have to do the following;
 
-$$(g \circ \pvec{\gamma})'(t) = Dg(\pvec{\gamma}(t))D\pvec{\gamma}(t)$$
+$$(g \circ \vec{\gamma})'(t) = Dg(\vec{\gamma}(t))D\vec{\gamma}(t)$$
 
 This can be written as:
 
-$$(g \circ \pvec{\gamma})'(t) = \gradient g(\pvec{\gamma}(t))^T \pvec{\gamma}'(t) =
-\boxed{\gradient g(\pvec{\gamma}(t))\cdot\pvec{\gamma}'(t)}$$
+$$(g \circ \vec{\gamma})'(t) = \gradient g(\vec{\gamma}(t))^T \vec{\gamma}'(t) =
+\boxed{\gradient g(\vec{\gamma}(t))\cdot\vec{\gamma}'(t)}$$
 
-Here, $\pvec{\gamma}'(t)$ is known as the \textbf{velocity vector} of the curve,
+Here, $\vec{\gamma}'(t)$ is known as the \textbf{velocity vector} of the curve,
 which is the column matrix (vector) of the derivatives of the component
-functions of $\pvec{\gamma}$ evaluated at $t$. It turns out that this value is
+functions of $\vec{\gamma}$ evaluated at $t$. It turns out that this value is
 also equal to:
 
-$$\pvec{\gamma}'(t) = \lim_{h \to 0} \frac{\pvec{\gamma}(t + h) -
-\pvec{\gamma}(t)}{h}$$
+$$\vec{\gamma}'(t) = \lim_{h \to 0} \frac{\vec{\gamma}(t + h) -
+\vec{\gamma}(t)}{h}$$
 
 This is because all the operations used here distributes across components. This
 is the physics-y interpretation of the derivative. The magnitude of this vector
 is the instataneous speed of the curve.
 
-$$ ||\+\pvec{\gamma}'(t)\+|| = \left|\left|\+\lim_{h \to 0} \frac{\pvec{\gamma}(t + h) -
-\pvec{\gamma}(t)}{h}\+\right|\right| = \lim_{h \to 0^+} \frac{||\+\pvec{\gamma}(t + h) -
-\pvec{\gamma}(t)\+||}{h}$$
+$$ ||\vec{\gamma}'(t)|| = \left|\left|\lim_{h \to 0} \frac{\vec{\gamma}(t + h) -
+\vec{\gamma}(t)}{h}\right|\right| = \lim_{h \to 0^+} \frac{||\vec{\gamma}(t + h) -
+\vec{\gamma}(t)||}{h}$$
 
 However, this physical interpretation is also the same as the Jacobian
-Derivative of $\pvec{\gamma}$. But since there is only one input variable, there
+Derivative of $\vec{\gamma}$. But since there is only one input variable, there
 is only one partial to compute, $\partial_t \gamma_1$, otherwise known as
 $\gamma_1'$. Therefore, the Jacobian Derivative becomes a column vector of the
 derivatives of the component functions.
@@ -2282,7 +2282,7 @@ derivatives of the component functions.
 \subsection{Rolle's Theorem}
 \subsubsection{Theorem}
 If $f$ is differentiable on $(a - r, b + r)$ where $r > 0$ and $a < b$, and
-$f(a) = f(b)$. Then $\exists \+ c \in (a, b)$ such that $f'(c) = 0$.
+$f(a) = f(b)$. Then $\exists  c \in (a, b)$ such that $f'(c) = 0$.
 
 \subsubsection{Proof}
 
@@ -2303,7 +2303,7 @@ Therefore, $f'(c) = 0$. A similar argument can be made if $f(p) < f(a}$
 
 \subsection{Mean Value Theorem}
 \subsubsection{Review of the Single Variable Theorem}
-If $f : [a, b] \to \varmathbb{R}$ is differentiable on $(a - r, b + r)$ where $r
+If $f : [a, b] \to \mathbb{R}$ is differentiable on $(a - r, b + r)$ where $r
 > 0$ and continuous
 on $[a, b]$, then $\Delta f = f(b) - f(a) = f'(c)(b - a)$ where $c \in (a, b)$.
 
@@ -2312,110 +2312,110 @@ on $[a, b]$, then $\Delta f = f(b) - f(a) = f'(c)(b - a)$ where $c \in (a, b)$.
 For the given function $f$, let us create a function $l: y = f(a) + \frac{f(b) -
 f(a)}{b - a} (x - a)$, or a secant line connecting $a$ to $b$. Let $g(x) = f(x)
 - l(x)$. Then, $g'(x) = f'(x) - \frac{f(b) - f(a)}{b - a}$. Note also $g(a) = 0
-= g(b)$. Then by Rolle's Theorem, $\exists \+ c \in (a, b)$ such that $g'(c) = 0$.
+= g(b)$. Then by Rolle's Theorem, $\exists  c \in (a, b)$ such that $g'(c) = 0$.
 This implies that at $c$, $f(c)$ has the same derivative as $l(c)$, or
 $\frac{f(b) - f(a)}{b - a}$.
 
 \subsubsection{Theorem}
-Exists $f: D \subseteq \varmathbb{R}^d \to \varmathbb{R}$, $\pvec{p}, \pvec{q} \in
-D^\circ$, $[\pvec{p}, \pvec{q}] \subseteq D^\circ$ \footnote{This represents a
-\textbf{closed segment} with the end points of $\pvec{p}$ and $\pvec{q}$, which can be
-expressed as $[\pvec{p}, \pvec{q}] = \{(1 - t)\pvec{p} + t \pvec{q} \+|\+ 0 \leq t
-\leq 1\}$. An \textbf{open segment} is written as $(\pvec{p}, \pvec{q}) = \{(1 -
-t) \pvec{p} + t \pvec{q} \+|\+ 0 < t < 1\}$}. Also assume that $f$ is
-differentiable on $D$. Then $\exists\+\pvec{r} \in (\pvec{p}, \pvec{q})$ such that:
+Exists $f: D \subseteq \mathbb{R}^d \to \mathbb{R}$, $\vec{p}, \vec{q} \in
+D^\circ$, $[\vec{p}, \vec{q}] \subseteq D^\circ$ \footnote{This represents a
+\textbf{closed segment} with the end points of $\vec{p}$ and $\vec{q}$, which can be
+expressed as $[\vec{p}, \vec{q}] = \{(1 - t)\vec{p} + t \vec{q} | 0 \leq t
+\leq 1\}$. An \textbf{open segment} is written as $(\vec{p}, \vec{q}) = \{(1 -
+t) \vec{p} + t \vec{q} | 0 < t < 1\}$}. Also assume that $f$ is
+differentiable on $D$. Then $\exists\vec{r} \in (\vec{p}, \vec{q})$ such that:
 
-$$\boxed{f(\pvec{q}) - f(\pvec{p}) = \gradient f(\pvec{r}) \cdot (\pvec{q} - \pvec{p})}$$
+$$\boxed{f(\vec{q}) - f(\vec{p}) = \gradient f(\vec{r}) \cdot (\vec{q} - \vec{p})}$$
 
 \subsubsection{Proof}
 
-Let $g(t) = f((1 - t)\pvec{p} - t\pvec{q})$, where $-\varepsilon \leq t \leq 1 +
-\varepsilon$ for some $\varepsilon > 0$. We can do this because $\pvec{p},
-\pvec{q} \in D^\circ$. Now we can try to take the derivative of $g(t)$. To do
-this we use the chain rule: $g'(t) = \gradient f((1 - t) \pvec{p} + t\pvec{q})
-\cdot (\pvec{q} - \pvec{p})$. We now apply the Mean Value Theorem to $g$, we know
-that $\exists \+ c \in (0, 1)$ such that $g'(c) = \frac{g(1) - g(0)}}1 - 0 =
-f(\pvec{q}) - f(\pvec{p})$. Now we have:
+Let $g(t) = f((1 - t)\vec{p} - t\vec{q})$, where $-\varepsilon \leq t \leq 1 +
+\varepsilon$ for some $\varepsilon > 0$. We can do this because $\vec{p},
+\vec{q} \in D^\circ$. Now we can try to take the derivative of $g(t)$. To do
+this we use the chain rule: $g'(t) = \gradient f((1 - t) \vec{p} + t\vec{q})
+\cdot (\vec{q} - \vec{p})$. We now apply the Mean Value Theorem to $g$, we know
+that $\exists  c \in (0, 1)$ such that $g'(c) = \frac{g(1) - g(0)}}1 - 0 =
+f(\vec{q}) - f(\vec{p})$. Now we have:
 
-$$f(\pvec{q}) - f(\pvec{p}) = \gradient f((1 - c) \pvec{p} + c\pvec{q}) \cdot
-(\pvec{q} - vec{p})$$
+$$f(\vec{q}) - f(\vec{p}) = \gradient f((1 - c) \vec{p} + c\vec{q}) \cdot
+(\vec{q} - vec{p})$$
 
-Now we simply call $(1 - c)\pvec{p} + c\pvec{q}$ $\pvec{r}$, and we're done.
+Now we simply call $(1 - c)\vec{p} + c\vec{q}$ $\vec{r}$, and we're done.
 
 \subsubsection{For Vector Valued Functions}
 
 Sadly there is no generalization of the MVT to vector valued functions. If we
-apply the MVT to each of its component functions, we see that for each $\pvec{r}$
+apply the MVT to each of its component functions, we see that for each $\vec{r}$
 may be different. Therefore there is no easy, consistent generalization.
 
 In order to actually generalize this, we will need to make the statement weaker.
 
-We can at least provide a bound for $|f(\pvec{p}) - f(\pvec{q})|$. By
+We can at least provide a bound for $|f(\vec{p}) - f(\vec{q})|$. By
 Cauchy-Schwarz inequality, we get:
 
-$$|f(\pvec{q}) - f(\pvec{p})| \leq ||\+\gradient f(\pvec{r})\+||\+ ||\+\pvec{q} -
-\pvec{p}\+||$$
+$$|f(\vec{q}) - f(\vec{p})| \leq ||\gradient f(\vec{r})|| ||\vec{q} -
+\vec{p}||$$
 
-for some $\pvec{r} \in (\pvec{p}, \pvec{q})$. However, we can write the most
+for some $\vec{r} \in (\vec{p}, \vec{q})$. However, we can write the most
 general case as:
 
-$$\boxed{|f(\pvec{q}) - f(\pvec{p})| \leq \left(\sup_{\pvec{x} \in [\pvec{p} , \pvec{q}]}
-||\+\gradient f(\pvec{x})\+||\right) ||\+\pvec{q} - \pvec{p}\+||}$$
+$$\boxed{|f(\vec{q}) - f(\vec{p})| \leq \left(\sup_{\vec{x} \in [\vec{p} , \vec{q}]}
+||\gradient f(\vec{x})||\right) ||\vec{q} - \vec{p}||}$$
 
 This is known as the \textbf{Mean Value Inequality}. And as a corollary, we can
-take any $B$ such that if $ ||\+\gradient f\+|| \leq B$ on $[\pvec{p}, \pvec{q}]$
+take any $B$ such that if $ ||\gradient f|| \leq B$ on $[\vec{p}, \vec{q}]$
 then:
 
-$$|f(\pvec{q}) - f(\pvec{p})| \leq B ||\+\pvec{q} - \pvec{p}\+||$$
+$$|f(\vec{q}) - f(\vec{p})| \leq B ||\vec{q} - \vec{p}||$$
 
-To generalize the Mean Value Inequality to vector valued function, let $\pvec{f}:
-D \subseteq \varmathbb{R}^d \to \varmathbb{R}^e$, and $[\pvec{p}, \pvec{q}]
-\subseteq D^\circ$. If $\pvec{f}$ is $C^1$ \footnote{For vector valued function,
-$C^n$ over $U$ means that every $\frac{\partial^n f_i}{(\partial x_j)^n}(\pvec{x})$ is
-continuous for all $\pvec{x} \in U$, $1 \leq i \leq e$ and $q \leq j \leq d$} in
-some open set $U$ such that $[\pvec{p}, \pvec{q}] \subseteq U \subseteq D^\circ$.
+To generalize the Mean Value Inequality to vector valued function, let $\vec{f}:
+D \subseteq \mathbb{R}^d \to \mathbb{R}^e$, and $[\vec{p}, \vec{q}]
+\subseteq D^\circ$. If $\vec{f}$ is $C^1$ \footnote{For vector valued function,
+$C^n$ over $U$ means that every $\frac{\partial^n f_i}{(\partial x_j)^n}(\vec{x})$ is
+continuous for all $\vec{x} \in U$, $1 \leq i \leq e$ and $q \leq j \leq d$} in
+some open set $U$ such that $[\vec{p}, \vec{q}] \subseteq U \subseteq D^\circ$.
 
-$$\boxed{\therefore ||\+\pvec{f}(\pvec{q}) - \pvec{f}(\pvec{p})\+|| \leq
-\left(\max_{[\pvec{p}, \pvec{q}]} ||\+D\pvec{f}\+||\right) ||\+\pvec{q} -
-\pvec{p}\+||}$$
+$$\boxed{\therefore ||\vec{f}(\vec{q}) - \vec{f}(\vec{p})|| \leq
+\left(\max_{[\vec{p}, \vec{q}]} ||D\vec{f}||\right) ||\vec{q} -
+\vec{p}||}$$
 
-Let $M := \max_{[\pvec{p}, \pvec{q}]} ||\+D\pvec{f}\+||$. Fix $\varepsilon > 0$.
-Let $D = \{t \in [0, 1] \+|\+ ||\+\pvec{f}(\pvec{q}_t) - \pvec{f}(\pvec{p})\+|| \leq
-(M + \varepsilon) ||\+\pvec{q}_t = \pvec{p}\+||\}$ where $\pvec{q}_:= (1 -
-t)\pvec{p} + t\pvec{q}$. Note that $\pvec{q}_0 = \pvec{p}$ and $\pvec{q}_1 =
-\pvec{q}$.
+Let $M := \max_{[\vec{p}, \vec{q}]} ||D\vec{f}||$. Fix $\varepsilon > 0$.
+Let $D = \{t \in [0, 1] | ||\vec{f}(\vec{q}_t) - \vec{f}(\vec{p})|| \leq
+(M + \varepsilon) ||\vec{q}_t = \vec{p}||\}$ where $\vec{q}_:= (1 -
+t)\vec{p} + t\vec{q}$. Note that $\vec{q}_0 = \vec{p}$ and $\vec{q}_1 =
+\vec{q}$.
 
 Note that $0 \in S$, which means that $S \neq \emptyset$. Also note that $S \leq
 1$ because $t \in [0, 1]$. Therefore $\sup S$ exists and finite (bounded by $[0,
-1]$), let us call this value $T$. This means that $\exists\+ t_n \in S$ such
-that $t_n \to T^-$. Therefore, $\forall n, ||\+\pvec{f}(\pvec{q}_{t_n}) -
-\vfofpv\+|| \leq (M + \varepsilon) ||\+\pvec{q}_{t_n} - \pvec{p}\+||$. Now take the
+1]$), let us call this value $T$. This means that $\exists t_n \in S$ such
+that $t_n \to T^-$. Therefore, $\forall n, ||\vec{f}(\vec{q}_{t_n}) -
+\vfofpv|| \leq (M + \varepsilon) ||\vec{q}_{t_n} - \vec{p}||$. Now take the
 limit as $n \to \infty$ and we get:
 
-$$ ||\+\pvec{f}(\pvec{q}_T) - \vfofpv\+|| \leq (M + \varepsilon) ||\+\pvec{q}_T
-- \pvec{p}\+||$$
+$$ ||\vec{f}(\vec{q}_T) - \vfofpv|| \leq (M + \varepsilon) ||\vec{q}_T
+- \vec{p}||$$
 
 This means that $T \in S$ as well. Assume for contradiction that $T < 1$. It
-will follow that $T = 1$. Because $\pvec{q}_1 = \pvec{q}$, it follows that:
+will follow that $T = 1$. Because $\vec{q}_1 = \vec{q}$, it follows that:
 
-$$ ||\+\pvec{f}(\pvec{q}) - \vfofpv\+|| < (M + \varepsilon) ||\+\pvec{q} - \pvec{p}\+||$$
+$$ ||\vec{f}(\vec{q}) - \vfofpv|| < (M + \varepsilon) ||\vec{q} - \vec{p}||$$
 
 Now take the limit as $\varepsilon \to 0^+$. We can then conclude:
 
-$$ ||\+\pvec{f}(\pvec{q}) - \vfofpv\+|| \leq M ||\+\pvec{q} - \pvec{p}\+||$$
+$$ ||\vec{f}(\vec{q}) - \vfofpv|| \leq M ||\vec{q} - \vec{p}||$$
 
 Say $T < 1$. Choose $\delta > 0$ such that $\tau = T + \delta \leq 1$. We now
 seek to show:
 
-$$ ||\+\pvec{f}(\pvec{q}_{\tau}) - \pvec{f}(\pvec{p})\+|| \overset{?}{\leq} (M +
-\varepsilon) ||\+\pvec{q}_{\tau} - \pvec{p}\+||$$
+$$ ||\vec{f}(\vec{q}_{\tau}) - \vec{f}(\vec{p})|| \overset{?}{\leq} (M +
+\varepsilon) ||\vec{q}_{\tau} - \vec{p}||$$
 
 We first add a bunch of terms to the left hand side and use the triangle
 inequality.
 
-$$ ||\+\pvec{f}(\pvec{q}_{\tau}) - \pvec{f}(\pvec{p})\+|| =
-||\+\pvec{f}(\pvec{q}_{\tau}) - \pvec{f}(\pvec{q}_T) - A_T(\pvec{q}_{\tau} -
-\pvec{q}_T)\+||$$
+$$ ||\vec{f}(\vec{q}_{\tau}) - \vec{f}(\vec{p})|| =
+||\vec{f}(\vec{q}_{\tau}) - \vec{f}(\vec{q}_T) - A_T(\vec{q}_{\tau} -
+\vec{q}_T)||$$
 
 
 \subsection{Implicit Function Theorem}
@@ -2444,72 +2444,72 @@ In addition, it follows that f is also $C^1$, and $\vec{\nabla}f = \frac{-1}{\pa
 
 \subsubsection{Generalization}
 
-$F(\pvec{x}, y) = 0$ is equivalent to $y = f(\pvec{x})$ locally in a neighborhood
-of some solution point, $(\pvec{a}, \alpha)$ if $F$ is $C^1$, $F(\pvec{a}, \alpha) = 0$,
-$(\pvec{a}, \alpha) \in D_F^\circ \subseteq \varmathbb{R}^{d + 1}$ and
-$\partial_y F(\pvec{a}, \alpha)$
+$F(\vec{x}, y) = 0$ is equivalent to $y = f(\vec{x})$ locally in a neighborhood
+of some solution point, $(\vec{a}, \alpha)$ if $F$ is $C^1$, $F(\vec{a}, \alpha) = 0$,
+$(\vec{a}, \alpha) \in D_F^\circ \subseteq \mathbb{R}^{d + 1}$ and
+$\partial_y F(\vec{a}, \alpha)$
 
-However, if $\pvec{F}$ is a vector-valued function, we also have this type of
-equivalency ($\pvec{F}(\pvec{x}, \pvec{y}) = \pvec{0}$ is equivalent to $\pvec{y} =
-\pvec{f}(\pvec{x})$ for $\pvec{x} \in U \subseteq \varmathbb{R}^d$ and $\pvec{y} \in
-V \subseteq \varmathbb{R}^e$) locally around some solution point $\pvec{F}(\pvec{a}, \pvec{b})
-= \pvec{0} \in \varmathbb{R}^e$ if $\pvec{F}$ is $C^1$ on $D_{\pvec{F}}^\circ$\footnote{A vector valued
-function is $C^1$ if all of its component functions are $C^1$} and $(\pvec{a},
-\pvec{b}) \in D_{\pvec{F}}^\circ \subseteq \varmathbb{R}^{d + e}$ and
-$\partial_{\pvec{y}} \pvec{F}(\pvec{a}, \pvec{b}) \neq 0$ where $\partial_{\pvec{y}}
-\pvec{F} = \det D_{\pvec{y}} \pvec{F}$ where $D_{\pvec{y}}$ (known as the
+However, if $\vec{F}$ is a vector-valued function, we also have this type of
+equivalency ($\vec{F}(\vec{x}, \vec{y}) = \vec{0}$ is equivalent to $\vec{y} =
+\vec{f}(\vec{x})$ for $\vec{x} \in U \subseteq \mathbb{R}^d$ and $\vec{y} \in
+V \subseteq \mathbb{R}^e$) locally around some solution point $\vec{F}(\vec{a}, \vec{b})
+= \vec{0} \in \mathbb{R}^e$ if $\vec{F}$ is $C^1$ on $D_{\vec{F}}^\circ$\footnote{A vector valued
+function is $C^1$ if all of its component functions are $C^1$} and $(\vec{a},
+\vec{b}) \in D_{\vec{F}}^\circ \subseteq \mathbb{R}^{d + e}$ and
+$\partial_{\vec{y}} \vec{F}(\vec{a}, \vec{b}) \neq 0$ where $\partial_{\vec{y}}
+\vec{F} = \det D_{\vec{y}} \vec{F}$ where $D_{\vec{y}}$ (known as the
 \textbf{partial Jacobian}) can be described as:
 
-$$D_{\pvec{y}} F = \left[\frac{\partial F_i}{\partial y_j}\right]_{\substack{1 \leq i \leq
+$$D_{\vec{y}} F = \left[\frac{\partial F_i}{\partial y_j}\right]_{\substack{1 \leq i \leq
 e \\ 1 \leq j \leq e}}$$
 
-Similarly, we know that if all the conditions are met, we know that $\pvec{f}$ is
+Similarly, we know that if all the conditions are met, we know that $\vec{f}$ is
 $C^1$. We also have a semi-explicit formula for the Jacobian of $f$:
 
-$$\boxed{D\pvec{f} = -(D_{\pvec{y}} \pvec{F})^{-1} D_{\pvec{x}} \pvec{F}}$$
+$$\boxed{D\vec{f} = -(D_{\vec{y}} \vec{F})^{-1} D_{\vec{x}} \vec{F}}$$
 
 By
-definition we know $\pvec{F}(\pvec{x}, \pvec{f}(\pvec{x})) \equiv \pvec{0}$ for all
-$\pvec{x} \in U$. Now we can differentiate:
+definition we know $\vec{F}(\vec{x}, \vec{f}(\vec{x})) \equiv \vec{0}$ for all
+$\vec{x} \in U$. Now we can differentiate:
 
-$$D_{\pvec{x}} \pvec{F}(\pvec{x}, \pvec{f}(\pvec{x})) \equiv D_{\pvec{x}} \+ \pvec{0} = O
-\in \varmathbb{R}^{e \times d}$$
+$$D_{\vec{x}} \vec{F}(\vec{x}, \vec{f}(\vec{x})) \equiv D_{\vec{x}}  \vec{0} = O
+\in \mathbb{R}^{e \times d}$$
 
-But we can rewrite the left hand side as $D_{\pvec{x}} \+ [\pvec{F} \circ (Id
-\times \pvec{f})]$, here we can apply the chain rule:
+But we can rewrite the left hand side as $D_{\vec{x}}  [\vec{F} \circ (Id
+\times \vec{f})]$, here we can apply the chain rule:
 
-$$(D_{\pvec{x}} \pvec{F})(\pvec{x}, \pvec{f}(\pvec{x})) \+ (D_{\pvec{x}}(Id \times
-\pvec{f})) (\pvec{x}) = O$$
+$$(D_{\vec{x}} \vec{F})(\vec{x}, \vec{f}(\vec{x}))  (D_{\vec{x}}(Id \times
+\vec{f})) (\vec{x}) = O$$
 
-We can express $(Id \times \pvec{f})(\pvec{x})$ as $(\pvec{x}, \pvec{f}(\pvec{x}))$,
+We can express $(Id \times \vec{f})(\vec{x})$ as $(\vec{x}, \vec{f}(\vec{x}))$,
 which can be written as
 
 $$\left[\begin{array}{c}
 x_1 \\
 \vdots \\
 x_d \\
-f_1 (\pvec{x})\\
+f_1 (\vec{x})\\
 \vdots \\
-f_e (\pvec{x})
+f_e (\vec{x})
 \end{array}\right] =
 \left[\begin{array}{c}
-\pvec{x}\\
-\pvec{f}(\pvec{x})
+\vec{x}\\
+\vec{f}(\vec{x})
 \end{array}\right]$$
 
 Since the Jacobian Operator works row by row, we can distribute it
 
-$$D_{\pvec{x}} \left[\begin{array}{c}
-\pvec{x}\\
-\pvec{f}(\pvec{x})
+$$D_{\vec{x}} \left[\begin{array}{c}
+\vec{x}\\
+\vec{f}(\vec{x})
 \end{array}\right] =
 \left[\begin{array}{c}
-D_{\pvec{x}} \pvec{x} \\
-D_{\pvec{x}} \pvec{f}(\pvec{x})
+D_{\vec{x}} \vec{x} \\
+D_{\vec{x}} \vec{f}(\vec{x})
 \end{array}\right] =
 \left[\begin{array}{c}
 I_d \\
-D \pvec{f}(\pvec{x})
+D \vec{f}(\vec{x})
 \end{array}\right]$$
 %}}}
 %{{{ TMP
@@ -2533,7 +2533,7 @@ G&: p'x + q'y + r'z = -(a'u + b'v) \\
 H&: p''x + q''y + r''z = -(a''u + b''v)
 \end{align*}
 
-Here we can rewrite this as the matrix equation $A\pvec{x} = \pvec{b}$ where
+Here we can rewrite this as the matrix equation $A\vec{x} = \vec{b}$ where
 
 \[
 A = 
@@ -2543,14 +2543,14 @@ p' & q' & r'\\
 p'' & q'' & r''
 \end{array}\right]
 \hfill
-\pvec{x} =
+\vec{x} =
 \left[\begin{array}{c}
 x\\
 y\\
 z\\
 \end{array}\right]
 \hfill
-\pvec{b} = 
+\vec{b} = 
 \left[\begin{array}{c}
 -(au + bv) \\
 -(a'u + b'v) \\
@@ -2590,9 +2590,9 @@ z = h(u, v)
 \end{cases}
 \]
 
-And we call the vector function $(f, g, h)$ $\pvec{f}$, we also know that $f, g,
+And we call the vector function $(f, g, h)$ $\vec{f}$, we also know that $f, g,
 h$ are $C^1$ on their domain. We also have the semi-explicit representation of
-$D\pvec{f}$:
+$D\vec{f}$:
 
 \[
 D\left[\begin{array}{c}
@@ -2609,7 +2609,7 @@ h \\
 \]
 
 To prove this we use an inductive argument, the base case is 1 equation one
-variable ($F(\pvec{x}, y) = 0$), which is done. Suppose that we can solve 2
+variable ($F(\vec{x}, y) = 0$), which is done. Suppose that we can solve 2
 equations in 2 unknowns locally and with $C^1$ solutions. We seek to prove that
 we can solve 3 equations in 3 unknows.
 
@@ -2697,92 +2697,92 @@ and $v$.
 
 \subsubsection{FORM}
 
-$$D \pvec{f} = -\{D_{\pvec{x}} \pvec{F}\}^{-1} (D_{\pvec{u}} \pvec{F})$$
+$$D \vec{f} = -\{D_{\vec{x}} \vec{F}\}^{-1} (D_{\vec{u}} \vec{F})$$
 
-Let $\pvec{G}(\pvec{u}) = \pvec{F}(\pvec{u}, \pvec{f}(\pvec{u})) \equiv \pvec{0}$
+Let $\vec{G}(\vec{u}) = \vec{F}(\vec{u}, \vec{f}(\vec{u})) \equiv \vec{0}$
 
 Now we can Jacobian both sides
-$$D\pvec{G}(\pvec{u}) \equiv D\pvec{0} = O$$
+$$D\vec{G}(\vec{u}) \equiv D\vec{0} = O$$
 
-Note that $\pvec{G} = \pvec{F} \circ (Id \times \pvec{f})$. Now we can apply the
+Note that $\vec{G} = \vec{F} \circ (Id \times \vec{f})$. Now we can apply the
 chain rule:
 
 \begin{align*}
-D\pvec{G} &= D(\pvec{F} \circ (Id \times \pvec{f}))\\
-&= \{(D\pvec{F}) \circ (Id \times \pvec{f})\} D(Id \times \pvec{f})\\
+D\vec{G} &= D(\vec{F} \circ (Id \times \vec{f}))\\
+&= \{(D\vec{F}) \circ (Id \times \vec{f})\} D(Id \times \vec{f})\\
 \end{align*}
 
 Now we try to write these out in a type of ``block decomposition.'' Let us start
-with $D(Id \times \pvec{f})$
+with $D(Id \times \vec{f})$
 
 \[
-D(Id \times \pvec{f})(\pvec{u}) = \left[\begin{array}{c}
-D_{\pvec{u}}\pvec{u} \\
-(D\pvec{f})(\pvec{u}) \\
+D(Id \times \vec{f})(\vec{u}) = \left[\begin{array}{c}
+D_{\vec{u}}\vec{u} \\
+(D\vec{f})(\vec{u}) \\
 \end{array}\right]
 = \left[\begin{array}{c}
 D(Id) \\
-D\pvec{f}\\
-\end{array}\right](\pvec{u})
+D\vec{f}\\
+\end{array}\right](\vec{u})
 = \left[\begin{array}{c}
 I \\
-D\pvec{f}\\
-\end{array}\right] (\pvec{u})
+D\vec{f}\\
+\end{array}\right] (\vec{u})
 =  \left[\begin{array}{c}
 I \\
-D\pvec{f} (\pvec{u})\\
+D\vec{f} (\vec{u})\\
 \end{array}\right]
 \]
 
-We also have a block decomposition of $D\pvec{F}$. We know:
+We also have a block decomposition of $D\vec{F}$. We know:
 
 \[
-\pvec{F}(\pvec{u}, \pvec{x}) = \left[\begin{array}{c}
-F_1(\pvec{u}, \pvec{x}) \\
-F_2(\pvec{u}, \pvec{x}) \\
+\vec{F}(\vec{u}, \vec{x}) = \left[\begin{array}{c}
+F_1(\vec{u}, \vec{x}) \\
+F_2(\vec{u}, \vec{x}) \\
 \vdots \\
-F_e(\pvec{u}, \pvec{x}) \\
+F_e(\vec{u}, \vec{x}) \\
 \end{array}\right]
 \]
 
 Therefore we know:
 
 \begin{align*}
-D\pvec{F} &= \left[\begin{array}{ccc|ccc}
+D\vec{F} &= \left[\begin{array}{ccc|ccc}
 \partial_{u_1} F_1 & \dots & \partial_{u_d} F_1 & \partial_{x_1}
 F_1  & \dots & \partial_{x_e} F_1\\
 \vdots & & \vdots & \vdots & & \vdots \\
 \partial_{u_1} F_2 & \dots & \partial_{u_d} F_e & \partial_{x_1} F_e
 & \dots & \partial_{x_e} F_e\\
 \end{array}\right] \\
-&= [D_{\pvec{u}} \pvec{F} \+|\+ D_{\pvec{x}} \pvec{F}]
+&= [D_{\vec{u}} \vec{F} | D_{\vec{x}} \vec{F}]
 \end{align*}
 
 Now we can bring everything back together and we have
 
 \begin{align*}
-D\pvec{G}(\pvec{u}) &= [D_{\pvec{u}} \pvec{F} \circ (Id \times \pvec{f}) \+|\+
-D_{\pvec{x}} \pvec{F} \circ (Id \times \pvec{f})]\left[\begin{array}{c}
+D\vec{G}(\vec{u}) &= [D_{\vec{u}} \vec{F} \circ (Id \times \vec{f}) |
+D_{\vec{x}} \vec{F} \circ (Id \times \vec{f})]\left[\begin{array}{c}
 I \\
-D\pvec{f} (\pvec{u})\\
+D\vec{f} (\vec{u})\\
 \end{array}\right]\\
-&= D_{\pvec{u}} \pvec{F} \circ (Id \times \pvec{f}) + (D_{\pvec{x}}
-\pvec{F} \circ (Id \times \pvec{f}))(D\pvec{f}) \equiv O
+&= D_{\vec{u}} \vec{F} \circ (Id \times \vec{f}) + (D_{\vec{x}}
+\vec{F} \circ (Id \times \vec{f}))(D\vec{f}) \equiv O
 \end{align*}
 
-Now if we isolate $D\pvec{f}$, we get
+Now if we isolate $D\vec{f}$, we get
 
 \[
-\boxed{D\pvec{f} = - (D\pvec{F})^{-1} (D_{\pvec{u}} F)}
+\boxed{D\vec{f} = - (D\vec{F})^{-1} (D_{\vec{u}} F)}
 \]
 
 We know that the inverse matrix exists because we assumed that
 
-$$\det D_{\pvec{x}} F \neq 0$$
+$$\det D_{\vec{x}} F \neq 0$$
 
 \subsection{Inverse Function Theorem}
 \subsubsection{Theorem}
-Suppose we have two sets of variables $\pvec{x}$ and $\pvec{u}$ where
+Suppose we have two sets of variables $\vec{x}$ and $\vec{u}$ where
 \[
 \begin{cases}
 x_1 &= f_1 (u_1, u_2, \dots, u_d) \\
@@ -2791,94 +2791,94 @@ x_2 &= f_2 (u_1, u_2, \dots, u_d) \\
 x_d &= f_d (u_1, u_2, \dots, u_d)\\
 \end{cases}
 \]
-or that $\pvec{x} = \pvec{f}(\pvec{u})$. Assume that we have a particular solution
-$\pvec{b} = \pvec{f}(\pvec{a})$ where $\pvec{f}$ is $C^1$ and $\pvec{a} \in (\dom
-\pvec{f})^\circ$ and $\partial_{\pvec{x}} \pvec{f}(\pvec{a}) \neq 0$. Then there exists an open set $U$ around $\pvec{a} \in
-\varmathbb{R}^d_{\pvec{u}}$ and there exists an open set $V$ around $\pvec{b} \in
-\varmathbb{R}^d_{\pvec{x}}$. There also exists a $C^1$ function $\pvec{g}: V \to
-U$ such that $\pvec{f} \circ \pvec{g} = Id_V$ and $\pvec{g} \circ
-\pvec{f}|_{\pvec{g}(V)} = Id_{\pvec{g}(V)}$. $\pvec{g}$ is known as the \textbf{local inverse}
-of $\pvec{f}$ near $\pvec{b}$.
+or that $\vec{x} = \vec{f}(\vec{u})$. Assume that we have a particular solution
+$\vec{b} = \vec{f}(\vec{a})$ where $\vec{f}$ is $C^1$ and $\vec{a} \in (\dom
+\vec{f})^\circ$ and $\partial_{\vec{x}} \vec{f}(\vec{a}) \neq 0$. Then there exists an open set $U$ around $\vec{a} \in
+\mathbb{R}^d_{\vec{u}}$ and there exists an open set $V$ around $\vec{b} \in
+\mathbb{R}^d_{\vec{x}}$. There also exists a $C^1$ function $\vec{g}: V \to
+U$ such that $\vec{f} \circ \vec{g} = Id_V$ and $\vec{g} \circ
+\vec{f}|_{\vec{g}(V)} = Id_{\vec{g}(V)}$. $\vec{g}$ is known as the \textbf{local inverse}
+of $\vec{f}$ near $\vec{b}$.
 
 \subsubsection{Random Fact}
 
-If $\pvec{f}$ is linear, it can be written as $\pvec{x} = \pvec{f}(\pvec{u}) =
-A\pvec{u}$, and its inverse function would be $\pvec{u} = A^{-1}\pvec{x}$ (if we
-assume that $\det A \neq 0$). However, note that $\pvec{f}(\pvec{u}) = A\pvec{u}$
-means that $D\pvec{f}(\pvec{u}) \equiv A$.
+If $\vec{f}$ is linear, it can be written as $\vec{x} = \vec{f}(\vec{u}) =
+A\vec{u}$, and its inverse function would be $\vec{u} = A^{-1}\vec{x}$ (if we
+assume that $\det A \neq 0$). However, note that $\vec{f}(\vec{u}) = A\vec{u}$
+means that $D\vec{f}(\vec{u}) \equiv A$.
 
-If we look at the component functions of $\pvec{f}$, we can see a list of
+If we look at the component functions of $\vec{f}$, we can see a list of
 partials
 \begin{align*}
-f_1(\pvec{u}) = A\pvec{u} \cdot \pvec{e}_1 &= a_{11}u_1 + a_{12}u_2 + \dots + a_{1d}u_d\\
-\partial_{u_1}f_1(\pvec{u}) &= a_{11}\\
-\partial_{u_2}f_1(\pvec{u}) &= a_{12}\\
+f_1(\vec{u}) = A\vec{u} \cdot \vec{e}_1 &= a_{11}u_1 + a_{12}u_2 + \dots + a_{1d}u_d\\
+\partial_{u_1}f_1(\vec{u}) &= a_{11}\\
+\partial_{u_2}f_1(\vec{u}) &= a_{12}\\
 \end{align*}
 \[
-\boxed{\partial_{u_j} f_i (\pvec{u}) = a_{ij}}
+\boxed{\partial_{u_j} f_i (\vec{u}) = a_{ij}}
 \]
-Therefore, $\det A = \partial \pvec{f}(\pvec{u}) \neq 0$ at $\pvec{a}$.
+Therefore, $\det A = \partial \vec{f}(\vec{u}) \neq 0$ at $\vec{a}$.
 
 \subsubsection{Proof}
 
-Let us create a function $\pvec{F} (\pvec{u}, \pvec{x}) := \pvec{x} -
-\pvec{f}(\pvec{u})$. By the Implicit Function Theorem, we know that this is
-equivalent to $\pvec{x} = \pvec{f}(\pvec{u})$. However, there is nothing in the
-Implicit Function Theorem that says we cannot solve for $\pvec{u}$. A couple of
-conditions must be met beforehand, however, including that $\pvec{F}$ has to be
-$C^1$, that $(\pvec{a}, \pvec{b}) \in (\dom \pvec{F})^\circ$, and that
-$\partial_{\pvec{u}} \pvec{F}(\pvec{a}, \pvec{b}) \neq 0$.
+Let us create a function $\vec{F} (\vec{u}, \vec{x}) := \vec{x} -
+\vec{f}(\vec{u})$. By the Implicit Function Theorem, we know that this is
+equivalent to $\vec{x} = \vec{f}(\vec{u})$. However, there is nothing in the
+Implicit Function Theorem that says we cannot solve for $\vec{u}$. A couple of
+conditions must be met beforehand, however, including that $\vec{F}$ has to be
+$C^1$, that $(\vec{a}, \vec{b}) \in (\dom \vec{F})^\circ$, and that
+$\partial_{\vec{u}} \vec{F}(\vec{a}, \vec{b}) \neq 0$.
 
-Let us start with the last condition first. $D_{\pvec{u}} \pvec{F} = D_{\pvec{u}}
-Id(\pvec{x}) - (D_{\pvec{u}}\pvec{f})(\pvec{u}) = -D\pvec{f}(\pvec{u})$
+Let us start with the last condition first. $D_{\vec{u}} \vec{F} = D_{\vec{u}}
+Id(\vec{x}) - (D_{\vec{u}}\vec{f})(\vec{u}) = -D\vec{f}(\vec{u})$
 
 \begin{align*}
-\partial_{\pvec{u}}\pvec{F} = \det D_{\pvec{u}}\pvec{F} &= \det (-D\pvec{f}(u))\\
+\partial_{\vec{u}}\vec{F} = \det D_{\vec{u}}\vec{F} &= \det (-D\vec{f}(u))\\
 &= (-1)^d \det
-D\pvec{f}(\pvec{u})\\
-&= (-1)^d \partial \pvec{f}(\pvec{u}) \neq 0 \text{ at } (\pvec{a}, vec{b})\\
+D\vec{f}(\vec{u})\\
+&= (-1)^d \partial \vec{f}(\vec{u}) \neq 0 \text{ at } (\vec{a}, vec{b})\\
 \end{align*}
 
-We also know that $\pvec{F}$ is $C^1$ by assumption. Now all we have to check is
-that $(\pvec{a}, \pvec{b}) \in (\dom \pvec{F})^\circ$. $\dom \pvec{F} = (\dom
-\pvec{f} \times \varmathbb{R}^d_{\pvec{x}}) \subseteq
-\varmathbb{R}^{2d}_{(\pvec{u}, \pvec{x})}$. So $\pvec{b}$ is not a problem. We also
-know that $\pvec{a} \in \dom \pvec{f}$ by assumption.
+We also know that $\vec{F}$ is $C^1$ by assumption. Now all we have to check is
+that $(\vec{a}, \vec{b}) \in (\dom \vec{F})^\circ$. $\dom \vec{F} = (\dom
+\vec{f} \times \mathbb{R}^d_{\vec{x}}) \subseteq
+\mathbb{R}^{2d}_{(\vec{u}, \vec{x})}$. So $\vec{b}$ is not a problem. We also
+know that $\vec{a} \in \dom \vec{f}$ by assumption.
 
-Therefore we conclude, using the Implicit Function Theorem that $\exists\+$ open
-sets $U, V$ around $\pvec{a}, \pvec{b}$ respectively, and $\exists\+ \pvec{g}:
-V\toU$ such that $\pvec{F}(\pvec{g}(\pvec{x}), \pvec{x}) \equiv \pvec{0}$ for all
-$\pvec{x} \in V$. This implies that $\pvec{x} - \pvec{f}(\pvec{g}(\pvec{x})) =
-\pvec{0}$. Therefore $\boxed{\pvec{f}(\pvec{g}(\pvec{x})) \equiv \pvec{x} \text{ for
-all } \pvec{x} \in V}$.
+Therefore we conclude, using the Implicit Function Theorem that $\exists$ open
+sets $U, V$ around $\vec{a}, \vec{b}$ respectively, and $\exists \vec{g}:
+V\toU$ such that $\vec{F}(\vec{g}(\vec{x}), \vec{x}) \equiv \vec{0}$ for all
+$\vec{x} \in V$. This implies that $\vec{x} - \vec{f}(\vec{g}(\vec{x})) =
+\vec{0}$. Therefore $\boxed{\vec{f}(\vec{g}(\vec{x})) \equiv \vec{x} \text{ for
+all } \vec{x} \in V}$.
 
-To prove the converse, take any point $\pvec{u} \in \pvec{g}(\pvec{V})$, plug in
-$\pvec{f}(\pvec{u})$ for $\pvec{x}$, then $\pvec{f}(\pvec{u}) =
-\pvec{f}(\pvec{g}(\pvec{x}_0)) = \pvec{x}_0 \in V$. Now we plug the thing back again
-and we get $\pvec{f}(\pvec{g}(\pvec{f}(\pvec{u}))) = \pvec{f}(\pvec{u})$. Now since
-$\pvec{f}$ is one-to-one locally, we can cancel out the outmost function, so we
-get $\pvec{g}(\pvec{f}(\pvec{u})) = \pvec{u}$. Therefore, we can say $\pvec{f}$ and
-$\pvec{g}$ are local inverses of each other.
+To prove the converse, take any point $\vec{u} \in \vec{g}(\vec{V})$, plug in
+$\vec{f}(\vec{u})$ for $\vec{x}$, then $\vec{f}(\vec{u}) =
+\vec{f}(\vec{g}(\vec{x}_0)) = \vec{x}_0 \in V$. Now we plug the thing back again
+and we get $\vec{f}(\vec{g}(\vec{f}(\vec{u}))) = \vec{f}(\vec{u})$. Now since
+$\vec{f}$ is one-to-one locally, we can cancel out the outmost function, so we
+get $\vec{g}(\vec{f}(\vec{u})) = \vec{u}$. Therefore, we can say $\vec{f}$ and
+$\vec{g}$ are local inverses of each other.
 
-To prove that $\pvec{f}$ is one-to-one, suppose $\pvec{f}(\pvec{u}_1) =
-\pvec{f}(\pvec{u}_2)$ but $\pvec{u}_1 \neq \pvec{u}_2$, and $\pvec{u}_1, \pvec{u}_2
-\in \pvec{g}(V)$. Then we know, by the continuity of $\pvec{g}$ that there exists
-$\pvec{x}_1, \pvec{x}_2 \in V$ such that $\pvec{u}_1 = \pvec{g}(\pvec{x}_1)$ and
-$\pvec{u}_2 = \pvec{g}(\pvec{x}_2)$. However, then we know that
-$\pvec{f}(\pvec{g}(\pvec{x}_1)) = \pvec{f}(\pvec{g}(\pvec{x}_2))$, which implies that
-$x_1 = x_2$, which implies that $\pvec{g}(\pvec{x}_1) = \pvec{g}(\pvec{x}_2)$, which
-means $\pvec{u}_1 = \pvec{u}_2$. Therefore $\pvec{f}$ is one-to-one.
+To prove that $\vec{f}$ is one-to-one, suppose $\vec{f}(\vec{u}_1) =
+\vec{f}(\vec{u}_2)$ but $\vec{u}_1 \neq \vec{u}_2$, and $\vec{u}_1, \vec{u}_2
+\in \vec{g}(V)$. Then we know, by the continuity of $\vec{g}$ that there exists
+$\vec{x}_1, \vec{x}_2 \in V$ such that $\vec{u}_1 = \vec{g}(\vec{x}_1)$ and
+$\vec{u}_2 = \vec{g}(\vec{x}_2)$. However, then we know that
+$\vec{f}(\vec{g}(\vec{x}_1)) = \vec{f}(\vec{g}(\vec{x}_2))$, which implies that
+$x_1 = x_2$, which implies that $\vec{g}(\vec{x}_1) = \vec{g}(\vec{x}_2)$, which
+means $\vec{u}_1 = \vec{u}_2$. Therefore $\vec{f}$ is one-to-one.
 
 \subsubsection{Implications}
 
-Let $\pvec{f}: D \subseteq \varmathbb{R}^d_{\pvec{u}} \to
-\varmathbb{R}^d_{\pvec{x}}$ be a $C^1$ transformation such that $\partial
-\pvec{f}(\pvec{u}) \neq 0$ for all $\pvec{u} \in D^\circ$. Let $K$ be a compact
-subset of $D^\circ$, Then $\pvec{f}(K^\circ) = [\pvec{f}(K)]^\circ$. In other
+Let $\vec{f}: D \subseteq \mathbb{R}^d_{\vec{u}} \to
+\mathbb{R}^d_{\vec{x}}$ be a $C^1$ transformation such that $\partial
+\vec{f}(\vec{u}) \neq 0$ for all $\vec{u} \in D^\circ$. Let $K$ be a compact
+subset of $D^\circ$, Then $\vec{f}(K^\circ) = [\vec{f}(K)]^\circ$. In other
 words, the interior of the pre-image maps onto the interior of the image.
 
-Moreover, if $\pvec{f}$ is also one-to-one on some open superset $U$ of $K$, then
-$\pvec{f}(\partial K) = \partial \{\pvec{f}(K)\}$.
+Moreover, if $\vec{f}$ is also one-to-one on some open superset $U$ of $K$, then
+$\vec{f}(\partial K) = \partial \{\vec{f}(K)\}$.
 
 
 \section{Lagrange Multiplier}
@@ -2888,37 +2888,37 @@ $\pvec{f}(\partial K) = \partial \{\pvec{f}(K)\}$.
 
 \textbf{Level Sets}
 
-Let $g: D \subseteq \varmathbb{R}^d \to \varmathbb{R}$ be
+Let $g: D \subseteq \mathbb{R}^d \to \mathbb{R}$ be
 $C^1$ on $D^\circ$. The Level-set at level $c \in g(D)^\circ$ of the function $g$, written as
-$L_c g := \{\pvec{x} \in D \+|\+ g(\pvec{x}) = c\}$. Note that $L_c g \neq
-\emptyset$ and $L_c g \neq \{\pvec{x}_0\}$.
+$L_c g := \{\vec{x} \in D | g(\vec{x}) = c\}$. Note that $L_c g \neq
+\emptyset$ and $L_c g \neq \{\vec{x}_0\}$.
 
 \textbf{K-Patch}
 
-A K-patch in d-space is a set $P \subseteq \varmathbb{R}^d$ which is the $C^1$
-and one-to-one image of some open connected set in $\varmathbb{R}^k (k \leq d)$
-by a mapping of ``full rank'', i.e. $P = \pvec{\phi}(U)$ where $U \subseteq
-\varmathbb{R}^k$ is open and connected, $\pvec{\phi}$ is $C^1$ and one-to-one and
-$\{\partial_{u_1} \pvec{\phi}, \partial_{u_2} \pvec{\phi}, \dots, \partial_{u_k}
-\pvec{\phi}\}$ are linearly independent for all $\pvec{u} \in U$.
+A K-patch in d-space is a set $P \subseteq \mathbb{R}^d$ which is the $C^1$
+and one-to-one image of some open connected set in $\mathbb{R}^k (k \leq d)$
+by a mapping of ``full rank'', i.e. $P = \vec{\phi}(U)$ where $U \subseteq
+\mathbb{R}^k$ is open and connected, $\vec{\phi}$ is $C^1$ and one-to-one and
+$\{\partial_{u_1} \vec{\phi}, \partial_{u_2} \vec{\phi}, \dots, \partial_{u_k}
+\vec{\phi}\}$ are linearly independent for all $\vec{u} \in U$.
 
 In layman terms, the geometric transformation is one that bends the surface in
-$\varmathbb{R}^k$ ``smoothly,'' it is a ``bending'' of the original set without
+$\mathbb{R}^k$ ``smoothly,'' it is a ``bending'' of the original set without
 any sharp edges or elimination of dimensions. In other way, the dimensionality
-is reserved. Which is why $\pvec{\phi}$ must be $C^1$ and one-to-one.
+is reserved. Which is why $\vec{\phi}$ must be $C^1$ and one-to-one.
 
-The function $\pvec{\phi}$ is known as a parameterization of the set $P$ because
-as the argument transverses $U$, $\pvec{\phi}$ traces out $P$. Note that our
-``full rank'' condition, which is that $\{\partial_{u_1} \pvec{\phi},
-\partial_{u_2} \pvec{\phi}, \dots, \partial_{u_k} \pvec{\phi}\}$ are linearly
-independent. This is because in the domain, pick an arbitrary point $\pvec{p}$
-and move in the $u_1$ direction, since $\pvec{\phi}$ is $C^1$ and one-to-one,
-this movement in the domain will trace out $\pvec{\phi}(\pvec{p})$ in the
-co-domain. The tangent vector to $\pvec{\phi}(\pvec{p})$ is $\partial_{u_1}
-\pvec{\phi}(\pvec{p})$. If we move along $u_2$ direction in the domain of
-$\pvec{p}$, the co-domain tangent velocity would be
-$\partial_{u_2}\pvec{\phi}(\pvec{p})$, which should be linearly independent from
-$\partial_{u_2}\pvec{\phi}(\pvec{p})$. In other words, independent movements from
+The function $\vec{\phi}$ is known as a parameterization of the set $P$ because
+as the argument transverses $U$, $\vec{\phi}$ traces out $P$. Note that our
+``full rank'' condition, which is that $\{\partial_{u_1} \vec{\phi},
+\partial_{u_2} \vec{\phi}, \dots, \partial_{u_k} \vec{\phi}\}$ are linearly
+independent. This is because in the domain, pick an arbitrary point $\vec{p}$
+and move in the $u_1$ direction, since $\vec{\phi}$ is $C^1$ and one-to-one,
+this movement in the domain will trace out $\vec{\phi}(\vec{p})$ in the
+co-domain. The tangent vector to $\vec{\phi}(\vec{p})$ is $\partial_{u_1}
+\vec{\phi}(\vec{p})$. If we move along $u_2$ direction in the domain of
+$\vec{p}$, the co-domain tangent velocity would be
+$\partial_{u_2}\vec{\phi}(\vec{p})$, which should be linearly independent from
+$\partial_{u_2}\vec{\phi}(\vec{p})$. In other words, independent movements from
 the domain maps onto independent movements in the co-domain. This prevents
 foldings and crimping.
 
@@ -2927,59 +2927,59 @@ them.
 
 \textbf{K-Manifold}
 
-A K-manifold in $\varmathbb{R}^d$ is a set $M \subseteq \varmathbb{R}^d$ that
+A K-manifold in $\mathbb{R}^d$ is a set $M \subseteq \mathbb{R}^d$ that
 can be completely covered by countably many (possibly overlapping) K-patches.
 
 \subsubsection{Level-Set Theorem}
 
-Let $g: D \subseteq \varmathbb{R}^d \to \varmathbb{R}$ be $C^1$, and choose $c
-\in g(D)^\circ$. Then $L_c g = \{\pvec{x} \in D \+|\+ g(\pvec{x}) = c\}$ is a $(d
-- 1)$-manifold in $\varmathbb{R}^d$ provided that $\gradient g \neq \pvec{0}$ for any
-point $\pvec{x} \in L_c g$.
+Let $g: D \subseteq \mathbb{R}^d \to \mathbb{R}$ be $C^1$, and choose $c
+\in g(D)^\circ$. Then $L_c g = \{\vec{x} \in D | g(\vec{x}) = c\}$ is a $(d
+- 1)$-manifold in $\mathbb{R}^d$ provided that $\gradient g \neq \vec{0}$ for any
+point $\vec{x} \in L_c g$.
 
 \textbf{Proof}:
 
-We know that $g(x_1, x_2, \dots, x_d) = c$, now let's pick $\pvec{p} \in L_c g$,
-we know that $g(p_1, p_2, \dots, p_d) = c$ and that $\partial_{x_1} g(\pvec{p}),
-\partial_{x_2} g(\pvec{p}), \dpts, \partial_{x_d} g(\pvec{p})$ cannot all be 0 (as
-$\gradient g(\pvec{p}) \neq 0$), therefore $\exists\+ j \in \{1,2,\dots,d\} :
-\partial_{x_j} g(\pvec{p}) \neq 0$. To be definite, let $j = d$ (wlog). By the
-Implicit Function Theorem, we get the equivalency between $g(\pvec{x}) = c$ and
+We know that $g(x_1, x_2, \dots, x_d) = c$, now let's pick $\vec{p} \in L_c g$,
+we know that $g(p_1, p_2, \dots, p_d) = c$ and that $\partial_{x_1} g(\vec{p}),
+\partial_{x_2} g(\vec{p}), \dpts, \partial_{x_d} g(\vec{p})$ cannot all be 0 (as
+$\gradient g(\vec{p}) \neq 0$), therefore $\exists j \in \{1,2,\dots,d\} :
+\partial_{x_j} g(\vec{p}) \neq 0$. To be definite, let $j = d$ (wlog). By the
+Implicit Function Theorem, we get the equivalency between $g(\vec{x}) = c$ and
 $x_d = \phi(x_1, x_2, \dots, x_{d - 1})$ in a neighborhood $U \times I \subseteq
-\varmathbb{R}^{d - 1} \times \varmathbb{R}$ of $\pvec{p}$. In this neighborhood,
-we can define a parameterization function $\pvec{\phi} (\pvec{u}) :
-U \subseteq \varmathbb{R}^{d - 1} \to \varmathbb{R}^d$ as: 
+\mathbb{R}^{d - 1} \times \mathbb{R}$ of $\vec{p}$. In this neighborhood,
+we can define a parameterization function $\vec{\phi} (\vec{u}) :
+U \subseteq \mathbb{R}^{d - 1} \to \mathbb{R}^d$ as: 
 
 \[
-\pvec{\phi}(u_1, u_2, \dots, u_{d-1}) = (u_1, u_2, \dots, u_{d - 1}, \phi(u_1,
+\vec{\phi}(u_1, u_2, \dots, u_{d-1}) = (u_1, u_2, \dots, u_{d - 1}, \phi(u_1,
 u_2, \dots, u_{d - 1}))
 \]
 
-Therefore the range, $\pvec{\phi}(U) = L_c g \cap N_{\pvec{p}}$ where
-$N_{\pvec{p}}$ is some open neighborhood of $\pvec{p}$ in $\varmathbb{R}^d$.
+Therefore the range, $\vec{\phi}(U) = L_c g \cap N_{\vec{p}}$ where
+$N_{\vec{p}}$ is some open neighborhood of $\vec{p}$ in $\mathbb{R}^d$.
 
-We now seek to show that $\pvec{\phi}(U)$ is a $(d-1)$-patch in
-$\varmathbb{R}^d$. We have to prove:
+We now seek to show that $\vec{\phi}(U)$ is a $(d-1)$-patch in
+$\mathbb{R}^d$. We have to prove:
 \begin{enumerate}
-\item $\pvec{\phi}$ is one-to-one
-\item $\pvec{\phi}$ is $C^1$ on $U$
-\item $\{\partial_{u_1} \pvec{\phi}, \dots, \partial_{u_{d - 1}}
-\pvec{\phi}\}$ are linearly independent
+\item $\vec{\phi}$ is one-to-one
+\item $\vec{\phi}$ is $C^1$ on $U$
+\item $\{\partial_{u_1} \vec{\phi}, \dots, \partial_{u_{d - 1}}
+\vec{\phi}\}$ are linearly independent
 \end{enumerate}
 
-Condition 2 is trivial, because $\pvec{\phi} = Id \times \phi$, and since both
-the identity function and $\phi$ are $C^1$, $\pvec{\phi}$ must be $C^1$.
+Condition 2 is trivial, because $\vec{\phi} = Id \times \phi$, and since both
+the identity function and $\phi$ are $C^1$, $\vec{\phi}$ must be $C^1$.
 
-Condition 1 is also not hard to see. suppose $\pvec{\phi}(\pvec{u}_1) =
-\pvec{\phi}(\pvec{u}_2)$, we then know that the first $d-1$ coordinates for
-$\pvec{u}_1$ and $\pvec{u_2}$ are the same, but $\pvec{u}_1$ and $\pvec{u}_2$ are
-both of dimension $d - 1$. Therefore $\pvec{u}_1 = \pvec{u}_2$.
+Condition 1 is also not hard to see. suppose $\vec{\phi}(\vec{u}_1) =
+\vec{\phi}(\vec{u}_2)$, we then know that the first $d-1$ coordinates for
+$\vec{u}_1$ and $\vec{u_2}$ are the same, but $\vec{u}_1$ and $\vec{u}_2$ are
+both of dimension $d - 1$. Therefore $\vec{u}_1 = \vec{u}_2$.
 
 Condition 3, or the ``full rank'' condition is a bit harder to prove, first we
 need the Jacobian Matrix:
 
 \[
-D\pvec{\phi}(\pvec{u}) =
+D\vec{\phi}(\vec{u}) =
 \left[\begin{array}{ccccc}
 1 & 0 & 0 & \dots & 0 \\
 0 & 1 & 0 & \dots & 0 \\
@@ -3012,28 +3012,28 @@ points in the function that just happen to have 0 derivative but the second
 order derivative changes as well.
 
 In multivariable calculus we do much of the same, except now we set the entire
-gradient to zero. Given $f: D \subseteq \varmathbb{R}^d \to \varmathbb{R}$ where
-$f$ is $C^1$, any point $\pvec{p} \in D$ where $\gradient f(\pvec{p}) = \pvec{0}$
+gradient to zero. Given $f: D \subseteq \mathbb{R}^d \to \mathbb{R}$ where
+$f$ is $C^1$, any point $\vec{p} \in D$ where $\gradient f(\vec{p}) = \vec{0}$
 is called a critical point.
 
-\textbf{Thm}:If $\pvec{p} \in D^\circ$ and $\pvec{p}$ is a local extremum for
-$\pvec{p}$, then $\gradient f(\pvec{p}) = \pvec{0}$.
+\textbf{Thm}:If $\vec{p} \in D^\circ$ and $\vec{p}$ is a local extremum for
+$\vec{p}$, then $\gradient f(\vec{p}) = \vec{0}$.
 
 \textbf{Proof}: Note that:
 
-$$\partial_{x_j} f(\pvec{p}) = \lim_{h \to 0^+} \frac{f(\pvec{p} +
-h\pvec{e}_j) - f(\pvec{p})}{h}$$
+$$\partial_{x_j} f(\vec{p}) = \lim_{h \to 0^+} \frac{f(\vec{p} +
+h\vec{e}_j) - f(\vec{p})}{h}$$
 
-because $f$ is $C^1$. WLOG assume $\pvec{p}$ is a local maximum, then
-$f(\pvec{p})$ should be greater than all surrounding values. Therefore $f(\pvec{p}
-+ h\pvec{e}_j) \leq f(\pvec{p})$, thus the numerator is negative, but the denominator
+because $f$ is $C^1$. WLOG assume $\vec{p}$ is a local maximum, then
+$f(\vec{p})$ should be greater than all surrounding values. Therefore $f(\vec{p}
++ h\vec{e}_j) \leq f(\vec{p})$, thus the numerator is negative, but the denominator
 is always greater than zero. Therefore the partial as a whole is negative or
 zero.
 
 Of course since the derivative is a two sided limit, 
 
-$$\partial_{x_j} f(\pvec{p}) = \lim_{h \to 0^-} \frac{f(\pvec{p} +
-h\pvec{e}_j) - f(\pvec{p})}{h}$$
+$$\partial_{x_j} f(\vec{p}) = \lim_{h \to 0^-} \frac{f(\vec{p} +
+h\vec{e}_j) - f(\vec{p})}{h}$$
 
 by similar logic the partial must therefore be positive or zero.
 
@@ -3069,8 +3069,8 @@ Integrals.
 
 The \textbf{lower Riemann Integral} is defined as:
 
-$$\underline{\int}_a^b f(x) dx = \sup \{ \sum_{i=1}^n [\inf\{ f(x) \+|\+ x_{i-1} \leq x \leq
-x_i\}] \Delta x_i \+|\+ a = x_0 < x_2 < \dots < x_n = b\}$$
+$$\underline{\int}_a^b f(x) dx = \sup \{ \sum_{i=1}^n [\inf\{ f(x) | x_{i-1} \leq x \leq
+x_i\}] \Delta x_i | a = x_0 < x_2 < \dots < x_n = b\}$$
 
 This is known as the \textbf{down-and-up} procedure, for that we first take the
 lower bound estimate with the infimum, but then we take the maximum possible
@@ -3079,8 +3079,8 @@ doesn't actually exist in the set of lower estimations.
 
 The \textbf{upper Riemann Integral} is defined as:
 
-$$\overline{\int}_a^b f(x) dx = \inf \{ \sum_{i=1}^n [\sup\{ f(x) \+|\+ x_{i-1} \leq x \leq
-x_i\}] \Delta x_i \+|\+ a = x_0 < x_2 < \dots < x_n = b\}$$
+$$\overline{\int}_a^b f(x) dx = \inf \{ \sum_{i=1}^n [\sup\{ f(x) | x_{i-1} \leq x \leq
+x_i\}] \Delta x_i | a = x_0 < x_2 < \dots < x_n = b\}$$
 
 This is also known as the \textbf{up-and-down} procedure.
 
