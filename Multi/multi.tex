@@ -124,6 +124,43 @@ This is known as a matrix, and an element of a matrix can be denoted with two
 subscripts with the lower case of the matrix' name, with the first subscript denoting the row number, and the second denoting the
 column number. If the above matrix is $A$, then $a_{11} = 1$ and $a_{31} = 0$.
 
+\subsubsection{Determinant}
+
+Geometrically, if you treat the matrix $A \in \varmathbb{R}^{d \times n}$ as an
+$d$-dimensional strucutre composed of $n$ $d$-dimensional vectors, then the
+determinant is the ``volume'' of said structure.
+
+Algebraically
+
+\begin{align*}
+    \det A &= \sum_{\sigma \in S_n} (sgn \+ \sigma) a_{1 \sigma_1} a_{2 \sigma_2}
+        \dots a_{n\sigma_n}\\
+	    \sigma &= (\sigma_1, \sigma_2, \dots, \sigma_n)
+	    \end{align*}
+
+	    where 
+
+	    $$sgn \+ \sigma = \frac{\Pi_{i < j} (x_{\sigma_i} - x_{\sigma_j})}{\Pi_{i
+	    < j} (x_i - x_j)}$$
+
+	    where $x_1, x_2, \dots, x_n$ are distant values. This function, in a more
+	    explicit/less percise form is:
+
+	    $$sgn = (-1)^N$$
+
+	    where $N$ is the number of ordered pairs $(i, j)$ where $i < j$ but $\sigma_j <
+	    \sigma_i$.
+
+	    And $S_n$ is the set of permutations of $\sigma$
+
+	    \textbf{Properties of the Determinant Function}:
+	    \begin{enumerate}
+	        \item $\det I = 1$ (unit property)
+		    \item $\det[\vec{a}_1, \dots, c\vec{a}_j, \dots, \vec{a}_n] = c \det A$
+		        \item $\det A = \det A^T$
+			\end{enumerate}
+
+
 \subsubsection{Operations}
 
 \textbf{The Transpose operation}: $B = A^T$ ($B$ is $A$ transposed),
@@ -248,6 +285,101 @@ result in the zero matrix.
 
 Note that the communicative property does not hold for matrix multiplication.
 
+\subsubsection{Norm}
+
+Given $A \in \varmathbb{R}^{e \times d} = [\vec{a}_1 \+ \vec{a}_2 \+ \dots \+
+\vec{a}_d]$, we define the norm of $A$, $||A||$ as:
+
+\[
+    ||A|| := \sqrt{\sum_{j = 1}^d ||\+\vec{a}_j\+||^2} = \sqrt{\sum_{j=1}^d
+        \sum_{i=1}^e a_{ij}^2}
+	\]
+
+	In other words, the norm of a matrix is the sqareroot of the sum of the squares
+	of every element in the matrix.
+
+	\textbf{Properties of the Norm}:
+	\begin{enumerate}
+	    \item $||A|| > 0, ||A|| = 0 \leftrightarrow A = O$
+	        \item $||cA|| = |C|||A||$
+		    \item $||A+B|| \leq ||A|| + ||B||$ (Triangle Inequality)
+		        \item $||AB|| \leq ||A||||B||$ (Generalized Cauchy-Schwarz Inequality)
+			\end{enumerate}
+
+			To prove these, we first establish a correspondence between any matrix $A \in
+			\varmathbb{R}^{e \times d}$ and a vector in $\varmathbb{R}^{ed}$, we define the
+			mapping $\Psi$ from $\varmathbb{R}^{e \times d}$ to $\varmathbb{R}^{ed}$:
+
+			\[
+			    A \overset{\Psi}{\longleftrightarrow} (a_{11}, \dots, a_{1d}, a_{21}, \dots,
+			        a_{2d}, \dots, a_{e1}, \dots, a_{ed})
+				\]
+
+				Note that under this operation, all vector space properties of the matrix are
+				preserved. Note that $||A|| = ||\Psi(A)||$, $\Psi(cA) = cA$, and $\Psi(A + B) =
+				A + B$.
+
+				However, note that the product is not exactly preserved with this transformation
+				to vector, since the size of the matrix plays an integral part in matrix
+				multiplication. To prove property 4 of the norm, we need to do a bit of work.
+
+				Let $C = AB$, then wwe know that
+				\begin{align*}
+				    ||AB||^2 = \sum_i \sum_j \left(\sum_k a_{ik}b_{kj}\right)^2 &= \sum_i \sum_j
+				        (\vec{\alpha}_i \cdot \vec{b}_j)^2 \\
+					    &\leq \sum_i \sum_j ||\+\vec{\alpha}_i\+||^2 ||\+\vec{b}_j\+||^2\\
+					        &= (\sum_i ||\+\vec{\alpha}_i\+||^2)(\sum_j ||\+\vec{b}_j\+||^2)\\
+						    &= ||A^T||^2 ||B||^2\\
+						        &= ||A||^2 ||B||^2
+							\end{align*}
+
+							Therefore, $||AB|| \leq ||A|| ||B||$.
+
+							\subsubsection{Inverses}
+
+							Suppose there exists $A \in \varmathbb{R}^{n \times n}$ and $B \in
+							\varmathbb{R}^{n \times n}$, we say that $B$ is a \textbf{two sided inverse} of
+							$A$ if $AB = BA = I (= I_n)$, where $I$ is the identity matrix, which functions
+							like the number one in real number multiplication.
+
+							\textbf{Thm}: If $A$ has a two-sided inverse, then it has exactly one, namely
+							$A^{-1}$.
+
+							Suppose that $B$ and $C$ are both two-sided inverses for $A$, i.e. $AB = BA = I$
+							and $AC = CA = I$. We know we can represent $B = BI = B(AC) = BA(C) = IC = C$.
+							Therefore $B = C$.
+
+							\textbf{Thm}: $A$ is invertible iff $\det A \neq 0$.
+
+							Let $B = A^{-1}$, $AB = I$. Now we take the determinant of both sides, we get:
+
+							$$\det (AB) = \det I$$
+
+							Since the determinant is distributive, we get:
+
+							$$(\det A)(\det B) = 1$$
+
+							Now it's clear that $\det A \neq 0$
+
+							CONVERSE = TODO
+
+							\subsubsection{Matrix Valued Functions}
+
+							It is entirely possible for functions to give out matrices as its output.
+							Suppose $A : D \subseteq \varmathbb{R}^d \to \varmathbb{R}^{e \times k}$.
+							Similar to how vector valued functions have component functions, matrix valued
+							functions have entry functions. $A$ would look something like this:
+
+							\[
+							    A(\vec{x}) = \left[\begin{array}{ccc}
+							                a_{11}(\vec{x}) & \dots & a_{1k}(\vec{x})\\
+									            \vdots & \vdots & \vdots \\
+										                a_{e1}(\vec{x}) & & a_{ek}(\vec{x})
+												    \end{array}\right]
+												    \]
+
+												    Continuity for such functions is an entrywise property: $A$ is continuous at
+												    $\vec{p}$ iff $a_{ij}$ is continuous at $\vec{p}$ $\forall i, j$
 \subsection{Unique Expression of Linear Functions}
 \subsubsection{Theorem}
 For any linear map $\vec{l}: \mathbb{R}^d \to \mathbb{R}^e$.

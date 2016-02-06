@@ -247,6 +247,10 @@ $dist(\vec{x}, \vec{p}) \leq dist(\vec{x}, \vec{q}) + dist(\vec{q}, \vec{p}) <
 \epsilon + d = d + \frac{1}{2} r - \frac{1}{2} d = \frac{1}{2}r +
 \frac{1}{2}d < \frac{1}{2} \cdot 2 \cdot r = r$
 
+\underline{Theorem:} The union of any number of open sets is an open set.
+
+\underline{Proof:} Let U = $u_1 \cup u_2 \cup \cdots \cup u_n$, where $u_n$ is an open set. We know that $\forall \vec{p} \in U, \vec{p} \in u_i$, which means $\exists r > 0: B_r(\vec{p}) \in u_i \in U.$. Therefore U is an open set.
+
 \subsection{Extreme-Value Theorem}
 Let $f:D \to \mathbb{R}$ be continuous, where D $\subseteq \mathbb{R^d}$ is compact. Then $\exists P, Q \in D$, which do not need to be unique, such that $\forall X \in D: f(P) \leq f(x) \leq f(Q)$.
 
@@ -505,7 +509,7 @@ equality case.
 This is a special case of H\"{o}lder's Inequality, where $p = q = 2$. (This is very important, 2 is the \textit{only} value that is its own conjugate, this is why Euclidean distance is so special)
 
 If we plug in 2 for $p$ and $q$ and use the Triangle Inequality:
-$|ac + bd| \leq |ac| + |bd| \leq \sqrt{a^2 + b^2} \sqrt{c^2 + d^2}$, or $|v \dot u| \leq ||u||||v||$ with equality iff $ab \geq 0$.
+$|ac + bd| \leq |ac| + |bd| \leq \sqrt{a^2 + b^2} \sqrt{c^2 + d^2}$. We can set $\vec{u} = (a, b), \vec{v} = (c, d)$, such that $|v \dot u| \leq ||u|| \dot ||v||$ with equality iff $ab \geq 0$, which can be written as iff $\vec{v} || \vec{u}$.
 
 Then, by Young's inequality, $|\frac{ac}{st}| = |\frac{a}{s}||\frac{c}{t}| \leq \frac{|a|^p}{p|s|^p} + \frac{|c|^q}{q|t^q}$, and the same is true for bd.
 
