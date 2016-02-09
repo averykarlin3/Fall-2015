@@ -8,6 +8,26 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 
+\usepackage{hyperref}
+\hypersetup {
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\cfoot{\hyperlink{content}{\thepage}}
+\lhead{}
+\chead{}
+\rfoot{}
+\lfoot{}
+\rhead{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
 \begin{document}
 
 \title{Macroeconomics}
@@ -16,7 +36,7 @@
 
 \maketitle
 \newpage
-\tableofcontents
+\hypertarget{content}{\tableofcontents}
 \vspace{11pt}
 \noindedt
 \underline{Main Textbook}: Krugman's Economics for AP\\

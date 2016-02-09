@@ -21,6 +21,17 @@ urlcolor=black
 %\usepackage{color}
 %\usepackage{verbatim}
 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\cfoot{\hyperlink{content}{\thepage}}
+\lhead{}
+\chead{}
+\rfoot{}
+\lfoot{}
+\rhead{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
 \begin{document}
 
 \title{Multivariable Calculus}
@@ -29,7 +40,7 @@ urlcolor=black
 
 \maketitle
 \newpage
-\tableofcontents
+\hypertarget{content}{\tableofcontents}
 \vspace{11pt}
 \noindent
 \underline{Teacher}: Stern

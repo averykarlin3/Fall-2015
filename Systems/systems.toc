@@ -1,37 +1,37 @@
-\contentsline {section}{\numberline {1}Learning C}{3}
-\contentsline {subsection}{\numberline {1.1}C Primitive Variable Types}{3}
-\contentsline {subsection}{\numberline {1.2}C Compilation}{3}
-\contentsline {subsection}{\numberline {1.3}C Programming}{4}
-\contentsline {subsection}{\numberline {1.4}C Structures}{5}
-\contentsline {section}{\numberline {2}Memory Management}{5}
-\contentsline {subsection}{\numberline {2.1}Memory Allocation}{5}
-\contentsline {subsection}{\numberline {2.2}Strings and Arrays}{6}
-\contentsline {subsection}{\numberline {2.3}Dynamic Memory Allocation}{6}
-\contentsline {subsection}{\numberline {2.4}Shared Memory}{7}
-\contentsline {section}{\numberline {3}Structural Functions}{8}
-\contentsline {subsection}{\numberline {3.1}String Functions}{8}
-\contentsline {subsection}{\numberline {3.2}Struct}{8}
-\contentsline {subsection}{\numberline {3.3}Union}{9}
-\contentsline {section}{\numberline {4}File Programming}{9}
-\contentsline {subsection}{\numberline {4.1}Permissions}{9}
-\contentsline {subsection}{\numberline {4.2}Bitwise Operators}{9}
-\contentsline {subsection}{\numberline {4.3}File Usage}{9}
-\contentsline {subsection}{\numberline {4.4}Metadata}{11}
-\contentsline {subsection}{\numberline {4.5}Directories}{11}
-\contentsline {subsection}{\numberline {4.6}Inputs}{11}
-\contentsline {section}{\numberline {5}Processing}{12}
-\contentsline {subsection}{\numberline {5.1}Processes}{12}
-\contentsline {subsection}{\numberline {5.2}Process Functions}{12}
-\contentsline {subsection}{\numberline {5.3}Exec Function Family}{12}
-\contentsline {section}{\numberline {6}File Redirection}{13}
-\contentsline {subsection}{\numberline {6.1}Command-Line Redirection}{13}
-\contentsline {subsection}{\numberline {6.2}C Redirection}{13}
-\contentsline {section}{\numberline {7}Signaling}{13}
-\contentsline {subsection}{\numberline {7.1}Command-Line Signals}{13}
-\contentsline {subsection}{\numberline {7.2}Signals in C}{13}
-\contentsline {subsection}{\numberline {7.3}Semaphores}{14}
-\contentsline {section}{\numberline {8}Connections}{15}
-\contentsline {subsection}{\numberline {8.1}Pipes}{15}
-\contentsline {subsection}{\numberline {8.2}Server-Client Protocol}{15}
-\contentsline {subsection}{\numberline {8.3}OSI 7-Layer Model}{16}
-\contentsline {subsection}{\numberline {8.4}Sockets}{19}
+\contentsline {section}{\numberline {1}Learning C}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}C Primitive Variable Types}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}C Compilation}{3}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}C Programming}{4}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}C Structures}{5}{subsection.1.4}
+\contentsline {section}{\numberline {2}Memory Management}{5}{section.2}
+\contentsline {subsection}{\numberline {2.1}Memory Allocation}{5}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Strings and Arrays}{6}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Dynamic Memory Allocation}{6}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Shared Memory}{7}{subsection.2.4}
+\contentsline {section}{\numberline {3}Structural Functions}{8}{section.3}
+\contentsline {subsection}{\numberline {3.1}String Functions}{8}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Struct}{8}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Union}{9}{subsection.3.3}
+\contentsline {section}{\numberline {4}File Programming}{9}{section.4}
+\contentsline {subsection}{\numberline {4.1}Permissions}{9}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Bitwise Operators}{9}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}File Usage}{9}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Metadata}{11}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Directories}{11}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Inputs}{11}{subsection.4.6}
+\contentsline {section}{\numberline {5}Processing}{12}{section.5}
+\contentsline {subsection}{\numberline {5.1}Processes}{12}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Process Functions}{12}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Exec Function Family}{12}{subsection.5.3}
+\contentsline {section}{\numberline {6}File Redirection}{13}{section.6}
+\contentsline {subsection}{\numberline {6.1}Command-Line Redirection}{13}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}C Redirection}{13}{subsection.6.2}
+\contentsline {section}{\numberline {7}Signaling}{13}{section.7}
+\contentsline {subsection}{\numberline {7.1}Command-Line Signals}{13}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Signals in C}{13}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Semaphores}{14}{subsection.7.3}
+\contentsline {section}{\numberline {8}Connections}{15}{section.8}
+\contentsline {subsection}{\numberline {8.1}Pipes}{15}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Server-Client Protocol}{15}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}OSI 7-Layer Model}{16}{subsection.8.3}
+\contentsline {subsection}{\numberline {8.4}Sockets}{19}{subsection.8.4}
