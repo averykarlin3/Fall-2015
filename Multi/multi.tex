@@ -1377,7 +1377,7 @@ If $\vec{p} + \vec{h} = \vec{X}$, then $|f(\vec{X}) - [f(\vec{p}) + \vec{a} \cdo
 Since $\vec{N}$ is the normal vector to the plane at that point, equal to $(-\vec{\nabla}f(\vec{p}), 1)$, or the projection of the negation of the normal vector onto the domain, such that it is the vector of the direction and magnitude of the fastest increase of the function at $\vec{p}$.
 
 \underline{Theorem:}
-If $f:D \subseteq \mathbb{R^d} \to \mathbb{R}$ is differentiable at $\vec{p} \in D^o$, then $\vec{u_0} = \frac{\vec{\nabla}f(\vec{p})}{||\vec{\nabla}f(\vec{p})||}$ is the direction of steepest ascent for f at $\vec{p}$, and $||\vec{\nabla}f(\vec{p})|| = max_{||\vec{u}||=1} \partial_\vec{u} f(\vec{p})$, where $\vec{u}$ is any unit vector, such that as a result, $\partial_{\vec{u}} f(\vec{p}) = \vec{\nabla}f(\vec{p}) \cdot \vec{u}$.
+If $f:D \subseteq \mathbb{R}^d \to \mathbb{R}$ is differentiable at $\vec{p} \in D^o$, then $\vec{u_0} = \frac{\vec{\nabla}f(\vec{p})}{||\vec{\nabla}f(\vec{p})||}$ is the direction of steepest ascent for f at $\vec{p}$, and $||\vec{\nabla}f(\vec{p})|| = $max$_{||\vec{u}||=1} \partial_{\vec{u}} f(\vec{p})$, where $\vec{u}$ is any unit vector, such that as a result, $\partial_{\vec{u}} f(\vec{p}) = \vec{\nabla}f(\vec{p}) \cdot \vec{u}$.
 
 This is by the Cauchy-Schwartz equality case $(-||\vec{u}||||\vec{v}|| \leq \vec{u} \cdot \vec{v} \leq ||\vec{u}||||\vec{v}||$, with equality with the lower bound if $\vec{u}$ and $\vec{v}$ are in opposite directions, the higher bound if in the same direction), such that $-\vec{u_0}$ is the direction of steepest descent for f at $\vec{p}$ and $-||\vec{\nabla}f(\vec{p})|| = min_{||\vec{u}||=1} \partial_{\vec{u}}f(\vec{p}).$ 
 
@@ -1411,7 +1411,7 @@ $$\boxed{a_j = \lim_{h \to 0} \left|\frac{f(\vec{p} + h\vec{e}_j) - f(\vec{p})}{
 
 We call this $a_j$ as a \textbf{partial derivative} of $f(\vec{x})$ at $j^{th}$ component, which can be written as $\partial_{x_j} f(\vec{p})$ or $\frac{\partial f}{\partial x_j} (\vec{p})$.
 
-Note that: $$\partial_{x_j}f(\vec{p}) = \frac{d}{dx_j}\left|_{x_j = p_j} f(p_1, p_2, \dots, p_{j-1}, x_j, p_{j+1}, \dots, p_d)$$
+%Note that: $$\partial_{x_j}f(\vec{p}) = \frac{d}{dx_j}\left|_{x_j = p_j} f(p_1, p_2, \dots, p_{j-1}, x_j, p_{j+1}, \dots, p_d)$$
 
 In other words, we can hold all other components of $f$ constant and differentiate based on only one component, and plug in the value $p_j$ after the differentiation. Now we know how to compute the gradient of $f$, it is simply the vector of all the partial derivatives:
 
@@ -1560,12 +1560,12 @@ $$|\Delta f - \vec{\nabla}f(\vec{p}) \cdot \vec{h}| < \sum_{j=1}^d |\partial_{x_
 
 Now we divide both sides by the length of $\vec{h}$:
 
-\begin{align*}
-\frac{|\Delta f - \gradient f(\vec{p}) \cdot \vec{h}|}{||\vec{h}||} &\leq
-\sum_{j=1}^d |\partial_{x_j} f(\vec{q}_j) - \partial_{x_j} f(\vec{p})| 
-\frac{|h_j|}{||\vec{h}||}\\
-&\leq \sum_{j=1}^d |\partial_{x_j} (\vec{q}_j) - \partial_{x_j} f(\vec{p})|
-\end{align*}
+%\begin{align*}
+%\frac{|\Delta f - \gradient f(\vec{p}) \cdot \vec{h}|}{||\vec{h}||} &\leq
+%\sum_{j=1}^d |\partial_{x_j} f(\vec{q}_j) - \partial_{x_j} f(\vec{p})| 
+%\frac{|h_j|}{||\vec{h}||}\\
+%&\leq \sum_{j=1}^d |\partial_{x_j} (\vec{q}_j) - \partial_{x_j} f(\vec{p})|
+%\end{align*}
 
 Now let $\vec{h} \to \vec{0}$. Then each $\vec{q}_j$ approaches $\vec{p}$. Then
 we know:
@@ -1577,7 +1577,7 @@ going to 0, the entire sum is going to 0, which means $||\vec{h}|| <
 \delta(\epsilon)$, we can say that the sum is less than $\epsilon$, which
 means that
 
-$$\frac{|\Delta f - \gradient f(\vec{p}) \cdot \vec{h}|}{||\vec{h}||} \leq
+$$\frac{|\Delta f - \vec{\nabla} f(\vec{p}) \cdot \vec{h}|}{||\vec{h}||} \leq
 \sum_{j=1}^d |\partial_{x_j} f(\vec{q}_j) - \partial_{x_j} f(\vec{p})| 
 \frac{|h_j|}{||\vec{h}||} \leq \epsilon$$
 
@@ -1600,7 +1600,7 @@ Classically, we also define second order partial derivatives as follows:
 \end{align*}
 
 \subsubsection{Partial Equality Theorem}
-If $f:D \subseteq \mathbb{R^d} \to \mathbb{R}$ is C^2$ (On $B_r(\vec{p}) \partial_{x_j}\partial{x_j}$ is continuous for any $i, j \in {1, 2, 3, ..., d}$)$ near $\vec{p} \in D^o$, then $\partial_{x_j}\partial_{x_i} f(\vec{p}) = \partial_{x_i}\partial_{x_j} f(\vec{p})$.
+If $f:D \subseteq \mathbb{R^d} \to \mathbb{R}$ is $C^2$ (On $B_r(\vec{p}) \partial_{x_j}\partial{x_j}$ is continuous for any $i, j \in \{1, 2, 3, ..., d\}$ near $\vec{p} \in D^o$, then $\partial_{x_j}\partial_{x_i} f(\vec{p}) = \partial_{x_i}\partial_{x_j} f(\vec{p})$.
 
 \underline{Proof:}
 WLOG, assume $i \leq j$. Let $x = x_i$ and $y = x_j$.
@@ -2522,8 +2522,6 @@ D_{\vec{x}} \vec{f}(\vec{x})
 I_d \\
 D \vec{f}(\vec{x})
 \end{array}\right]$$
-%}}}
-%{{{ TMP
 \subsubsection{Example}
 \[(*)
 \begin{cases}
@@ -3012,8 +3010,6 @@ Find a local extremum of $f(x_1, \dots, x_d)$ subject to the constraint $g(x_1,
 \dots, x_d) = c$ where $f, g$ are $C^1$.
 
 This has tremendous application in engineering, economics, etc.
-%}}}
-%{{{ Maximization
 \subsection{Optimization}
 \subsubsection{Critical Points}
 In single variable calculus, we optimize by taking the derivative of the
