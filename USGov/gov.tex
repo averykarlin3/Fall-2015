@@ -1,0 +1,258 @@
+\documentclass[11 pt, twoside]{article}
+\usepackage{textcomp}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage{indentfirst} %Comment out for no first paragraph indent
+\usepackage[parfill]{parskip}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{outlines}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\cfoot{\hyperlink{content}{\thepage}}
+\lhead{}
+\chead{}
+\rfoot{}
+\lfoot{}
+\rhead{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+\usepackage{hyperref}
+\hypersetup {
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+
+\newcommand{\sepitem}{0pt} %Added room between items on the list, not including a list and its sublist
+\newcommand{\seppar}{1pt} %Between items and lists overall
+
+\setenumerate[1]{itemsep=\sepitem, parsep=\seppar}
+\setenumerate[2]{itemsep=\sepitem, parsep=\seppar}
+\setenumerate[3]{itemsep=\sepitem, parsep=\seppar}
+\setenumerate[4]{itemsep=\sepitem, parsep=\seppar}
+
+\newenvironment{outline*}
+{
+	\begin{outline}[enumerate]
+	}
+	{\end{outline}
+}
+
+\newcommand{\foot}[1]{\hyperlink{#1}{$_#1$}}
+
+\begin{document}
+
+\title{US Government}
+\author{Avery Karlin}
+\date{Fall 2015}
+\newcommand{\textbook}{Democracy in Action by Richard Remy}
+\newcommand{\teacher}{Trainor}
+
+\maketitle
+\newpage
+\hypertarget{content}{\tableofcontents}
+\vspace{11pt}
+\noindent
+\underline{Primary Textbook}: \textbook\\
+\underline{Teacher}: \teacher
+\newpage
+
+\section{Chapter 1 - People and Government}
+\subsection{Principles of Government}
+\begin{outline*}
+\1 The state is a political community within a definite territory, with an organized government to make and enforce laws, typically without a higher authority
+\2 The state in the US was used originally in this way, but was used as the political divisions in the US after the federal government formed as well
+\2 Nations are a sizable group united by a common bond of race, custom, tradition, or religion, such that a nation-state is a state and nation sharing a boundary, even if not all citizens are within the nation
+\2 Nations may include several states or vice versa, but are used the same
+\1 States must have a population with a shared political and social consensus on basic beliefs to be stable, who are often mobile, causing political power shifting
+\2 They must also have a specific territorial boundary from other states, government, which enforces decisions on the population, and sovereignty, or complete, legitimately accepted authority within
+\2 Sovereignty theoretically makes all states equal, though economic and military power renders them not fully sovereign
+\1 Evolutionary theory states that government began as an attempt to organize extended families as they grew larger and larger
+\2 Force theory states that government formed when people were put under one authority by force, while divine right is based on the belief that rulers were chosen or descended from gods
+\2 Diamond believed in evolution, saying that overtime, to sustain the need for more resources, force theory interjected, while religion gave unity
+\2 Social contract theory was developed by Hobbes in England, stating that people gave power to the state to maintain order, in exchange for protection from natural state of violence
+\2 Locke said that people had natural rights to life, liberty, and property, and could break the contract if the government broke them
+\1 Governments maintain social order, such as taxes or drafts, and prevent conflict, because people don’t know how to do it by themselves, according to Locke
+\2 Governments must provide services for general welfare, public service projects that people wouldn’t do alone, and create health and safety laws
+\2 Federal government protects citizens from terrorism or wars, and handles foreign and trade relations, and can change states' foreign agreements
+\2 Government can also make economic decisions to increase growth, reduce inequality and prevent rebellions and issues, in themselves and other nations, and can incentivize particular economic actions
+\end{outline*}
+\subsection{Formation of Governments}
+\begin{outline*}
+\1 Unitary systems of government are those where a single central government holds absolute power, while a federal system divides it between central and local
+\2 Originally, the US was a confederacy, or loose union of independent states, but eventually became federal, when found ineffective
+\1 Constitutions are government rules, creating ideals for the state (preamble), structure and powers of government, and supreme law
+\2 It may be written, or unwritten (based on laws and decisions, such as in the UK), and is found in all governments
+\2 Constitutional governments are those where the constitution is able to limit the powers of the government
+\2 Constitutions are incomplete, and cannot include everything for the nation, and may not actually reflect the government, such as in China
+\1 Politics are the effort to influence and control government policies, influencing services and benefits provided to their interests and values, allowing a peaceful clash of opinions in society
+\2 Some, such as Madison in the Federalist, feared politics would allow special interest groups to do actions against the general welfare
+\1 Most nations are unequal, some industrialized with large industry and advanced tech, while some are developing, and economic and political interdependence due to industry and tech growth takes away total sovereignty
+\2 Many developing countries have also began to depend on foreign aid to cope with environmental or political issues
+\2 Political motivated nonstate organizations, such as terrorists or national liberation organizations, also play a role in world politics, as well as multinational corporations and international organizations
+\end{outline*}
+\subsection{Types of Governments}
+\begin{outline*}
+\1 Autocracies are governments where power is in a single person, including totalitarian dictatorships, glorifying the ideas of a leader, and controlling all social and economic life, where the leader is not limited
+\2 Monarchies are an inherited autocracy, where absolute monarchs have unlimited power over the people, and constitutional monarchies are limited by some alternate, elected source of power
+\1 Oligarchies are systems where a group holds power due to economic, social, or military power, often attempting to stimulate a democratic system
+\1 Democracies are those ruled by the people, either a direct democracy of public meetings to vote on issues, or a representative democracy, voting to give people power to vote for laws
+\2 Republics are where the voters are fully the source of the government’s authority, with representatives held accountable
+\2 Democracies promote freedom and equal opportunity to the greatest degree possible, and allow majority rule but give rights to minorities
+\2 Korematsu v. US allowed the government to take liberties from Japanese Americans, but Endo v. US stated that as a natural born, it was racism
+\1 Democracies rely on free and open elections, each vote with the same amount of power, minimum requirements to vote, allowed to voice opinions and get help or support from citizens, and have a secret ballot to prevent risk
+\2 Political parties are groups with common interests, by simplifying choices, and serve as loyal opposition to critique policies of those in power
+\1 Democracy requires active citizen participation in government, an educated public, an economy with a large, stable middle class and without extremes and control over their economic decisions, also called free enterprise
+\2 It also requires a social consensus, or acceptance of democratic values and agreement about the goals and limits of government
+\2 It requires a civil society, or groups independent of government, to make views known to the rest of society, and allow people to participate easier
+\end{outline*}
+\section{Chapter 2 - Origins of American Government}
+\subsection{The Colonial Period}
+\begin{outline*}
+\1 Most of the original American colonists were from England, using English governmental ideas, also found in many Native cultures
+\2 Magna Carta gave the idea of limited government, protecting against loss of natural rights, unjust punishment, and popular consent to some taxes
+\2 It was made in 1215, starting on nobles, but eventually forming the basis of constitutional government
+\2 The 1628 Petition of Right limited kings power from collecting taxes without Parliament, imprisoning without cause, house troops in homes without permission, and martial law without war
+\1 The English Bill of Rights in 1688 by William and Mary gave limited power to monarchs, and required Parliament to stop laws, give taxes, and have an army, as well as prevented interference in Parliament elections and debates
+\2 It also gave right to petition, trial by jury, and prevented cruel and unusual punishments
+\1 Representative government was found in the Parliament, with the House of Lords and Commoners (merchants and property owners, mainly)
+\1 Locke (in his Two Treatises of Government), Voltaire, and Rousseau believed government must protect natural rights by contract with the people
+\1 Each colonial government had a governor, legislature, and court system, but had allegiance to the monarch, property qualifications for white males to vote
+\2 Nine of the original colonies also persecuted religious dissenters
+\2 They had a written constitution for limitations and liberties, elected legislature representatives, and Montesquieu’s separation of powers
+\2 Written constitutions started with the 1620 Mayflower Compact for self-government, followed by the Puritan Great Fundamental in MA and Fundamental Orders in 1639 CT, giving representative and legal plans
+\2 Fundamental Orders gave an judicial and executive of members from the legislative house, which can tax, spend, and was able to set their own calendar, all with term limits, the executive having a single 2 year term
+\2 The VA House of Burgesses in 1619, elected church officials and government in Puritan MA, eventually changing in 1636 to two representatives to the MA General Court legislature
+\2 Legislatures also had to adapt to unexpected civil, public works situations such as roads and schools as the colonies grew
+\end{outline*}
+\subsection{Unification for Independence}
+\begin{outline*}
+\1 The colonies were a raw materials source and market for British goods to aid England, but due to long distance, they self-governed
+\2 During the French and Indian War from 1754 to 1763, the British took more control in exchange for protection from the French in Canada, fighting for land in Western PA and OH, won by the British
+\2 The war took away the need for protection, but added war debts, putting the direct tax, Stamp Act of 1765, for all printed documents and dice
+\2 They put additional taxes on tea, sugar, glass, paper, and other products, and began to control trade to benefit England further
+\1 England’s revenue increased, but protests and boycotts led to the removal of the Stamp Act, replaced by other taxes, leading to the Tea Party in 1773
+\2 Intolerable Acts then put MA under British rule and closed Boston Harbor
+\1 In 1754, Franklin proposed the Albany Plan of Union to fight the French, but the colonies were too separate to give up power to a federal government
+\2 The taxes led to a community, leading to the 1765 Stamp Act Congress to discuss protest, sending a petition that only colonies could do direct taxes
+\2 The 1773 dozens of Committees of Correspondence communicated between colonies to organize protests
+\1 After the Intolerable Acts, VA and MA called the First Continental Congress of the colonies except GA in September 1774 in Philadelphia, deciding on a trade embargo with England, and a meeting in 1775 if the King didn’t back down
+\2 In April 19, 1775, the British attacked the minutemen at Lexington and Concord, and in May, they met for a 2nd Congress, organizing a government with Hancock as president, and a military under Washington
+\1 Thomas Paine wrote Common Sense, saying King George was against liberty and corrupt, and Sam Adams called for independence, which Henry Lee proposed in June 1776, passed July 2nd, edited and approved July 4th
+\2 The declaration justified the resolution and gave founding principals of the country, based on liberty, natural rights, and consent of governed, written by Jefferson, Adams, Franklin, Sherman, and Livingston, with 1/4 cut
+\2 After, it lists specific complaints against King George, then finally states that attempts to resolve differences peacefully have failed
+\1 States began to draft state constitutions as independent states, typically with a bill of rights and the idea of consent of the governed emphasized
+\end{outline*}
+\subsection{The Articles of Confederation}
+\begin{outline*}
+\1 In Lee’s resolution, he proposed the loose Articles of Confederation, to continue the government of the 2nd Congress, ratified in March 1781 by all states
+\2 It was a unicameral legislature, with no federal court, a Committee of States of one delegate from each when Congress was not in session
+\2 Executive positions were chosen from the Congress, which was only able to handle foreign affairs, maintain a military, fix weights and measures, Indian affairs, post offices, and decide state disputes
+\1 The Articles were weak, due to not allowing taxes, only requesting from state taxes or borrowing money, could not regulate trade internally or externally, and needed 9 states approval for laws, when 3 or 4 were often absent from Congress
+\2 Congress could not enforce laws, amendments needed to be unanimous, and without an executive, there were uncoordinated committees for management, and had no federal courts for interstate disputes
+\2 The framers felt a Republic could only work in small, homogeneous communities, based on Montesquieu's teachings that the rich and small interests would control the government
+\1 The Confederation did make the states cede claims to land West of the Appalachians, passing two land ordinances, 1785 for survey and division, and the Northwest of 1787 deciding they would be made into equal states
+\2 It also signed the 1783 peace treaty with the UK, and gave all Eastern UK land, as well as setting up the executive Departments and secretaries (splitting military into War and Marine)
+\2 It also had the full faith and credit clause, preventing discrimination against citizens of others, and respect legal decisions of another state
+\1 States quickly fought over boundaries, tariffs, and trade with foreign nations, and the government owed \$40M to soldiers, and could not afford the military either
+\2 Shay’s Rebellion due to a depression hurting farmers, led to an armed march on the MA Supreme Court, and then on Springfield federal arsenal
+\2 The MA militia stopped it, but it showed the need for a strong federal
+\1 Washington held the Mount Vernon convention for MD and VA to discuss import duties, navigation on the Potomac, and currency differences in 1785
+\2 In 1786, the Annapolis Convention discussed commerce between the 5 states that came, where Hamilton and Madison called for the Constitutional Convention in 1787 due to Shay’s in Philadelphia
+\2 This was intended to revise the Articles for a stronger government
+\1 State level began to take private interests and became corrupt, with 1 year terms forcing them to push for reelection, such that laws shifted constantly
+\2 As a result, they appealed to the majority, such that many believed it had to be further from the people to balance majority and minority interests
+\end{outline*}
+\subsection{The Constitutional Convention}
+\begin{outline*}
+\1 The 74 delegates (55 which attended) at the convention, many of which had helped on state constitutions, the Articles, the Declaration, and were leaders
+\2 Washington gave it trustworthy appearance, while Franklin was a famous scientist and diplomat, as well as Wilson who read Franklin’s speeches and did detailed work, and Morris who wrote the final draft
+\2 Madison also wrote the government plan, and notes on the Convention, called the Father of the Constitution
+\1 Washington was chosen as leader, each state got 1 vote, a simple majority was needed for meetings and votes, and it was closed to press and public
+\2 They quickly decided to start over, using a limited representative government, divided among the three branches
+\2 They also agreed to strengthen the federal, and limit states ability to coin money or interfere with the rights of creditors
+\1 Madison’s Virginia Plan stated that a national legislature, with a lower house elected, who pick the upper house, and a strong executive and judicial appointed by the legislature, setting the strong national tone for the convention
+\2 The legislature would be able to remove unconstitutional state laws, but small states feared larger ones controlling a strong national government
+\1 Paterson’s New Jersey Plan had one legislature with equal, single votes, that could set taxes and regulate interstate trade, a weak executive chosen by it, and a limited judiciary chosen by the executive, amending the articles
+\1 The Hamilton Plan would set up an absolute executive for life, to make the Virginia Plan appear moderate
+\1 Sherman’s Connecticut Compromise had a lower House based on population, where spending/taxing begins, and an upper house, chosen by state legislatures
+\1 The 3/5ths Compromise stated that slaves would be counted as 3/5ths of a person for both tax and representation purposes
+\2 The North also wanted complete federal control over international trade, while the South needed agricultural exports, fearing control over them
+\2 They agreed to not abolish the slave trade until 1808, and let Congress regulate interstate and foreign commerce, but did not allow export taxes
+\1 The Constitution also did not mention slavery, except allowing slaves to be returned to owners, ignoring slavery to allow it to be written without dispute
+\2 They agreed to the voted electoral college (instead of people, state legislatures, and Congress), voted for the president, and a 4 year term
+\1 9 states had to ratify it for it to apply to those, the rest for them, leading to a debate between the Federalists, supported by urban merchants, and the anti-federalists, supported by laborers and farmers
+\2 Anti-Federalists said it was extralegal, not authorized since the convention was to revise the Articles, and said it took powers from states
+\2 They also feared, without a written bill of rights, the government would violate rights, led by Henry, gaining the Bill of Rights as amendments (12, 2 rejected), even though most states had in their state constitution
+\2 The Federalists thought strong government was needed to prevent anarchy, and protect the nation from internal and external problems
+\1 Federalists feared state armies fighting or military leadership of smaller states out of fear, and thought the people would prevent lobbyists and that Senate age and citizen restrictions was enough regulation
+\2 Anti-federalists felt not knowing representatives personally, not separated by different interests, would lead to tyranny, and that recall was needed to prevent Senate autocracy, as well as fearing drafts taking away rights
+\2 They also feared a standing army in peace, not loyal to the government, and feared Senate influence, approving executive choices, regulating judicial actions, but lost due to no alternative
+\2 Yates was a NY judge, and the anti-federalist leader called Brutus, while the Federalists called themselves Publius
+\1 After NH, it took effect, but had to be approved in VA and NY, leading to Hamilton, Madison, and Jay writing the Federalist essays defending it, after which the government began on March 4, 1889 in NYC
+\end{outline*}
+\section{Chapter 3 - The Constitution}
+\subsection{Structure and Principles}
+\begin{outline*}
+\1 The US Constitution is unusually simple and short, such that it could be understood vaguely by people in the future
+\2 The Preamble is the explanation of why it was written, to serve the people, and protect liberties, stability and order
+\2 There are 7 articles, Article I making the legislative, Section I making Congress, II and II making the House and the Senate, then elaborating on powers, restrictions, and procedures of Congress
+\2 Article II makes the executive branch, describing qualifications, procedures, elections, and powers of the president and VP
+\2 Article III makes the judicial, allowing them to make lower federal courts, followed by Section II, giving jurisdiction on specific types of cases, followed by Section III which defines treason
+\2 Article IV gives citizens of other states, the rights of citizens of that state, discusses federal military protection to states, and admitting new states
+\2 Article V discusses amendments, VI the supremacy clause of Federal law and treaties being the supreme law, and VII for ratification
+\1 The Constitution is first based on popular sovereignty, or consent of governed, as well as separation of powers, to prevent any one branch from gaining too much
+\2 It includes federalism, or the division of power between national and states, moving from the confederation, but not to a unitary due to fear
+\1 Judicial review is the power to declare national, state, and local government actions unconstitutional, given to all federal courts, established over federal law by Marbury v. Madison in 1803, only to be changed by amendments or the court
+\2 It is also based on checks and balances on other branches, such as presidential vetoes as well as 2/3 vote of both houses to overrule, as well as the president able to appoint judges, approved by the Senate
+\2 Limited government was also given, specifically listing its powers in the Bill of Rights and Article IV
+\end{outline*}
+\subsection{Amending the Constitution}
+\begin{outline*}
+\1 Amendments must be proposed either by a 2/3 vote of both houses of Congress, or by a national convention, requested by 2/3 of states
+\2 The latter was almost used in 1963, when 33/34 needed states petitioned for an amendment overturning state lawmaker elections
+\2 By 1991, 32 had petitioned for a required balanced budget amendment, but after the 2000 balanced budget, it lost support
+\1 Ratification must either be by 3/4 of state legislatures, or a ratifying convention in 3/4 states, able to try again for ratification later
+\2 During the Equal Rights Amendment anti-gender discrimination debate, 5 tried to revoke it, which it was uncertain whether was legal
+\2 Conventions have only been used once for the 21st amendment to repeal Prohibition (18th), determined over legislatures by Congress, planned and organized by states
+\2 Congress can set the time limit for ratification, currently 7 years, though it can be specified in the amendment, influencing the results
+\1 Informal changes are also used to subtly change the constitution, either through passing laws to clarify or expand the Constitutional provisions, such as tax law, cabinet departments and agencies, and the Judiciary Act of 1789
+\1 Congress has also used changes through practice, like impeachment, accused in the House, tried in the Senate, to define high crimes and misdemeanors
+\2 Presidents have also done this through presidential succession (interim or actual) by Tyler in 1841 after Harrison died, until 25th amendment in 1967
+\2 Executive agreements directly between the president and foreign leaders, are often used in place of Senate approved treaties, and the president has began pushing for Congressional laws, rather than just enforce
+\1 Federal court decisions by judicial review, either restraint, avoiding initiative unless it is in clear violation, or activism, shaping national policies such as the Warren Court from 1953-69, setting the bar for civil and accused rights
+\2 In the 1930s, fiscal conservation activism was common, now typically liberal, while Court rulings have often changed as times did
+\1 Changes can also be done by custom, such as political parties or term limits
+\end{outline*}
+\subsection{Amendments}
+\begin{outline*}
+\1 The first 10 amendments are the Bill of Rights, ratified in 1971 to limit the powers of government, the first of which gave freedom of religion, speech (written and verbal), press, assembly, and separation of church and state
+\2 As a result, the press doesn’t have prior restraint, or government censorship, though it is unable to slander (false speech to damage a person’s reputation) or libel (false writing)
+\2 People are also required to have responsible speech, and are not allowed to give state secrets or advocate violent revolution
+\1 The 2nd gives the right to security, allowing an armed militia and citizen gun ownership, but does not prevent arm regulation
+\1 The 3rd prevents forced quartering, though Congress has certain conditions in war, under which they can
+\1 The 4th requires specific warrants to search and seizure, needing probable cause, as well as search or arrest warrants
+\1 The 5th requires evidence before calling a trial, bans double jeopardy (tried for a crime found innocent for), self-incrimination, due process of law (proper trial procedures), and defines eminent domain, saying property can only be seized with fair compensation, for the good of the general public
+\1 The 6th gives a speedy, public trial by an impartial jury, allowing a request to talk to the judge privately, and a change of venue if the jury cannot be impartial
+\2 It also allows being informed of charges against, calling witnesses, hearing all questions against witnesses, and the right to an attorney
+\1 The 7th gives right to a jury trial for civil disputes >\$20, able to be decided by a judge if both parties agree, while the 9th states all non-specified rights are not declines, and 10th gives all non-specified powers to the states
+\2 The 8th prohibits excessive bail, fines, and cruel and unusual punishment
+\1 The 11th limits federal court jurisdiction after Chisholm v. Georgia gave it full powers, while 12th creates separate ballots for president and VP
+\1 The 13th outlaws slavery, the 14th protects all citizens from losing rights without due process, and gives equal protection under the law, and gives citizens to all born or naturalized, and the 15th prohibits loss of voting rights by race
+\1 The 16th gives Congress the power to do individual income taxes, after it was ruled unconstitutional in 1895, the 17th gives popular election of senators after buying votes, and the 18th began the prohibition, ended by the 21st (though transport to states that ban alcohol was still illegal)
+\2 The 19th gives women the right to vote, the 20th gives dates for inauguration and Congress start terms, ending terms earlier in January 3rd (Congress) and 20th, preventing lame ducks
+\2 The 22nd gave presidential term limits, the 23rd gave presidential voting rights to DC, 24th banned poll taxes, 25th gave a process for VP succession, such that the VP and majority of the cabinet, or the president, can write the president pro tem of the Senate and Speaker of the House
+\2 26th lowers voting age to 18, and the 27th makes constitutional pay raises effective only in the term after
+\end{outline*}
+\end{document}
