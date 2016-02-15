@@ -72,13 +72,13 @@
 \subsection{Displacement, Time, and Average Velocity}
 \begin{outline*}
 \1 All objects are placed on a coordinate system, and viewed as a particle, or a single point of negligible size and shape
-\1 The displacement is equal to the vector from the initial point to the final point, written $\delta x = x_f - x_i$, measured in meters (m)
+\1 The displacement is equal to the vector from the initial point to the final point, written $\Delta x = x_f - x_i$, measured in meters (m)
 \2 Displacement is typically drawn as a function of time on an x-t graph, such that the secant line from two points is the average velocity within
 \2 Distance is defined as the scalar quantity of the movement of the particle in the time interval
 \1 Velocity is the rate of change of position with respect to time, in m/s
-\1 $v_{average} = \frac{\delta x}{\delta t}$, such that $\delta t$ is the scalar change in time during the movement
-\2 Speed is defined as the scalar distance over change in time, or $s = \frac{d}{\delta t}$
-\2 $\delta t$ is typically represented as going from 0 to t, such that $\delta t$ is often represented at t
+\1 $v_{average} = \frac{\Delta x}{\Delta t}$, such that $\Delta t$ is the scalar change in time during the movement
+\2 Speed is defined as the scalar distance over change in time, or $s = \frac{d}{\Delta t}$
+\2 $\Delta t$ is typically represented as going from 0 to t, such that $\Delta t$ is often represented at t
 \end{outline*}
 \subsection{Instantaneous Velocity}
 \begin{outline*}
@@ -95,8 +95,8 @@
 \2 On a v-t graph, it is interpreted the same as velocity is on an x-t graph
 \2 On an x-t graph, it is viewed as the concavity of the graph, equal to 0 at a point of inflection, or where there is no concavity
 \2 Can be drawn on a motion diagram showing the change in velocity from one point in time to another, similarly to how velocity is drawn
-\2 On an a-t graph, $\delta v$ is the area under the curve to the x-axis
-\1 $a_{average} = \frac{\delta v}{t}$
+\2 On an a-t graph, $\Delta v$ is the area under the curve to the x-axis
+\1 $a_{average} = \frac{\Delta v}{t}$
 \1 $a_{instantaneous} = \frac{dv}{dt} = \frac{d^2x}{dt^2}$
 \end{outline*}
 \subsection{Motion with Constant Acceleration}
@@ -104,8 +104,8 @@
 \1 Drawn by a straight line on an a-t graph, or a parabola on an x-t graph such that there is a constant rate of change of velocity
 \1 $v_f = v_i + at$
 \1 $v_{average} = \frac{v_i + v_f}{2}$
-\1 $\delta x = v_it + \frac{at^2}{2}$
-\1 $v_f^2 - v_i^2 = 2a\delta x$
+\1 $\Delta x = v_it + \frac{at^2}{2}$
+\1 $v_f^2 - v_i^2 = 2a\Delta x$
 \end{outline*}
 \subsection{Freely Falling Bodies}
 \begin{outline*}
@@ -113,16 +113,16 @@
 \end{outline*}
 \subsection{Motion with Non-Constant Acceleration}
 \begin{outline*}
-\1 $\delta v = \int_0^t a(t)dt$
-\1 $\delta x = \int_0^t v(t)dt$
-\1 $\delta d = \int_0^t |v(t)|dt$
+\1 $\Delta v = \int_0^t a(t)dt$
+\1 $\Delta x = \int_0^t v(t)dt$
+\1 $\Delta d = \int_0^t |v(t)|dt$
 \1 To get proper functions and values, the boundary conditions must always be used on integrals, rather than simply used as indefinite integrals
 \end{outline*}
 \section{Chapter 3 - Multidimensional Motion}
 \subsection{Position, Velocity, and Acceleration Vectors}
 \begin{outline*}
 \1 Position Vector $(\vec{r}) = x\vec{i} + y\vec{j} + z\vec{k}$
-\1 $\delta \vec{r} = \delta x\vec{i} + \delta y\vec{j} + \delta z\vec{k}$
+\1 $\Delta \vec{r} = \Delta x\vec{i} + \Delta y\vec{j} + \Delta z\vec{k}$
 \1 Speed (s) = |v|
 \1 $\vec{v} = \frac{d\vec{r}}{dt}$
 \1 Velocity can be thought of in two perpendicular components and a parallel component, such that the perpendicular signify the change in direction, while the parallel signifies the change in speed
@@ -264,14 +264,14 @@
 \begin{outline*}
 \1 $K = \frac{1}{2}mv^2$
 \1 Increase in speed means positive acceleration in the direction of displacement, work is positive, showing the relationship between work and velocity
-\1 The Work Energy Theorem states that $W_{total} = \delta K$ for any single particle or composite system within any inertial frame of reference
+\1 The Work Energy Theorem states that $W_{total} = \Delta K$ for any single particle or composite system within any inertial frame of reference
 \2 This is true for any forces, conservative or nonconservative
 \end{outline*}
 \subsection{Power}
 \begin{outline*}
 \1 Power is the rate at which work is done, measured in Watts (W), or J/s
 \2 Can also be measured in ft*lb/s, or horsepower (hp), such that 1 hp = 500 ft*lb/s
-\1 $P_{av} = \frac{\delta W}{\delta t}$
+\1 $P_{av} = \frac{\Delta W}{\Delta t}$
 \1 $P = \frac{dW}{dt} = F \cdot v$ (if F is constant)
 \end{outline*}
 \section{Chapter 7 - Potential Energy and Conservation of Energy}
@@ -279,9 +279,9 @@
 \begin{outline*}
 \1 Potential energy is the energy associated with position, which can be converted through work into kinetic energy, such that the change in potential energy is useful, rather than the actual potential energy
 \2 Thus, any point can be chosen as the zero point within convention, such that it is measured from that
-\1 Gravitational Potential Energy $(U_{grav}) = F_{weight}\delta h$
-\2 Thus, $W_{grav} = -\delta U_{grav}$
-\2 If $F_g$ is the only force acting on a body, then $\delta K = -\delta U_{grav}$
+\1 Gravitational Potential Energy $(U_{grav}) = F_{weight}\Delta h$
+\2 Thus, $W_{grav} = -\Delta U_{grav}$
+\2 If $F_g$ is the only force acting on a body, then $\Delta K = -\Delta U_{grav}$
 \2 Gravitational potential energy is considered a shared property of both bodies the force exists between, considered part of the same system
 \2 Gravitational potential of a single body = $-\frac{GmM}{r}$, where r is the distance between the centers, m is the body, and M is the attracting body
 \end{outline*}
@@ -289,24 +289,24 @@
 \begin{outline*}
 \1 Elastic potential energy is the energy stored in a stretched elastic body, or a body which returns to its original shape and size after being changed
 \2 $U_{el} = \frac{1}{2}kx^2$, where x is the distance stretched from the relaxed position
-\2 $W_{el} = -\delta U_{el}$
+\2 $W_{el} = -\Delta U_{el}$
 \end{outline*}
 \subsection{Conservative Forces}
 \begin{outline*}
-\1 Conservative Forces are forces where the work is reversible, can be expressed as $\delta U$, if $\delta x = 0, W = 0$, and depends only on $\delta x$, not on the path taken
-\2 $W_{conservative} = -\delta U$, where W is the work done by conservative forces and U is the total potential energy of the system
+\1 Conservative Forces are forces where the work is reversible, can be expressed as $\Delta U$, if $\Delta x = 0, W = 0$, and depends only on $\Delta x$, not on the path taken
+\2 $W_{conservative} = -\Delta U$, where W is the work done by conservative forces and U is the total potential energy of the system
 \2 Total Potential Energy of the System (U) is the sum of all forms of potential energy within the system
 \2 E is constant if only conservative forces act on the body
 \2 Conservative forces include elastic, gravitational, and electric force
 \1 Nonconservative forces include friction or fluid resistance
 \2 Nonconservative forces which cause a loss in mechanical energy are called dissipative forces
 \1 Internal Energy ($U_{int}$) is the energy of the molecular state of the body, such as the body temperature, increasing when mechanical energy is lost
-\2 $W_{nonconservative} = -\delta U_{int}$
+\2 $W_{nonconservative} = -\Delta U_{int}$
 \2 Work on a closed path is not equal to 0, due to energy lost based on path
 \2 The increase in internal energy due to friction is generally considered to be the rotational kinetic energy for a rolling body
-\1 The Law of Conservation of Energy states $\delta K + \delta U + \delta U_{int} = 0$
+\1 The Law of Conservation of Energy states $\Delta K + \Delta U + \Delta U_{int} = 0$
 \2 Thus, energy is never created or destroyed, but its form can be changed
-\2 Total Mechanical Energy of the System (E) = K + $U_{grav}$, such that $\delta E + \delta U_{int} = 0$, or $\delta E = W_{nonconservative}$
+\2 Total Mechanical Energy of the System (E) = K + $U_{grav}$, such that $\Delta E + \Delta U_{int} = 0$, or $\Delta E = W_{nonconservative}$
 \1 Energy diagrams can be used to understand motion, graphing U(x), such that if there are only mechanical forces acting on it, y = E can be drawn to show the limits of motion
 \2 The relative minimums of the curve are stable equilibrium, which the force always attempts to restore
 \2 The relative maximums of the curve are unstable equilibrium, such that any force tends to push it away from the equilibrium
