@@ -118,6 +118,53 @@
 \1 $\delta d = \int_0^t |v(t)|dt$
 \1 To get proper functions and values, the boundary conditions must always be used on integrals, rather than simply used as indefinite integrals
 \end{outline*}
+\section{Chapter 3 - Multidimensional Motion}
+\subsection{Position, Velocity, and Acceleration Vectors}
+\begin{outline*}
+\1 Position Vector $(\vec{r}) = x\vec{i} + y\vec{j} + z\vec{k}$
+\1 $\delta \vec{r} = \delta x\vec{i} + \delta y\vec{j} + \delta z\vec{k}$
+\1 Speed (s) = |v|
+\1 $\vec{v} = \frac{d\vec{r}}{dt}$
+\1 Velocity can be thought of in two perpendicular components and a parallel component, such that the perpendicular signify the change in direction, while the parallel signifies the change in speed
+\1 $a = \frac{d\vec{v}}{dt}$
+\end{outline*}
+\subsection{Projectile Motion}
+\begin{outline*}
+\1 Projectiles are a body with initial velocity, such that the only force acting on it is air resistance and gravitational acceleration
+\1 Idealized projectiles move with gravitational acceleration that is constant, ignoring air resistance, earth rotation, and earth curvature
+\2 Ideal projectiles follow their parabolic 2D trajectory path
+\1 It is measured, so that $a_x = 0$ and $a_y = -g = 9.81 m/s^2$, with initial velocity $(v_0)$, so $v_{0x} = v_0cos\theta$, and $v_{0y} = v_0sin\theta$, typically using the starting point as the origin
+\1 Air resistance pushes against all directions of motion, such that the ideal angle for maximum distance is $<45^o$, and max height and range are less than expected
+\1 Range = $\frac{2sin(\theta)cos(\theta)v^2}{g}$
+\1 Height = $\frac{v^2sin^2(\theta)}{2g}$
+\1 Flight Time = $\frac{2vsin\theta}{g}$
+\end{outline*}
+\subsection{Circular Motion}
+\begin{outline*}
+\1 Cartesian vectors can be converted to polar form, such that $\vec{r}$ and $\vec{\theta}$ are the unit vectors, where $\vec{r}$ is coming from the origin, while $\vec{\theta}$ is perpendicular, such that it is tangential to the circle, both dependent on the angle from the origin (ø), while r is a fixed vector length
+\2 $\vec{r} = \vec{i}cos(\theta) + \vec{j}sin(\theta)$
+\2 $vec{\theta} = \vec{i}(-sin(\theta)) + \vec{j}cos(\theta)$
+\2 $\vec{r}$ (position vector) = $r\vec{r}$ by polar conversion ($x = rcos\theta$, $y = rsin\theta$)
+\2 Thus, $\vec{v} = r\vec{\theta}\frac{d\theta}{dt} = v\vec{\theta}$, where v is tangential velocity, such that if $\theta = \omega t$ where $\omega$ is angular velocity, then $\vec{v} = r\omega\vec{\theta}$
+\2 $\vec{a} = \vec{\theta}\frac{dv}{dt} + v\frac{d\theta}{dt}$, where the first part is tangential acceleration, and $\vec{a}_c = -v(\frac{d\theta}{dt}\vec{r} = -v\omega\vec{r}$, where if $\theta = \omega t$, then $\vec{a}_c = \frac{-v^2}{r}$
+\1 Uniform circular motion is moving around a circle with constant speed, such that the acceleration is purely perpendicular
+\1 $a_{radial} = \frac{v^2}{R} = \frac{4\pi^2R}{T^2}$
+\2 T is the time for one revolution around the circle, while R is the radius
+\2 This acceleration is called centripetal acceleration, due to going toward the center of the circle
+\1 Nonuniform circular motion is motion around a circle with non constant speed, such that radial acceleration is still the same, but there is also tangential (parallel) acceleration due to the change in speed
+\2 Radial acceleration changes based on the speed at that moment
+\2 $a_{tan} = \frac{d|v|}{dt}$
+\end{outline*}
+\subsection{Relative Velocity}
+\begin{outline*}
+\1 The appearance of velocity relative to the observer is called relative velocity, determined by the movement of the frame of reference of the observer
+\2 $x_{P/A} = x_{P/B} + x_{B/A}$, meaning the position of P relative to frame A is equal to the position of P relative to B plus the position of B relative to frame A
+\2 Thus, $\frac{dx_{P/A}}{dt} = \frac{dx_{P/B}}{dt} + \frac{dx_{B/A}}{dt}$, and $v_{P/A} = v_{P/B} + v_{B/A}$
+\1 If  $\vec{v}$ is the constant velocity of the origin, such that origin O moves to O’, then $\vec{r} = \vec{v}t + \vec{r}'$ 
+\2 If $\vec{v}_r$ is the velocity of the point, $\vec{v}_r'$ (velocity of the point relative to O’) = $\vec{v}_r - \vec{v}$, while acceleration is the same
+\1 This is referred to as the Galilean Velocity Transformation
+\2 At frame of reference speeds nearing the speed of light, real velocity can be greater than c, which is impossible, leading to the Relativistic Transformation
+\end{outline*}
 \section{Chapter 4 - Newton's Laws of Motion}
 \subsection{Force}
 \begin{outline*}
