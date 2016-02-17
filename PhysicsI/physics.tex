@@ -68,6 +68,98 @@
 \underline{Teacher}: \teacher
 \newpage
 
+\section{Chapter 1 - Mathematics and Units}
+\subsection{Fundamental Units}
+\begin{outline*}
+\1 Unit = SI = CGS = Alternate
+\1 Length (l) = Meters (m) = Centimeters (cm) = Angstrom ($10^{-10}$ m, or the size of an atom)
+\1 Mass (m) = Kilogram (kg) = Grams (g)
+\1 Time (t) = Seconds (s) = Seconds (s)
+\1 Electric Current (I) = Ampere (A)
+\1 Temperature (T) = Kelvin (K)
+\1 Amount of Substance (n) = Moles (mol)
+\1 Dimensional analysis can be used to find an unknown unit, check a answer or formula, or find the unit of a constant, such that if the fundamental units on both sides are equal, it is possibly correct
+\2 Functions take and return unitless values, such that constants must assure that
+\end{outline*}
+\subsection{Prefixes}
+\begin{outline*}
+\1 Kilo - $10^3$ - k
+\1 Mega - $10^6$ - M
+\1 Giga - $10^9$ - G
+\1 Terra - $10^{12}$ - T
+\1 Peta - $10^{15}$ - P
+\1 Milli - $10^{-3}$ - m
+\1 Micro - $10^{-6}$ - $\mu$
+\1 Nano - $10^{-9}$ - n
+\1 Pico - $10^{-12}$ - p
+\1 Femto - $10^{-15}$ - f
+\end{outline*}
+\subsection{Scalars}
+\begin{outline*}
+\1 Quantities with only value and a unit (magnitude)
+\1 Examples are time, distance, speed, kinetic or potential energy, mass, pressure, volume, temperature, charge, electric potential, current, resistance, or capacitance
+\end{outline*}
+\subsection{Vectors}
+\begin{outline*}
+\1 Quantities with a magnitude and direction
+\1 Examples are displacement, velocity, acceleration, force, momentum, or electric and magnetic fields
+\1 The magnitude of a vector must be $\geq$ 0, but direction can be shown with a negative value
+\1 Vectors have an x and y component
+\2 $A_x = \vec{A}cos(\theta)$
+\2 $A_y = \vec{A}sin(\theta)$
+\2 $|A| = \sqrt{A_x^2 + A_y^2}$
+\2 $tan(\theta) = \frac{A_y}{A_x}$
+\1 Vectors can be written in $\vec{A} = <A_x, A_y, A_z>$ or $\vec{A} = A_x\vec{i} + A_y\vec{j} + A_z\vec{k}$, where $\vec{i}$, $\vec{j}$, and $\vec{k}$ are dimensional unit vectors
+\2 Unit vectors are those with a magnitude of 1
+\end{outline*}
+\subsection{Vector Mathematics}
+\begin{outline*}
+\1 Arithmetic
+\2 Vectors are put tip-to-tail, finding the vector going from the tail of the first to the tip of the last, calculating that vector
+\2 Sum the x components of the vectors to get the final x component, do the same for y
+\2 Parallelogram can be drawn with the vectors to and from both sides of the resultant vector, using that to calculate the vector measurements
+\1 The law of sines and cosines can be used to solve for vectors and vector angles
+\1 The dot product of two vectors produces a scalar, such that $\vec{A} \cdot \vec{B} = |\vec{A}||\vec{B}|cos(\theta) = A_xB_x + A_yB_y + A_zB_z$
+\2 Thus, it is the magnitude of the projection of the first vector onto the second, multiplied by the second
+\1 The cross product of two vectors produces a vector, perpendicular to the other two by the right hand rule, noncommutative, such that the right hand rule of the curling from first to second, the thumb points toward the vector
+\2 $|\vec{A} x \vec{B}| = |\vec{A}||\vec{B}|sin(\theta) = \begin{vmatrix} \vec{i} & \vec{j} & \vec{k} \\ ax & ay & az \\ bx & by & bz \end{vmatrix} = (\begin{vmatrix} ay & az \\ by & bz \end{vmatrix})\vec{i} +(\begin{vmatrix} az & ax \\ bz & bx \end{vmatrix})\vec{j} + (\begin{vmatrix} ax & ay \\ bx & by \end{vmatrix})\vec{k}$, where $\begin{vmatrix} 1 & 2 \\ 3 & 4 \\ \end{vmatrix} = 1*4 - 2*3$
+\2 This procedure to take the discriminant of a square matrix can be extended to higher dimensions, taking an item from the top, multiplied by the matrix of the square which is not in the same row or column
+\2 The Jacobian matrix is the matrix of the partial derivatives of the function with respect to each variable as the column, with each row as a different function in the set of functions
+\end{outline*}
+\subsection{Mathematics}
+\begin{outline*}
+\1 Vectors can be measured in spherical coordinates, such that the 3 components are $\theta$ (angle from the positive x-axis), r (distance from the origin), and $\phi$ (angle from the positive z-axis)
+\2 Cartesian coordinates can be measured in terms of the angles of the vector ($\vec{F}$) from each of the positive axes, such that $x = \vec{F}cos(\theta_x)$, and so on
+\2 When doing integrals of spherical coordinates, it must be noted that $\phi$ is the angle from the positive z-axis, not the x-axis
+\1 Functions are graphed by the roots and relative maxima, where the second derivative is found to determine the concavity of the maxima
+\1 All problems must state the conventions taken, such that the positive and negative directions are defined
+\1 Partial derivatives with respect to some variable ($\frac{\partial f}{\partial x}$), assume all variables other than x are constant
+\1 Integrals have the product of the differential, such that the order parsed through the region determines if it is positive or negative
+\end{outline*}
+\subsection{Multiple Integral Mathematics}
+\begin{outline*}
+\1 $\int_D \int f(x, y)dA = \int^b_a \int^{g(x)}_{f(x)} f(x, y)dydx$
+\1 $\int_D \int f(x, y)dA = \int^b_a \int^d_c f(x)g(y)dydx = \int^d_c g(y)dy \int^b_a f(x)dx$
+\1 When parsing through in higher dimensions, it can also be done by sections if there is a formula for area in the other direction, rather than by point
+\1 dV = dxdydz = rdzdrd$\theta$, such that $a \leq \theta \leq b, g(\theta) \leq r \leq h(\theta)$, and $u(r, \theta) \leq z \leq v(r, \theta)$, bounding the function $w  = f_{cyl}(r, \theta, z) = f_{cart}(x, y, z)$
+\1 dV = dxdydz = $p^2sin(\phi)dpd\theta d\phi$, such that $a \leq p \leq b, c \leq \theta \leq d$, and $e \leq \phi \leq f$, bounding the function $w  = f_{sph}(p, \theta, \phi) = f_{cart}(x, y, z)$
+\1 dA = dxdy = $rdrd\theta$, such that $a \leq \theta \leq b$, and $g(\theta) \leq r \leq h(\theta)$, bounding the function $z = f_{pol}(r, \theta) = f_{cart}(x, y)$
+\1 The coefficients to the differentials, or the scaling factor, is equal to the discriminant of the Jacobian matrix of the $x = f(r, \theta), y = g(r, \theta)$ functions for 2D, or the corresponding for 3D
+\end{outline*}
+\subsection{Differential Equations}
+\begin{outline*}
+\1 Differential equations are those containing derivatives, where the order of the equation is the highest numbered derivative
+\2 Homogeneous equations are those without an f(x) constant as the right-hand side, while inhomogeneous are those with
+\2 Linear differential equations are those where the derivative coefficients are constants
+\1 Homogeneous second order linear differential equations are solved by assuming y = $Ae^{rx}$ where the equation is of the form ay’’ + by’ + cy = 0
+\2 Thus, the equation can be turned into $ar^2y + bry + cy = 0$, able to be solved for y, such that $y_1 = A_1e^{r_1x} and y_2 = A_2e^{r_2x}$
+\2 The superposition principle or linear combination allows there to be two solutions for y, such that the general solution is the sum
+\2 If the two roots are real, that is the final solution, if the two roots are the same, the equation is $y = Ae^{rx} + Bxe^{rx}$
+\2 If the two roots are imaginary $(\alpha + \beta i)$, it can be changed by the equation $e^{ix} = cis(x)$ such that $y = e^{\alpha x}(Acos(\beta x) + Bsin(\beta x))$
+\1 Inhomogeneous second order linear differential equations have two separate solutions found, the left-hand side are the $y_c$ (compliment solution), solved the same as homogeneous
+\2 $y_p$ (particular solution) is solved based on the format of the right-hand side, f(x), where c is A, x is Ax + B, sinx/cosx is Acosx + Bsinx, $e^x$/$e^{-x}$ is $Ae^x$/$Ae^{-x}$, and $e^xsinx$ is $Ae^x(Bsinx + Ccosx)$
+\2 $y_p$’ and $y_p$’’ are then found, and plugged into the original equation as y, y’, and y’’, after which the general solution is the sum of the particular and compliment solutions, related by plugging in
+\end{outline*}
 \section{Chapter 2 - One Dimensional Motion}
 \subsection{Displacement, Time, and Average Velocity}
 \begin{outline*}
@@ -316,5 +408,317 @@
 \begin{outline*}
 \1 $F = -\frac{dU}{dx}$, when U is a one dimensional potential energy
 \1 $\vec{F} = -(\frac{\partial U\vec{i}}{\partial x} + \frac{\partial U\vec{j}}{\partial y} + \frac{\partial U\vec{k}}{\partial z}) = -\vec{\nabla}U$, for 3 dimensional potential energy, able to be extended to other dimensions
+\end{outline*}
+\section{Chapter 8 - Momentum and Center of Mass}
+\subsection{Momentum and Impulse}
+\begin{outline*}
+\1 Momentum (p) is a vector quantity, measured in kg*m/s, such that p = mv
+\1 $Fnet = \frac{dp}{dt}$
+\2 This is a way of writing Newton’s Second Law, and such is valid only within inertial frames of reference
+\1 Impulse (J) = $F_{av}\Delta t = \int^{t_2}_{t_1} \sum F dt = \Delta p$
+\2 Impulse is measured in N*s
+\end{outline*}
+\subsection{Conservation of Momentum}
+\begin{outline*}
+\1 Within a system of particles, forces the particles exert on each other are internal forces, while forces exerted by objects outside the system are external
+\2 An isolated system is one such that there are no external forces
+\1 By the Principle of Conservation of Momentum, in an isolated system, in an inertial reference frame, the total momentum of the system is constant
+\2 $\Delta p_{system} = 0$
+\end{outline*}
+\subsection{Collisions}
+\begin{outline*}
+\1 Collisions are strong, short interactions between bodies
+\2 If the force between them is stronger than external forces, those forces can be thought to be negligible, as if it was a closed system
+\1 Elastic collisions are those with only conservative forces between the bodies during the collision, such that no kinetic (and mechanical) energy is lost
+\2 Elastic collisions can occur even if the kinetic energy is temporarily used in a conservative force, such as converted to elastic potential energy
+\1 Inelastic collisions are those such that kinetic energy is lost from the system during the collision
+\2 Completely inelastic collisions are those such that the bodies stick together after the collision, and move as one
+\1 Head-on collisions occur aligned with the movement, such that direction doesn’t change of any of the particles
+\end{outline*}
+\subsection{Center of Mass}
+\begin{outline*}
+\1 If a system has n particles, the center of mass is such that $x_{cm} = \frac{\sum_i^n m_ix_i}{\sum_i^n m_i}$  (for point masses) = $\frac{\int_L xdm}{\int_L dm}$ (for rigid bodies), broken into small pieces of mass, rather than space
+\2 The denominator is equal to the overall mass of the body
+\2 $m = \lambda L, m = \sigma A, m = \rho V$, where $\lambda, \sigma$, and $\rho$ are linear, area, and volume mass density constants for uniform density
+\2 $m = \int_L \lambda (r)ds, m = \int_A \sigma (r)dA, m = \int_V \rho (r) dV$, where $\lambda (r), \sigma (r), \rho (r)$ are linear, area, and volume mass density functions of position for nonuniform density
+\2 Mass-density equations are used to convert small pieces of mass (element of mass) to values based on position (element of length)
+\1 Homogeneous bodies with a geometric center have the center of mass at that point, and bodies with continual distribution can use integrals to find the point
+\2 Bodies with an axis of symmetry have the point on the axis of symmetry
+\2 The center of mass does not need to be within the object
+\2 Bodies can also be broken up into multiple homogeneous or symmetrical pieces, finding the center of mass of those, then finding the overall center of mass using the sub-centers
+\2 It can also be broken up by nonexistent pieces, subtracted by mass from the center of mass of the larger area to find the new center
+\1 The derivative can be taken to get a similar formula for velocity of the center of mass in terms of the particles, such that $P = \sum^n_i m_iv_{cm} = \sum_i^n m_iv$
+\2 This enables the system to be viewed as a single mass
+\1 By Newton’s Laws, $\sum F_{external} = \sum^n_i m_ia_{cm}$, proving why complex bodies, or systems with separate parts, can be viewed as a single particle
+\2 By extension, in a system of particles, $\sum F_{external} = \frac{dP}{dt}$
+\end{outline*}
+\subsection{Rocket Propulsion}
+\begin{outline*}
+\1 As the rocket mass changes by dm/dt, such that the $\Delta m$ is negative, momentum must stay constant within the system of the fuel and the rocket
+\2 $v_{ex}$ can be deemed the velocity of the fuel relative to the rocket, denoted positively, while v is the velocity of the rocket, and m is the initial mass of the rocket
+\2 As a result, it can be evaluated, removing values which are purely differential due to being negligible
+\1 Thus, using conservation of momentum, $F_{external} = m*(\frac{dv}{dt}) + v_{ex}\frac{dm}{dt}$, such that $F_{thrust} = -v_{ex}\frac{dm}{dt}$ and $F_{rocket} = m*(\frac{dv}{dt})$
+\2 Thus, $\Delta v = v_eln(\frac{m_i}{m_f})$ is true with no external forces acting
+\end{outline*}
+\section{Chapter 9 - Rotation of Rigid Bodies}
+\subsection{Angular Velocity and Acceleration}
+\begin{outline*}
+\1 Rigid bodies are ideal objects with definite and unchanging shape and size, such that any two points have the same distance during rotation, generally solid
+\1 Bodies with a fixed axis are those such that the axis is rotating in a specific dimension solely, such that ø can show the position
+\2 Almost any motion can be considered rotational around some fixed axis, such that it is calculated based around that
+\1 Angular velocity ($\omega$) = $\frac{d\theta}{dt}$
+\2 Angular velocity, such that the object is rotating in the x-y plane, is a vector on the z-axis
+\2 The direction is found by the right hand rule, such that the fingers curl in the direction of the rotation, and the thumb points in the vector direction
+\2 By the definition of radians ($s = r\theta$), $v = r\omega$, such that v is tangential to the axis in the direction of rotation
+\1 Angular acceleration ($\alpha$) = $\frac{d\omega}{dt}$, such that $a = r\alpha$
+\1 Kinematics formulas for linear velocity and acceleration apply equally to angular velocity and acceleration, with the variables changed to the corresponding one
+\2 By the formulas for circular motion, the same formulas can be used to derive acceleration formulas
+\2 $a_{tan} = r\alpha$
+\2 $a_{rad} = \omega^2r$
+\1 The principles of fixed body velocity also apply to any object acting as part of a rotating rigid body with tangential velocity, even if not with a fixed axis, with the exception of radial angular acceleration
+\1 Angular variables are vectors or scalars the same as their regular counterpart 
+\end{outline*}
+\subsection{Rotational Motion Energy}
+\begin{outline*}
+\1 Bodies can be considered to be particles of certain masses, a certain distance from the axis of rotation, while rigid bodies are those with constant distances
+\1 $K = \sum_i \frac{1}{2}m_iv_i^2 = \sum_i \frac{1}{2}m_ir_i^2\omega^2 = \frac{1}{2}I\omega^2$, where I is the moment of inertia, or rotational inertia, such that $I = \sum_i m_ir_i^2$, or the mass distribution of the body
+\1 $I = \int r^2dm$ for continuous bodies
+\2 It must be noted that r is not the distance from the origin, but the distance from the axis of revolution
+\1 Total kinetic energy of an object is the combination of translational and rotational in the case of rolling bodies
+\end{outline*}
+\subsection{Moment of Inertia Formulas}
+\begin{outline*}
+\1 Solid cylinder around axis = $\frac{1}{2}MR^2$
+\1 Solid sphere around axis = $\frac{2}{5}MR^2$
+\end{outline*}
+\subsection{Parallel and Perpendicular Axis Theorems}
+\begin{outline*}
+\1 $I_P = I + Md^2$, where d is the distance of the new axis from the center axis, I is the moment of inertia on the axis through the center of mass, $I_P$ on the new axis, parallel to the previous, and M as the body’s mass
+\1 $I_z = I_x + I_y$, for some 2D object entirely within the x-y plane
+\end{outline*}
+\section{Chapter 10 - Rotational Motion Dynamics}
+\subsection{Torque}
+\begin{outline*}
+\1 Motion can be either translational, moving as a whole through space, or rotational, which also depends on the point where force is applied
+\1 $\tau$ (Torque) = r x F, where F is the force perpendicular to the axis of rotation, and r is the lever/moment arm distance, or the perpendicular distance to the axis from the line of action, which is the line of the force vector
+\2 Torque is measured in N-m, but is not J, due to not being energy
+\2 Counterclockwise rotation has positive torque, and clockwise is negative
+\2 Net torque can be calculated from any point, which would then be considered the axis of rotation
+\end{outline*}
+\subsection{Torque and Rigid Body Angular Acceleration}
+\begin{outline*}
+\1 $\sum \tau = I\alpha$, though this only applies to rigid bodies where $\alpha$ is uniform for the body
+\2 This is the supplement to Newton’s Second Law, such that it is the sum of external torque, since internal torques cancel out by the Third Law
+\2 This is valid when the axis moves, though the axis must not change direction, and must be an axis of symmetry
+\end{outline*}
+\subsection{Rigid Body Rotation with a Moving Axis}
+\begin{outline*}
+\1 When the axis moves, the body has both types of motion, such that the body can be viewed as rotating about an axis through the center of mass
+\2 Thus, the object’s dynamics equations must be broken up
+\2 Velocity of specific points as a result is the sum of rotational/tangential and translational velocities
+\1 The kinetic energy is the sum of translational and rotational kinetic energy
+\1 One major example is that wheels must have instantaneous velocity of 0 at the point it touches the ground, due to not slipping
+\2 Thus, $v_{cm} = R\omega$
+\1 Rolling friction is another example, due to the fact that if the body and surface are rigid, normal force produces no torque, but if not, normal force can shift position, creating torque countering rotation
+\end{outline*}
+\subsection{Rotational Work and Power}
+\begin{outline*}
+\1 $W = \int \tau d\theta = \Delta\frac{1}{2}I\omega^2$
+\1 $P = \tau\omega$
+\end{outline*}
+\subsection{Angular Momentum}
+\begin{outline*}
+\1 L (Angular Momentum) = r x p, where r is the lever distance
+\2 The right hand rule can be used to determine the vector direction for any body rotating around an axis of symmetry
+\2 For any rigid body rotating around an axis of symmetry, L = $I\Omega$
+\1 $\tau = \frac{dL}{dt} = r x \frac{dp}{dt}$ within any system of particles, since only external forces produce torque on the system
+\end{outline*}
+\subsection{Conservation of Angular Momentum}
+\begin{outline*}
+\1 If the net torque on a system is 0, then total angular momentum is constant, though angular momentum can be transferred within the system
+\end{outline*}
+\subsection{Gyroscopes and Precession}
+\begin{outline*}
+\1 Precession is the rotation of the axis of rotation, combined the torque created by gravity acting on the circle, causing the axis to rotate around the pivot
+\1 Due to the initial momentum outward from the pivot, instead of the torque from gravity pulling it down, it changes the direction of the original momentum
+\2 Since it is perpendicular, it doesn’t change the magnitude, and the movement counters the gravitational movement
+\2 The original momentum can manifest itself as the spinning of the wheel, rather than the fall of gravity, due to the direction
+\2 To overcome the gravity due to the axis combined with the circle, the pivot must supply normal force equal to the overall weight
+\1 $\Omega$ )Precession Angular Speed) = $\frac{d\theta}{dt} = \frac{\frac{|dL|}{|L|}}{dt}$, where L is that of the wheel
+\2 Thus, $\Omega = \frac{F_wd}{I\Omega}$
+\2 The greater the torque is compared to the angular velocity, the more the object will nutate due to the adjustment caused by the gravitational momentum
+\2 The object must have force from the center to sustain centripetal motion, such that F = $m\Omega^2r$
+\end{outline*}
+\section{Chapter 11 - Equilibrium and Elasticity}
+\subsection{Equilibrium Conditions}
+\begin{outline*}
+\1 $\sum F = 0$
+\1 $\sum \tau = 0$ about every point
+\1 Thus, the body at equilibrium has no tendency to gain acceleration or angular acceleration
+\1 If a body is at static equilibrium, it is at equilibrium while at rest, such that there is no translational or rotational motion
+\end{outline*}
+\subsection{Center of Gravity}
+\begin{outline*}
+\1 The torque due to gravity can be calculated by assuming it only applies to a specific point, at the center of gravity
+\1 If the change in gravity due to elevation on the body can be ignored, such that gravitational acceleration is the same on all points, the center of gravity is the center of mass
+\1 If a body is suspended or supported by a point and the body is at equilibrium, the center of gravity is on the vertical axis from that point
+\2 If the body is suspended or supported by several points and at equilibrium, the center of gravity is in the region within the points
+\end{outline*}
+\subsection{Stress, Strain, and Elastic Moduli}
+\begin{outline*}
+\1 Strain is the scalar deformation of a non-rigid body due to a force acting on it
+\1 Stress is the scalar strength of force causing the deformation
+\2 Stress is measured in Pascals (Pa), or $N/m^2$, which is the same unit as pressure
+\1 Elastic modulus is a constant, such that Elastic Modulus = $\frac{\text{Stress}}{\text{Strain}}$
+\2 Hooke’s Law of Springs is a special case of this, which is also called Hooke’s Law, valid only within a specific range
+\1 Tensile stress is the stretching of an object from the ends, with an equal force from both directions so it doesn’t move, but is in tension
+\2 Tensile Stress = $\frac{F}{A}$, where A is the cross-sectional area, or the area of a slice taken perpendicular to the ends/the force, and F is the magnitude of the force
+\2 Tensile Strain = $\frac{\Delta l}{l_0}$, where $l_0$ is the initial length of the object, such that Tensile Strain doesn’t have a unit due to it cancelling out
+\2 Young’s Modulus (Y) = $\frac{\text{Tensile Stress}}{\text{Tensile Strain}}$
+\2 Compressive stress is stress such that the force is inward, though compressive modulus is usually the same, though certain composite materials, such as stone, are the exception
+\2 Objects, such as a beam being bent, can have both tensile and compressive stress simultaneously
+\1 Bulk stress is caused by uniform pressure on all sides, caused by a fluid, such that Pressure (p) = $\frac{F}{A}$, causing a change in volume as pressure changes
+\2 Bulk Stress = $\Delta p$
+\2 Bulk Strain = $\frac{\Delta V}{V_0}$
+\2 Bulk Modulus (B) = $-\frac{\text{Bulk Stress}}{\text{Bulk Strain}}$
+\2 Compressibility = $\frac{1}{B}$
+\2 Bulk modulus of a gas depends on the initial pressure of the gas, though that of a liquid or solid is constant
+\1 Shear stress is the force again both sides of an object at a point, parallel to the cross-sectional area taken, against a solid object with definite shape, causing it to become compressed and slanted
+\2 Shear Stress = $\frac{F}{A}$
+\2 Shear Strain = $\frac{x}{h}$, where h is the length of the side on which the force is applied, while x is the displacement of the part with force acting on it, relative to the part with opposite force
+\2 Shear Modulus (S) = $\frac{\text{Shear Stress}}{\text{Shear Strain}}$
+\end{outline*}
+\subsection{Elasticity and Plasticity}
+\begin{outline*}
+\1 The graph of strain by stress of a material is called the percent elongation, such that the strain is measured as a percent of change
+\1 Until the proportional limit at some percent strain less than 1, Hooke’s law applies and the force is mostly conservative, able to be recovered and reversed when the stress is removed
+\1 Until the elastic limit/yield point, the force is still mostly conservative
+\1 Until the fracture point, during plastic deformation, the strain is not reversible, but rather if the force is removed, instead going to a changed permanent set measurement when no stress is applied
+\1 Brittle materials are those with a fracture point soon after the yield point, while ductile materials are those with the point far after
+\1 Elastic hysteresis is a difference in the curve for relaxing using less work, due to some of the force of the stress being used for internal friction force
+\1 Ultimate strength/breaking stress/tensile strength is the stress needed to reach the fracture point, completely independent of the modulus
+\end{outline*}
+\section{Chapter 12 - Fluid Mechanics}
+\subsection{Fluids and Density}
+\begin{outline*}
+\1 Fluid statics is the study of fluids at rest under equilibrium
+\1 Fluid dynamics is the study of fluids in motion
+\1 Density is a property of all materials, such that Density $(\rho) = \frac{m}{V}$, typically measured in $kg/m^3$
+\2 All objects made of the same material have the same density, though density depends on temperature and pressure
+\2 Objects made up of many materials are measured in average density
+\2 Specific gravity of a material is the ratio of the materials density to the density of water at $4^oC$ (1000 $kg/m^3$)
+\end{outline*}
+\subsection{Pressure in a Fluid}
+\begin{outline*}
+\1 Pressure (p) = $\frac{dF}{dA}$, where F is the magnitude of the force perpendicular to the surface
+\1 //Finish
+\end{outline*}
+\section{Chapter 13 - Gravitation}
+\subsection{Newton's Law of Gravitation}
+\begin{outline*}
+\1 $F_g = \frac{Gm_1m_2}{r^2}$, where m is the mass of each of the particles, r is the distance between them, G is the universal gravitational constant, and $F_g$ is the gravitational force pulling each of the objects toward the other
+\2 The universal gravitational constant (G) is $6.67 * 10^{-11} N*m^2/kg^2$
+\2 The force always acts on both bodies with equal and opposite magnitude
+\2 Spherically symmetric bodies have the same gravitational force acting on external point masses, as if the mass was concentrated at the center
+\2 On the inside, it can be thought to be a smaller body, and thus less force
+\2 Rigid bodies are broken into small masses, such that the integral is taken to find the force or gravitational field
+\1 As a result, on larger bodies, the particles are pulled into a symmetrical, spherical shape, such that the larger, the more spherical
+\2 Thus, while a body may be spherically symmetrical, it is not uniform
+\1 Forces that act at a distance are typically described in terms of a field, or a disturbance in space caused by the body, including gravity
+\1 Weight is the gravitational force exerted on a body by the other bodies in the universe, though the effect of most is typically negligible
+\2 The gravitational field is the graviational force on a body with 1 kg mass at a specific point, such that $m_{body}g = F_g$
+\1 Gauss’s Law of Gravitation can be used to calculate the graviational field at a point, by creating a gaussian surface including that point
+\2 Gaussian surfaces must be closed (compact/effectively-continuous without boundary in any direction), 3D surfaces, such that they are the boundary of a 3D region with a constant field throughout (symmetrical)
+\2 The gravitational field must also be parallel to the normal of the tangent plane, $A_N$, on the surface A
+\2 $\Phi_g = \oint gdA = -4\pi GM_{enclosed}$, where M is the mass of the body inside the surface creating the field, the negative signifies direction, and the surface integral of dA is the surface area, where g can be removed as a constant
+\2 $\Phi_g$ is the gravitational flux, or the number of field lines passing through an specific area, simplifying to $\Phi_g = g \cdot A_N$ for uniform surfaces
+\end{outline*}
+\subsection{Gravitational Potential Energy}
+\begin{outline*}
+\1 $W_g = \int^{r_2}_{r_1} F_g \cdot dr = -\Delta U_g$
+\2 For ease of calculation, it is often assumed that only one particle is moving due to gravity, while the other is stationary
+\2 Thus, $U_g = -\frac{Gm_Em}{r}$, based on the convention outward force is positive, inward negative (called a bounded state, pulled toward a center mass), such that gravitational potential is always negative, equal to 0 as distance from the center mass is infinite, measured from infinity
+\2 Close to the surface of the Earth, the potential energy formula can reduce to the simpler form of the formula, due to $r_1$ is almost equal to $r_2$
+\1 Escape velocity can be calculated as a result by conservation of energy, such that at infinity distance, U is 0, and KE is 0
+\2 If the escape velocity is the speed of light, the body is a black hole
+\2 $v_{ex} = \sqrt{\frac{2Gm}{r}}$, where m is the weight of the body, not the object
+\end{outline*}
+\subsection{Satellite Motion}
+\begin{outline*}
+\1 Horizontal projectile motion at a high enough velocity allow it to move far enough that the curvature of the Earth becomes a factor, create an orbital motion
+\2 Open orbits are those where the projectile velocity is high enough to escape gravity, and never return to their starting point, shaped as parabolas or hyperbolas
+\2 Closed orbits are those where velocity is low enough that they continue to orbit in an ellipse, shaped as ellipses
+\1 Circular orbits are those where the satellite revolves by uniform circular motion
+\2 $v_{projectile} = \sqrt{\frac{Gm_E}{r}}$
+\2 $E_{orbit} = K + U = -\frac{Gm_Em}{2r} = \frac{U}{2}$
+\2 In the atmosphere, mechanical energy is used up by air resistance, until the orbit decays and the satellite falls
+\1 Kepler’s laws are proven by assuming eccentricity of 0, such that circular motion formulas can be used, generally used on planets around the Sun
+\1 Kepler’s First Law states that each planet moves in an elliptical orbit, with the sun at one focal point of the ellipse
+\2 The distance from each foci to the center is ea, where a is the semi-major (half the major axis) length, and e is the eccentricity (from 0/circle to 1/parallel lines)
+\2 The end of the major axis near the sun is the perihelion, while the other side of the ellipse is the aphelion
+\1 Kepler’s Second Law states that a line from the sun to a given planet sweeps out equal areas in equal times ($\frac{dA}{dt} = \frac{L}{2m_{satellite}}$ 
+\2 //Finish from Textbook
+\1 Kepler’s Third Law states that the periods of the planets are proportional to the $\frac{3}{2}^{rd}$ power of the semimajor axis length of the orbits ($\frac{T^2}{r^3} = \frac{4\pi^2}{GM_{sun}}$)
+\2 Thus, in constant velocity (circular orbit), $v = \frac{2r\pi}{T}$ can be used
+\2 Due to the second law, this does not depend on eccentricity, such that it is true for elliptical orbits, although the velocity is not constant in that case
+\1 //Finish from Textbook
+\end{outline*}
+\subsection{Constants}
+\begin{outline*}
+\1 $G = 6.67 * 10^{-11} N*m^2/kg^2$
+\1 $M_e = 5.97 * 10^{24} kg$
+\1 $M_s = 1.98 * 10^{30} kg$
+\1 $M_m = 7.35 * 10^{22} kg$
+\1 $R_e = 6.37 * 10^6 m$
+\1 $R_s = 6.95 * 10^8 m$
+\1 $R_m = 1.73 * 10^6 m$
+\end{outline*}
+\section{Chapter 14 - Periodic Motion}
+\subsection{Oscillation}
+\begin{outline*}
+\1 Displacement (x), typically one-dimensionally, is the displacement of the body from equilibrium, such that the coordinate system origin is equilibrium
+\2 Oscillation occurs when there is a restoring force on a body to move it back toward equilibrium when displaced, such that while force is 0 at equilibrium, velocity is at maximum, causing it to move past
+\1 Amplitude (A) is the maximum magnitude of displacement from equilibrium
+\1 Period (T) is the time for a single cycle, while frequency (f) is the number of cycles per second, measured in Hertz (Hz)/$s^{-1}$, such that $f = \frac{1}{T}$
+\1 Angular frequency ($\omega$) = $2\pi f$
+\end{outline*}
+\subsection{Simple Harmonic Motion (Mass-Spring System)}
+\begin{outline*}
+\1 Simple harmonic motion is oscillation such that the restoring force is directly proportional to the displacement from equilibrium, such as that of an ideal spring
+\2 Bodies that undergo SHM are called harmonic oscillators
+\2 While most vibrations are not strictly SHM, under small displacements, they behave as SHM and can be represented as such
+\2 $a_x = \frac{d^2x}{dt^2} = -\frac{kx}{m}$
+\1 Simple harmonic motion can be thought of as the projection of uniform circular motion onto the x-axis, such that the circle is the reference circle, and the vector to the point on the circle is the phasor
+\2 As a result, angular speed ($\omega$) of the circular motion is equal to the angular frequency of the SHM, though not directly proportional to the velocity, but rather only the horizontal component is the velocity
+\2 Thus, $\omega = \sqrt{\frac{k}{m}}$, such that frequency and period are independent of amplitude, explained by larger restoring forces with greater amplitude
+\1 $x = Acos(\omega t + \phi)$, where $\phi$ is the phase angle, or the point on the circle the motion was in at t = 0
+\2 Thus, displacement can be determined in terms of the differential equation from the force, after which angular frequency is derived by the resultant expression (x’’ + $\omega^2$x = 0)
+\2 This formula is then derived from when it is released from a phase angle of 0, such that it begins at x = A when t = 0
+\2 Thus, v = $-\omega Asin(\omega t + \phi)$ and $a = -\omega^2Acos(\omega t + \phi)$
+\2 In addition, $\phi = arctan(\frac{-v_0}{\omega x_0})$ and $A = \sqrt{x_0^2 + (\frac{v_0}{\omega})^2}$
+\1 $E = \frac{1}{2}mv^2 + \frac{1}{2}kx^2 = \frac{1}{2}kA^2$ by conservation of energy
+\2 Thus, $v = \pm\sqrt{\frac{k}{m}}*\sqrt{A^2 - x^2}$, with the sign depending on the direction the body is going
+\end{outline*}
+\subsection{Applications of SHM}
+\begin{outline*}
+\1 Vertical spring-mass systems, such that the effect of gravity is still present, can be solved such that the equilibrium position is simply shifted down by $\frac{mg}{k}$
+\2 All other values are the same on the other hand, due to being a constant added to the position
+\1 Simple pendulums can be simplified to the equation $l\theta$’’ + gsin($\theta$) = 0, which as $\theta$ approaches 0, $\frac{sin(\theta)}{\theta}$ approaches 1, such that $sin(\theta)$ approaches $\theta$
+\2 Thus, $\omega = \sqrt{\frac{g}{l}}$, where l is the length of the pendulum, and $\theta$ is the angle measured from the y-axis
+\1 Rigid pendulums are done by the net torque formula instead, such that $I\theta$’’ + mgDsin($\theta$) = 0, or $\omega = \sqrt{\frac{mgD}{I}}$, where I is based from the axis
+\1 Torsion pendulums are build as a mass fixed to a flexible material able to be twisted, which follows a law similar to Hooke’s Law for Angular Motion, or $\tau = -k\theta$, such that $\omega = \sqrt{\frac{k}{I}}$
+\2 I must be the combined moment of the mass and the material rod, centered around the center rod axis
+\1 //Finish from Textbook
+\end{outline*}
+\subsection{Damped Oscillations}
+\begin{outline*}
+\1 Damped oscillations are caused by a nonconservative force acting on the body, generally friction or drag force, which is assumed to be F = Dv for calculation
+\1 The differential equation comes out such that r = $\frac{-D}{2m} \pm \frac{M}{2}\sqrt{D^2 - 4km}$, when x = $Ae^{rt}$, such that if the discriminant is positive, it is overdamped, if equal to 0, it is critical damping, and if negative, it is underdamped
+\2 Overdamped and critically damped bodies do not oscillate, rather just decaying toward equilibrium
+\2 Underdamped bodies can be solved similarly to non-damped oscillations, such that x = $e^{\frac{-D}{2M}t}(Acos(\sqrt{\frac{k}{m} - \frac{D^2}{4m^2}}t)$
+\1 $\omega_D$, or damped angular frequency = $\sqrt{\frac{k}{m} - \frac{D^2}{4m^2}}$, such that $f_D$, or damped frequency = $\frac{\omega_D}{2\pi}$, while regular angular frequency is generally termed $\omega_0$ under those cases
+\1 $A = A_0e^{\frac{-D}{2M}t}$ and $E = E_0e^{\frac{-D}{M}t}$ using the previous displacement equation
+\2 $\frac{-D}{m}$ is often written for the latter formula as $\frac{-t}{\tau}$, where $\frac{m}{D}$, where $\tau$ is the time constant/decay time
+\2 Quality Factor for the System (Q) = $2\pi * \frac{E_{initial}}{E_{lost}}$, where the denominator is the energy lost in one period, such that as x approaches 0, since $e^x$ approaches 1 + x, $Q = \omega_0 \tau$, such that the total quality factor is the a measure of the percent of energy lost in each period
 \end{outline*}
 \end{document}
