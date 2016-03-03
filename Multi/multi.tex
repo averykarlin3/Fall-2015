@@ -31,6 +31,7 @@ urlcolor=black
 \rhead{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
+\newcommand{\gradient}{\vec{\nabla}}
 
 \begin{document}
 
@@ -1674,10 +1675,10 @@ Thus, the base case of $C^1$, then $C^0$ is true, and it can be done by inductio
 
 Consider a function $\vec{l}: \mathbb{R}^d \to \mathbb{R}^e$. $\vec{l}$ is
 called a \textbf{linear mapping} if the image of any k-flat in $\mathbb{R}^d$
-($0 \leq k \leq d$) is a \~{k}-flat in $\mathbb{R}^e$, where $\~{k} \leq k$.
+($0 \leq k \leq d$) is a ~k-flat in $\mathbb{R}^e$, where ~k $\leq k$.
 Basically these definitions ``preserve flatness.''
 
-Thus the rigorous definition of a linear function is if $\vec{l}: \mathbb{R^d} \to \mathbb{R^e}$ is linear, then $\exists A \in \mathbb{R^{e \times d}}$ such that $\vec{l}(\vec{x}) = A\vec{x}$, where $\vec{x}$ is viewed as a column matrix (d \times 1).
+Thus the rigorous definition of a linear function is if $\vec{l}: \mathbb{R^d} \to \mathbb{R^e}$ is linear, then $\exists A \in \mathbb{R^{e \times d}}$ such that $\vec{l}(\vec{x}) = A\vec{x}$, where $\vec{x}$ is viewed as a column matrix ($d \times 1$).
 
 \subsection{Sufficient Conditions for Linear Mapping}
 For $\vec{l}$ to be a linear function, it must have the following properties:
@@ -2058,7 +2059,7 @@ $\vec{l}(\vec{X}) = (l_1(\vec{x}), l_2(\vec{x}),...,l_e(\vec{x}))$, such that ea
 
 $\vec{x} = x_1\vec{e}_1 + x_2\vec{e}_2 + ... + x_d\vec{e}_d = (x_1, x_2, ..., x_d)$, and $\Gamma(\vec{x}) = \Gamma(x_1\vec{e}_1 + ... + x_d\vec{e}_d) = \Gamma(\vec{e}_1)x_1 + \Gamma(\vec{e}_2)x_2 + ... + \Gamma(\vec{e}_d)x_d$. If each term, $\Gamma(\vec{e}_n)x_n = a_n$, then $\Gamma(\vec{x}) = \vec{a} \cdot \vec{x}$.
 
-\underline{Claim:} If \vec{a} $\cdot \vec{x}  = \vec{b} \cdot \vec{x}$ for all $\vec{x} \in \mathbb{R^d}$, where $\vec{a}$, $\vec{b} \in \mathbb{R^d}$, then $\vec{a} = \vec{b}$.
+\underline{Claim:} If $\vec{a} \cdot \vec{x}  = \vec{b} \cdot \vec{x}$ for all $\vec{x} \in \mathbb{R^d}$, where $\vec{a}$, $\vec{b} \in \mathbb{R^d}$, then $\vec{a} = \vec{b}$.
 
 For some $\vec{x} = \vec{e}_1 = (1, 0, 0, ..., 0)$, then $a_1 = \vec{a} \cdot \vec{e_1} = \vec{b} \cdot \vec{e_1} = b_1$, and so forth.
 
@@ -2135,22 +2136,22 @@ z_i}{\partial y_l} \frac{\partial y_l}{\partial x_j}
 
 For simplicity's sake, let $B := D\vec{g}(\vec{f}(\vec{p}))$ and $A :=
 D\vec{f}(\vec{p})$. We know that $A$ satisfies $\forall
-\varepsilon > 0, \exists\delta(\varepsilon) > 0, \forall \vec{h}$ with
-$||\vec{h}|| < \delta(\varepsilon)$:
+\epsilon > 0, \exists\delta(\epsilon) > 0, \forall \vec{h}$ with
+$||\vec{h}|| < \delta(\epsilon)$:
 
 \[
-||\Delta \vec{f}(\vec{p}, \vec{h}) - A \vec{h}|| < \varepsilon
+||\Delta \vec{f}(\vec{p}, \vec{h}) - A \vec{h}|| < \epsilon
 ||\vec{h}||
 \]
 
 Let us call this condition $*_{\vec{f}}$
 
-We also know that $B$ satisfies $\forall \varepsilon' > 0, \exists 
-\delta'(\varepsilon') > 0, \forall \vec{k}$ with
-$||\vec{k}|| < \delta'(\varepsilon')$:
+We also know that $B$ satisfies $\forall \epsilon' > 0, \exists 
+\delta'(\epsilon') > 0, \forall \vec{k}$ with
+$||\vec{k}|| < \delta'(\epsilon')$:
 
 \[
-||\Delta \vec{g}(\vec{q}, \vec{k}) - B \vec{k}|| < \varepsilon'
+||\Delta \vec{g}(\vec{q}, \vec{k}) - B \vec{k}|| < \epsilon'
 ||\vec{k}||
 \]
 
@@ -2158,13 +2159,13 @@ Let us call this condition $*_{\vec{g}}$
 
 We seek to prove the following:
 
-$\forall \varepsilon_2 > 0, \exists\delta_2(\varepsilon_2) > 0, \forall
-\vec{h}$ with $||\vec{h}|| < \delta_2(\varepsilon_2)$:
+$\forall \epsilon_2 > 0, \exists\delta_2(\epsilon_2) > 0, \forall
+\vec{h}$ with $||\vec{h}|| < \delta_2(\epsilon_2)$:
 
 \[
 ||(\vec{g} \circ \vec{f})(\vec{p} + \vec{h}) - (\vec{g} \circ
 \vec{f})(\vec{p}) - (BA) \vec{h}||
-\overset{?}{<} \varepsilon_2 ||\vec{h}||
+\overset{?}{<} \epsilon_2 ||\vec{h}||
 \]
 
 Let's define a vector $\vec{k} := \Delta \vec{f} = \vec{f}(\vec{p} + \vec{h}) -
@@ -2173,14 +2174,14 @@ Let's define a vector $\vec{k} := \Delta \vec{f} = \vec{f}(\vec{p} + \vec{h}) -
 
 \[
 ||\vec{g}(\vec{q} + \vec{k}) - \vec{g}(\vec{q}) - B\vec{k} + B\vec{k} - (BA) \vec{h}||
-\overset{?}{<} \varepsilon_2 ||\vec{h}||
+\overset{?}{<} \epsilon_2 ||\vec{h}||
 \]
 
 Now we left factor $B$ out of the left hand side:
 
 \[
 ||\vec{g}(\vec{q} + \vec{k}) - \vec{g}(\vec{q}) - B\vec{k} + B(\vec{k} - A
-\vec{h})|| \overset{?}{<} \varepsilon_2 ||\vec{h}||
+\vec{h})|| \overset{?}{<} \epsilon_2 ||\vec{h}||
 \]
 
 Now we can apply the triangle inequality and the generalized Cauchy-Schwarz
@@ -2197,51 +2198,51 @@ so we get:
 
 \[
 ||\vec{g}(\vec{q} + \vec{k}) - \vec{g}(\vec{q}) - B\vec{k}|| + ||B||
-||\vec{k} - A\vec{h}|| < \varepsilon' ||\vec{k}|| + ||B||||\vec{k} -
-A\vec{h}|| = \varepsilon' ||\vec{k} - A\vec{h} + A\vec{h}|| + ||B||
+||\vec{k} - A\vec{h}|| < \epsilon' ||\vec{k}|| + ||B||||\vec{k} -
+A\vec{h}|| = \epsilon' ||\vec{k} - A\vec{h} + A\vec{h}|| + ||B||
 ||\vec{k} - A\vec{h}||
 \]
 
 Now we can apply the same trick, except WLOG we assume that $||\vec{k}|| <
-\delta'(\varepsilon')$ and assume $\varepsilon' \leq 1$.  we get:
+\delta'(\epsilon')$ and assume $\epsilon' \leq 1$.  we get:
 \[
-\varepsilon' ||\vec{k} - A\vec{h} + A\vec{h}|| + ||B||
-||\vec{k} - A\vec{h}|| \leq \varepsilon' ||\vec{k} - A\vec{h}|| +
-\varepsilon'||A||||\vec{h}|| + ||B||||\vec{k} - A\vec{h}||
+\epsilon' ||\vec{k} - A\vec{h} + A\vec{h}|| + ||B||
+||\vec{k} - A\vec{h}|| \leq \epsilon' ||\vec{k} - A\vec{h}|| +
+\epsilon'||A||||\vec{h}|| + ||B||||\vec{k} - A\vec{h}||
 \]
 
-Now we factor and apply the bounds on $\varepsilon'$:
+Now we factor and apply the bounds on $\epsilon'$:
 \[
-\varepsilon' ||\vec{k} - A\vec{h}|| +
-\varepsilon'||A||||\vec{h}|| + ||B||||\vec{k} - A\vec{h}|| \leq
-(||B|| + 1) ||\vec{k} - A\vec{h}|| + ||A||||\vec{h}||\varepsilon'
+\epsilon' ||\vec{k} - A\vec{h}|| +
+\epsilon'||A||||\vec{h}|| + ||B||||\vec{k} - A\vec{h}|| \leq
+(||B|| + 1) ||\vec{k} - A\vec{h}|| + ||A||||\vec{h}||\epsilon'
 \]
 
 Note that $||\vec{k} - A\vec{h}|| = ||\vec{f}(\vec{p} + \vec{h}) -
-\vec{f}(\vec{p}) - A\vec{h}|| < \varepsilon ||\vec{h}||$. From this we
+\vec{f}(\vec{p}) - A\vec{h}|| < \epsilon ||\vec{h}||$. From this we
 get:
 
 \[
-(||B|| + 1) ||\vec{k} - A\vec{h}|| + ||A||||\vec{h}||\varepsilon'
-\leq (||B|| + 1) \varepsilon ||\vec{h}|| + ||A||  ||\vec{h}||
-\varepsilon'
+(||B|| + 1) ||\vec{k} - A\vec{h}|| + ||A||||\vec{h}||\epsilon'
+\leq (||B|| + 1) \epsilon ||\vec{h}|| + ||A||  ||\vec{h}||
+\epsilon'
 \]
 
-If we take $\varepsilon = \varepsilon'$, we get:
+If we take $\epsilon = \epsilon'$, we get:
 
 \[
-(||B|| + 1) \varepsilon ||\vec{h}|| + ||A||  ||\vec{h}||
-\varepsilon' \leq (||A|| + ||B|| + 1) \varepsilon ||\vec{h}||
+(||B|| + 1) \epsilon ||\vec{h}|| + ||A||  ||\vec{h}||
+\epsilon' \leq (||A|| + ||B|| + 1) \epsilon ||\vec{h}||
 \]
 
-Note that $(||A|| + ||B|| + 1) \varepsilon$ can be arbitarily small because it
+Note that $(||A|| + ||B|| + 1) \epsilon$ can be arbitarily small because it
 is a constant times an arbitarily small value. If we call this value
-$\varepsilon_2$, we get that
+$\epsilon_2$, we get that
 
 \[
 ||(\vec{g} \circ \vec{f})(\vec{p} + \vec{h}) - (\vec{g} \circ
 \vec{f})(\vec{p}) - (BA) \vec{h}||
-< \varepsilon_2 ||\vec{h}||
+< \epsilon_2 ||\vec{h}||
 \]
 
 \subsubsection{Special Cases}
@@ -2310,7 +2311,7 @@ But if we consider the limits from two directions, we get:
 $$\lim_{h \to 0^+} \frac{f(c + h) - f(c)}{h} \leq 0$$
 $$\lim_{h \to 0^-} \frac{f(c + h) - f(c)}{h} \geq 0$$
 
-Therefore, $f'(c) = 0$. A similar argument can be made if $f(p) < f(a}$
+Therefore, $f'(c) = 0$. A similar argument can be made if $f(p) < f(a)$
 
 \subsection{Mean Value Theorem}
 \subsubsection{Review of the Single Variable Theorem}
@@ -2340,12 +2341,12 @@ $$\boxed{f(\vec{q}) - f(\vec{p}) = \gradient f(\vec{r}) \cdot (\vec{q} - \vec{p}
 
 \subsubsection{Proof}
 
-Let $g(t) = f((1 - t)\vec{p} - t\vec{q})$, where $-\varepsilon \leq t \leq 1 +
-\varepsilon$ for some $\varepsilon > 0$. We can do this because $\vec{p},
+Let $g(t) = f((1 - t)\vec{p} - t\vec{q})$, where $-\epsilon \leq t \leq 1 +
+\epsilon$ for some $\epsilon > 0$. We can do this because $\vec{p},
 \vec{q} \in D^\circ$. Now we can try to take the derivative of $g(t)$. To do
 this we use the chain rule: $g'(t) = \gradient f((1 - t) \vec{p} + t\vec{q})
 \cdot (\vec{q} - \vec{p})$. We now apply the Mean Value Theorem to $g$, we know
-that $\exists  c \in (0, 1)$ such that $g'(c) = \frac{g(1) - g(0)}}1 - 0 =
+that $\exists  c \in (0, 1)$ such that $g'(c) = \frac{g(1) - g(0)}{1 - 0} =
 f(\vec{q}) - f(\vec{p})$. Now we have:
 
 $$f(\vec{q}) - f(\vec{p}) = \gradient f((1 - c) \vec{p} + c\vec{q}) \cdot
@@ -2390,9 +2391,9 @@ $$\boxed{\therefore ||\vec{f}(\vec{q}) - \vec{f}(\vec{p})|| \leq
 \left(\max_{[\vec{p}, \vec{q}]} ||D\vec{f}||\right) ||\vec{q} -
 \vec{p}||}$$
 
-Let $M := \max_{[\vec{p}, \vec{q}]} ||D\vec{f}||$. Fix $\varepsilon > 0$.
+Let $M := \max_{[\vec{p}, \vec{q}]} ||D\vec{f}||$. Fix $\epsilon > 0$.
 Let $D = \{t \in [0, 1] | ||\vec{f}(\vec{q}_t) - \vec{f}(\vec{p})|| \leq
-(M + \varepsilon) ||\vec{q}_t = \vec{p}||\}$ where $\vec{q}_:= (1 -
+(M + \epsilon) ||\vec{q}_t = \vec{p}||\}$ where $\vec{q}_:= (1 -
 t)\vec{p} + t\vec{q}$. Note that $\vec{q}_0 = \vec{p}$ and $\vec{q}_1 =
 \vec{q}$.
 
@@ -2400,26 +2401,26 @@ Note that $0 \in S$, which means that $S \neq \emptyset$. Also note that $S \leq
 1$ because $t \in [0, 1]$. Therefore $\sup S$ exists and finite (bounded by $[0,
 1]$), let us call this value $T$. This means that $\exists t_n \in S$ such
 that $t_n \to T^-$. Therefore, $\forall n, ||\vec{f}(\vec{q}_{t_n}) -
-\vfofpv|| \leq (M + \varepsilon) ||\vec{q}_{t_n} - \vec{p}||$. Now take the
+\vec{f}(\vec{p})|| \leq (M + \epsilon) ||\vec{q}_{t_n} - \vec{p}||$. Now take the
 limit as $n \to \infty$ and we get:
 
-$$ ||\vec{f}(\vec{q}_T) - \vfofpv|| \leq (M + \varepsilon) ||\vec{q}_T
+$$ ||\vec{f}(\vec{q}_T) - \vec{f}(\vec{p})|| \leq (M + \epsilon) ||\vec{q}_T
 - \vec{p}||$$
 
 This means that $T \in S$ as well. Assume for contradiction that $T < 1$. It
 will follow that $T = 1$. Because $\vec{q}_1 = \vec{q}$, it follows that:
 
-$$ ||\vec{f}(\vec{q}) - \vfofpv|| < (M + \varepsilon) ||\vec{q} - \vec{p}||$$
+$$ ||\vec{f}(\vec{q}) - \vec{f}(\vec{p})|| < (M + \epsilon) ||\vec{q} - \vec{p}||$$
 
-Now take the limit as $\varepsilon \to 0^+$. We can then conclude:
+Now take the limit as $\epsilon \to 0^+$. We can then conclude:
 
-$$ ||\vec{f}(\vec{q}) - \vfofpv|| \leq M ||\vec{q} - \vec{p}||$$
+$$ ||\vec{f}(\vec{q}) - \vec{f}(\vec{p})|| \leq M ||\vec{q} - \vec{p}||$$
 
 Say $T < 1$. Choose $\delta > 0$ such that $\tau = T + \delta \leq 1$. We now
 seek to show:
 
 $$ ||\vec{f}(\vec{q}_{\tau}) - \vec{f}(\vec{p})|| \overset{?}{\leq} (M +
-\varepsilon) ||\vec{q}_{\tau} - \vec{p}||$$
+\epsilon) ||\vec{q}_{\tau} - \vec{p}||$$
 
 We first add a bunch of terms to the left hand side and use the triangle
 inequality.
