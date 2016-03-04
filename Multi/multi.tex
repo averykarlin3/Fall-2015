@@ -2431,28 +2431,28 @@ $$ ||\vec{f}(\vec{q}_{\tau}) - \vec{f}(\vec{p})|| =
 
 
 \subsection{Implicit Function Theorem}
-Let $F: D \subseteq \mathbb{R}^{d+1} \to \mathbb{R}$ be $C^1$ on $D^o$. Suppose $F(\vec{A}) = 0$, where $\vec{A} = (\vec{a}, \alpha), \vec{a} \in \mathbb{R}^d, \alpha \in \mathbb{R}$. Also suppose $\partial_yF(\vec{A}) \neq 0$. Here, we write $F(\vec{x}, y) = F(x_1, x_2, ..., x_d, y) = F(\vec{X})$. Then $\exists$ an open set $U \subseteq \mathbb{R}^d$ and an open interval $I \subseteq \mathbb{R}$, such that $\vec{a} \in U$ and $\alpha \in I$ and $U x I \subseteq D^o$, and $\exists$ a function $f: U \to I$, such that $\{\vec{X} \in U x I|F(\vec{X}) = 0\} = G_f := \{(\vec{x}, f(\vec{x}))|\vec{x} \in U\}$. Also f is also $C^1$, and $$\vec{\nabla}f(\vec{x}) = -\frac{1}{\partial_yF(\vec{x}, f(\vec{x}))}\vec{\nabla}_\vec{x}F(\vec{x}, f(\vec{x}))$$, where $\vec{\nabla}_\vec{x}F(\vec{x}) = (\partial_{x_1}F, \partial_{x_2}F, ..., \partial_{x_d}F)$, called the partial gradient.
-
+Let $F: D \subseteq \mathbb{R}^{d+1} \to \mathbb{R}$ be $C^1$ on $D^o$. Suppose $F(\vec{A}) = 0$, where $\vec{A} = (\vec{a}, \alpha), \vec{a} \in \mathbb{R}^d, \alpha \in \mathbb{R}$. Also suppose $\partial_yF(\vec{A}) \neq 0$. Here, we write $F(\vec{x}, y) = F(x_1, x_2, ..., x_d, y) = F(\vec{X})$. Then $\exists$ an open set $U \subseteq \mathbb{R}^d$ and an open interval $I \subseteq \mathbb{R}$, such that $\vec{a} \in U$ and $\alpha \in I$ and $U x I \subseteq D^o$, and $\exists$ a function $f: U \to I$, such that $\{\vec{X} \in U x I|F(\vec{X}) = 0\} = G_f := \{(\vec{x}, f(\vec{x}))|\vec{x} \in U\}$. 
+Also f is also $C^1$, and $$\vec{\nabla}f(\vec{x}) = -\frac{1}{\partial_yF(\vec{x}, f(\vec{x}))}\vec{\nabla}_{\vec{x}}F(\vec{x}, f(\vec{x}))$$, where $\vec{\nabla}_{\vec{x}}F(\vec{x}) = (\partial_{x_1}F, \partial_{x_2}F, ..., \partial_{x_d}F)$, called the partial gradient.
 \subsubsection{Meaning}
 If F is $C^1$ on its domain $D \subseteq \mathbb{R}^{d+1}, \vec{A} \in D^o, F(\vec{A}) = 0,$ and $\partial_yF(\vec{A}) \neq 0, F(\vec{x}, y) = 0$ can be solved inpliticly for y as a function of $vec{x}$ locally in some neighborhood of a solution point, $\vec{A} = (\vec{a}, \alpha)$.
 
 \subsubsection{Proof}
 The implicit function theorem is done in three parts, first by proving the existance of f, then proving the continuity of f, and finally that f is $C^1$, allowing the equation to be proved.
 
-For the first part, a cube (or any convex set) is drawn with an axis from the center of the top and bottom faces, where the midpoint of the axes is said to be $\vec{A}$. $\partial_yF(\vec{A}) \neq 0$ and it can be assumed to be either positive or negative, not changing the proof. Let $g_\vec{a}(y) = F(\vec{a}, y)$. When $y = \alpha, g'_\vec{a}(y) > 0$, meaning $\partial_yF(\vec{x}, y)$ is continuous since F is $C^1$. By continuity, we can assume that the partial derivative is positive for all points within the cube, such that there exists a cube where that is true by the continuity. Thus, the derivative is defined on the axis, such that $\vec{a}$ is fixed. By the theorem assumptions, $F(\vec{A}) = 0, g_\vec{a}(\alpha) = 0$, such that $\exists$ some point $p > \alpha$ and $-p < \alpha$, such that the function value is greater and less than 0 respectively.
+For the first part, a cube (or any convex set) is drawn with an axis from the center of the top and bottom faces, where the midpoint of the axes is said to be $\vec{A}$. $\partial_yF(\vec{A}) \neq 0$ and it can be assumed to be either positive or negative, not changing the proof. Let $g_{\vec{a}}(y) = F(\vec{a}, y)$. When $y = \alpha, g'_{\vec{a}}(y) > 0$, meaning $\partial_yF(\vec{x}, y)$ is continuous since F is $C^1$. By continuity, we can assume that the partial derivative is positive for all points within the cube, such that there exists a cube where that is true by the continuity. Thus, the derivative is defined on the axis, such that $\vec{a}$ is fixed. By the theorem assumptions, $F(\vec{A}) = 0, g_{\vec{a}}(\alpha) = 0$, such that $\exists$ some point $p > \alpha$ and $-p < \alpha$, such that the function value is greater and less than 0 respectively.
 
-By the continuity of F, $g_\vec{a}(y)$ is continuous, such that a square can be drawn around  $g_\vec{a}(p)$, such that F > 0 for all points within by continuity. We can do the same for p, gaining edge lengths of $r^+$ and $r^-$ respectively, such that the minimum edge length forms the open boundary of U, and I := (-p, p). For each $\vec{a}$ by the Intermediate Value Theorem and the derivative, there must be exactly one point such that $F(\vec{a}, \alpha) = 0$, such that the function of those $\alpha$ is f, proving the existance of the implicit function.
+By the continuity of F, $g_{\vec{a}}(y)$ is continuous, such that a square can be drawn around  $g_{\vec{a}}(p)$, such that F > 0 for all points within by continuity. We can do the same for p, gaining edge lengths of $r^+$ and $r^-$ respectively, such that the minimum edge length forms the open boundary of U, and I := (-p, p). For each $\vec{a}$ by the Intermediate Value Theorem and the derivative, there must be exactly one point such that $F(\vec{a}, \alpha) = 0$, such that the function of those $\alpha$ is f, proving the existance of the implicit function.
 
-For the second part, since for all $\vec{x}, F(\vec{x}, f(\vec{x})) = 0$ for all $\vec{x} \in U$, we can add $\vec{h}$ to $\vec{x}$, such that it is still in U, such that $F(\vec{x}+\vec{h}, f(\vec{x} + \vec{h})) - F(\vec{x}, f(\vec{x})) = 0$, or $\vec{\nabla}F(\vec{X}^*) \cdot \vec{H} = 0$, by the mean value theorem where $\vec{X}^* \in [(\vec{x}, f(\vec{x})), (\vec{x} + \vec{h}, f(\vec{x} + \vec{h}))]$. Further, we can seperate the gradient, such that $\vec{\nabla}_\vec{x}F(\vec{X}^*) \cdot \vec{h} + \partial_yF(\vec{X}^*)\delta f$ = 0. Since if f is continuious, $\delta f = f(\vec{x} + \vec{h}) - f(\vec{x}) \to 0$ as $\vec{h} \to 0$ is true, we use that to prove the continuity of f.
+For the second part, since for all $\vec{x}, F(\vec{x}, f(\vec{x})) = 0$ for all $\vec{x} \in U$, we can add $\vec{h}$ to $\vec{x}$, such that it is still in U, such that $F(\vec{x}+\vec{h}, f(\vec{x} + \vec{h})) - F(\vec{x}, f(\vec{x})) = 0$, or $\vec{\nabla}F(\vec{X}^*) \cdot \vec{H} = 0$, by the mean value theorem where $\vec{X}^* \in [(\vec{x}, f(\vec{x})), (\vec{x} + \vec{h}, f(\vec{x} + \vec{h}))]$. Further, we can seperate the gradient, such that $\vec{\nabla}_{\vec{x}}F(\vec{X}^*) \cdot \vec{h} + \partial_yF(\vec{X}^*)\delta f$ = 0. Since if f is continuious, $\delta f = f(\vec{x} + \vec{h}) - f(\vec{x}) \to 0$ as $\vec{h} \to 0$ is true, we use that to prove the continuity of f.
 
-We take the absolute value of the two sides of the equation, such that $|-\partial_yF(\vec{X}^*)\delta f| = |\vec{\nabla}_\vec{x}F(\vec{x}^*) \cdot \vec{h}| \leq ||\vec{\nabla}_\vec{x}F(\vec{X}^*)||||\vec{h}|| \leq ||\vec{\nabla}F(\vec{X}^*)||||\vec{h}|| \leq M||\vec{h}||$ by Cauchy-Schwartz Inequality. Since F is $C^1$, then $\vec{\nabla}F$ is contnuous on U x I, and $||\vec{\nabla}F||$ is continuous on U x I, let M := $max_{UxI}||\vec{\nabla}F||$. We then use the fact that the box is convex, such that any two points within the convex region, the line segment joining them is contained within the region. Thus, $|\partial_yF(\vec{X}^*)||\delta f| \leq M||\vec{h}||$, isolating $\delta f$. We can also say that $\partial_y F(\vec{X}^*) \geq \frac{1}{2}\partial_yF(\vec{A})$, by continuity saying we can create some point $\vec{X}^*$, such that it is true, such that we can create a cube subset of the original cube, such that it is true for all points, $\vec{X}$. Since $\frac{2M||\vec{H}||}{\partial_yF(\vec{A})} \to 0$ as $\vec{h} \to \vec{0}$, we can state the same thing of $\delta f$, since it must be greater than 0, proving continuity.
+We take the absolute value of the two sides of the equation, such that $|-\partial_yF(\vec{X}^*)\delta f| = |\vec{\nabla}_{\vec{x}}F(\vec{x}^*) \cdot \vec{h}| \leq ||\vec{\nabla}_{\vec{x}}F(\vec{X}^*)||||\vec{h}|| \leq ||\vec{\nabla}F(\vec{X}^*)||||\vec{h}|| \leq M||\vec{h}||$ by Cauchy-Schwartz Inequality. Since F is $C^1$, then $\vec{\nabla}F$ is contnuous on U x I, and $||\vec{\nabla}F||$ is continuous on U x I, let M := $max_{UxI}||\vec{\nabla}F||$. We then use the fact that the box is convex, such that any two points within the convex region, the line segment joining them is contained within the region. Thus, $|\partial_yF(\vec{X}^*)||\delta f| \leq M||\vec{h}||$, isolating $\delta f$. We can also say that $\partial_y F(\vec{X}^*) \geq \frac{1}{2}\partial_yF(\vec{A})$, by continuity saying we can create some point $\vec{X}^*$, such that it is true, such that we can create a cube subset of the original cube, such that it is true for all points, $\vec{X}$. Since $\frac{2M||\vec{H}||}{\partial_yF(\vec{A})} \to 0$ as $\vec{h} \to \vec{0}$, we can state the same thing of $\delta f$, since it must be greater than 0, proving continuity.
 
-For the third part, let $\vec{h} = h\vec{e}_j = (0, ..., 1, ..., 0)$, where the 1 is in the $j^{th}$ place. By the previous equation, $-h(\vec{\nabla}_\vec{x}F(\vec{X}^*) \cdot \vec{e}_j) = \partial_yF(\vec{X}^*)\delta f$, after which we divide by h on both sides. As $h \to 0, \frac{\delta f}{h} = -\frac{\vec{\nabla}_\vec{x}F(\vec{X}^*) \cdot \vec{e}_j}{\partial_y F(\vec{X}^*)} \to -\frac{\vec{\nabla}_\vec{x}F(\vec{x}, f(\vec{x})) \cdot \vec{e}_j}{\partial_yF(\vec{x}, f(\vec{x}))} = -\frac{\partial_{x_j}F(\vec{x}, f(\vec{x}))}{\partial_yF(\vec{x}, f(\vec{x})}.$ Since this is equal to $\partial_{x_j}f(\vec{x})$, both can be shown easily to be differentiable.
+For the third part, let $\vec{h} = h\vec{e}_j = (0, ..., 1, ..., 0)$, where the 1 is in the $j^{th}$ place. By the previous equation, $-h(\vec{\nabla}_{\vec{x}}F(\vec{X}^*) \cdot \vec{e}_j) = \partial_yF(\vec{X}^*)\delta f$, after which we divide by h on both sides. As $h \to 0, \frac{\delta f}{h} = -\frac{\vec{\nabla}_{\vec{x}}F(\vec{X}^*) \cdot \vec{e}_j}{\partial_y F(\vec{X}^*)} \to -\frac{\vec{\nabla}_{\vec{x}}F(\vec{x}, f(\vec{x})) \cdot \vec{e}_j}{\partial_yF(\vec{x}, f(\vec{x}))} = -\frac{\partial_{x_j}F(\vec{x}, f(\vec{x}))}{\partial_yF(\vec{x}, f(\vec{x})}.$ Since this is equal to $\partial_{x_j}f(\vec{x})$, both can be shown easily to be differentiable.
 
 \subsubsection{Theorem Summary}
 $F(\vec{x}, y) = 0$ can be written as $y = f(x)$ locally in a neighborhood (for all $(\vec{x}, y) \in U x I$) of some solution point, $(\vec{a}, \alpha) \in D_F^o \subseteq \mathbb{R}^{d+1}$, when $\partial_yF(\vec{a}, \alpha) \neq 0$ and F is $C^1$ on $D^o$.
 
-In addition, it follows that f is also $C^1$, and $\vec{\nabla}f = \frac{-1}{\partial_yF o (Id x f)}\vec{\nabla}_\vec{x}F o (Id x f)$, where $(Id x f)(\vec{x}) = (\vec{x}, f(\vec{x}))$, where Id is the identity function which makes that valid.
+In addition, it follows that f is also $C^1$, and $\vec{\nabla}f = \frac{-1}{\partial_yF o (Id x f)}\vec{\nabla}_{\vec{x}}F o (Id x f)$, where $(Id x f)(\vec{x}) = (\vec{x}, f(\vec{x}))$, where Id is the identity function which makes that valid.
 
 \subsubsection{Generalization}
 
@@ -2631,34 +2631,34 @@ $$H(u, v, x, y, z) = 0 \longleftrightarrow z = \phi(u, v, x, y)$$
 where $\phi$ is some $C^1$ explicit function in the neighborhood of $(a, b, p,
 q, r)$.
 
-Let us define $\~{F} (u, v, x, y) := F(u, v, x, y, \phi(u, v, x, y))$ and $\~{G}
+Let us define ~F (u, v, x, y)$ := F(u, v, x, y, \phi(u, v, x, y))$ and ~G$
 (u, v, x, y) := G(u, v, x, y, \phi(u, v, x, y))$. We know that both of these
-equal to 0, as well as the fact that $\~{F}$ and $\~{G}$ are $C^1$.
+equal to 0, as well as the fact that ~F and ~G are $C^1$
 
 Then we only need to show the following:
 
 \[
-\partial_{(x, y)} (\~{F}, \~{G}) =
+\partial_{(x, y)} (~F, ~G) =
 \left|\begin{array}{cc}
-\partial_x \~{F} & \partial_y \~{F}\\
-\partial_x \~{G} & \partial_y \~{G}\\
+\partial_x ~F & \partial_y ~F\\
+\partial_x ~G & \partial_y ~G\\
 \end{array}\right| \neq O
 \]
 
 To do this we use the chain rule:
 
 \begin{align*}
-\partial_x \~{F} &= \partial_x F + (\partial_z F)(\partial_x \phi) = F_x +
+\partial_x ~F &= \partial_x F + (\partial_z F)(\partial_x \phi) = F_x +
 F_z \phi_x\\
-\partial_y \~{F} &= \partial_y F + (\partial_z F)(\partial_y \phi) = G_x +
+\partial_y ~F &= \partial_y F + (\partial_z F)(\partial_y \phi) = G_x +
 G_z \phi_x\\
 \end{align*}
 
-The same holds true for $\partial_x \~{G}$ and $\partial_y \~{G}$. Note also
+The same holds true for $\partial_x ~G$ and $\partial_y ~G$. Note also
 that $\partial_x H = H_x + H_z \phi_x = 0$ and $\partial_y H = 0$ as well.
 Therefore:
 \[
-\partial_{(x, y)} (\~{F}, \~{G}) = 
+\partial_{(x, y)} (~F, ~G) = 
 \left|\begin{array}{ccc}
 F_x + F_z \phi_x & F_y + F_z \phi_y \\
 G_x + G_z \phi_x & G_y + G_z \phi_y \\
@@ -2686,7 +2686,7 @@ H_x & H_y & 1 \\
 \]
 
 However, note that we can get from here to the original $3 \times 3$ determinant
-by column operations, therefore we know that $\partial_{(x, y)}(\~{F}, \~{G})
+by column operations, therefore we know that $\partial_{(x, y)}(~F, ~G)
 \neq 0$. Therefore we have the degeneracy condition.
 
 Then we can write
@@ -2802,7 +2802,7 @@ x_d &= f_d (u_1, u_2, \dots, u_d)\\
 \end{cases}
 \]
 or that $\vec{x} = \vec{f}(\vec{u})$. Assume that we have a particular solution
-$\vec{b} = \vec{f}(\vec{a})$ where $\vec{f}$ is $C^1$ and $\vec{a} \in (\dom
+$\vec{b} = \vec{f}(\vec{a})$ where $\vec{f}$ is $C^1$ and $\vec{a} \in (\text{dom }
 \vec{f})^\circ$ and $\partial_{\vec{x}} \vec{f}(\vec{a}) \neq 0$. Then there exists an open set $U$ around $\vec{a} \in
 \mathbb{R}^d_{\vec{u}}$ and there exists an open set $V$ around $\vec{b} \in
 \mathbb{R}^d_{\vec{x}}$. There also exists a $C^1$ function $\vec{g}: V \to
@@ -2836,7 +2836,7 @@ Let us create a function $\vec{F} (\vec{u}, \vec{x}) := \vec{x} -
 equivalent to $\vec{x} = \vec{f}(\vec{u})$. However, there is nothing in the
 Implicit Function Theorem that says we cannot solve for $\vec{u}$. A couple of
 conditions must be met beforehand, however, including that $\vec{F}$ has to be
-$C^1$, that $(\vec{a}, \vec{b}) \in (\dom \vec{F})^\circ$, and that
+$C^1$, that $(\vec{a}, \vec{b}) \in (\text{dom } \vec{F})^\circ$, and that
 $\partial_{\vec{u}} \vec{F}(\vec{a}, \vec{b}) \neq 0$.
 
 Let us start with the last condition first. $D_{\vec{u}} \vec{F} = D_{\vec{u}}
@@ -2850,14 +2850,14 @@ D\vec{f}(\vec{u})\\
 \end{align*}
 
 We also know that $\vec{F}$ is $C^1$ by assumption. Now all we have to check is
-that $(\vec{a}, \vec{b}) \in (\dom \vec{F})^\circ$. $\dom \vec{F} = (\dom
+that $(\vec{a}, \vec{b}) \in (\text{dom } \vec{F})^\circ$. $\text{dom } \vec{F} = (\text{dom }
 \vec{f} \times \mathbb{R}^d_{\vec{x}}) \subseteq
 \mathbb{R}^{2d}_{(\vec{u}, \vec{x})}$. So $\vec{b}$ is not a problem. We also
-know that $\vec{a} \in \dom \vec{f}$ by assumption.
+know that $\vec{a} \in \text{dom } \vec{f}$ by assumption.
 
 Therefore we conclude, using the Implicit Function Theorem that $\exists$ open
 sets $U, V$ around $\vec{a}, \vec{b}$ respectively, and $\exists \vec{g}:
-V\toU$ such that $\vec{F}(\vec{g}(\vec{x}), \vec{x}) \equiv \vec{0}$ for all
+V \to U$ such that $\vec{F}(\vec{g}(\vec{x}), \vec{x}) \equiv \vec{0}$ for all
 $\vec{x} \in V$. This implies that $\vec{x} - \vec{f}(\vec{g}(\vec{x})) =
 \vec{0}$. Therefore $\boxed{\vec{f}(\vec{g}(\vec{x})) \equiv \vec{x} \text{ for
 all } \vec{x} \in V}$.
@@ -2951,7 +2951,7 @@ point $\vec{x} \in L_c g$.
 
 We know that $g(x_1, x_2, \dots, x_d) = c$, now let's pick $\vec{p} \in L_c g$,
 we know that $g(p_1, p_2, \dots, p_d) = c$ and that $\partial_{x_1} g(\vec{p}),
-\partial_{x_2} g(\vec{p}), \dpts, \partial_{x_d} g(\vec{p})$ cannot all be 0 (as
+\partial_{x_2} g(\vec{p}), \dots, \partial_{x_d} g(\vec{p})$ cannot all be 0 (as
 $\gradient g(\vec{p}) \neq 0$), therefore $\exists j \in \{1,2,\dots,d\} :
 \partial_{x_j} g(\vec{p}) \neq 0$. To be definite, let $j = d$ (wlog). By the
 Implicit Function Theorem, we get the equivalency between $g(\vec{x}) = c$ and
