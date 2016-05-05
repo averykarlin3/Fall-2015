@@ -56,7 +56,7 @@
 \title{Physics I: Classical Mechanics}
 \author{Avery Karlin}
 \date{Fall 2015}
-\newcommand{\textbook}{Young's University Physics}
+\newcommand{\textbook}{Fundementals of Physics by Walker, Halliday, and Resnick}
 \newcommand{\teacher}{Ali}
 
 \maketitle
@@ -68,7 +68,7 @@
 \underline{Teacher}: \teacher
 \newpage
 
-\section{Chapter 1 - Mathematics and Units}
+\section{Chapter 1 and 3 - Mathematics, Vectors, and Units}
 \subsection{Fundamental Units}
 \begin{outline*}
 \1 Unit = SI = CGS = Alternate
@@ -135,6 +135,13 @@
 \1 All problems must state the conventions taken, such that the positive and negative directions are defined
 \1 Partial derivatives with respect to some variable ($\frac{\partial f}{\partial x}$), assume all variables other than x are constant
 \1 Integrals have the product of the differential, such that the order parsed through the region determines if it is positive or negative
+\end{outline*}
+\subsection{Approximations}
+\begin{outline*}
+\1 $(1 + x)^n \to 1 + nx$ as $x \to 0$
+\1 $e^x \to 1 + x$ as $x \to 0$
+\1 $sin(x) \to x$ as $x \to 0$
+\1 $ln(1 + x) \to x$ as $x \to 0$
 \end{outline*}
 \subsection{Multiple Integral Mathematics}
 \begin{outline*}
@@ -210,7 +217,7 @@
 \1 $\Delta d = \int_0^t |v(t)|dt$
 \1 To get proper functions and values, the boundary conditions must always be used on integrals, rather than simply used as indefinite integrals
 \end{outline*}
-\section{Chapter 3 - Multidimensional Motion}
+\section{Chapter 4 - Multidimensional Motion}
 \subsection{Position, Velocity, and Acceleration Vectors}
 \begin{outline*}
 \1 Position Vector $(\vec{r}) = x\vec{i} + y\vec{j} + z\vec{k}$
@@ -257,7 +264,7 @@
 \1 This is referred to as the Galilean Velocity Transformation
 \2 At frame of reference speeds nearing the speed of light, real velocity can be greater than c, which is impossible, leading to the Relativistic Transformation
 \end{outline*}
-\section{Chapter 4 - Newton's Laws of Motion}
+\section{Chapter 5 - Newton's Laws of Motion}
 \subsection{Force}
 \begin{outline*}
 \1 Force is a vector quantity that one body or the environment exerts on another, measured in Newtons (N), or $kg*m/s^2$
@@ -308,7 +315,7 @@
 \2 This law applies to both long range, and contact forces
 \2 The two forces are called an action-reaction pair
 \end{outline*}
-\section{Chapter 5 - Applicatons of Newton's Laws}
+\section{Chapter 6 - Applicatons of Newton's Laws}
 \subsection{Friction Force}
 \begin{outline*}
 \1 Friction force opposes movement, parallel to the surface, opposite the contact force of an object being pushed or pulled on a surface
@@ -341,7 +348,7 @@
 \1 Electroweak interactions were developed to encompass electromagnetic and weak interactions, leading to the grand unified theory containing electroweak and strong interactions
 \2 This has led to attempts to produce a theory of everything, containing all four types of interactions
 \end{outline*}
-\section{Chapter 6 - Work and Kinetic Energy}
+\section{Chapter 7 - Work and Kinetic Energy}
 \subsection{Work}
 \begin{outline*}
 \1 Work is the scalar product of displacement and the force in the direction of displacement, such that W = Fx and $W_{tot} = F_{net}x$ when force is constant
@@ -366,7 +373,7 @@
 \1 $P_{av} = \frac{\Delta W}{\Delta t}$
 \1 $P = \frac{dW}{dt} = F \cdot v$ (if F is constant)
 \end{outline*}
-\section{Chapter 7 - Potential Energy and Conservation of Energy}
+\section{Chapter 8 - Potential Energy and Conservation of Energy}
 \subsection{Gravitational Potential}
 \begin{outline*}
 \1 Potential energy is the energy associated with position, which can be converted through work into kinetic energy, such that the change in potential energy is useful, rather than the actual potential energy
@@ -409,7 +416,7 @@
 \1 $F = -\frac{dU}{dx}$, when U is a one dimensional potential energy
 \1 $\vec{F} = -(\frac{\partial U\vec{i}}{\partial x} + \frac{\partial U\vec{j}}{\partial y} + \frac{\partial U\vec{k}}{\partial z}) = -\vec{\nabla}U$, for 3 dimensional potential energy, able to be extended to other dimensions
 \end{outline*}
-\section{Chapter 8 - Momentum and Center of Mass}
+\section{Chapter 9 - Momentum and Center of Mass}
 \subsection{Momentum and Impulse}
 \begin{outline*}
 \1 Momentum (p) is a vector quantity, measured in kg*m/s, such that p = mv
@@ -460,7 +467,7 @@
 \1 Thus, using conservation of momentum, $F_{external} = m*(\frac{dv}{dt}) + v_{ex}\frac{dm}{dt}$, such that $F_{thrust} = -v_{ex}\frac{dm}{dt}$ and $F_{rocket} = m*(\frac{dv}{dt})$
 \2 Thus, $\Delta v = v_eln(\frac{m_i}{m_f})$ is true with no external forces acting
 \end{outline*}
-\section{Chapter 9 - Rotation of Rigid Bodies}
+\section{Chapter 10 - Rotation of Rigid Bodies}
 \subsection{Angular Velocity and Acceleration}
 \begin{outline*}
 \1 Rigid bodies are ideal objects with definite and unchanging shape and size, such that any two points have the same distance during rotation, generally solid
@@ -496,7 +503,7 @@
 \1 $I_P = I + Md^2$, where d is the distance of the new axis from the center axis, I is the moment of inertia on the axis through the center of mass, $I_P$ on the new axis, parallel to the previous, and M as the body’s mass
 \1 $I_z = I_x + I_y$, for some 2D object entirely within the x-y plane
 \end{outline*}
-\section{Chapter 10 - Rotational Motion Dynamics}
+\section{Chapter 11 - Rotational Motion Dynamics}
 \subsection{Torque}
 \begin{outline*}
 \1 Motion can be either translational, moving as a whole through space, or rotational, which also depends on the point where force is applied
@@ -549,7 +556,8 @@
 \2 The greater the torque is compared to the angular velocity, the more the object will nutate due to the adjustment caused by the gravitational momentum
 \2 The object must have force from the center to sustain centripetal motion, such that F = $m\Omega^2r$
 \end{outline*}
-\section{Chapter 11 - Equilibrium and Elasticity}
+\section{Chapter 12 - Equilibrium}
+\underline{Note:} Ignores all sections on Elasticity
 \subsection{Equilibrium Conditions}
 \begin{outline*}
 \1 $\sum F = 0$
@@ -563,55 +571,6 @@
 \1 If the change in gravity due to elevation on the body can be ignored, such that gravitational acceleration is the same on all points, the center of gravity is the center of mass
 \1 If a body is suspended or supported by a point and the body is at equilibrium, the center of gravity is on the vertical axis from that point
 \2 If the body is suspended or supported by several points and at equilibrium, the center of gravity is in the region within the points
-\end{outline*}
-\subsection{Stress, Strain, and Elastic Moduli}
-\begin{outline*}
-\1 Strain is the scalar deformation of a non-rigid body due to a force acting on it
-\1 Stress is the scalar strength of force causing the deformation
-\2 Stress is measured in Pascals (Pa), or $N/m^2$, which is the same unit as pressure
-\1 Elastic modulus is a constant, such that Elastic Modulus = $\frac{\text{Stress}}{\text{Strain}}$
-\2 Hooke’s Law of Springs is a special case of this, which is also called Hooke’s Law, valid only within a specific range
-\1 Tensile stress is the stretching of an object from the ends, with an equal force from both directions so it doesn’t move, but is in tension
-\2 Tensile Stress = $\frac{F}{A}$, where A is the cross-sectional area, or the area of a slice taken perpendicular to the ends/the force, and F is the magnitude of the force
-\2 Tensile Strain = $\frac{\Delta l}{l_0}$, where $l_0$ is the initial length of the object, such that Tensile Strain doesn’t have a unit due to it cancelling out
-\2 Young’s Modulus (Y) = $\frac{\text{Tensile Stress}}{\text{Tensile Strain}}$
-\2 Compressive stress is stress such that the force is inward, though compressive modulus is usually the same, though certain composite materials, such as stone, are the exception
-\2 Objects, such as a beam being bent, can have both tensile and compressive stress simultaneously
-\1 Bulk stress is caused by uniform pressure on all sides, caused by a fluid, such that Pressure (p) = $\frac{F}{A}$, causing a change in volume as pressure changes
-\2 Bulk Stress = $\Delta p$
-\2 Bulk Strain = $\frac{\Delta V}{V_0}$
-\2 Bulk Modulus (B) = $-\frac{\text{Bulk Stress}}{\text{Bulk Strain}}$
-\2 Compressibility = $\frac{1}{B}$
-\2 Bulk modulus of a gas depends on the initial pressure of the gas, though that of a liquid or solid is constant
-\1 Shear stress is the force again both sides of an object at a point, parallel to the cross-sectional area taken, against a solid object with definite shape, causing it to become compressed and slanted
-\2 Shear Stress = $\frac{F}{A}$
-\2 Shear Strain = $\frac{x}{h}$, where h is the length of the side on which the force is applied, while x is the displacement of the part with force acting on it, relative to the part with opposite force
-\2 Shear Modulus (S) = $\frac{\text{Shear Stress}}{\text{Shear Strain}}$
-\end{outline*}
-\subsection{Elasticity and Plasticity}
-\begin{outline*}
-\1 The graph of strain by stress of a material is called the percent elongation, such that the strain is measured as a percent of change
-\1 Until the proportional limit at some percent strain less than 1, Hooke’s law applies and the force is mostly conservative, able to be recovered and reversed when the stress is removed
-\1 Until the elastic limit/yield point, the force is still mostly conservative
-\1 Until the fracture point, during plastic deformation, the strain is not reversible, but rather if the force is removed, instead going to a changed permanent set measurement when no stress is applied
-\1 Brittle materials are those with a fracture point soon after the yield point, while ductile materials are those with the point far after
-\1 Elastic hysteresis is a difference in the curve for relaxing using less work, due to some of the force of the stress being used for internal friction force
-\1 Ultimate strength/breaking stress/tensile strength is the stress needed to reach the fracture point, completely independent of the modulus
-\end{outline*}
-\section{Chapter 12 - Fluid Mechanics}
-\subsection{Fluids and Density}
-\begin{outline*}
-\1 Fluid statics is the study of fluids at rest under equilibrium
-\1 Fluid dynamics is the study of fluids in motion
-\1 Density is a property of all materials, such that Density $(\rho) = \frac{m}{V}$, typically measured in $kg/m^3$
-\2 All objects made of the same material have the same density, though density depends on temperature and pressure
-\2 Objects made up of many materials are measured in average density
-\2 Specific gravity of a material is the ratio of the materials density to the density of water at $4^oC$ (1000 $kg/m^3$)
-\end{outline*}
-\subsection{Pressure in a Fluid}
-\begin{outline*}
-\1 Pressure (p) = $\frac{dF}{dA}$, where F is the magnitude of the force perpendicular to the surface
-\1 //Finish
 \end{outline*}
 \section{Chapter 13 - Gravitation}
 \subsection{Newton's Law of Gravitation}
@@ -657,11 +616,9 @@
 \2 The distance from each foci to the center is ea, where a is the semi-major (half the major axis) length, and e is the eccentricity (from 0/circle to 1/parallel lines)
 \2 The end of the major axis near the sun is the perihelion, while the other side of the ellipse is the aphelion
 \1 Kepler’s Second Law states that a line from the sun to a given planet sweeps out equal areas in equal times ($\frac{dA}{dt} = \frac{L}{2m_{satellite}}$ 
-\2 //Finish from Textbook
 \1 Kepler’s Third Law states that the periods of the planets are proportional to the $\frac{3}{2}^{rd}$ power of the semimajor axis length of the orbits ($\frac{T^2}{r^3} = \frac{4\pi^2}{GM_{sun}}$)
 \2 Thus, in constant velocity (circular orbit), $v = \frac{2r\pi}{T}$ can be used
 \2 Due to the second law, this does not depend on eccentricity, such that it is true for elliptical orbits, although the velocity is not constant in that case
-\1 //Finish from Textbook
 \end{outline*}
 \subsection{Constants}
 \begin{outline*}
@@ -673,7 +630,7 @@
 \1 $R_s = 6.95 * 10^8 m$
 \1 $R_m = 1.73 * 10^6 m$
 \end{outline*}
-\section{Chapter 14 - Periodic Motion}
+\section{Chapter 15 - Periodic Motion}
 \subsection{Oscillation}
 \begin{outline*}
 \1 Displacement (x), typically one-dimensionally, is the displacement of the body from equilibrium, such that the coordinate system origin is equilibrium
@@ -708,7 +665,6 @@
 \1 Rigid pendulums are done by the net torque formula instead, such that $I\theta$’’ + mgDsin($\theta$) = 0, or $\omega = \sqrt{\frac{mgD}{I}}$, where I is based from the axis
 \1 Torsion pendulums are build as a mass fixed to a flexible material able to be twisted, which follows a law similar to Hooke’s Law for Angular Motion, or $\tau = -k\theta$, such that $\omega = \sqrt{\frac{k}{I}}$
 \2 I must be the combined moment of the mass and the material rod, centered around the center rod axis
-\1 //Finish from Textbook
 \end{outline*}
 \subsection{Damped Oscillations}
 \begin{outline*}
