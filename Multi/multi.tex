@@ -87,41 +87,29 @@ For some function $\omega$ evaluated over the region $M$, where $\partial M$ is 
 $$\int_M d\omega = \int_{\partial M} \omega$$
 
 \section{Real Number Set}
-
 \subsection{Definitions of Number Structures}
 \subsubsection{$\mathbb{N}$}
-We can define the natural number system by sets, like the following:
-
-$$0 = \emptyset$$
-
-\noindent And from there we introduce a succession operation:
-
-$$n + 1 = n \cup \{n\}$$
-
-\noindent So for example, $1 = \{0\} = \{\emptyset\}$, $1 = \{0, 1\} = \{\emptyset,
-\{\emptyset\}\}$, etc.
+We can define the natural number system by sets, such that $0 = \emptyset$.
+From there we introduce a succession operation:
+$n + 1 = n \cup \{n\}$.
 
 \noindent Set theory is the deepest concept in mathematics, such that it must be assumed as postulates.
 
 \subsubsection{$\mathbb{Z}$}
 Positive integers are defined as an ordered pair of natural numbers, for
-example, $2 = (2, 0)$, and $-2 = (0, 2)$
+example, $2 = (2, 0)$, and $-2 = (0, 2)$.
 
 \subsubsection{$\mathbb{Q}$}
 Rationals are defined as an infinite set of ordered pairs of integers.
 A rational number $q = \frac{n}{m}$, then $q = \{(n, m), (2n, 2m), (3n, 3m)
-\dots (-2n, -2m), (-3, -3m) \dots\}$
+\dots (-2n, -2m), (-3, -3m) \dots\}$.
 
 \subsubsection{$\mathbb{R}$}
 
-There are several definitions of the real number system
+There are two main definitions of the real number system, such that
 \begin{itemize}
-\item Each real number can be thouhgt of as an infinite sequence in the
-following format:
-
-$$(s, N, d_1, d_2, d_3 \dots)$$
-
-Where $s = \pm 1$, $N \in \mathbb{N}$, and $d_n \in {0, 1, 2, 3,
+\item Each real number can be thought of as an infinite sequence in the
+following format: $(s, N, d_1, d_2, d_3 \dots)$, where $s = \pm 1$, $N \in \mathbb{N}$, and $d_n \in {0, 1, 2, 3,
 \dots 8, 9}$. It is also not the case that $d_n = d_{n+1} = \dots = 0$.
 If there is a terminal decimal, we express it as 9 repeated.
 \item Each real number forms a subdivision of $\mathbb{Q}$ into two
@@ -140,7 +128,7 @@ $\mathbb{R}$ is an instance of many kinds of mathematical structures, such as:
 \item Ordered Set
 \begin{itemize}
 \item The set has an ordering that reflect the operations in the
-field (such that x, y > 0, then x + y and  xy > 0)
+field (such that x, y $>$ 0, then x + y and xy $>$ 0)
 \item This structure is what allows for comparisons, like the $<$
 function
 \end{itemize}
@@ -164,8 +152,7 @@ defined as'')
 
 \subsection{Properties of $\mathbb{R}^n$}
 In higher dimensions, several of the properties of $\mathbb{R}$ no longer hold.
-$\mathbb{R}^n, n > 1$ is not a field, and not an ordered set, but it is a vector, metric, and geometric space.
-
+$\mathbb{R}^n, n > 1$ is not a field, and not an ordered set, but it is a vector, metric, and geometric space. This is due to the fact that it can no longer be compared in a linear manner, such that it cannot be an ordered set. It is not considered a field, because there is no definition of an inverse, such that any non-additive identity/zero vector has a multiplicative inverse.
 \subsection{Basic Axioms for $\mathbb{R}^1$}
 $\mathbb{R}$ is a field under $+$ and $\cdot$ ($x, y \in \mathbb{R}$)
 \begin{enumerate}
@@ -206,7 +193,7 @@ either $0$, $\in \mathbb{R}^+$ or $\notin \mathbb{R}^+$
 \subsection{The Seperation Axiom}
 
 The main difference between the $\mathbb{Q}$ and the $\mathbb{R}$ is the
-separation axiom which the rationals do not have. If $\mathcal{A} \subseteq \mathbb{R}$ and $\mathcal{B} \subseteq \mathbb{R}$, and:
+separation axiom which the rationals do not have (meaning that the boundary element may not be contained within $\mathbb{Q}$). If $\mathcal{A} \subseteq \mathbb{R}$ and $\mathcal{B} \subseteq \mathbb{R}$, and:
 
 \begin{enumerate}
 \item $\mathcal{A} \cap \mathcal{B} = \emptyset$
@@ -216,6 +203,7 @@ $\mathcal{B}$''
 \begin{itemize}
 \item $\forall$ (for all) $a \in \mathcal{A}, \forall b \in \mathcal{B}, a < b$
 \end{itemize}
+\item Thus, there must be some item, c, such that $\mathcal{A} \leq c \leq \mathcal{B}$, where it is able to be contained in one set, but not both
 \end{enumerate}
 
 \subsubsection{Proof of Irrationals}
@@ -237,19 +225,19 @@ $\mathcal{A}$ and $\mathcal{B}$. We know that $\mathcal{A} \leq q_0 \leq
 follow the separation axiom.
 
 \section{Sequence Theorems}
-
 \subsection{The Least Upper Bound Theorem}
 
 If $\mathcal{A} \subseteq \mathbb{R}$
-is non-empty, and is \underline{bounded above} (So $\exists b_1 \in \mathbb{R}$
-such that $\mathcal{A} < b_1$), then $\mathcal{A}$ has a
+is non-empty, and is \underline{bounded above} (such that $\exists b_1 \in \mathbb{R}$
+such that $\mathcal{A} \leq b_1$), then $\mathcal{A}$ has a
 \underline{least upper bound}, i.e. a number $b_0 \in \mathbb{R}$ such that
-$\mathcal{A} \leq b_0$ and for any $b$ with $\mathcal{A} \leq b$, $b_0 \leq b$
+$\mathcal{A} \leq b_0$ and for any $b$ with $\mathcal{A} \leq b$, $b_0 \leq b$.
 
-$$\mathcal{A}\subseteq\mathbb{R}, \mathcal{A} \neq \emptyset, (\exists\text{
-} b_1 \in \mathbb{R}: \mathcal{A} \leq b_1)\to[\exists\text{ } b_0 \in
+It is written in proper notation as:
+$\mathcal{A}\subseteq\mathbb{R}, \mathcal{A} \neq \emptyset, (\exists\text{
+} b_1 \in \mathbb{R}: \mathcal{A} \leq b_1)\to \exists\text{ } b_0 \in
 \mathbb{R}: \mathcal{A} < b_0, \forall b \in \mathbb{R} (\mathcal{A} \leq
-b \to b_0 \leq b)]$$
+b \to b_0 \leq b)$
 
 $b_0$ is known as the least possible upper bound, or the \textit{supremum} of
 $\mathcal{A}$, we write $b_0 = \textrm{sup } \mathcal{A}$.
@@ -261,14 +249,13 @@ of $\mathcal{A}$
 
 \subsubsection{Proof}
 Define $\mathcal{B}$ to be the set of all upper bounds of $\mathcal{A}$. Let
-$\mathcal{C} = \mathbb{R} \setminus \mathcal{B}$. Clearly $\mathcal{B}$ is
-nonempty; also $\mathcal{C}$ is non-empty because it contains $x_0 - 1$, where
-$x_0 \in \mathcal{A}$. By the way in which we defined $\mathcal{C}$,
+$\mathcal{C} = \mathbb{R} \setminus \mathcal{B}$ (where $\setminus$ denotes the set of all items in the first set, but not in the second, called the set difference). Clearly $\mathcal{B}$ is
+nonempty, since it is defined to be bounded above; also $\mathcal{C}$ is non-empty because it contains all of $\mathcal{A} < \mathcal{B}$ and all less than any item in $\mathcal{A}$. By the way in which we defined $\mathcal{C}$, we can show that $\mathcal{C} < \mathcal{B}$, by
 $\mathcal{B} \cap \mathcal{C} = \emptyset$. Pick any $c \in \mathcal{C}$ and $b
 \in \mathcal{B}$. By the definition of $\mathcal{C}$, $\exists$ $x_1 \in
-\mathcal{A}: c < x_1$. But $x_1 \leq b$ by the definition of $\mathcal{B}$.
-Therefore $\mathcal{C} < \mathcal{B}$. By
-the separation postulate, $\exists$ $b_0 \in \mathbb{R}: \mathcal{C} \leq
+\mathcal{A}: c < x_1$, or it would be an upper bound in $\mathcal{B}$. But $x_1 \leq b$ by the definition of $\mathcal{B}$.
+Therefore $\mathcal{C} < \mathcal{B}$. Further, by
+the separation postulate, $\exists x_0,$ called $b_0, \in \mathbb{R}: \mathcal{C} <
 b_0 \leq \mathcal{B}$. Note that $\mathcal{A}\setminus\{b_0\} \subseteq
 \mathcal{C}$. Thus, $b_0$ is an upper bound for $\mathcal{A}$. Morever, it is
 the least upper bound because $b_0 \leq \mathcal{B}$.
@@ -293,14 +280,14 @@ set $\mathcal{A} = \{a_n | n \geq 1\}$. We know that $\mathcal{A} \neq
 is bounded above by $b$; $\mathcal{A} < b$
 By the Least Upper Bound Theorem, $\exists$ $b_0 = sup \mathcal{A}$. We now show that $b_0 = \lim_{n\to\infty}a_n$. By the definition of limits, to say $b_0 =
 \lim_{n\to\infty} a_n$ means to say $\forall \epsilon > 0, \exists$ $N > 0,
-\forall n \geq N$, $|a_n - b_0| < \epsilon$
+\forall n \geq N$, $|a_n - b_0| < \epsilon$.
 
 If we look at the number $b_0 - \epsilon$, it is not an upper bound on
 $\mathcal{A}$ because $b_0$ is the least upper bound and $\epsilon > 0$.
-Therefore, $\exists$ $a_N > b_0 - \epsilon$. Since $\{a_n\}$ is increasing,
-$\forall n > N$, $a_n > b_0 - \epsilon$. If we rearrange the terms, we get $b_0
-- a_n < \epsilon$. Therefore, $b_0$ (which exists by the least upper bound
-theorem) is the limit of $a_n$ as $n \to \infty$.
+Therefore, $\exists N'$, such that $a_{N'} > b_0 - \epsilon$. Since $\{a_n\}$ is increasing,
+$\forall n > N'$, $a_n > b_0 - \epsilon$. If we rearrange the terms, we get $b_0
+- a_n < \epsilon$. Therefore, $b_0$ (which exists by the Least Upper Bound
+Theorem) is the limit of $a_n$ as $n \to \infty$.
 
 \subsection{Archimedean Property}
 
@@ -319,7 +306,7 @@ Now we've established the existence of $N$, let us consider $(N + 1)x$. $(N +
 1)x = Nx + x > (c - \frac{1}{2}x) + x = c + \frac{1}{2}x > c$. But $(N + 1)x \in
 \mathcal{C}$, so it should be $< c$. We have a contradiction. This shows that
 the original assumption is false, so $\forall x, y > 0, \exists n \in
-\mathbb{N}: nx > y$
+\mathbb{N}: nx > y$.
 
 \subsubsection{Consequences}
 This property can be used to show that $\lim_{n\to\infty} \frac{1}{n} = 0$.
@@ -333,24 +320,24 @@ is truely 0.
 
 \subsection{Sunrise Lemma}
 
-The Sunrise Lemma states for any sequence $(a_n)^\infty_n=1$ in $\mathbb{R}$, $\exists$ monotone subsequence $(a_{n_k})^\infty_{k=1}$, where $(n_k)^\infty_{k=1}$ is a strictly increasing sequence in $\mathbb{N}$ and $n_k \geq k$ for all $k \in \mathbb{N}$
+The Sunrise Lemma states for any sequence $(a_n)^\infty_{n=1}$ in $\mathbb{R}$, $\exists$ monotone subsequence $(a_{n_k})^\infty_{k=1}$, where $(n_k)^\infty_{k=1}$ is a strictly increasing sequence in $\mathbb{N}$ and $n_k \geq k$ for all $k \in \mathbb{N}$.
 
-Vistas are points in a sequence, $a_n$, where  $N \in \mathbb{N}$, such that $a_N > a_n$ for all $n > N$
+Vistas are points in a sequence, $a_n$, where  $N \in \mathbb{N}$, such that $a_N > a_n$ for all $n > N$.
 
-This means that for any sequence, there exists a subset of points within, such that within that sequence, the sequence is monotone
+This means that for any sequence, there exists a subset of points within, such that within that sequence, the sequence is monotone.
 
 \subsubsection{Well-Ordering Property}
 For any set $A \subseteq \mathbb{N}, A \neq \emptyset, min(A)$ exists
 
-\subsubsection{Proof}
-\underline{Case I:} The set V of vistas, is infinite, such that $n_1 = min(v)$ and $n_k = min(V \cap n_{k-1}^\infty$, where $k \geq 2$, then $a_{n_k}$ is strictly decreasing\\
+\subsubsection{Proof NOTDONE}
+\underline{Case I:} The set V of vistas, is infinite, such that $n_1 = min(V)$ and $n_k = min(V \cap n_{k-1}^\infty)$, where $k \geq 2$, then $a_{n_k}$ is strictly decreasing.\\
 \underline{Case II:}
 \[ n_1 =
 \begin{cases}
 1 & if v = \emptyset \\
 1 + max(v) & if v \neq \emptyset
 \end{cases} \]
-$n_k = choice\{n > n_{k-1} | a_n \geq a_{n_{k-1}}$, thus $n_k \neq \emptyset$ because V is finite, thus $a_{n_k}$ is increasing
+$n_k = choice\{n > n_{k-1} | a_n \geq a_{n_{k-1}}$, thus $n_k \neq \emptyset$ because V is finite, thus $a_{n_k}$ is increasing.
 
 \subsection{Bolzano-Weierstrass Theorem}
 Every bounded sequence in $\mathbb{R}$ has at least one convergent subsequence
@@ -358,13 +345,13 @@ Every bounded sequence in $\mathbb{R}$ has at least one convergent subsequence
 \subsubsection{Proof}
 Let $(a_n)^\infty_{n=1}$ be a bounded sequence. For any monotone sequence $(a_{n_k})^\infty_{k=1}$, then $(a_{n_k})^\infty_{k=1}$ is both bounded and monotone, so it converges.
 
-\section{Extreme Value Theorem}
-For some function $f:[a, b] \to \mathbb{R}$ (for the codomain, not the range) that is continuous ($f(x_0) = \lim_{x \to x_o}f(x)$ for any x $\in (a, b)$, $f(a) = \lim_{x \to a^+}f(x)$, $f(b) = \lim_{x \to b^-}f(x)$), then $\exists c, d \in [a, b]$ such that $f(c) \leq f(x) \leq f(d)$.
+\section{Extreme Value Theorem NEXT}
+For some function $f:[a, b] \to \mathbb{R}$ (for the codomain, not the range) that is continuous ($f(x_0) = \lim_{x \to x_o}f(x)$, extended to open intervals such that for any x $\in (a, b)$, $f(a) = \lim_{x \to a^+}f(x)$, $f(b) = \lim_{x \to b^-}f(x)$), then $\exists c, d \in [a, b]$ such that $f(c) \leq f(x) \leq f(d)$.
 
 \subsection{Proof}
-\subsubsection{$\exists M>0$ such that $f(x) \leq < M \forall x \in [a,b]$ (f(x) is bounded above)}
-Lets assume that f is not bounded above, such that for any $n \in \mathbb{N}, \exists x_n \in [a, b]$ such that $f(x_n) > n$.
-The sequence $(x_n)^\infty_{n=1}$ is bounded between a and b, such that it has a convergent subsequence $(x_{n_k})^\infty_{k=1}$ converging to some point t, when $ \lim_{k \to \infty}(x_{n_k})$, by the below claim.\par
+\subsubsection{$\exists M>0$ such that $f(x) \leq  M \forall x \in [a,b]$ (f(x) is bounded above)}
+Lets assume that f is not bounded above. The sequence, $x_n \in [a, b]$ is defined for all $n \in \mathbb{N}$, we can state by the assumption that $\exists n$, such that $f(x_n) > n$.
+The sequence $(x_n)^\infty_{n=1}$ is bounded between a and b, such that it has a convergent subsequence $(x_{n_k})^\infty_{k=1}$ converging to some point t by Balzano-Weirstrauss, when $ \lim_{k \to \infty}(x_{n_k})$, by the below claim.\par
 \underline{Claim:} $t \in [a, b]$. 
 Let $t>b$, then $\epsilon > 0$ such that $[a, b] \cap (t-\epsilon, t+\epsilon) = \emptyset$. But $\exists N$ such that $x_N \in (t-\epsilon, t+\epsilon)$ and $x_N \in [a, b]$, which is a contradiction.
 
