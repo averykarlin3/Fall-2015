@@ -35,7 +35,7 @@ urlcolor=black
 
 \begin{document}
 
-\title{Multivariable Calculus Theory}
+\title{Real Analysis of Multivariable Calculus} 
 \author{Avery Karlin}
 \date{Fall 2015}
 
@@ -320,24 +320,24 @@ is truely 0.
 
 \subsection{Sunrise Lemma}
 
-The Sunrise Lemma states for any sequence $(a_n)^\infty_{n=1}$ in $\mathbb{R}$, $\exists$ monotone subsequence $(a_{n_k})^\infty_{k=1}$, where $(n_k)^\infty_{k=1}$ is a strictly increasing sequence in $\mathbb{N}$ and $n_k \geq k$ for all $k \in \mathbb{N}$.
-
-Vistas are points in a sequence, $a_n$, where  $N \in \mathbb{N}$, such that $a_N > a_n$ for all $n > N$.
+The Sunrise Lemma states for any sequence $(a_n)^\infty_{n=1}$ in $\mathbb{R}$, $\exists$ monotone subsequence $(a_{n_k})^\infty_{k=1}$, where $(n_k)^\infty_{k=1}$ is a strictly increasing sequence in $\mathbb{N}$ and $n_k \geq k$ for all $k \in \mathbb{N}$ (such that it is a subsequence).
 
 This means that for any sequence, there exists a subset of points within, such that within that sequence, the sequence is monotone.
 
 \subsubsection{Well-Ordering Property}
 For any set $A \subseteq \mathbb{N}, A \neq \emptyset, min(A)$ exists
 
-\subsubsection{Proof NOTDONE}
-\underline{Case I:} The set V of vistas, is infinite, such that $n_1 = min(V)$ and $n_k = min(V \cap n_{k-1}^\infty)$, where $k \geq 2$, then $a_{n_k}$ is strictly decreasing.\\
+\subsubsection{Proof}
+Vistas are points in a sequence, $a_n$, where  $N \in \mathbb{N}$, such that $a_N > a_n$ for all $n > N$.
+
+\underline{Case I:} The set V of $n_k$ vista coordinates, is infinite, such that $n_1 = min(V)$ and $n_k = min(V \cap n_{k}^\infty)$, where $k \geq 2$, then $a_{n_k}$ is strictly decreasing.\\
 \underline{Case II:}
 \[ n_1 =
 \begin{cases}
-1 & if v = \emptyset \\
-1 + max(v) & if v \neq \emptyset
+1 & if V = \emptyset \\
+1 + max(V) & if V \neq \emptyset
 \end{cases} \]
-$n_k = choice\{n > n_{k-1} | a_n \geq a_{n_{k-1}}$, thus $n_k \neq \emptyset$ because V is finite, thus $a_{n_k}$ is increasing.
+$n_k = choice\{n > n_{k-1} | a_n \geq a_{n_{k-1}}\}$, thus $n_k \neq \emptyset$ because V is finite, such that otherwise there would be a vista, thus $a_{n_k}$ is increasing.
 
 \subsection{Bolzano-Weierstrass Theorem}
 Every bounded sequence in $\mathbb{R}$ has at least one convergent subsequence
@@ -379,38 +379,36 @@ $\bar{B}_r := \{X| dist(X, P) \leq r\}$
 $S_r := \{X|dist(X, P) = r\}$
 \end{itemize}
 
-\subsubsection{Boundary NEXT}
+\subsubsection{Boundary}
 Given $D \subseteq \mathbb{R}^2, D \neq \emptyset$. We say $(a, b) \in
-\partial D$, i.e. $(a, b)$ is on a \underline{boundry point} of $D$ if $\forall
+\partial D$ ($(a, b)$ is on a \underline{boundry point} of $D$) if $\forall
 \epsilon > 0$, there are points $(x, y)\in D$ and $(u, v) \in D^c$ ($D^c :=
-\mathbb{R}^2 \setminus D$) such that $dist(x, y+;+ a, b) < \epsilon$ and
-$dist(u, v+;+ a, b) < \epsilon$. Since the definition is symmetrical, $\partial D^c = \partial D$.
+\mathbb{R}^2 \setminus D$) such that $dist(x, y; a, b) < \epsilon$ and
+$dist(u, v; a, b) < \epsilon$. Since the definition is symmetrical, $\partial D^c = \partial D$.
 
-\subsubsection{Interior}
+\subsubsection{Interior and Exterior}
 Let $D \subseteq \mathbb{R}^2$. We say $(a, b)$ is an
-\underline{interior point} of $D$ if $\exists+ r > 0:B_r(a, b)\subseteq D$.
+\underline{interior point} of $D$ if $\exists r > 0:B_r(a, b)\subseteq D$.
 The set of all interior points is called the \underline{interior} of $D$ and is
 written as $\text{int } D$.
 
-\subsubsection{Exterior}
-Let $D \subseteq \mathbb{R}^2$. We say $(a, b)$ is an
-\underline{exterior point} for $D$ if it is an interior point of $D^c$.
-$\exists r > 0: B_r(a, b) \subseteq D^c$.
-The set of all exterior points for $D$ is the \underline{exterior} of $D$,
-written as $\text{ext } D$.
+The exterior set, written ext D, is the set of all interior points of $D^c$.
+
 \par \underline{Thm}: For any $D \subseteq \mathbb{R}^2$, $\mathbb{R}^2 =
-\text{int } D \cup \partial D \cup \text{ext } D$. And $\text{int } D \cap
+\text{int } D \cup \partial D \cup \text{ext } D$. 
+\par \underline{Thm}: For any $D \subseteq \mathbb{R}^2, \text{int } D \cap
 \partial D = \emptyset$, $\text{int } D \cap \text{ext } D = \emptyset$,
 $\partial D \cap \text{ext } D = \emptyset$.
 \par \underline{Thm}: $\text{int } D = \text{ext } D^c$ and $\text{ext } D =
-\text{int } D^c$
-\par \underline{Thm}: $\text{ext } D \subseteq D^c$
+\text{int } D^c$.
+\par \underline{Thm}: $\text{ext } D \subseteq D^c$.
 
 \subsubsection{Closure}
-The \textbf{closure} of $D \subseteq \mathbb{R}^2$:
-$$\bar{D} := D \cup \partial D$$
+The \textbf{closure} of $D \subseteq \mathbb{R}^2$ is defined as $\bar{D}$ if
+$\bar{D} := D \cup \partial D$.
+
 \underline{Thm}: $\partial \bar{D} = \partial D$, $\text{int } \bar{D} =
-\text{int } D$, and $\text{ext } \bar{D} = \text{ext } D$
+\text{int } D$, and $\text{ext } \bar{D} = \text{ext } D$.
 \par \underline{Thm}: $\text{int } D \subseteq D \subseteq \bar{D}$.
 
 \subsubsection{Ordered Pair}
@@ -420,13 +418,13 @@ unordered. To express the order, we can do the following: $(a, b) = \{\{a\},
 both subsets.
 We can then expand this into higher dimensions like the following:
 $(a, b, c) = ((a, b), c)$. Note that this means that $((a, b), c) \neq (a, (b,
-c))$. But this does not matter to us.
+c))$.
 
-\textbf{Fundamental Postulate of Ordered Pairs}:
+\underline{Fundamental Postulate of Ordered Pairs}:
 $(a_1, a_2, a_3, \dots, a_n) = (b_1, b_2, b_3, \dots, b_n)$ if and only if $a_1
 = b_1 \wedge a_2 = b_2 \wedge \dots \wedge a_n = b_n$.
 
-\subsubsection{Vector and Points}
+\subsubsection{Vector and Points NOTDONE}
 Vectors are quantities of directionality and length, its location does not
 matter. Points are just positions in space. In higher dimensions with no
 ambiance space (flat space surrounding the surface, i.e. the shortest distance
@@ -442,10 +440,11 @@ $$||\vec{a}|| := dist(\vec{0}, \vec{a}) = \sqrt{\sum_{i =
 1}^d a_i^2}$$
 
 \subsubsection{Space and Lines}
-$\mathbb{R^d} = \{(x_1, x_2, ..., x_d)|x_1, x_2, ... x_d \in \mathbb{R}\}$
-A line, l, can be defined such that l = $\{(a_1 + tb_1, a_2 + tb_2, ..., a_d, tb_d)|t \in \mathbb{R}\}$
+$\mathbb{R^d} = \{(x_1, x_2, ..., x_d)|x_1, x_2, ... x_d \in \mathbb{R}\}$.
 
-\subsection{Dot Product}
+A line, l, can be defined such that l = $\{(a_1 + tb_1, a_2 + tb_2, ..., a_d, tb_d)|t \in \mathbb{R}\}$.
+
+\subsection{Dot Product NEXT}
 \subsubsection{Definition and Perpendicularity}
 The dot product arises naturally through the idea of geometric distance, such that if $a \neq \emptyset, b \neq \emptyset$, then $a \perp bi$ iff $dist(a; b)^2 = dist(\emptyset, a)^2 + dist(\emptyset, b)^2$, where $a = (a_1, a_2), b = (b_1, b_2)$. Thus, by expanding out, $a \perp b$ iff $a_1b_1 + a_2b_2 = 0$ where $a \neq \emptyset, b \neq \emptyset$. In addition, orthoganal refers to both perpendicular vectors and where $a = \emptyset$ and/or $b = \emptyset$, so that no vector can be perpendicular to itself.
 
