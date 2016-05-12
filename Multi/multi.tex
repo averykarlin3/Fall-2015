@@ -444,11 +444,11 @@ $\mathbb{R^d} = \{(x_1, x_2, ..., x_d)|x_1, x_2, ... x_d \in \mathbb{R}\}$.
 
 A line, l, can be defined such that l = $\{(a_1 + tb_1, a_2 + tb_2, ..., a_d, tb_d)|t \in \mathbb{R}\}$.
 
-\subsection{Dot Product NEXT}
+\subsection{Dot Product}
 \subsubsection{Definition and Perpendicularity}
-The dot product arises naturally through the idea of geometric distance, such that if $a \neq \emptyset, b \neq \emptyset$, then $a \perp bi$ iff $dist(a; b)^2 = dist(\emptyset, a)^2 + dist(\emptyset, b)^2$, where $a = (a_1, a_2), b = (b_1, b_2)$. Thus, by expanding out, $a \perp b$ iff $a_1b_1 + a_2b_2 = 0$ where $a \neq \emptyset, b \neq \emptyset$. In addition, orthoganal refers to both perpendicular vectors and where $a = \emptyset$ and/or $b = \emptyset$, so that no vector can be perpendicular to itself.
+The dot product arises naturally through the idea of geometric distance, such that if $\vec{a} \neq \emptyset, \vec{b} \neq \emptyset$, then $\vec{a} \perp \vec{b}$ iff $dist(\vec{a}; \vec{b})^2 = dist(\emptyset, \vec{a})^2 + dist(\emptyset, \vec{b})^2$, where $\vec{a} = (a_1, a_2), \vec{b} = (b_1, b_2)$. Thus, by expanding out, $\vec{a} \perp \vec{b}$ iff $a_1b_1 + a_2b_2 = 0$ where $\vec{a} \neq \emptyset, \vec{b} \neq \emptyset$. In addition, orthoganal refers to both perpendicular vectors and where $\vec{a} = \emptyset$ and/or $\vec{b} = \emptyset$, so that no vector can be perpendicular to itself.
 
-By extension, in $\mathbb{R^d}$, $a \dot b = a_1b_1 + a_2b_2 + a_3b_3 +...+ a_db_d$, such that it forms a scalar, rather than a vector.
+By extension, in $\mathbb{R^d}$, $\vec{a} \cdot \vec{b} = a_1b_1 + a_2b_2 + a_3b_3 +...+ a_db_d$, such that it forms a scalar, rather than a vector, equal to 0 if perpendicular.
 
 \subsubsection{Properties}
 The dot product is:
@@ -459,12 +459,12 @@ The dot product is:
 
 \subsection{Functions in Higher Dimensions}
 \subsubsection{Domain, Range, and One-to-One}
-The domain is a subset of $\mathbb{R^n}$.
-Let the function of f(x, y) be an ordered pair within some curve, such that $(x, y) \in D$. Thus, the range of f, G = ${x, y, f(x,y) | (x, y) \in D} \subseteq{R^{n+1}}$.
-Functions are defined as one-to-one if for f(x, y), $(x, y), (u, v) \in D, f(x, y) = f(u, v)$ iff (if and only if) x = u $\wedge$ (and) y = v (such that for every z value, there is only one point that will create it.
+The domain is a subset of $\mathbb{R}^n$.
+Let the function of f(x, y) take as parameters an ordered pair within some curve, such that $(x, y) \in D$. Thus, the range of f, G = $\{(x, y, f(x,y)) | (x, y) \in D\} \subseteq{\mathbb{R}^{n+1}}$.
+Functions are defined as one-to-one for f(x, y), $\forall (x, y), (u, v) \in D, f(x, y) = f(u, v)$ iff (if and only if) x = u $\wedge$ (and) y = v (such that for every f(x, y) value, there is only one point in the domain that will create it.
 
-\subsubsection{Bolzano-Weirstrauss in Higher Dimensions}
-\underline{Theorem:} A bounded sequence $\in \mathbb{R^d}$ has a convergent subsequence.
+\subsubsection{Bolzano-Weirstrauss in Higher Dimensions NEXT}
+\underline{Theorem:} A bounded sequence $\in \mathbb{R}^d$ has a convergent subsequence.
 
 \underline{Lemma:} If $(x_n)_{n=1}^\infty$ converges to $x \in \mathbb{R}$, then every subsequence $(x_{n_k})_{k=1}^\infty$ also converges to x, following from the definition of convergence and limits ($\forall \epsilon > 0, \exists N, \forall n \geq N: |x_n - x| < \epsilon,$ thus $\exists K, \forall k \geq K: n_k \geq N$, since $n_k \to \infty$ as $k \to \infty$, such that $|x_{n_k} - x| < \epsilon$).
 
