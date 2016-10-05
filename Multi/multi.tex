@@ -425,8 +425,8 @@ $(a_1, a_2, a_3, \dots, a_n) = (b_1, b_2, b_3, \dots, b_n)$ if and only if $a_1
 = b_1 \wedge a_2 = b_2 \wedge \dots \wedge a_n = b_n$.
 
 \subsubsection{Vector and Points NOTDONE}
-Vectors are quantities of directionality and length, its location does not
-matter. Points are just positions in space. In higher dimensions with no
+Vectors are quantities of directionality and length, where its location does not
+matter. Points are positions in space. In higher dimensions with no
 ambiance space (flat space surrounding the surface, i.e. the shortest distance
 in the ambiant space is the straight line),  we define a vector as all
 the lines with the same direction at a certain point.
@@ -446,9 +446,15 @@ A line, l, can be defined such that l = $\{(a_1 + tb_1, a_2 + tb_2, ..., a_d, tb
 
 \subsection{Dot Product}
 \subsubsection{Definition and Perpendicularity}
+<<<<<<< HEAD
 The dot product arises naturally through the idea of geometric distance, such that if $\vec{a} \neq \emptyset, \vec{b} \neq \emptyset$, then $\vec{a} \perp \vec{b}$ iff $dist(\vec{a}; \vec{b})^2 = dist(\emptyset, \vec{a})^2 + dist(\emptyset, \vec{b})^2$, where $\vec{a} = (a_1, a_2), \vec{b} = (b_1, b_2)$. Thus, by expanding out, $\vec{a} \perp \vec{b}$ iff $a_1b_1 + a_2b_2 = 0$ where $\vec{a} \neq \emptyset, \vec{b} \neq \emptyset$. In addition, orthoganal refers to both perpendicular vectors and where $\vec{a} = \emptyset$ and/or $\vec{b} = \emptyset$, so that no vector can be perpendicular to itself.
 
 By extension, in $\mathbb{R^d}$, $\vec{a} \cdot \vec{b} = a_1b_1 + a_2b_2 + a_3b_3 +...+ a_db_d$, such that it forms a scalar, rather than a vector, equal to 0 if perpendicular.
+=======
+The dot product arises naturally through the idea of geometric distance, such that if $a \neq \emptyset, b \neq \emptyset$, then $a \perp b$ iff $dist(a; b)^2 = dist(\emptyset, a)^2 + dist(\emptyset, b)^2$, where $a = (a_1, a_2), b = (b_1, b_2)$. Thus, by expanding out, $a \perp b$ iff $a_1b_1 + a_2b_2 = 0$ where $a \neq \emptyset, b \neq \emptyset$. In addition, orthoganal refers to both perpendicular vectors and where $a = \emptyset$ and/or $b = \emptyset$, so that no vector can be perpendicular to itself, but it can be orthoganal to a null vector.
+
+By extension, in $\mathbb{R^d}$, $a \cdot b = a_1b_1 + a_2b_2 + a_3b_3 +...+ a_db_d$, such that it forms a scalar, rather than a vector, equal to 0 if they are perpendicular.
+>>>>>>> 808176b9042a15d60516163edc6db69a613094dd
 
 \subsubsection{Properties}
 The dot product is:
@@ -460,22 +466,30 @@ The dot product is:
 \subsection{Functions in Higher Dimensions}
 \subsubsection{Domain, Range, and One-to-One}
 The domain is a subset of $\mathbb{R}^n$.
+<<<<<<< HEAD
 Let the function of f(x, y) take as parameters an ordered pair within some curve, such that $(x, y) \in D$. Thus, the range of f, G = $\{(x, y, f(x,y)) | (x, y) \in D\} \subseteq{\mathbb{R}^{n+1}}$.
 Functions are defined as one-to-one for f(x, y), $\forall (x, y), (u, v) \in D, f(x, y) = f(u, v)$ iff (if and only if) x = u $\wedge$ (and) y = v (such that for every f(x, y) value, there is only one point in the domain that will create it.
 
 \subsubsection{Bolzano-Weirstrauss in Higher Dimensions NEXT}
+=======
+Let the function of f(x, y) take an ordered pair within some curve, such that $(x, y) \in D$. Thus, the range of f, G = $(x, y, f(x,y)) \subseteq \mathbb{R}^{n+1}$.
+Functions are defined as one-to-one if for f(x, y), $(x, y), (u, v) \in D, f(x, y) = f(u, v)$ iff (if and only if) x = u $\wedge$ (and) y = v (such that for every z value, there is only one point that will create it.
+
+\subsubsection{Bolzano-Weirstrauss in Higher Dimensions}
+>>>>>>> 808176b9042a15d60516163edc6db69a613094dd
 \underline{Theorem:} A bounded sequence $\in \mathbb{R}^d$ has a convergent subsequence.
 
-\underline{Lemma:} If $(x_n)_{n=1}^\infty$ converges to $x \in \mathbb{R}$, then every subsequence $(x_{n_k})_{k=1}^\infty$ also converges to x, following from the definition of convergence and limits ($\forall \epsilon > 0, \exists N, \forall n \geq N: |x_n - x| < \epsilon,$ thus $\exists K, \forall k \geq K: n_k \geq N$, since $n_k \to \infty$ as $k \to \infty$, such that $|x_{n_k} - x| < \epsilon$).
+\underline{Lemma:} If $(x_n)_{n=1}^\infty$ converges to $x \in \mathbb{R}$, then every subsequence $(x_{n_k})_{k=1}^\infty$ also converges to x, following from the definition of convergence and limits ($\forall \epsilon > 0, \exists N, \forall n \geq N: |x_n - x| < \epsilon,$ thus $\exists K, \forall k \geq K: n_k \geq n_K = N$, since $n_k \to \infty$ as $k \to \infty$, such that $|x_{n_k} - x| < \epsilon$).
 
 \underline{Proof for $d = 2$:} Let $P_n = (x_n, y_n)$. Consider $(x_n)_{n=1}^\infty \in \mathbb{R}$. Since $\forall x_n, -M \leq x_n \leq M, (x_n)_{n=1}^\infty$ is bounded. For some $(x_{n_k})_{k=1}^\infty$, converging to some $x \in \mathbb{R}$. Consider $(y_{n_k})_{k=1}^\infty$ is bounded by the same rationale, thus $(y_{n_{k_j}})^\infty_{j=1}$ converges to some $y \in \mathbb{R}$. Since $(x_{n_{k_j}})_{j=1}^\infty$ is a subsequence of a converging sequence, it converges to the same value, x. Thus, $P_{n_{k_j}} = (x_{n_{k_j}}, y_{n_{k_j}}) \to (x, y) = P$.
 
 \subsubsection{Cauchy Sequence}
-A cauchy sequence in $\mathbb{R}$ is a sequence $(x_n)^\infty_{n=1}$ such that: $\forall \epsilon > 0, \exists N, \forall n, m \geq N: |x_n - x_m| < \epsilon$. This defines a sequence where as $n \to \infty$, the distance between values of points on the sequence decreases.
+A cauchy sequence in $\mathbb{R}$ is a sequence $(x_n)^\infty_{n=1}$ such that: $\forall \epsilon > 0, \exists N, \forall n, m \geq N: |x_n - x_m| < \epsilon$. This defines a sequence where as $n \to \infty$, the distance between values of points on the sequence decreases, such that the distance between any points after some given point are $< \epsilon$.
 
-\subsubsection{Convergence as Cauchy}
-Note that any convergent sequence is cauchy, because as terms get together
+\subsubsection{Convergence as Cauchy NEXT}
+\underline{Theorem:} Any convergent sequence is cauchy, due the fact that as terms get together
 to a limit, they also go very closely together.
+
 \underline{Proof:} Let $(x_n)_{n = 1}^\infty$ be convergent, with limit $x \in \mathbb{R}$.
 Then, by definition, $\forall \epsilon > 0, \exists N_\epsilon, \forall
 n \geq N_\epsilon :
